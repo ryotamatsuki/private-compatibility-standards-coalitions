@@ -56,42 +56,12 @@ def cournot_table() -> str:
 
 def threshold_table() -> str:
     rows = [
-        (
-            "SU outsider: adopt bloc standard",
-            "---",
-            r"$2T_A=2(P-B)$",
-            r"$F^\ast=2T_A$",
-        ),
-        (
-            "SU member: adopt outsider standard",
-            "Other member has not adopted",
-            r"$T_U=A-C$",
-            r"$T_U$",
-        ),
-        (
-            "SU member: adopt outsider standard",
-            "Other member has adopted",
-            r"$T_A=P-B$",
-            r"$T_A$",
-        ),
-        (
-            "SW foreign firm: adopt target standard",
-            "Rival foreign firm has not adopted",
-            r"$T_W=A-S$",
-            r"$T_W$",
-        ),
-        (
-            "SW foreign firm: adopt target standard",
-            "Rival foreign firm has adopted",
-            r"$T_A=P-B$",
-            r"$T_A$",
-        ),
-        (
-            "Relevant no-adoption lower boundary",
-            "SW unilateral or any post-rival adoption",
-            r"$\max\{T_W,T_A\}$",
-            r"$F_L=\max\{T_W,T_A\}$",
-        ),
+        ("SU outsider: adopt bloc standard", "---", r"$2T_A=2(P-B)$", r"$F^\ast=2T_A$"),
+        ("SU member: adopt outsider standard", "Other member has not adopted", r"$T_U=A-C$", r"$T_U$"),
+        ("SU member: adopt outsider standard", "Other member has adopted", r"$T_A=P-B$", r"$T_A$"),
+        ("SW foreign firm: adopt target standard", "Rival foreign firm has not adopted", r"$T_W=A-S$", r"$T_W$"),
+        ("SW foreign firm: adopt target standard", "Rival foreign firm has adopted", r"$T_A=P-B$", r"$T_A$"),
+        ("Relevant no-adoption lower boundary", "SW unilateral or any post-rival adoption", r"$\max\{T_W,T_A\}$", r"$F_L=\max\{T_W,T_A\}$"),
     ]
     lines = [
         r"\begin{table}[htbp]",
@@ -117,7 +87,7 @@ def stability_table() -> str:
             r"\begin{table}[htbp]",
             r"\centering",
             r"\small",
-            r"\caption{Headline formal-stability regions in the symmetric Main Model for $(c,v)\in\Omega_0$. The table reports the private-adoption continuation state and the strict-blocking stable set characterized by Theorem~\ref{thm:formal-coalition-stability}.}",
+            r"\caption{Headline formal-stability regions in the symmetric Main Model for $(c,v)\in\Omega_0$. The table reports the private-adoption continuation state and the strict-blocking stable set.}",
             r"\label{tab:stability-regions}",
             r"\resizebox{\textwidth}{!}{%",
             r"\begin{tabular}{lll}",
