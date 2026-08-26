@@ -1,6 +1,7 @@
 """Generate reproducible manuscript figures from the frozen canonical model.
 
-The figures are infrastructure / illustrations only. They are not proofs.
+The figures are infrastructure / illustrations only. They are not proofs and
+are not yet included in the manuscript scaffold.
 """
 
 from __future__ import annotations
@@ -11,6 +12,7 @@ import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+import sympy as sp
 
 import canonical as can
 
@@ -138,7 +140,7 @@ def selective_erosion_figure() -> None:
 
 
 def f_region_figure() -> None:
-    """Numerical illustration of the headline Theorem-2 F regions at the frozen witness."""
+    """Numerical illustration of the headline Theorem-2 F regions at the Stage-8 main witness."""
     w = can.witness_values()
     f_l = w["F_L"]
     f_star = w["F_star"]
