@@ -1,10 +1,248 @@
 \section{Private Compatibility and Formal Coalition Stability}
 \label{sec:coalition-stability}
 
-% TODO:
-% - Microfound the selective-erosion theorem in the symmetric three-country model.
-% - Expected formal results: Proposition 1 and Theorem 2.
-% - Candidate figure placement: Figure 3 (verified F-region illustration).
-% - Candidate table placement: Table 3 (stability regions).
-% - Preserve the symmetric high-F stable set containing all three regional SUs.
-% Source of truth: docs/CANONICAL_MODEL.md and docs/THEOREM_LEDGER.md.
+Section~\ref{sec:selective-erosion} established the selective-erosion mechanism as a continuation-payoff result: outsider-only private compatibility removes the regional coalition member's net exclusion surplus in member markets while leaving its reciprocal disadvantage in the outsider market intact. We now map that mechanism into the symmetric three-country Cournot standards model and close the model by evaluating strict blocking over the five admissible formal partitions. The main result is a change in the stable formal partition set when the private compatibility cost moves from a high-cost region, in which no firm circumvents a regional standard, to an intermediate-cost region, in which the outsider alone circumvents the regional bloc standard.
+
+\subsection{Three-country microfoundation}
+\label{subsec:three-country-microfoundation}
+
+Throughout this section the Main Model is symmetric, $m_1=m_2=m_3=1$. For a member of any regional standards union, specialize the Section~\ref{sec:selective-erosion} decomposition to
+\begin{equation}
+    \mathscr E
+    \equiv (K_M-K_I)+2(A-P),
+    \qquad
+    \mathscr D
+    \equiv P-C,
+    \label{eq:symmetric-erosion-objects}
+\end{equation}
+and define
+\begin{equation}
+    \Phi_0
+    \equiv \mathscr E-\mathscr D
+    =W_M^{SU,N}-W^{IS}.
+    \label{eq:phi-zero}
+\end{equation}
+The first equality records the member-market gain from regional exclusion net of the reciprocal outsider-market disadvantage; the second equality follows directly from the continuation-payoff accounting in Section~\ref{sec:selective-erosion}.
+
+The parameter region used for the Main stability result is
+\begin{equation}
+    \boxed{
+    \Omega_0
+    =\left\{
+    (c,v):
+    0<v<\frac14,\;
+    0<c<\frac{1-3v}{3(1-v)},\;
+    \Phi_0>0,\;
+    P>C,\;
+    \max\{T_W,T_A\}<2T_A
+    \right\}.
+    }
+    \label{eq:omega-zero}
+\end{equation}
+The fixed cost $F$ is not an element of $\Omega_0$. The set collects only the $(c,v)$ conditions needed for the payoff reversal and for the existence of distinct high- and intermediate-$F$ regions. Because every inequality in \eqref{eq:omega-zero} is strict and all canonical expressions are continuous on the interior admissible domain, $\Omega_0$ is open.
+
+The set is also nonempty. At the verified witness
+\begin{equation}
+    (c,v)=\left(\frac{1}{10},\frac{6}{25}\right)=(0.10,0.24),
+    \label{eq:omega-witness}
+\end{equation}
+we obtain
+\begin{align}
+    T_U&\approx0.0661011,&
+    T_A&\approx0.0818242,&
+    T_W&\approx0.1003198,\notag\\
+    \mathscr E&\approx0.0161623,&
+    \mathscr D&\approx0.00801809,&
+    \Phi_0&\approx0.00814425.
+    \label{eq:omega-witness-values}
+\end{align}
+Thus $P>C$, $\Phi_0>0$, and
+\[
+    F_L=\max\{T_W,T_A\}=T_W\approx0.1003198
+    <2T_A\approx0.1636485=F^\ast.
+\]
+The witness establishes nonemptiness; it is not used as a substitute for the analytical argument below.
+
+\begin{proposition}[Three-Country Microfoundation]
+\label{prop:three-country-microfoundation}
+For every $(c,v)\in\Omega_0$, the symmetric three-country Cournot standards model satisfies
+\[
+    \mathscr E>\mathscr D>0
+    \qquad\text{and}\qquad
+    F_L<F^\ast=2T_A.
+\]
+Hence there is a nonempty intermediate fixed-cost region $F_L<F<F^\ast$ in which each regional standards union induces outsider-only private adoption and separate national standards induce no private adoption, while for $F>F^\ast$ neither SU nor SW induces private adoption. Moreover,
+\[
+    W_M^{SU,N}>W^{IS}
+    \qquad\text{and}\qquad
+    W_M^{SU,O}<W^{IS}.
+\]
+Thus the primitive Cournot standards model generates the selective-erosion ranking reversal on a nonempty open set.
+\end{proposition}
+
+\begin{proof}
+By definition of $\Omega_0$, $\Phi_0=\mathscr E-\mathscr D>0$ and $P>C$, so $\mathscr D=P-C>0$ and therefore $\mathscr E>\mathscr D>0$. The same definition gives $F_L=\max\{T_W,T_A\}<2T_A=F^\ast$. Lemma~\ref{lem:private-adoption} then implies the stated private-adoption patterns in the high- and intermediate-$F$ regions. Finally, \eqref{eq:phi-zero} gives $W_M^{SU,N}-W^{IS}=\Phi_0>0$, while Theorem~\ref{thm:selective-erosion} gives $W_M^{SU,O}-W^{IS}=-(P-C)<0$.
+\end{proof}
+
+Proposition~\ref{prop:three-country-microfoundation} performs only the microfoundation step. It does not yet identify a stable partition. Stability additionally requires the outsider government's continuation payoff and the strict-blocking comparisons for all admissible deviations.
+
+\subsection{The outsider government and strict blocking}
+\label{subsec:outsider-strict-blocking}
+
+Without private bypass, the outsider to a regional coalition receives
+\begin{equation}
+    W_O^{SU,N}=K_O+2B+D.
+    \label{eq:outsider-welfare-no-bypass}
+\end{equation}
+The canonical welfare comparison gives $W^{IS}>W_O^{SU,N}$ throughout the admissible domain. Under outsider-only bypass, by contrast, the outsider's domestic firm pays the additional-standard fixed cost itself. Its national welfare is therefore
+\begin{equation}
+    W_O^{SU,O}=K_O+2P+D-F.
+    \label{eq:outsider-welfare-bypass}
+\end{equation}
+The $-F$ term is present here because the adopting firm is domestic to the outsider country. This differs from the member-government accounting in Section~\ref{sec:selective-erosion}, where the outsider's fixed cost was foreign and therefore absent from the member's national welfare.
+
+To compare \eqref{eq:outsider-welfare-bypass} with international standardization, define the canonical derived object
+\begin{equation}
+    J\equiv K_I+P-K_O-D.
+    \label{eq:j-definition}
+\end{equation}
+Then
+\begin{align}
+    W^{IS}-W_O^{SU,O}
+    &=K_I+3P-\left(K_O+2P+D-F\right)\notag\\
+    &=J+F.
+    \label{eq:outsider-is-gap}
+\end{align}
+A direct sign check gives $J>0$ throughout the canonical $(c,v)$ domain. For completeness, multiplying $J$ by its positive denominator yields
+\begin{align}
+    N_J(c,v)
+    ={}&-48(1-v)^2c^2
+    +(48v^3-80v^2+16v+16)c\notag\\
+    &+v(68-269v+318v^2-108v^3).
+    \label{eq:j-numerator}
+\end{align}
+For fixed $v$, $N_J$ is concave in $c$ because
+\[
+    \frac{\partial^2 N_J}{\partial c^2}=-96(1-v)^2<0.
+\]
+Its minimum on the closure of the admissible $c$ interval is therefore attained at an endpoint. At $c=0$ and at $c_{\max}(v)=(1-3v)/[3(1-v)]$, respectively,
+\begin{align}
+    N_J(0,v)
+    &=v(68-269v+318v^2-108v^3),\notag\\
+    N_J(c_{\max}(v),v)
+    &=\frac v3(284-1095v+1098v^2-324v^3).
+    \label{eq:j-endpoints}
+\end{align}
+Both bracketed polynomials are decreasing on $0<v<1/4$ and remain positive at $v=1/4$, where they equal $303/16$ and $1181/16$. Hence $J>0$. Since $F>0$, equation~\eqref{eq:outsider-is-gap} implies
+\begin{equation}
+    \boxed{W^{IS}>W_O^{SU,O}.}
+    \label{eq:outsider-prefers-is-after-bypass}
+\end{equation}
+This strict outsider ranking is what converts the member-side selective-erosion result into a grand-coalition blocking result.
+
+We use the strict-blocking concept defined in Section~\ref{subsec:model-stability}: a deviating coalition blocks the current partition only if every deviator is strictly better off under the induced alternative partition. Indifference by even one deviator is therefore sufficient to prevent blocking.
+
+\subsection{High private-compatibility costs}
+\label{subsec:high-f-stability}
+
+Fix $(c,v)\in\Omega_0$ and suppose
+\begin{equation}
+    F>F^\ast=2T_A.
+    \label{eq:high-f-region-stability}
+\end{equation}
+Lemma~\ref{lem:private-adoption} implies that neither SU nor SW induces private adoption. The relevant continuation payoffs are therefore $W^{SW}$ for every country under separate national standards, $W^{IS}$ for every country under international standardization, and $(W_M^{SU,N},W_M^{SU,N},W_O^{SU,N})$ up to permutation under any regional SU.
+
+Separate national standards are not stable. The canonical inequality $W_M^{SU,N}>W^{SW}$ implies that any two countries can form a regional SU and both strictly gain. International standardization is also not stable on $\Omega_0$: because $\Phi_0=W_M^{SU,N}-W^{IS}>0$, any two countries can leave IS, form a regional SU, and both strictly gain.
+
+Now take an arbitrary regional partition $\rho_{ij}^{SU}$ with outsider $o$. A deviation by the same pair reproduces the status quo and cannot strictly block it. A grand-coalition deviation to IS also fails because each current member obtains $W_M^{SU,N}>W^{IS}$. An alternative pair containing the outsider, say $\{i,o\}$, makes country $i$ a regional member both before and after the deviation. Symmetry gives it the same payoff $W_M^{SU,N}$ in the two regional coalitions, so it is indifferent rather than strictly better off. The alternative pair therefore cannot block. Finally, fragmentation to SW makes a current member worse off because $W_M^{SU,N}>W^{SW}$, while a deviation that leaves a current member as an SU outsider gives that country $W_O^{SU,N}<W^{IS}<W_M^{SU,N}$. No admissible coalition strictly blocks $\rho_{ij}^{SU}$.
+
+Thus all three regional SUs, and not a unique regional partner, survive under high private-compatibility costs.
+
+\subsection{Intermediate private-compatibility costs}
+\label{subsec:intermediate-f-stability}
+
+Now suppose
+\begin{equation}
+    F_L<F<2T_A,
+    \qquad F_L=\max\{T_W,T_A\}.
+    \label{eq:intermediate-f-region-stability}
+\end{equation}
+Lemma~\ref{lem:private-adoption} gives a selection-free continuation state: the outsider to each regional SU alone adopts the bloc standard, SU members do not adopt the outsider standard, and SW induces no private adoption. Hence an SU member obtains
+\begin{equation}
+    W_M^{SU,O}=K_I+2P+C
+    =W^{IS}-(P-C),
+    \label{eq:member-intermediate-welfare}
+\end{equation}
+whereas the outsider obtains \eqref{eq:outsider-welfare-bypass}.
+
+Every regional SU is now strictly blocked by the grand coalition. For each of the two members,
+\[
+    W^{IS}-W_M^{SU,O}=P-C>0
+\]
+because $(c,v)\in\Omega_0$. For the outsider, \eqref{eq:outsider-is-gap} and $J>0$ imply
+\[
+    W^{IS}-W_O^{SU,O}=J+F>0.
+\]
+All three countries therefore strictly prefer IS to the continuation outcome under the current regional coalition.
+
+Separate national standards are also strictly blocked by the grand coalition because the canonical comparison $W^{IS}>W^{SW}$ holds throughout the admissible domain. It remains to verify that IS itself is stable. A pair deviation from IS to a regional SU makes the two deviators SU members, but outsider-only bypass then yields $W_M^{SU,O}<W^{IS}$ for each of them. A deviation whose relevant deviator becomes the outsider to an SU yields $W_O^{SU,O}<W^{IS}$. Fragmentation to SW yields $W^{SW}<W^{IS}$. Thus no coalition can strictly block international standardization.
+
+\subsection{Formal coalition stability}
+\label{subsec:formal-stability-theorem}
+
+The preceding comparisons produce the paper's Main applied stability result.
+
+\begin{theorem}[Private Compatibility and Formal Coalition Stability]
+\label{thm:formal-coalition-stability}
+For every $(c,v)\in\Omega_0$, the strict-blocking stable set changes with the private compatibility fixed cost as follows.
+
+If
+\[
+    F>2T_A,
+\]
+then no private adoption occurs under SU or SW and
+\begin{equation}
+    \boxed{
+    \mathcal S(F)
+    =\left\{
+    \rho_{12}^{SU},
+    \rho_{13}^{SU},
+    \rho_{23}^{SU}
+    \right\}.
+    }
+    \label{eq:high-f-stable-set}
+\end{equation}
+If
+\[
+    F_L<F<2T_A,
+\]
+then every regional SU induces outsider-only private adoption, SW induces no private adoption, and
+\begin{equation}
+    \boxed{
+    \mathcal S(F)=\{\rho^{IS}\}.
+    }
+    \label{eq:intermediate-f-stable-set}
+\end{equation}
+Thus a reduction in the private compatibility cost from the high-$F$ region into the intermediate region can eliminate the stability of all regional standards unions and make international standardization uniquely stable.
+\end{theorem}
+
+\begin{proof}
+For $F>2T_A$, the private-adoption continuation is the no-bypass state. Separate national standards are strictly blocked by a two-country regional coalition because $W_M^{SU,N}>W^{SW}$. International standardization is strictly blocked by a two-country regional coalition because $W_M^{SU,N}-W^{IS}=\Phi_0>0$. For any current $\rho_{ij}^{SU}$, a grand-coalition deviation fails because its two members strictly prefer the current SU to IS; an alternative regional pair fails because the common member is indifferent across symmetric SUs; and fragmentation fails because a current member would obtain either $W^{SW}$ or $W_O^{SU,N}$, both below $W_M^{SU,N}$. Hence precisely the three regional SUs are stable.
+
+For $F_L<F<2T_A$, each regional SU induces outsider-only bypass. Its two members strictly prefer IS because $W^{IS}-W_M^{SU,O}=P-C>0$, and its outsider strictly prefers IS because $W^{IS}-W_O^{SU,O}=J+F>0$. The grand coalition therefore strictly blocks every regional SU. It also strictly blocks SW because $W^{IS}>W^{SW}$. Finally, no coalition blocks IS: a pair deviating to an SU obtains $W_M^{SU,O}<W^{IS}$; a deviator becoming an SU outsider obtains $W_O^{SU,O}<W^{IS}$; and a deviation to SW gives $W^{SW}<W^{IS}$. Thus IS is uniquely stable.
+\end{proof}
+
+Figure~\ref{fig:f-regions} illustrates the two headline fixed-cost regions at the verified witness. It is a numerical illustration of the theorem, not its proof.
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{figures/generated/figure_03_f_regions.pdf}
+    \caption{Fixed-cost regions at the verified witness $(c,v)=(0.10,0.24)$. For $F_L<F<2T_A$, outsider-only private compatibility makes international standardization uniquely stable; for $F>2T_A$, no private adoption occurs and all three regional standards unions are stable. The figure is a numerical illustration of Theorem~\ref{thm:formal-coalition-stability}, not its proof.}
+    \label{fig:f-regions}
+\end{figure}
+
+Table~\ref{tab:stability-regions} collects the same analytical regions without extending the theorem to the boundary or low-$F$ cases.
+\input{tables/generated/table_stability_regions.tex}
+
+The economic mechanism is not that private adoption mechanically merges formal coalitions. Formal membership remains unchanged. Instead, a lower private compatibility cost selects a continuation state in which the outsider can replicate the bloc standard technologically. That action removes the member-market exclusion component sustaining the regional coalition but does not reciprocally improve the coalition members' position in the outsider market. Members consequently reverse their ranking toward IS, while the outsider also strictly prefers IS after its own adoption cost is correctly included. Private technological adaptation therefore changes formal institutional stability through continuation-payoff reordering.
+
+The result is deliberately local to the headline fixed-cost comparison. It does not assert monotonic unique-IS stability as $F\rightarrow0$, does not select a unique regional partner under symmetric market sizes, and does not make a world-welfare claim. Market-size asymmetry and partner selection are treated separately in the next section; sufficiently low private compatibility costs are reserved for the Appendix.
