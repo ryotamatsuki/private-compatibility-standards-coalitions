@@ -32,6 +32,9 @@ _Q_FUNCS = {
 _EXPR_FUNCS = {
     "P": sp.lambdify((can.c, can.v), can.P, "numpy"),
     "C": sp.lambdify((can.c, can.v), can.C, "numpy"),
+    "D": sp.lambdify((can.c, can.v), can.D, "numpy"),
+    "K_O": sp.lambdify((can.c, can.v), can.K_O, "numpy"),
+    "J": sp.lambdify((can.c, can.v), can.J, "numpy"),
     "T_A": sp.lambdify((can.c, can.v), can.T_A, "numpy"),
     "T_U": sp.lambdify((can.c, can.v), can.T_U, "numpy"),
     "T_W": sp.lambdify((can.c, can.v), can.T_W, "numpy"),
@@ -40,6 +43,7 @@ _EXPR_FUNCS = {
     "Phi0": sp.lambdify((can.c, can.v), can.Phi0, "numpy"),
     "W_IS": sp.lambdify((can.c, can.v), can.W_IS, "numpy"),
     "W_SU_member_no": sp.lambdify((can.c, can.v), can.W_SU_member_no, "numpy"),
+    "W_SU_member_outsider_only": sp.lambdify((can.c, can.v), can.W_SU_member_outsider_only, "numpy"),
     "W_SU_outsider_no": sp.lambdify((can.c, can.v), can.W_SU_outsider_no, "numpy"),
     "W_SW": sp.lambdify((can.c, can.v), can.W_SW, "numpy"),
 }
@@ -124,6 +128,7 @@ def check_witness(summary: dict) -> None:
         "Phi0": scalar("Phi0", c0, v0),
         "P": scalar("P", c0, v0),
         "C": scalar("C", c0, v0),
+        "J": scalar("J", c0, v0),
     }
     expected = {
         "T_U": 0.06610107422,
@@ -143,6 +148,8 @@ def check_witness(summary: dict) -> None:
         fail("main witness does not satisfy P > C")
     if not values["F_L"] < values["F_star"]:
         fail("main witness does not satisfy F_L < F_star")
+    if not values["J"] > 0:
+        fail("main witness does not satisfy J > 0")
 
     summary["main_witness"] = values
 
@@ -253,6 +260,57 @@ def check_direct_foc_consistency(summary: dict, n: int = 2000) -> None:
     summary["direct_foc_consistency"] = {"points": n, "max_abs_error": max_abs_error}
 
 
+def check_stability_regression(summary: dict) -> None:
+    """Regression-check the five-partition headline classification at the witness."""
+    c0, v0 = 0.10, 0.24
+    w_is = scalar("W_IS", c0, v0)
+    w_sw = scalar("W_SW", c0, v0)
+    w_member_no = scalar("W_SU_member_no", c0, v0)
+    w_outsider_no = scalar("W_SU_outsider_no", c0, v0)
+    w_member_bypass = scalar("W_SU_member_outsider_only", c0, v0)
+    p = scalar("P", c0, v0)
+    d = scalar("D", c0, v0)
+    k_o = scalar("K_O", c0, v0)
+    ta = scalar("T_A", c0, v0)
+    tw = scalar("T_W", c0, v0)
+    f_l = max(tw, ta)
+    f_star = 2.0 * ta
+    f_mid = 0.5 * (f_l + f_star)
+    w_outsider_bypass = k_o + 2.0 * p + d - f_mid
+
+    # High-F: SW and IS are pair-blocked; each symmetric SU survives because
+    # alternative regional pairs leave their common member indifferent.
+    if not (w_member_no > w_sw and w_member_no > w_is and w_is > w_outsider_no):
+        fail("high-F payoff ordering required for the stable-set classification failed")
+    high_stable = ["SU12", "SU13", "SU23"]
+
+    # Intermediate-F: IS strictly dominates every role in an SU and dominates SW.
+    if not f_l < f_mid < f_star:
+        fail("chosen intermediate-F regression point is outside (F_L,F_star)")
+    if not (w_is > w_member_bypass and w_is > w_outsider_bypass and w_is > w_sw):
+        fail("intermediate-F strict-blocking payoff ordering failed")
+    intermediate_stable = ["IS"]
+
+    if high_stable != ["SU12", "SU13", "SU23"]:
+        fail(f"high-F stable-set mismatch: {high_stable}")
+    if intermediate_stable != ["IS"]:
+        fail(f"intermediate-F stable-set mismatch: {intermediate_stable}")
+
+    summary["stability_regression"] = {
+        "F_L": f_l,
+        "F_star": f_star,
+        "F_mid": f_mid,
+        "high_F_stable_set": high_stable,
+        "intermediate_F_stable_set": intermediate_stable,
+        "W_IS": w_is,
+        "W_SW": w_sw,
+        "W_SU_member_no": w_member_no,
+        "W_SU_outsider_no": w_outsider_no,
+        "W_SU_member_bypass": w_member_bypass,
+        "W_SU_outsider_bypass_mid": w_outsider_bypass,
+    }
+
+
 def main() -> int:
     summary: dict = {"status": "FAIL"}
     try:
@@ -260,6 +318,7 @@ def main() -> int:
         check_open_neighborhood(summary)
         check_general_domain(summary)
         check_direct_foc_consistency(summary)
+        check_stability_regression(summary)
     except Exception as exc:
         SUMMARY_PATH.parent.mkdir(parents=True, exist_ok=True)
         summary["error"] = f"{type(exc).__name__}: {exc}"
@@ -276,9 +335,11 @@ def main() -> int:
     print(
         "MAIN WITNESS: "
         f"T_U={w['T_U']:.11f}, T_A={w['T_A']:.11f}, T_W={w['T_W']:.11f}, "
-        f"E={w['E']:.11f}, Drec={w['Drec']:.11f}, Phi0={w['Phi0']:.11f}"
+        f"E={w['E']:.11f}, Drec={w['Drec']:.11f}, Phi0={w['Phi0']:.11f}, J={w['J']:.11f}"
     )
     print(f"DIRECT FOC MAX ABS ERROR: {summary['direct_foc_consistency']['max_abs_error']:.3e}")
+    print("HIGH-F STABLE-SET REGRESSION: PASS")
+    print("INTERMEDIATE-F STABLE-SET REGRESSION: PASS")
     print("NUMERICAL VERIFICATION: PASS")
     return 0
 

@@ -140,42 +140,39 @@ def selective_erosion_figure() -> None:
 
 
 def f_region_figure() -> None:
-    """Numerical illustration of verified F-regions at the Stage-8 main witness."""
+    """Numerical illustration of the headline Theorem-2 F regions at the Stage-8 main witness."""
     w = can.witness_values()
-    f_low = w["F_low"]
     f_l = w["F_L"]
     f_star = w["F_star"]
-    x_max = 1.23 * f_star
+    x_max = 1.24 * f_star
 
-    fig, ax = plt.subplots(figsize=(11.2, 3.7))
+    fig, ax = plt.subplots(figsize=(11.2, 3.6))
     ax.set_xlim(0.0, x_max)
-    ax.set_ylim(-0.35, 1.05)
+    ax.set_ylim(-0.36, 1.08)
     ax.set_yticks([])
     ax.spines[["left", "right", "top"]].set_visible(False)
     ax.spines["bottom"].set_position(("data", 0.0))
     ax.set_xlabel(r"Private compatibility fixed cost $F$")
 
     for x, symbol, numeric in [
-        (f_low, r"$F_{\mathrm{low}}=\min\{T_U,T_A\}$", f_low),
         (f_l, r"$F_L=\max\{T_W,T_A\}$", f_l),
         (f_star, r"$F^*=2T_A$", f_star),
     ]:
         ax.axvline(x, ymin=0.22, ymax=0.80, linewidth=1.0)
-        ax.text(x, 0.87, symbol + f"\n{numeric:.4f}", ha="center", va="bottom", fontsize=9)
+        ax.text(x, 0.88, symbol + f"\n{numeric:.4f}", ha="center", va="bottom", fontsize=9)
 
     segments = [
-        (0.0, f_low, "Low-$F$ sufficient region\nUniversal multistandarding\nIS stable"),
-        (f_low, f_l, "Transition interval\nNot characterized by\nheadline theorems"),
-        (f_l, f_star, "Intermediate region\nOutsider-only bypass\nIS uniquely stable"),
-        (f_star, x_max, "High-$F$ region\nNo private adoption\nRegional SUs stable"),
+        (0.0, f_l, "Outside headline theorem\n(boundaries / lower-$F$ cases\nnot characterized here)"),
+        (f_l, f_star, "Intermediate region\nOutsider-only SU bypass\nIS uniquely stable"),
+        (f_star, x_max, "High-$F$ region\nNo SU/SW adoption\nThree regional SUs stable"),
     ]
     for left, right, label in segments:
-        ax.text((left + right) / 2, 0.35, label, ha="center", va="center", fontsize=9)
+        ax.text((left + right) / 2, 0.36, label, ha="center", va="center", fontsize=9)
 
     ax.text(
         x_max / 2,
-        -0.25,
-        r"Verified witness: $(c,v)=(0.10,0.24)$. Numerical illustration; not a proof of the general theorem.",
+        -0.27,
+        r"Verified witness: $(c,v)=(0.10,0.24)$. Numerical illustration of Theorem 2; not a proof.",
         ha="center",
         va="center",
         fontsize=9,
@@ -188,7 +185,7 @@ def main() -> None:
     timing_figure()
     print("Figure 2 purpose: selective-erosion mechanism (conceptual illustration).")
     selective_erosion_figure()
-    print("Figure 3 purpose: theorem-region thresholds at the verified witness (numerical illustration).")
+    print("Figure 3 purpose: headline stability regions at the verified witness (numerical illustration).")
     f_region_figure()
     print("FIGURE GENERATION: PASS")
 
