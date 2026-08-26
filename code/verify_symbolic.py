@@ -122,6 +122,8 @@ def verify_canonical_identities() -> None:
     assert_zero("P-C factorization", can.P - can.C - expected_pc)
 
     # Under c < c_upper, second_factor is strictly above its value at c_upper.
+    # The boundary value is 8/3 - v > 0 for v < 1/4, so the sign of P-C
+    # is exactly the sign of first_factor on the canonical domain.
     boundary_second = sp.simplify(second_factor.subs(c, can.c_upper))
     assert_zero("P-C second factor boundary", boundary_second - (sp.Rational(8, 3) - v))
     assert_zero(
@@ -143,10 +145,12 @@ def verify_private_adoption_identities() -> None:
     c, v, F = can.c, can.v, can.F
     m_i, m_j, m_o, m_k = sp.symbols("m_i m_j m_o m_k", positive=True, real=True)
 
+    # Section 5 threshold definitions.
     assert_zero("T_A definition", can.T_A - (can.P - can.B))
     assert_zero("T_U definition", can.T_U - (can.A - can.C))
     assert_zero("T_W definition", can.T_W - (can.A - can.S))
 
+    # Section 5 adoption-gain identities, including the general market-mass forms.
     assert_zero(
         "SU outsider adoption gain",
         (m_i + m_j) * (can.P - can.B) - F - ((m_i + m_j) * can.T_A - F),
@@ -169,9 +173,16 @@ def verify_private_adoption_identities() -> None:
     )
     assert_zero("symmetric SU outsider gain", 2 * (can.P - can.B) - F - (2 * can.T_A - F))
 
-    expected_ta_zero = v * (36 * v**2 - 51 * v + 16) / (16 * (1 - v) * (2 - 3 * v) ** 2)
+    # Exact sign-support identities for the analytical threshold-positivity proof.
+    expected_ta_zero = (
+        v * (36 * v**2 - 51 * v + 16)
+        / (16 * (1 - v) * (2 - 3 * v) ** 2)
+    )
     assert_zero("T_A at c=0 factorization", can.T_A.subs(c, 0) - expected_ta_zero)
-    assert_zero("q_B derivative in c", sp.diff(can.q_B, c) + 3 * (1 - v) / (2 * (2 - 3 * v)))
+    assert_zero(
+        "q_B derivative in c",
+        sp.diff(can.q_B, c) + 3 * (1 - v) / (2 * (2 - 3 * v)),
+    )
     ta_poly = 36 * v**2 - 51 * v + 16
     assert_zero("T_A positivity polynomial derivative", sp.diff(ta_poly, v) - (72 * v - 51))
     assert_zero(
@@ -218,40 +229,57 @@ def verify_selective_erosion_identities() -> None:
 
 
 def verify_coalition_stability_identities() -> None:
-    """Verify Section 7 microfoundation and outsider-payoff identities."""
+    """Verify the Section 7 microfoundation and outsider-payoff identities."""
     c, v, F = can.c, can.v, can.F
 
-    # Symmetric selective-erosion specialization.
     assert_zero("Phi0 welfare gap", can.Phi0 - (can.W_SU_member_no - can.W_IS))
     assert_zero("Phi0 decomposition", can.Phi0 - (can.E - can.Drec))
-    assert_zero("post-bypass member IS gap", can.W_IS - can.W_SU_member_outsider_only - (can.P - can.C))
+    assert_zero(
+        "post-bypass member IS gap",
+        can.W_IS - can.W_SU_member_outsider_only - (can.P - can.C),
+    )
 
-    # Outsider post-bypass welfare and its exact IS gap.
     w_outsider_bypass = can.K_O + 2 * can.P + can.D - F
-    assert_zero("outsider post-bypass IS gap", can.W_IS - w_outsider_bypass - (can.J + F))
+    assert_zero(
+        "outsider post-bypass IS gap",
+        can.W_IS - w_outsider_bypass - (can.J + F),
+    )
     assert_zero("J definition", can.J - (can.K_I + can.P - can.K_O - can.D))
 
-    # Analytical sign support for J > 0 on the canonical domain.
     nj = (
         -48 * (1 - v) ** 2 * c**2
         + (48 * v**3 - 80 * v**2 + 16 * v + 16) * c
         + v * (68 - 269 * v + 318 * v**2 - 108 * v**3)
     )
-    assert_zero("J numerator representation", can.J - nj / (32 * (1 - v) ** 2 * (2 - 3 * v) ** 2))
+    assert_zero(
+        "J numerator representation",
+        can.J - nj / (32 * (1 - v) ** 2 * (2 - 3 * v) ** 2),
+    )
     assert_zero("J numerator c curvature", sp.diff(nj, c, 2) + 96 * (1 - v) ** 2)
 
     p0 = 68 - 269 * v + 318 * v**2 - 108 * v**3
     p1 = 284 - 1095 * v + 1098 * v**2 - 324 * v**3
     assert_zero("J lower endpoint", nj.subs(c, 0) - v * p0)
     assert_zero("J upper endpoint", sp.simplify(nj.subs(c, can.c_upper)) - v * p1 / 3)
-    assert_zero("J endpoint p0 at v=1/4", p0.subs(v, sp.Rational(1, 4)) - sp.Rational(303, 16))
-    assert_zero("J endpoint p1 at v=1/4", p1.subs(v, sp.Rational(1, 4)) - sp.Rational(1181, 16))
-    assert_zero("J p0 derivative at v=1/4", sp.diff(p0, v).subs(v, sp.Rational(1, 4)) + sp.Rational(521, 4))
-    assert_zero("J p1 derivative at v=1/4", sp.diff(p1, v).subs(v, sp.Rational(1, 4)) + sp.Rational(2427, 4))
+    assert_zero(
+        "J endpoint p0 at v=1/4",
+        p0.subs(v, sp.Rational(1, 4)) - sp.Rational(303, 16),
+    )
+    assert_zero(
+        "J endpoint p1 at v=1/4",
+        p1.subs(v, sp.Rational(1, 4)) - sp.Rational(1181, 16),
+    )
+    assert_zero(
+        "J p0 derivative at v=1/4",
+        sp.diff(p0, v).subs(v, sp.Rational(1, 4)) + sp.Rational(521, 4),
+    )
+    assert_zero(
+        "J p1 derivative at v=1/4",
+        sp.diff(p1, v).subs(v, sp.Rational(1, 4)) + sp.Rational(2427, 4),
+    )
     assert_zero("J p0 second derivative", sp.diff(p0, v, 2) - (636 - 648 * v))
     assert_zero("J p1 second derivative", sp.diff(p1, v, 2) - (2196 - 1944 * v))
 
-    # Exact Stage-8 witness: proves the stated point satisfies the three extra Omega_0 inequalities.
     witness = can.MAIN_WITNESS
     exact_witness = {
         "T_A": (can.T_A, sp.Rational(636789, 7782400)),
