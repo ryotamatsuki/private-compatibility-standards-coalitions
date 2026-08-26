@@ -141,16 +141,74 @@ def verify_canonical_identities() -> None:
     assert_zero("low-F SW accounting", constructed_sw - (can.W_IS - 2 * F))
 
 
+def verify_private_adoption_identities() -> None:
+    c, v, F = can.c, can.v, can.F
+    m_i, m_j, m_o, m_k = sp.symbols("m_i m_j m_o m_k", positive=True, real=True)
+
+    # Section 5 threshold definitions.
+    assert_zero("T_A definition", can.T_A - (can.P - can.B))
+    assert_zero("T_U definition", can.T_U - (can.A - can.C))
+    assert_zero("T_W definition", can.T_W - (can.A - can.S))
+
+    # Section 5 adoption-gain identities, including the general market-mass forms.
+    assert_zero(
+        "SU outsider adoption gain",
+        (m_i + m_j) * (can.P - can.B) - F - ((m_i + m_j) * can.T_A - F),
+    )
+    assert_zero(
+        "SU member unilateral adoption gain",
+        m_o * (can.A - can.C) - F - (m_o * can.T_U - F),
+    )
+    assert_zero(
+        "SU member post-rival adoption gain",
+        m_o * (can.P - can.B) - F - (m_o * can.T_A - F),
+    )
+    assert_zero(
+        "SW unilateral adoption gain",
+        m_k * (can.A - can.S) - F - (m_k * can.T_W - F),
+    )
+    assert_zero(
+        "SW post-rival adoption gain",
+        m_k * (can.P - can.B) - F - (m_k * can.T_A - F),
+    )
+    assert_zero("symmetric SU outsider gain", 2 * (can.P - can.B) - F - (2 * can.T_A - F))
+
+    # Exact sign-support identities for the analytical threshold-positivity proof.
+    expected_ta_zero = (
+        v * (36 * v**2 - 51 * v + 16)
+        / (16 * (1 - v) * (2 - 3 * v) ** 2)
+    )
+    assert_zero("T_A at c=0 factorization", can.T_A.subs(c, 0) - expected_ta_zero)
+    assert_zero(
+        "q_B derivative in c",
+        sp.diff(can.q_B, c) + 3 * (1 - v) / (2 * (2 - 3 * v)),
+    )
+    ta_poly = 36 * v**2 - 51 * v + 16
+    assert_zero("T_A positivity polynomial derivative", sp.diff(ta_poly, v) - (72 * v - 51))
+    assert_zero(
+        "T_A positivity polynomial at v=1/4",
+        ta_poly.subs(v, sp.Rational(1, 4)) - sp.Rational(11, 2),
+    )
+    assert_zero(
+        "canonical c upper bound below one third",
+        can.c_upper - sp.Rational(1, 3) + 2 * v / (3 * (1 - v)),
+    )
+
+
 def main() -> int:
     try:
         solve_focs()
         verify_blocks()
         verify_canonical_identities()
+        verify_private_adoption_identities()
     except Exception as exc:  # hard gate: any mismatch is a non-zero exit.
         print("SYMBOLIC VERIFICATION: FAIL")
         print(f"{type(exc).__name__}: {exc}")
         return 1
 
+    print("PRIVATE ADOPTION IDENTITIES: PASS")
+    print("THRESHOLD POSITIVITY FACTORIZATION: PASS")
+    print("T_W>T_U FACTORIZATION: PASS")
     print("P-C factorization:")
     print(sp.factor(can.P - can.C))
     print("SYMBOLIC VERIFICATION: PASS")
