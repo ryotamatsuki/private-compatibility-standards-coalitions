@@ -1,6 +1,5 @@
 """Generate reproducible LaTeX table fragments from the frozen canonical model.
 
-The tables are scaffold infrastructure and are not yet included in main.tex.
 Paper-facing formula strings are controlled centrally by canonical.py.
 """
 
@@ -117,18 +116,17 @@ def stability_table() -> str:
         [
             r"\begin{table}[htbp]",
             r"\centering",
-            r"\scriptsize",
-            r"\caption{Canonical stability regions in the symmetric model}",
+            r"\small",
+            r"\caption{Headline formal-stability regions in the symmetric Main Model for $(c,v)\in\Omega_0$. The table reports the private-adoption continuation state and the strict-blocking stable set characterized by Theorem~\ref{thm:formal-coalition-stability}.}",
             r"\label{tab:stability-regions}",
             r"\resizebox{\textwidth}{!}{%",
             r"\begin{tabular}{lll}",
             r"\toprule",
-            r"Fixed-cost region & Private compatibility pattern & Frozen stability statement \\",
+            r"Fixed-cost region & Private-adoption continuation & Stable formal partitions \\",
             r"\midrule",
-            r"$0<F<F_{\mathrm{low}}$ & Universal multistandarding & $\mathcal{S}(F)=\{\rho^{IS}\}$ (sufficient low-$F$ result) \\",
-            r"$F_{\mathrm{low}}\le F\le F_L$ & Transition interval & Not characterized by the headline theorems \\",
-            r"$F_L<F<2T_A$ & Outsider-only bypass in each SU & $\mathcal{S}(F)=\{\rho^{IS}\}$ \\",
-            r"$F>2T_A$ & No private adoption & $\mathcal{S}(F)=\{\rho_{12}^{SU},\rho_{13}^{SU},\rho_{23}^{SU}\}$ \\",
+            r"$0<F\le F_L$ & Outside the headline theorem & Not characterized here \\",
+            r"$F_L<F<2T_A$ & Outsider-only bypass in each SU; no SW adoption & $\{\rho^{IS}\}$ \\",
+            r"$F>2T_A$ & No SU or SW private adoption & $\{\rho_{12}^{SU},\rho_{13}^{SU},\rho_{23}^{SU}\}$ \\",
             r"\bottomrule",
             r"\end{tabular}%",
             r"}",
