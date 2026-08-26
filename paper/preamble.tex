@@ -1,0 +1,21 @@
+% Shared preamble for the manuscript.
+% Keep dependencies minimal and add packages only when a section requires them.
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{xurl}
+\usepackage{hyperref}
+
+\hypersetup{hidelinks}
+
+% Global theorem counter shared by all formal results.
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{assumption}[theorem]{Assumption}
+
+\input{notation}

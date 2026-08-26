@@ -1,0 +1,51 @@
+name: Paper CI
+
+on:
+  pull_request:
+  push:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install Python dependencies
+        run: python -m pip install --upgrade pip && pip install -r requirements.txt
+
+      - name: Install LaTeX toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            latexmk \
+            texlive-latex-base \
+            texlive-latex-recommended \
+            texlive-latex-extra \
+            texlive-publishers \
+            texlive-fonts-recommended
+
+      - name: Symbolic and numerical verification
+        run: make verify
+
+      - name: Generate figures
+        run: make figures
+
+      - name: Generate tables
+        run: make tables
+
+      - name: Syntax-check generated tables
+        run: make tables-check
+
+      - name: Compile manuscript scaffold
+        run: make paper
