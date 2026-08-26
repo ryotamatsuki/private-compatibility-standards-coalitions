@@ -1,9 +1,205 @@
 \section{Selective Erosion of Regional Coalition Rents}
 \label{sec:selective-erosion}
 
-% TODO:
-% - Introduce the frozen exclusion-surplus / reciprocal-disadvantage decomposition.
-% - Expected formal results: Theorem 1 and Corollary 1.
-% - Candidate figure placement: Figure 2 (selective-erosion mechanism).
-% - Do not assume the post-bypass ranking; derive it from the canonical decomposition.
-% Source of truth: docs/CANONICAL_MODEL.md and docs/THEOREM_LEDGER.md.
+Section~\ref{sec:private-compatibility} determines when firms privately support additional formal standards. This section takes the resulting private-adoption state as given and asks how it changes a government's continuation payoff from regional relative to international standardization. The comparison isolates the mechanism that links a firm-level compatibility investment to a government-level ranking over formal standards regimes. Throughout, consider a regional coalition $C=\{i,j\}$ with outsider $o$, and write
+\begin{equation}
+    M_C\equiv m_i+m_j
+    \label{eq:coalition-market-mass}
+\end{equation}
+for the total mass of markets covered by the bloc standard. This is only bookkeeping notation; the symmetric Main Model continues to impose $m_i=m_j=m_o=1$.
+
+The formal partition remains $\rho_{ij}^{SU}$ throughout the comparison below. Private adoption changes the standards that firms can use in product markets, not government coalition membership. National welfare is $W_i=CS_i+\Pi_i$ as in Section~\ref{sec:model}, where $\Pi_i$ is the worldwide profit of country $i$'s domestic firm net of its own adoption costs. Consequently, when the outsider firm pays $F$ to support the bloc standard, that fixed cost does not enter coalition member $i$'s welfare directly. For member $i$, $F$ matters by selecting which private-adoption continuation state is reached.
+
+\subsection{Government continuation payoffs}
+\label{subsec:selective-payoffs}
+
+First consider a regional coalition without private bypass. Country $i$'s consumers are in a coalition-member market and therefore obtain the consumer-surplus block $K_M$. Its domestic firm earns the coalition-member profit block $A$ in both markets covered by the bloc standard and the bloc-firm profit block $C$ in the outsider market. With general market masses, the continuation payoff is therefore
+\begin{equation}
+    W_i^{SU,N}
+    =m_iK_M+M_CA+m_oC,
+    \label{eq:welfare-su-member-no-bypass-general}
+\end{equation}
+where the superscript $N$ denotes the no-bypass continuation state, not a new formal regime.
+
+Under international standardization, all three firms support the common formal standard and all three destinations have complete compatibility. Country $i$'s consumers obtain $K_I$, while its domestic firm earns $P$ in every market. Hence
+\begin{equation}
+    W_i^{IS}
+    =m_iK_I+(M_C+m_o)P.
+    \label{eq:welfare-is-general}
+\end{equation}
+Subtracting \eqref{eq:welfare-is-general} from \eqref{eq:welfare-su-member-no-bypass-general} gives
+\begin{align}
+    W_i^{SU,N}-W_i^{IS}
+    & =m_i(K_M-K_I)+M_C(A-P)+m_o(C-P) \notag\\
+    & =m_i(K_M-K_I)+M_C(A-P)-m_o(P-C).
+    \label{eq:su-no-bypass-direct-gap}
+\end{align}
+This expression separates two economically distinct consequences of the regional arrangement. The first two terms arise entirely in markets covered by the coalition's common standard. They capture how regional exclusion changes both domestic consumer surplus and the domestic firm's profits in the protected member markets. The final term arises in the market outside the coalition, where the same domestic firm remains technologically disadvantaged relative to the complete-compatibility benchmark. Keeping these margins separate is essential because private adoption need not affect them symmetrically.
+
+\subsection{Net exclusion surplus and reciprocal disadvantage}
+\label{subsec:selective-decomposition}
+
+Define the coalition member's \emph{net exclusion surplus} in coalition-member markets as
+\begin{equation}
+    \mathscr E_i
+    \equiv
+    m_i(K_M-K_I)+M_C(A-P).
+    \label{eq:exclusion-surplus}
+\end{equation}
+The first term is the change in country $i$'s own consumer surplus when its market is a member market rather than a completely compatible market. The second term is the change in the domestic firm's operating profit across all coalition-member markets. Thus $\mathscr E_i$ is a net object: it combines the consumer and producer consequences generated in the markets protected by the bloc standard. The label ``surplus'' does not impose a sign. In particular, we do not assume that $\mathscr E_i>0$ everywhere on the canonical parameter domain. Nor is $\mathscr E_i$ a transfer from the outsider to the member. It is the member government's own national-welfare difference generated in coalition-covered markets, aggregating consumer surplus in country $i$ and the worldwide domestic firm's profits earned in both member destinations. This accounting makes clear why the market mass $M_C$ multiplies the profit component but only $m_i$ multiplies the consumer component: government $i$ counts its own consumers, but it counts its domestic firm's profits in every destination.
+
+Define separately the coalition member's \emph{reciprocal disadvantage} in the outsider market as
+\begin{equation}
+    \mathscr D_i
+    \equiv
+    m_o(P-C).
+    \label{eq:reciprocal-disadvantage}
+\end{equation}
+Under SU, the member's domestic firm earns $C$ in the outsider market because it supplies that market under the bloc standard and incurs the adaptation cost $c$. Under IS the same firm would earn $P$. Thus $P-C$ is the market-level profit disadvantage associated with the reciprocal incompatibility faced by the coalition member, and $m_o(P-C)$ is its contribution to country $i$'s national welfare. The calligraphic object $\mathscr D_i$ is distinct from the product-market profit block $D$ in Section~\ref{sec:product-market}.
+
+Using \eqref{eq:exclusion-surplus} and \eqref{eq:reciprocal-disadvantage}, the no-bypass comparison becomes
+\begin{equation}
+    \boxed{
+    W_i^{SU,N}-W_i^{IS}
+    =\mathscr E_i-\mathscr D_i.
+    }
+    \label{eq:selective-before}
+\end{equation}
+The reciprocal-disadvantage term has a transparent primitive sign condition. The Cournot blocks imply
+\begin{equation}
+    P-C
+    =
+    \frac{
+    [4c(1-v)-v]
+    [4(1-c)-v(5-4c)]
+    }{
+    16(1-v)(2-3v)^2
+    }.
+    \label{eq:p-minus-c-factorization}
+\end{equation}
+The second factor in the numerator is decreasing in $c$. At the canonical upper bound $c=(1-3v)/[3(1-v)]$, it equals $8/3-v>0$; it is therefore strictly positive throughout the admissible domain. The denominator is also positive. For a positive outsider market mass,
+\begin{equation}
+    \boxed{
+    \mathscr D_i>0
+    \iff
+    P>C
+    \iff
+    c>\frac{v}{4(1-v)}.
+    }
+    \label{eq:reciprocal-disadvantage-condition}
+\end{equation}
+This condition identifies when the outsider-market loss is genuine; it is not a claim that network effects are necessary for the selective-erosion mechanism. It also shows why the sign restriction used below is economically substantive rather than a relabeling of the desired ranking. The condition is stated in primitives $c$ and $v$, while the ranking reversal additionally requires the independently defined member-market object $\mathscr E_i$ to exceed that loss.
+
+\subsection{Outsider-only private bypass}
+\label{subsec:selective-outsider-bypass}
+
+Now suppose the outsider privately supports the bloc standard while the coalition members do not support the outsider's standard. Section~\ref{sec:private-compatibility} identifies the fixed-cost region in which this is the relevant SU continuation state. One adoption of the bloc standard covers both member markets. In each of those markets the outsider becomes compatible with the two member firms and no longer incurs the marginal adaptation cost. The product-market configuration therefore becomes complete compatibility: country $i$'s consumer-surplus block changes from $K_M$ to $K_I$, and its domestic firm's profit block in coalition-member markets changes from $A$ to $P$.
+
+The change is directional. Coalition members have not adopted the outsider's formal standard, so the domestic firm of member $i$ remains a costly bloc-standard supplier in the outsider market. Its outsider-market profit block remains $C$. Private compatibility therefore does not symmetrically transform all destinations into the IS configuration even though it removes the outsider's exclusion in the coalition markets. The formal partition also remains $\rho_{ij}^{SU}$. This distinction matters for interpretation. The outsider can replicate the coalition standard technologically without receiving formal membership and without compelling coalition members to reciprocate in its home market. The model therefore separates effective product-market compatibility from institutional harmonization: the former can change unilaterally at the firm level while the latter is still fixed at the government level.
+
+Member $i$'s post-bypass continuation payoff is consequently
+\begin{equation}
+    W_i^{SU,O}
+    =m_iK_I+M_CP+m_oC,
+    \label{eq:welfare-su-member-outsider-bypass-general}
+\end{equation}
+where $O$ denotes outsider-only private adoption. The fixed cost paid by the outsider firm is absent from \eqref{eq:welfare-su-member-outsider-bypass-general} because foreign-firm profit is not included in country $i$'s national welfare. Comparing directly with IS,
+\begin{align}
+    W_i^{SU,O}-W_i^{IS}
+    & =m_iK_I+M_CP+m_oC
+       -\left[m_iK_I+(M_C+m_o)P\right] \notag\\
+    & =m_o(C-P)
+     =-\mathscr D_i.
+    \label{eq:selective-after}
+\end{align}
+Thus outsider-only bypass eliminates the entire member-market component $\mathscr E_i$ while leaving the reciprocal disadvantage $\mathscr D_i$ intact. Equivalently,
+\begin{equation}
+    \boxed{
+    W_i^{SU,O}-W_i^{SU,N}
+    =-\mathscr E_i.
+    }
+    \label{eq:erosion-size}
+\end{equation}
+
+\subsection{The selective-erosion theorem}
+\label{subsec:selective-theorem}
+
+Equations~\eqref{eq:selective-before} and \eqref{eq:selective-after} yield the central transformation
+\begin{equation}
+    \boxed{
+    \mathscr E_i-\mathscr D_i
+    \quad\longrightarrow\quad
+    -\mathscr D_i.
+    }
+    \label{eq:selective-erosion-identity}
+\end{equation}
+Private compatibility does not erase every consequence of the regional coalition. It selectively removes the net value created in member markets by excluding the outsider, while the coalition member's disadvantage in the outsider market survives. This one-sided erosion is the mechanism through which a technological response by a firm can change a government's ranking over formal standards regimes. The mechanism is not simply that compatibility improves product-market efficiency. The relevant political effect depends on which regime-specific payoff component the compatibility investment removes. Here the outsider's investment removes the coalition member's protected-market component, but it does not repair the member firm's competitive position in the outsider market. That asymmetry is what turns a private technological adjustment into a change in the relative political value of the formal coalition.
+
+\begin{theorem}[Selective Erosion]
+\label{thm:selective-erosion}
+Consider a regional standards coalition $C=\{i,j\}$ with outsider $o$. Conditional on the no-bypass and outsider-only private-adoption states described above,
+\[
+    W_i^{SU,N}-W_i^{IS}=\mathscr E_i-\mathscr D_i,
+    \qquad
+    W_i^{SU,O}-W_i^{IS}=-\mathscr D_i.
+\]
+Hence outsider-only private compatibility reduces coalition member $i$'s relative continuation value of SU by exactly $\mathscr E_i$. If
+\[
+    \mathscr E_i>\mathscr D_i>0,
+\]
+then
+\[
+    W_i^{SU,N}>W_i^{IS}
+    \qquad\text{and}\qquad
+    W_i^{SU,O}<W_i^{IS}.
+\]
+Thus the private bypass reverses coalition member $i$'s ranking between regional and international standardization.
+\end{theorem}
+
+\begin{proof}
+The first payoff identity follows by subtracting \eqref{eq:welfare-is-general} from \eqref{eq:welfare-su-member-no-bypass-general} and applying \eqref{eq:exclusion-surplus}--\eqref{eq:reciprocal-disadvantage}. The second follows independently by subtracting \eqref{eq:welfare-is-general} from \eqref{eq:welfare-su-member-outsider-bypass-general}; the result is $m_o(C-P)=-\mathscr D_i$. Therefore the bypass changes the relative payoff by $-\mathscr E_i$. If $\mathscr E_i>\mathscr D_i>0$, then $\mathscr E_i-\mathscr D_i>0$ while $-\mathscr D_i<0$, giving the two rankings. The post-bypass ranking is thus derived from continuation-payoff accounting rather than imposed as an assumption.
+\end{proof}
+
+The theorem is a government-preference result, not yet a coalition-stability result. It establishes a member government's ranking reversal conditional on the relevant private-adoption states. Showing that a formal partition is strictly blocked additionally requires the continuation comparison of the outsider government and the blocking conditions for all deviators; those steps are left to the next section.
+
+Figure~\ref{fig:selective-erosion} summarizes the accounting logic under the theorem's ranking-reversal condition. The figure is conceptual; the result follows from the analytical identities above.
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{figures/generated/figure_02_selective_erosion.pdf}
+    \caption{Selective erosion of a regional coalition member's continuation advantage. Under $\mathscr E_i>\mathscr D_i>0$, the no-bypass payoff gap $\mathscr E_i-\mathscr D_i$ becomes $-\mathscr D_i$ after outsider-only private compatibility. The figure is conceptual; the ranking reversal is established analytically in Theorem~\ref{thm:selective-erosion}.}
+    \label{fig:selective-erosion}
+\end{figure}
+
+\subsection{Technological substitute, political complement}
+\label{subsec:selective-political-complement}
+
+The same decomposition clarifies why technological substitution need not imply political substitution. Define country $i$'s relative gain from moving to international standardization in the two private-adoption states as
+\begin{equation}
+    G_i^N\equiv W_i^{IS}-W_i^{SU,N},
+    \qquad
+    G_i^O\equiv W_i^{IS}-W_i^{SU,O}.
+    \label{eq:government-is-incentives}
+\end{equation}
+Equations~\eqref{eq:selective-before} and \eqref{eq:selective-after} give
+\begin{equation}
+    G_i^N=\mathscr D_i-\mathscr E_i,
+    \qquad
+    G_i^O=\mathscr D_i,
+    \label{eq:government-is-incentive-levels}
+\end{equation}
+and therefore
+\begin{equation}
+    \boxed{
+    G_i^O-G_i^N=\mathscr E_i.
+    }
+    \label{eq:political-incentive-cross-difference}
+\end{equation}
+
+\begin{corollary}[Technological Substitute / Political Complement]
+\label{cor:technological-political}
+If $\mathscr E_i>0$, outsider-only private compatibility raises coalition member $i$'s relative incentive for international standardization by exactly $\mathscr E_i$.
+\end{corollary}
+
+Private adoption is a technological substitute for formal multilateral standardization in the narrow sense that it removes the effective compatibility difference between SU and IS in the coalition-member markets. Yet the same investment can be a political complement to formal multilateralization: by removing the member-market exclusion component while leaving the reciprocal outsider-market disadvantage unchanged, it raises the government's relative gain from replacing the regional arrangement with the international standard. This is a binary government-incentive cross-difference, not a claim of general supermodularity or continuous-action complementarity.
+
+The fixed cost $F$ therefore operates at a different margin from the payoff decomposition above. It determines whether the outsider-only private response is selected, but once that state is given it does not directly enter the coalition member's welfare because the adopting firm is foreign. Formal membership remains unchanged throughout. The next section maps this structural ranking mechanism into the canonical three-country parameter region and adds the outsider government's comparison required for formal coalition stability.

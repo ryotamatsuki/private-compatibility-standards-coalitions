@@ -2,6 +2,7 @@
 % Keep dependencies minimal and add packages only when a section requires them.
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{mathrsfs}
 \usepackage{amsthm}
 \usepackage{mathtools}
 \usepackage{booktabs}
@@ -11,11 +12,11 @@
 
 \hypersetup{hidelinks}
 
-% Global theorem counter shared by all formal results.
+% Type-specific counters preserve the frozen result numbering in THEOREM_LEDGER.md.
 \newtheorem{theorem}{Theorem}
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{proposition}[theorem]{Proposition}
-\newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{assumption}{Assumption}
 
 \input{notation}

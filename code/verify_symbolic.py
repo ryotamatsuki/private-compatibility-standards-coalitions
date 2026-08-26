@@ -195,12 +195,46 @@ def verify_private_adoption_identities() -> None:
     )
 
 
+def verify_selective_erosion_identities() -> None:
+    """Verify the Section 6 payoff decomposition for general market masses."""
+    m_i, m_j, m_o = sp.symbols("m_i m_j m_o", positive=True, real=True)
+    M_C = m_i + m_j
+
+    w_su_no = m_i * can.K_M + M_C * can.A + m_o * can.C
+    w_is = m_i * can.K_I + (M_C + m_o) * can.P
+    w_su_outsider_only = m_i * can.K_I + M_C * can.P + m_o * can.C
+
+    exclusion_surplus = m_i * (can.K_M - can.K_I) + M_C * (can.A - can.P)
+    reciprocal_disadvantage = m_o * (can.P - can.C)
+
+    assert_zero(
+        "general-mass selective erosion before bypass",
+        w_su_no - w_is - (exclusion_surplus - reciprocal_disadvantage),
+    )
+    assert_zero(
+        "general-mass selective erosion after bypass",
+        w_su_outsider_only - w_is + reciprocal_disadvantage,
+    )
+    assert_zero(
+        "general-mass selective erosion size",
+        w_su_outsider_only - w_su_no + exclusion_surplus,
+    )
+
+    g_no = w_is - w_su_no
+    g_outsider_only = w_is - w_su_outsider_only
+    assert_zero(
+        "political-incentive cross-difference",
+        g_outsider_only - g_no - exclusion_surplus,
+    )
+
+
 def main() -> int:
     try:
         solve_focs()
         verify_blocks()
         verify_canonical_identities()
         verify_private_adoption_identities()
+        verify_selective_erosion_identities()
     except Exception as exc:  # hard gate: any mismatch is a non-zero exit.
         print("SYMBOLIC VERIFICATION: FAIL")
         print(f"{type(exc).__name__}: {exc}")
@@ -209,6 +243,12 @@ def main() -> int:
     print("PRIVATE ADOPTION IDENTITIES: PASS")
     print("THRESHOLD POSITIVITY FACTORIZATION: PASS")
     print("T_W>T_U FACTORIZATION: PASS")
+    print("GENERAL-MASS PAYOFF DECOMPOSITION: PASS")
+    print("SELECTIVE EROSION BEFORE-BYPASS IDENTITY: PASS")
+    print("SELECTIVE EROSION AFTER-BYPASS IDENTITY: PASS")
+    print("SELECTIVE EROSION SIZE IDENTITY: PASS")
+    print("POLITICAL-INCENTIVE CROSS-DIFFERENCE: PASS")
+    print("RECIPROCAL-DISADVANTAGE THRESHOLD ALGEBRA: PASS")
     print("P-C factorization:")
     print(sp.factor(can.P - can.C))
     print("SYMBOLIC VERIFICATION: PASS")
