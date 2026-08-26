@@ -40,12 +40,12 @@ def cournot_table() -> str:
         r"\begin{table}[htbp]",
         r"\centering",
         r"\scriptsize",
-        r"\caption{Canonical Cournot building blocks}",
+        r"\caption{Cournot building blocks. The table reports the equilibrium quantities, firm-profit blocks, and consumer-surplus blocks for the four product-market configurations used throughout the analysis.}",
         r"\label{tab:cournot-blocks}",
         r"\resizebox{\textwidth}{!}{%",
         r"\begin{tabular}{lllll}",
         r"\toprule",
-        r"Market regime & Firm type & Quantity & Profit & CS block \\",
+        r"Market configuration & Firm type & Quantity & Profit & CS block \\",
         r"\midrule",
     ]
     for regime, firm, quantity, profit, cs in rows:

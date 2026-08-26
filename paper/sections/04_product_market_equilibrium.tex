@@ -1,9 +1,169 @@
 \section{Product-Market Equilibrium}
 \label{sec:product-market}
 
-% TODO:
-% - Present only the canonical Cournot building blocks required by the paper.
-% - Expected formal result: Lemma 1 (Cournot equilibrium building blocks).
-% - Candidate table placement: Table 1 (Cournot building blocks).
-% - Long derivations belong in Appendix A.
-% Source of truth: docs/CANONICAL_MODEL.md and docs/THEOREM_LEDGER.md.
+This section solves the Cournot stage conditional on the compatibility and marginal-cost structure inherited from Section~\ref{sec:model}. Because national markets are segmented, each destination is an independent Cournot subgame. The formal regimes and, later, private standard adoption can generate four product-market configurations that are sufficient for the continuation analysis: complete compatibility; a member market of a regional standardization union; the outsider market of such a union; and separate national standards. We solve these configurations once and collect the resulting quantities, operating-profit blocks, and consumer-surplus blocks for reuse in the subsequent analysis. We do not yet solve the private-adoption stage or compare government continuation payoffs. The reason there are exactly four required blocks is the used-standard rule in Section~\ref{sec:model}. A market can have three mutually compatible zero-cost firms; two mutually compatible zero-cost firms facing a costly singleton; two mutually compatible costly firms facing a zero-cost singleton; or three singletons with the native firm at zero cost and the two foreign firms at cost $c$. Later adoption decisions determine which of these product-market environments applies in a given destination. They do not require a new Cournot solution. This separation lets the adoption analysis operate on a small set of verified continuation values rather than repeatedly resolving the quantity game.
+
+\subsection{Product-market first-order conditions}
+\label{subsec:product-market-focs}
+
+Fix a destination market $k$. Firm $i$'s operating profit in that market is
+\begin{equation}
+    \pi_i^k=(p_i^k-r_i^k)q_i^k.
+    \label{eq:market-operating-profit}
+\end{equation}
+If firm $i$ belongs to a compatibility group with at least two firms, its compatibility benefit contains its own output. From \eqref{eq:compatibility-benefit} and \eqref{eq:inverse-demand},
+\begin{equation}
+    \frac{\partial p_i^k}{\partial q_i^k}=-(1-v),
+    \qquad |G_i^k|\ge 2.
+    \label{eq:compatible-own-slope}
+\end{equation}
+The interior first-order condition is therefore
+\begin{equation}
+    p_i^k-r_i^k=(1-v)q_i^k.
+    \label{eq:compatible-markup}
+\end{equation}
+For a singleton, $g_i^k=0$, so
+\begin{equation}
+    \frac{\partial p_i^k}{\partial q_i^k}=-1,
+    \qquad
+    p_i^k-r_i^k=q_i^k.
+    \label{eq:singleton-markup}
+\end{equation}
+These markup relations are a useful shortcut. Compatibility raises the demand intercept faced by firms sharing a standard, while a compatible firm's marginal expansion also raises its own compatibility benefit. The latter effect flattens its own inverse demand from slope $-1$ to $-(1-v)$. Thus the compatibility effect changes both the level of demand and the marginal revenue calculation. By contrast, the incompatibility cost $c$ enters only through the margin $p_i^k-r_i^k$; it shifts a firm's competitive position without changing its own-demand slope. These two margins also identify the economically relevant state variables for the Cournot stage. A firm's own-demand slope depends on whether it has a compatible peer, whereas the cost term depends on whether it supports the local standard. Consequently, the two regional configurations have the same two-firm-plus-singleton compatibility partition but require different equilibrium blocks because the marginal-cost assignment is reversed. Since $0<v<1/4$, operating profit is strictly concave in own output in each configuration considered below: the own second derivative is $-2(1-v)$ for a compatible firm and $-2$ for a singleton.
+
+\subsection{Complete compatibility}
+\label{subsec:product-market-complete}
+
+Suppose all three firms use the same standard and all have zero marginal cost. Symmetry gives $q_1=q_2=q_3\equiv q_I$. Total output is $3q_I$ and each firm's inverse demand is $p=1-(1-v)3q_I$. Using \eqref{eq:compatible-markup}, the symmetric first-order condition is
+\begin{equation}
+    1-4(1-v)q_I=0.
+    \label{eq:foc-complete}
+\end{equation}
+Hence
+\begin{equation}
+    q_I=\frac{1}{4(1-v)}.
+    \label{eq:qI}
+\end{equation}
+By the compatible-firm markup relation, each firm's operating profit is
+\begin{equation}
+    P\equiv(1-v)q_I^2=\frac{1}{16(1-v)}.
+    \label{eq:profit-P}
+\end{equation}
+Here and below capital letters $P,A,B,C,D,H,S$ denote product-market profit blocks, not formal partitions. In particular, $P$ is the complete-compatibility profit of one firm. The expression illustrates why it is useful to retain the markup relation: once the equilibrium quantity is known, no separate substitution into the price equation is needed to recover operating profit.
+
+\subsection{Regional standardization: member market}
+\label{subsec:product-market-su-member}
+
+Consider a member market of a two-country regional standardization union. The two coalition firms are mutually compatible and have zero marginal cost, while the excluded outsider is a singleton and incurs marginal cost $c$. Let $x$ denote the common quantity of a coalition firm and $y$ the outsider's quantity. A coalition firm's price is $1-2(1-v)x-y$, whereas the outsider's price is $1-2x-y$. The two distinct first-order conditions reduce to
+\begin{align}
+    1-3(1-v)x-y&=0, \label{eq:foc-su-member-compatible}\\
+    1-c-2x-2y&=0. \label{eq:foc-su-member-outsider}
+\end{align}
+Solving this two-equation system gives
+\begin{equation}
+    q_M\equiv x=\frac{1+c}{2(2-3v)},
+    \qquad
+    q_B\equiv y=\frac{1-3c-3(1-c)v}{2(2-3v)}.
+    \label{eq:quantities-su-member}
+\end{equation}
+The associated operating-profit blocks follow directly from \eqref{eq:compatible-markup}--\eqref{eq:singleton-markup}:
+\begin{equation}
+    A\equiv(1-v)q_M^2
+    =\frac{(1-v)(1+c)^2}{4(2-3v)^2},
+    \qquad
+    B\equiv q_B^2
+    =\frac{[1-3c-3(1-c)v]^2}{4(2-3v)^2}.
+    \label{eq:profits-su-member}
+\end{equation}
+Thus $A$ is the profit of one coalition member firm in a coalition-member market, while $B$ is the excluded outsider's profit in that same market. The distinction between $q_M$ and $q_B$ is economically substantive: the member firm combines zero marginal cost with compatibility with the other member, whereas the outsider is both technologically isolated in that destination and subject to the marginal adaptation cost. The upper bound on $c$ in \eqref{eq:parameter-domain} is precisely strong enough to keep the outsider quantity strictly positive in this configuration. No government-level interpretation is attached to these blocks at this stage.
+
+\subsection{Regional standardization: outsider market}
+\label{subsec:product-market-su-outsider}
+
+Now consider the outsider country's market. The two coalition firms remain mutually compatible with one another but neither supports the outsider's local standard, so each incurs marginal cost $c$. The native outsider is a zero-cost singleton. Let $x$ denote the common quantity of a coalition firm and $y$ the native outsider's quantity. The first-order conditions are
+\begin{align}
+    1-c-3(1-v)x-y&=0, \label{eq:foc-su-outsider-compatible}\\
+    1-2x-2y&=0. \label{eq:foc-su-outsider-native}
+\end{align}
+They imply
+\begin{equation}
+    q_C\equiv x=\frac{1-2c}{2(2-3v)},
+    \qquad
+    q_D\equiv y=\frac{1+2c-3v}{2(2-3v)}.
+    \label{eq:quantities-su-outsider}
+\end{equation}
+The corresponding profit blocks are
+\begin{equation}
+    C\equiv(1-v)q_C^2
+    =\frac{(1-v)(1-2c)^2}{4(2-3v)^2},
+    \qquad
+    D\equiv q_D^2
+    =\frac{(1+2c-3v)^2}{4(2-3v)^2}.
+    \label{eq:profits-su-outsider}
+\end{equation}
+The symbol $D$ in \eqref{eq:profits-su-outsider} is only the native outsider's product-market profit block. It is distinct from the reciprocal-disadvantage object introduced later in the paper. Relative to the member-market configuration, the location of the marginal-cost burden is reversed: the two mutually compatible coalition firms now pay $c$, while the native singleton does not. This is why the relevant quantities are $q_C$ and $q_D$, rather than $q_M$ and $q_B$, even though the compatibility partition still consists of a two-firm group and a singleton.
+
+\subsection{Separate national standards}
+\label{subsec:product-market-sw}
+
+Under separate national standards, all three firms are singletons. In any destination market the native firm has zero marginal cost and the two foreign firms each incur marginal cost $c$. Let $h$ denote native output and $s$ the common output of a foreign firm. The singleton markup condition yields
+\begin{align}
+    1-2h-2s&=0, \label{eq:foc-sw-native}\\
+    1-c-h-3s&=0. \label{eq:foc-sw-foreign}
+\end{align}
+Therefore
+\begin{equation}
+    q_H\equiv h=\frac{1+2c}{4},
+    \qquad
+    q_S\equiv s=\frac{1-2c}{4},
+    \label{eq:quantities-sw}
+\end{equation}
+and the profit blocks are
+\begin{equation}
+    H\equiv q_H^2=\frac{(1+2c)^2}{16},
+    \qquad
+    S\equiv q_S^2=\frac{(1-2c)^2}{16}.
+    \label{eq:profits-sw}
+\end{equation}
+The incompatibility cost $c$ therefore shifts firms' competitive positions differently across the formal regimes even before any private standard adoption is considered. Under separate standards there is no compatibility-induced demand shift and no $v$ term in the first-order conditions; the native--foreign asymmetry is generated entirely by the cost difference. This provides a useful benchmark for isolating the additional product-market effect of shared standards.
+
+\subsection{Consumer surplus and the Cournot building blocks}
+\label{subsec:product-market-blocks}
+
+Let $X_k=\sum_j q_j^k$ as in Section~\ref{sec:model}. The marginal participating consumer has type $1-X_k$. Compatibility can shift product-specific prices, but the generalized price $p_i^k-g_i^k$ of every active product equals this common marginal type. Consumer surplus therefore depends on the configuration through total market quantity alone. With market mass $m_k$, it is
+\begin{equation}
+    CS_k
+    =m_k\int_{1-X_k}^{1}\left[u-(1-X_k)\right]du
+    =m_k\frac{X_k^2}{2}.
+    \label{eq:consumer-surplus-general}
+\end{equation}
+The main model sets $m_k=1$. Before computing consumer surplus, the corresponding total quantities can be written compactly as
+\begin{align}
+    X_I&=\frac{3}{4(1-v)}, &
+    X_M&=\frac{3-c-3v+3cv}{2(2-3v)}, \\
+    X_O&=\frac{3-2c-3v}{2(2-3v)}, &
+    X_W&=\frac{3-2c}{4}.
+    \label{eq:total-quantities}
+\end{align}
+Substituting these total quantities gives
+\begin{align}
+    K_I&\equiv\frac{(3q_I)^2}{2}
+        =\frac{9}{32(1-v)^2}, \label{eq:KI}\\
+    K_M&\equiv\frac{(2q_M+q_B)^2}{2}
+        =\frac{(3-c-3v+3cv)^2}{8(2-3v)^2}, \label{eq:KM}\\
+    K_O&\equiv\frac{(2q_C+q_D)^2}{2}
+        =\frac{(3-2c-3v)^2}{8(2-3v)^2}, \label{eq:KO}\\
+    K_W&\equiv\frac{(q_H+2q_S)^2}{2}
+        =\frac{(3-2c)^2}{32}. \label{eq:KW}
+\end{align}
+
+\begin{lemma}[Cournot equilibrium building blocks]
+\label{lem:cournot-blocks}
+On the canonical parameter domain in \eqref{eq:parameter-domain}, each of the four product-market configurations described above has a unique interior Cournot equilibrium. The equilibrium quantities are given by \eqref{eq:qI}, \eqref{eq:quantities-su-member}, \eqref{eq:quantities-su-outsider}, and \eqref{eq:quantities-sw}; the firm-profit blocks by \eqref{eq:profit-P}, \eqref{eq:profits-su-member}, \eqref{eq:profits-su-outsider}, and \eqref{eq:profits-sw}; and the consumer-surplus blocks by \eqref{eq:KI}--\eqref{eq:KW}.
+\end{lemma}
+
+The derivations above establish the first-order systems and their closed-form solutions. Strict concavity gives each firm's unique best response. For the two regional configurations, the reduced $2\times2$ coefficient matrix has determinant $2(2-3v)>0$; for separate standards the corresponding determinant is $4$; and complete compatibility is pinned down directly by \eqref{eq:foc-complete}. Hence the stated linear systems have unique solutions. Interiorness also follows transparently from the canonical domain. In particular, the numerator of $q_B$ is $1-3v-3c(1-v)>0$ by \eqref{eq:parameter-domain}; the same domain implies $c<1/3$, which is sufficient for $q_C>0$ and $q_S>0$, while all other quantities are immediately positive. From \eqref{eq:total-quantities}, $X_I<1$ follows from $v<1/4$, and the remaining three totals are also below one on the stated domain. The detailed domain algebra is collected in \ref{app:cournot}. Table~\ref{tab:cournot-blocks} summarizes the blocks used throughout the remainder of the paper.
+
+\input{tables/generated/table_cournot_blocks}
+
+These expressions isolate the product-market channel cleanly. Compatibility raises demand for firms that share a standard and changes their own-output slope, while the marginal incompatibility cost changes which firms are competitively advantaged in a destination. Formal coalitions consequently generate different firm-profit and consumer-surplus blocks before private adoption is considered. Section~\ref{sec:private-compatibility} uses these blocks to analyze private compatibility.
