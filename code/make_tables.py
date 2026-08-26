@@ -57,27 +57,58 @@ def cournot_table() -> str:
 
 def threshold_table() -> str:
     rows = [
-        (r"$T_A$", r"$P-B$", f("T_A")),
-        (r"$T_U$", r"$A-C$", f("T_U")),
-        (r"$T_W$", r"$A-S$", f("T_W")),
-        (r"$F_{\mathrm{low}}$", r"$\min\{T_U,T_A\}$", f("F_low")),
-        (r"$F_L$", r"$\max\{T_W,T_A\}$", f("F_L")),
-        (r"$F^*$", r"$2T_A$", f("F_star")),
+        (
+            "SU outsider: adopt bloc standard",
+            "---",
+            r"$2T_A=2(P-B)$",
+            r"$F^\ast=2T_A$",
+        ),
+        (
+            "SU member: adopt outsider standard",
+            "Other member has not adopted",
+            r"$T_U=A-C$",
+            r"$T_U$",
+        ),
+        (
+            "SU member: adopt outsider standard",
+            "Other member has adopted",
+            r"$T_A=P-B$",
+            r"$T_A$",
+        ),
+        (
+            "SW foreign firm: adopt target standard",
+            "Rival foreign firm has not adopted",
+            r"$T_W=A-S$",
+            r"$T_W$",
+        ),
+        (
+            "SW foreign firm: adopt target standard",
+            "Rival foreign firm has adopted",
+            r"$T_A=P-B$",
+            r"$T_A$",
+        ),
+        (
+            "Relevant no-adoption lower boundary",
+            "SW unilateral or any post-rival adoption",
+            r"$\max\{T_W,T_A\}$",
+            r"$F_L=\max\{T_W,T_A\}$",
+        ),
     ]
     lines = [
         r"\begin{table}[htbp]",
         r"\centering",
-        r"\small",
-        r"\caption{Canonical private-adoption thresholds}",
+        r"\scriptsize",
+        r"\caption{Private-adoption incentives and thresholds. The table reports the operating-profit gains associated with adopting an additional formal standard and the resulting fixed-cost thresholds in the symmetric Main Model.}",
         r"\label{tab:thresholds}",
-        r"\begin{tabular}{lll}",
+        r"\resizebox{\textwidth}{!}{%",
+        r"\begin{tabular}{llll}",
         r"\toprule",
-        r"Threshold & Definition & Canonical expression \\",
+        r"Decision & Rival adoption state & Operating-profit gain & Fixed-cost threshold \\",
         r"\midrule",
     ]
-    for name, definition, expression in rows:
-        lines.append(f"{name} & {definition} & ${expression}${ROW_END}")
-    lines += [r"\bottomrule", r"\end{tabular}", r"\end{table}"]
+    for decision, state, gain, threshold in rows:
+        lines.append(f"{decision} & {state} & {gain} & {threshold}{ROW_END}")
+    lines += [r"\bottomrule", r"\end{tabular}%", r"}", r"\end{table}"]
     return "\n".join(lines)
 
 
