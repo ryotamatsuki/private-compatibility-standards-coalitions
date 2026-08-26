@@ -31,8 +31,10 @@ _Q_FUNCS = {
 }
 _EXPR_FUNCS = {
     "P": sp.lambdify((can.c, can.v), can.P, "numpy"),
+    "A": sp.lambdify((can.c, can.v), can.A, "numpy"),
     "C": sp.lambdify((can.c, can.v), can.C, "numpy"),
     "D": sp.lambdify((can.c, can.v), can.D, "numpy"),
+    "K_M": sp.lambdify((can.c, can.v), can.K_M, "numpy"),
     "K_O": sp.lambdify((can.c, can.v), can.K_O, "numpy"),
     "J": sp.lambdify((can.c, can.v), can.J, "numpy"),
     "T_A": sp.lambdify((can.c, can.v), can.T_A, "numpy"),
@@ -311,6 +313,61 @@ def check_stability_regression(summary: dict) -> None:
     }
 
 
+def check_partner_selection_regression(summary: dict) -> None:
+    """Regression-check Proposition 2 at the canonical witness."""
+    c0, v0 = 0.10, 0.24
+    a = scalar("A", c0, v0)
+    c_block = scalar("C", c0, v0)
+    k_m = scalar("K_M", c0, v0)
+    tu = scalar("T_U", c0, v0)
+    deltas = [0.1, 0.25, 0.5, 0.75]
+    rows = []
+
+    if not math.isclose(a - c_block, tu, rel_tol=0.0, abs_tol=1e-12):
+        fail("partner-selection block mismatch: A-C != T_U at witness")
+
+    for delta_val in deltas:
+        w1_12 = k_m + 2.0 * a + (1.0 - delta_val) * c_block
+        w1_13 = k_m + (2.0 - delta_val) * a + c_block
+        gap = w1_12 - w1_13
+        expected = delta_val * tu
+        if not gap > 0.0:
+            fail(f"nonpositive large-country partner gap at delta={delta_val}: {gap}")
+        if not math.isclose(gap, expected, rel_tol=0.0, abs_tol=1e-12):
+            fail(
+                f"partner-selection regression mismatch at delta={delta_val}: "
+                f"gap={gap}, expected={expected}"
+            )
+        if not math.isclose(gap / delta_val, tu, rel_tol=0.0, abs_tol=1e-12):
+            fail(f"partner-selection slope mismatch at delta={delta_val}")
+
+        w3_13 = (1.0 - delta_val) * k_m + (2.0 - delta_val) * a + c_block
+        w3_23 = (1.0 - delta_val) * k_m + (2.0 - delta_val) * a + c_block
+        if not math.isclose(w3_13, w3_23, rel_tol=0.0, abs_tol=1e-14):
+            fail(f"small-country partner symmetry failed at delta={delta_val}")
+
+        rows.append(
+            {
+                "delta": delta_val,
+                "W1_SU12_minus_W1_SU13": gap,
+                "gap_over_delta": gap / delta_val,
+                "W3_SU13_minus_W3_SU23": w3_13 - w3_23,
+            }
+        )
+
+    w1_12_sym = k_m + 2.0 * a + c_block
+    w1_13_sym = k_m + 2.0 * a + c_block
+    if not math.isclose(w1_12_sym - w1_13_sym, 0.0, rel_tol=0.0, abs_tol=1e-14):
+        fail("delta=0 symmetry restoration failed")
+
+    summary["partner_selection_regression"] = {
+        "T_U": tu,
+        "A_minus_C": a - c_block,
+        "delta_zero_gap": w1_12_sym - w1_13_sym,
+        "rows": rows,
+    }
+
+
 def main() -> int:
     summary: dict = {"status": "FAIL"}
     try:
@@ -319,6 +376,7 @@ def main() -> int:
         check_general_domain(summary)
         check_direct_foc_consistency(summary)
         check_stability_regression(summary)
+        check_partner_selection_regression(summary)
     except Exception as exc:
         SUMMARY_PATH.parent.mkdir(parents=True, exist_ok=True)
         summary["error"] = f"{type(exc).__name__}: {exc}"
@@ -340,6 +398,7 @@ def main() -> int:
     print(f"DIRECT FOC MAX ABS ERROR: {summary['direct_foc_consistency']['max_abs_error']:.3e}")
     print("HIGH-F STABLE-SET REGRESSION: PASS")
     print("INTERMEDIATE-F STABLE-SET REGRESSION: PASS")
+    print("MARKET-SIZE PARTNER-SELECTION REGRESSION: PASS")
     print("NUMERICAL VERIFICATION: PASS")
     return 0
 
