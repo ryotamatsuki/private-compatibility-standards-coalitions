@@ -294,6 +294,36 @@ def verify_coalition_stability_identities() -> None:
         assert_zero(f"exact witness {label}", expr.subs(witness) - target)
 
 
+def verify_market_size_partner_selection_identities() -> None:
+    """Verify the Section 8 secondary market-size partner-ranking identities."""
+    delta = can.delta
+    m_i, m_j, m_k = sp.symbols("m_i m_j m_k", positive=True, real=True)
+
+    w_ij = m_i * can.K_M + (m_i + m_j) * can.A + m_k * can.C
+    w_ik = m_i * can.K_M + (m_i + m_k) * can.A + m_j * can.C
+    assert_zero(
+        "general market-size partner-selection identity",
+        w_ij - w_ik - (m_j - m_k) * (can.A - can.C),
+    )
+    assert_zero("partner-ranking block equals T_U", can.A - can.C - can.T_U)
+
+    w1_12 = can.K_M + 2 * can.A + (1 - delta) * can.C
+    w1_13 = can.K_M + (2 - delta) * can.A + can.C
+    w2_12 = can.K_M + 2 * can.A + (1 - delta) * can.C
+    w2_23 = can.K_M + (2 - delta) * can.A + can.C
+    w3_13 = (1 - delta) * can.K_M + (2 - delta) * can.A + can.C
+    w3_23 = (1 - delta) * can.K_M + (2 - delta) * can.A + can.C
+
+    assert_zero("country 1 large-partner ranking", w1_12 - w1_13 - delta * can.T_U)
+    assert_zero("country 2 large-partner ranking", w2_12 - w2_23 - delta * can.T_U)
+    assert_zero("country 3 partner symmetry", w3_13 - w3_23)
+    assert_zero("delta symmetry restoration", (w1_12 - w1_13).subs(delta, 0))
+    assert_zero(
+        "delta partner-ranking comparative static",
+        sp.diff(w1_12 - w1_13, delta) - can.T_U,
+    )
+
+
 def main() -> int:
     try:
         solve_focs()
@@ -302,6 +332,7 @@ def main() -> int:
         verify_private_adoption_identities()
         verify_selective_erosion_identities()
         verify_coalition_stability_identities()
+        verify_market_size_partner_selection_identities()
     except Exception as exc:  # hard gate: any mismatch is a non-zero exit.
         print("SYMBOLIC VERIFICATION: FAIL")
         print(f"{type(exc).__name__}: {exc}")
@@ -319,6 +350,10 @@ def main() -> int:
     print("OUTSIDER POST-BYPASS WELFARE IDENTITY: PASS")
     print("J POSITIVITY SIGN SUPPORT: PASS")
     print("EXACT OMEGA_0 WITNESS: PASS")
+    print("MARKET-SIZE PARTNER-SELECTION IDENTITY: PASS")
+    print("LARGE-COUNTRY PARTNER RANKING: PASS")
+    print("SMALL-COUNTRY SYMMETRY: PASS")
+    print("DELTA SYMMETRY RESTORATION: PASS")
     print("P-C factorization:")
     print(sp.factor(can.P - can.C))
     print("SYMBOLIC VERIFICATION: PASS")
