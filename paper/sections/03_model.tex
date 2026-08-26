@@ -1,9 +1,167 @@
 \section{Model}
 \label{sec:model}
 
-% TODO:
-% - Countries, firms, consumers.
-% - Formal standards partitions and private compatibility adoption.
-% - Timing, government welfare, coalition stability, and parameter restrictions.
-% - Candidate figure placement: Figure 1 (timing).
-% Source of truth: docs/CANONICAL_MODEL.md (repository root).
+\subsection{Countries, firms, and markets}
+\label{subsec:model-countries}
+
+There are three countries, indexed by $i\in N\equiv\{1,2,3\}$. Each country is home to one firm, also indexed by $i$. The three firms sell in each of the three national markets. Markets are segmented, so quantities chosen for one destination do not affect demand in another destination except through the firm's aggregate profit. Let $q_i^k$ denote firm $i$'s quantity in market $k$, and let $p_i^k$ denote the corresponding price. The mass of consumers in market $k$ is $m_k$. In the main model, market sizes are symmetric and normalized to
+\begin{equation}
+    m_1=m_2=m_3=1.
+    \label{eq:main-market-masses}
+\end{equation}
+We retain $m_k$ in aggregate-profit expressions for bookkeeping, but all main-text results prior to the secondary analysis impose \eqref{eq:main-market-masses}. Firms compete in quantities in every national market.
+
+\subsection{Formal standards regimes}
+\label{subsec:model-formal-standards}
+
+Governments determine which countries formally share a product standard. A formal standards regime is represented by a partition $\rho$ of $N$. The main model allows the five partitions that are relevant with three countries. Under separate national standards,
+\begin{equation}
+    \rho^{SW}=\bigl\{\{1\},\{2\},\{3\}\bigr\}.
+    \label{eq:partition-sw}
+\end{equation}
+Under a regional standardization union, two countries share one formal standard while the remaining country retains a separate standard. The three possible regional partitions are denoted by
+\begin{equation}
+    \rho_{12}^{SU},\qquad
+    \rho_{13}^{SU},\qquad
+    \rho_{23}^{SU}.
+    \label{eq:partition-su}
+\end{equation}
+Finally, under international standardization all three countries share one formal standard,
+\begin{equation}
+    \rho^{IS}=\bigl\{\{1,2,3\}\bigr\}.
+    \label{eq:partition-is}
+\end{equation}
+A coalition in $\rho$ therefore identifies a set of countries whose home markets and domestic firms are assigned the same formal standard. The partition determines the baseline technological environment in which firms compete: firms belonging to the same formal coalition natively support the same standard, whereas firms belonging to different coalitions begin from different standards. Because the product markets are segmented, the competitive consequences of this baseline assignment can differ across destinations even though the formal partition is common to the three-country economy.
+
+Formal standardization is a government-level institutional choice. It changes which national markets are formally covered by a common standard and which domestic firms natively support that standard. It is distinct from the private compatibility decisions introduced below. A private adoption decision changes only the adopting firm's technological support set; it neither admits a country to a government coalition nor changes the partition $\rho$ itself. This separation between institutional membership and technological support is the central modeling distinction that allows firm behavior to feed back into the attractiveness of formal standards regimes without making firms the designers of those regimes.
+
+\subsection{Consumers, compatibility, and demand}
+\label{subsec:model-demand}
+
+In each market, consumers are indexed by $u\sim U[0,1]$ and buy at most one unit. The outside option yields zero utility. A consumer who buys from firm $i$ in market $k$ obtains
+\begin{equation}
+    u+g_i^k-p_i^k,
+    \label{eq:consumer-utility}
+\end{equation}
+where $g_i^k$ is the compatibility benefit associated with firm $i$'s product in that market.
+
+Compatibility is market specific because it depends on the formal standard that each firm actually uses in that market. Let $G_i^k$ denote the set of firms using the same standard as firm $i$ in market $k$. If at least two firms belong to this compatibility group, the compatibility benefit is
+\begin{equation}
+    g_i^k
+    =v\sum_{j\in G_i^k}q_j^k,
+    \qquad |G_i^k|\ge 2,
+    \label{eq:compatibility-benefit}
+\end{equation}
+where $v>0$ measures the strength of the network or compatibility effect. A singleton receives no such benefit, so $g_i^k=0$ when $|G_i^k|=1$.
+
+Let $X_k\equiv\sum_{j\in N}q_j^k$ denote total sales in market $k$. For products supplied with positive quantities, the generalized price $p_i^k-g_i^k$ equals the willingness to pay of the marginal participating consumer. Uniformity of $u$ then gives $p_i^k-g_i^k=1-X_k$. Hence the inverse demand faced by firm $i$ in market $k$ is
+\begin{equation}
+    p_i^k
+    =1+g_i^k-\sum_{j\in N}q_j^k.
+    \label{eq:inverse-demand}
+\end{equation}
+Thus compatibility affects product-market competition through the demand intercept associated with the group of firms using the same standard. Formal standards matter for competition because they determine firms' baseline compatibility relations, while private adoption can subsequently modify those relations in selected markets. Section~\ref{sec:product-market} solves the resulting Cournot subgames.
+
+\subsection{Production and incompatibility costs}
+\label{subsec:model-costs}
+
+Production has no intrinsic marginal cost. What matters is whether a firm supports the formal standard required in the destination market. Let $r_i^k$ denote firm $i$'s relevant marginal cost in market $k$. If firm $i$ supports the local formal standard and therefore uses that standard in market $k$, then
+\begin{equation}
+    r_i^k=0.
+    \label{eq:marginal-cost-compatible}
+\end{equation}
+If it does not support the local formal standard, it supplies the market under its baseline supported standard and incurs
+\begin{equation}
+    r_i^k=c>0.
+    \label{eq:marginal-cost-incompatible}
+\end{equation}
+The parameter $c$ is an incompatibility, conversion, or adaptation cost. It is not a transport cost or a tariff. Importantly, cost and compatibility are logically distinct objects. Two foreign firms can use the same non-local standard in a destination market and therefore be compatible with each other while each still incurs the adaptation cost $c$ because neither supports that market's local formal standard.
+
+\subsection{Private standard adoption}
+\label{subsec:model-private-adoption}
+
+The formal partition fixes the standards assigned by governments, but firms can privately expand the set of formal standards they support. Each firm natively supports the standard associated with its own coalition in $\rho$. For every additional formal standard it chooses to support, the firm pays a real fixed cost
+\begin{equation}
+    F>0.
+    \label{eq:private-adoption-cost}
+\end{equation}
+Support decisions are binary standard by standard. The cost is standard specific rather than market specific: adopting a formal standard once allows the firm to use that standard in every market covered by it. In particular, if two countries belong to the same regional standards union, one adoption of the bloc standard covers both member markets. Let $n_i$ denote the number of additional formal standards supported by firm $i$.
+
+The rule governing multi-standard firms is fixed as follows. In market $k$, if firm $i$ supports the local formal standard, it uses that standard there. Otherwise it uses its baseline standard---the standard associated with its native formal coalition. The compatibility group $G_i^k$ is then determined by the standard actually used by each firm in market $k$. A firm's compatibility status can therefore differ across destinations: the same firm may use a locally supported standard in one market and its baseline standard in another. Likewise, two firms may be mutually compatible in a destination even when neither uses the destination's local standard. These possibilities follow mechanically from the used-standard rule rather than from an additional compatibility choice at the product-market stage.
+
+This structure gives the fixed cost $F$ an economically distinct role from the marginal adaptation cost $c$. Paying $F$ expands the set of formal standards the firm can use at zero adaptation cost and can change the compatibility group in every market covered by the adopted standard. By contrast, $c$ is paid on units sold into a market whose local standard the firm does not support. The model therefore separates a discrete technological investment decision from the subsequent variable cost of supplying an incompatible destination. This rule makes private compatibility technologically meaningful without allowing firms to rewrite the formal partition. Private adoption can alter effective product-market compatibility while leaving the government-level standards regime unchanged.
+
+The term \emph{private circumvention}, when used later, refers only to this technological ability to support an additional formal standard. It does not refer to evasion of a legal requirement or to noncompliance with a formal standard.
+
+\subsection{Timing}
+\label{subsec:model-timing}
+
+The model is solved in the following order:
+\begin{equation}
+    \rho
+    \longrightarrow
+    a^\ast(\rho,F)
+    \longrightarrow
+    q^\ast\bigl(\rho,a^\ast\bigr)
+    \longrightarrow
+    W_i(\rho,F)
+    \longrightarrow
+    \mathcal S(F).
+    \label{eq:model-timing}
+\end{equation}
+First, the formal standards partition is specified. Second, firms choose which additional formal standards to support. Third, given the resulting market-by-market compatibility pattern, firms compete in quantities in the segmented product markets. Fourth, these continuation outcomes determine national welfare. Finally, the induced continuation payoffs are used to evaluate whether the formal partition is stable against coalition deviations. Figure~\ref{fig:timing} summarizes the sequence.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{figures/generated/figure_01_timing.pdf}
+    \caption{Timing of the model. Governments determine the formal standards partition, firms choose private compatibility, firms compete in segmented product markets, and national continuation payoffs determine coalition stability.}
+    \label{fig:timing}
+\end{figure}
+
+The private-adoption stage may in principle have multiple equilibria. When multiplicity is relevant, continuation outcomes are treated as a correspondence rather than imposing an arbitrary equilibrium-selection rule. The main stability results below are stated on parameter regions where the relevant comparisons are selection free.
+
+\subsection{Firm profits}
+\label{subsec:model-profits}
+
+Firm $i$'s operating profit is aggregated across the three segmented markets. Net of private adoption costs, its worldwide profit is
+\begin{equation}
+    \Pi_i
+    =\sum_{k\in N}m_k\bigl(p_i^k-r_i^k\bigr)q_i^k-Fn_i.
+    \label{eq:firm-profit}
+\end{equation}
+The fixed-cost term is paid once for each additional formal standard that the firm supports, irrespective of how many markets share that standard. This accounting distinction is important because formal coalitions can change the geographic scope covered by a single private adoption decision.
+
+\subsection{National welfare}
+\label{subsec:model-welfare}
+
+Government $i$ evaluates a formal standards regime using national welfare
+\begin{equation}
+    W_i=CS_i+\Pi_i,
+    \label{eq:national-welfare}
+\end{equation}
+where $CS_i$ is consumer surplus in country $i$ and $\Pi_i$ is the worldwide profit of its domestic firm defined in \eqref{eq:firm-profit}. Foreign-firm profits are not part of country $i$'s welfare. The private adoption cost $Fn_i$ is a real resource cost and is therefore already deducted through domestic-firm profit. There are no transfers between governments or firms in the canonical model. This objective makes formal standards policy sensitive to both domestic consumer outcomes and the competitive position of the domestic firm across all three markets.
+
+\subsection{Coalition stability}
+\label{subsec:model-stability}
+
+After solving the private-adoption and product-market stages for each formal partition, we evaluate the resulting partition game using strict blocking under the frozen exclusive-membership rule. Consider a current partition $\rho$ and an admissible coalition deviation by a set $D\subseteq N$ that induces an alternative partition $\rho'$. The deviation blocks $\rho$ only if every member of the deviating coalition is strictly better off under the continuation payoff associated with $\rho'$:
+\begin{equation}
+    W_i(\rho',F)>W_i(\rho,F)
+    \qquad\text{for every }i\in D.
+    \label{eq:strict-blocking}
+\end{equation}
+A weak improvement for one of the deviators is therefore insufficient. Let $\mathcal S(F)$ denote the set of formal partitions that are not strictly blocked at private-adoption cost $F$. The precise payoff comparisons supporting this stability concept are derived only after the product-market and private-adoption subgames have been solved.
+
+\subsection{Parameter domain}
+\label{subsec:model-domain}
+
+The main analysis restricts primitives to
+\begin{equation}
+    F>0,
+    \qquad
+    0<v<\frac14,
+    \qquad
+    0<c<\frac{1-3v}{3(1-v)}.
+    \label{eq:parameter-domain}
+\end{equation}
+These restrictions define the canonical admissible domain. They ensure that the quantities required by the relevant Cournot subgames are strictly positive, own inverse demand is downward sloping, and total market quantity remains below one so that consumer participation is interior. The corresponding algebraic checks are deferred to the Appendix. No market-size asymmetry is required for the main model.
