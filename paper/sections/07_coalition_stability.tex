@@ -27,15 +27,11 @@ The first equality records the member-market gain from regional exclusion net of
 The parameter region used for the Main stability result is
 \begin{equation}
     \boxed{
-    \Omega_0
-    =\left\{
-    (c,v):
-    0<v<\frac14,\;
-    0<c<\frac{1-3v}{3(1-v)},\;
-    \Phi_0>0,\;
-    P>C,\;
-    \max\{T_W,T_A\}<2T_A
-    \right\}.
+    \begin{aligned}
+    \Omega_0=\{(c,v):\;&0<v<\tfrac14,\\
+    &0<c<\tfrac{1-3v}{3(1-v)},\\
+    &\Phi_0>0,\quad P>C,\quad \max\{T_W,T_A\}<2T_A\}.
+    \end{aligned}
     }
     \label{eq:omega-zero}
 \end{equation}
@@ -77,7 +73,7 @@ Hence there is a nonempty intermediate fixed-cost region $F_L<F<F^\ast$ in which
     \qquad\text{and}\qquad
     W_M^{SU,O}<W^{IS}.
 \]
-Thus the primitive Cournot standards model generates the selective-erosion ranking reversal on a nonempty open set.
+Thus the primitive model generates the selective-erosion reversal on a nonempty open set.
 \end{proposition}
 
 \begin{proof}
@@ -152,7 +148,11 @@ Fix $(c,v)\in\Omega_0$ and suppose
 \end{equation}
 Lemma~\ref{lem:private-adoption} implies that neither SU nor SW induces private adoption. The relevant continuation payoffs are therefore $W^{SW}$ for every country under separate national standards, $W^{IS}$ for every country under international standardization, and $(W_M^{SU,N},W_M^{SU,N},W_O^{SU,N})$ up to permutation under any regional SU.
 
-Separate national standards are not stable. The canonical inequality $W_M^{SU,N}>W^{SW}$ implies that any two countries can form a regional SU and both strictly gain. International standardization is also not stable on $\Omega_0$: because $\Phi_0=W_M^{SU,N}-W^{IS}>0$, any two countries can leave IS, form a regional SU, and both strictly gain.
+Separate national standards are not stable because
+\[
+    W_M^{SU,N}>W^{SW}.
+\]
+Any two countries can therefore form a regional SU and both strictly gain. International standardization is also not stable on $\Omega_0$: because $\Phi_0=W_M^{SU,N}-W^{IS}>0$, any two countries can leave IS, form a regional SU, and both strictly gain.
 
 Now take an arbitrary regional partition $\rho_{ij}^{SU}$ with outsider $o$. A deviation by the same pair reproduces the status quo and cannot strictly block it. A grand-coalition deviation to IS also fails because each current member obtains $W_M^{SU,N}>W^{IS}$. An alternative pair containing the outsider, say $\{i,o\}$, makes country $i$ a regional member both before and after the deviation. Symmetry gives it the same payoff $W_M^{SU,N}$ in the two regional coalitions, so it is indifferent rather than strictly better off. The alternative pair therefore cannot block. Finally, fragmentation to SW makes a current member worse off because $W_M^{SU,N}>W^{SW}$, while a deviation that leaves a current member as an SU outsider gives that country $W_O^{SU,N}<W^{IS}<W_M^{SU,N}$. No admissible coalition strictly blocks $\rho_{ij}^{SU}$.
 
@@ -241,7 +241,7 @@ Figure~\ref{fig:f-regions} illustrates the two headline fixed-cost regions at th
 \end{figure}
 
 Table~\ref{tab:stability-regions} collects the same analytical regions without extending the theorem to the boundary or low-$F$ cases.
-\input{tables/generated/table_stability_regions.tex}
+\input{tables/generated/table_stability_regions}
 
 The economic mechanism is not that private adoption mechanically merges formal coalitions. Formal membership remains unchanged. Instead, a lower private compatibility cost selects a continuation state in which the outsider can replicate the bloc standard technologically. That action removes the member-market exclusion component sustaining the regional coalition but does not reciprocally improve the coalition members' position in the outsider market. Members consequently reverse their ranking toward IS, while the outsider also strictly prefers IS after its own adoption cost is correctly included. Private technological adaptation therefore changes formal institutional stability through continuation-payoff reordering.
 
