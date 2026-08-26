@@ -20,9 +20,9 @@ Private compatibility can selectively remove the exclusionary benefit supporting
 
 **Stage 8 theory frozen. Full-paper writing has not yet started.**
 
-Current phase: **Repository governance and canonical-theory freeze**.
+Current phase: **Modular LaTeX scaffold and reproducible verification pipeline complete**.
 
-Next phase: **Modular LaTeX manuscript scaffold and reproducible verification pipeline**.
+Next phase: **Section-by-section theoretical manuscript drafting**.
 
 ## Governance
 

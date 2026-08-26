@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Verification / temporary build outputs
+build/
+
+# LaTeX generated files
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.run.xml
+*.bcf
+*.spl
+
+# Reproducible generated figures/tables are rebuilt from code and not committed.
+paper/figures/generated/*.pdf
+!paper/figures/generated/.gitkeep
+paper/tables/generated/*.tex
+!paper/tables/generated/.gitkeep
+
+# Compiled manuscript artifact (rebuilt by Makefile/CI)
+paper/main.pdf
