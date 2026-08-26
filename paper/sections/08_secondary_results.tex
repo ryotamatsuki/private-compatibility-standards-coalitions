@@ -17,6 +17,8 @@ Consider the secondary specification
 \end{equation}
 Countries 1 and 2 therefore have equal larger markets, while country 3 has the smaller market. No other primitive is asymmetric. In particular, costs, preferences, network effects, and government objectives remain unchanged. We condition on a continuation state with no private standard adoption so that the result isolates partner selection from the selective-erosion mechanism. A sufficiently high fixed cost provides one such continuation state, but the payoff identity below requires only that no private adoption occurs.
 
+This conditioning separates two distinct comparative questions. Sections~\ref{sec:private-compatibility}--\ref{sec:coalition-stability} ask whether firms circumvent a given formal partition and how that response changes governments' incentives over formal regimes. The present section instead holds the private-adoption state fixed and asks how a government ranks two regional coalitions that differ only in the market size of its partner. Consequently, $F$ does not enter the partner-ranking difference directly. Its role here is only to support the no-adoption continuation state under which the comparison is evaluated. This separation is useful because it makes clear that market-size asymmetry is not doing hidden work in the Main stability reversal.
+
 Let country $i$ compare two otherwise identical regional standards unions, one with partner $j$ and outsider $k$, and the other with partner $k$ and outsider $j$. From the general-mass continuation payoff in Section~\ref{sec:selective-erosion}, country $i$ obtains
 \begin{align}
     W_i^{ij}
@@ -36,6 +38,8 @@ Subtracting gives the general partner-comparison identity
     \label{eq:general-partner-ranking}
 \end{equation}
 The consumer-surplus term in country $i$'s own market cancels. Replacing a smaller partner with a larger partner instead reallocates market mass from the outsider-profit block $C$ to the coalition-member profit block $A$.
+
+The accounting in \eqref{eq:general-partner-ranking} also clarifies why the result is a partner-size effect rather than a generic preference for larger markets. Country $i$'s own market mass and its own-market consumer surplus are identical across the two coalitions. The only change is where the other countries' market mass appears in the domestic firm's worldwide operating profit. A unit of market mass attached to a coalition partner contributes the member-market block $A$; the same unit of mass attached to the outsider contributes the outsider-market block $C$. Partner selection is therefore governed by the difference between these two profit opportunities, not by a direct utility benefit from country size itself.
 
 The sign is immediate from the private-adoption block already derived in Section~\ref{sec:private-compatibility}:
 \begin{equation}
@@ -98,6 +102,8 @@ For country 1, $m_2-m_3=\delta$, and for country 2, $m_1-m_3=\delta$. Since $A-C
 
 Proposition~\ref{prop:market-size-partner-selection} is a partner-preference result, not a coalition-stability theorem. For example, $W_1^{12}>W_1^{13}$ by itself does not imply that $\rho_{13}^{SU}$ is strictly blocked by $\{1,2\}$: strict blocking would additionally require country 2 to gain from the same induced deviation relative to its own current payoff. The proposition therefore does not establish a uniquely stable $\rho_{12}^{SU}$ and does not modify the stable-set result in Theorem~\ref{thm:formal-coalition-stability}.
 
+This distinction matters because the asymmetry removes one source of indifference without, by itself, solving the full coalition-formation problem. In the symmetric high-$F$ analysis, an alternative regional pair could not strictly block an existing SU because the country common to the two coalitions received the same member payoff. Proposition~\ref{prop:market-size-partner-selection} shows that this particular indifference can disappear for a larger country when the prospective partners have different market sizes. Whether an actual partner-switching deviation is a strict block, however, also depends on the payoff of the second deviator. Establishing that additional inequality would be a separate result, not a corollary of Proposition~\ref{prop:market-size-partner-selection}; we therefore do not impose an unverified partner-switching region here.
+
 Two comparative observations make the role of the asymmetry transparent. First, letting $\delta\downarrow0$ restores the symmetric Main Model and
 \begin{equation}
     \left.(W_1^{12}-W_1^{13})\right|_{\delta=0}=0,
@@ -110,6 +116,6 @@ which is consistent with the inability of the symmetric high-$F$ model to select
     =T_U>0.
     \label{eq:delta-partner-comparative-static}
 \end{equation}
-A larger market-size gap therefore strengthens the larger country's ranking in favor of the other larger partner. This derivative concerns only the payoff difference across potential partners; it is not a welfare statement about shrinking country 3.
+A larger market-size gap therefore strengthens the larger country's ranking in favor of the other larger partner. This derivative concerns only the payoff difference across potential partners; it is not a welfare statement about shrinking country 3. Nor does it imply that a larger $\delta$ monotonically changes the stable partition set, because such a claim would require the complete set of strict-blocking inequalities under asymmetric market sizes.
 
 A larger partner is valuable not because market-size asymmetry creates selective erosion, but because it reallocates market mass from the outsider-profit block $C$ to the member-market block $A$. The extension consequently sharpens partner identity while leaving the Main theoretical chain intact: symmetry establishes the private-compatibility stability mechanism, whereas asymmetry only refines which regional partner a government prefers.
