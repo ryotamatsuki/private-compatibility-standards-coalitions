@@ -28,3 +28,8 @@ paper/tables/generated/*.tex
 
 # Compiled manuscript artifact (rebuilt by Makefile/CI)
 paper/main.pdf
+
+# Confidential/local research-governance records.
+# Detailed AI-use logs, prompts/outputs, historical research files, and provenance evidence
+# must not be committed to this public repository.
+.local-research-audit/
