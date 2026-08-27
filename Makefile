@@ -2,17 +2,20 @@ PYTHON ?= python
 LATEXMK ?= latexmk
 LATEX_FLAGS := -pdf -interaction=nonstopmode -halt-on-error
 
-.PHONY: all verify verify-symbolic verify-numeric figures tables tables-check paper check-paper-log clean
+.PHONY: all verify verify-symbolic verify-welfare verify-numeric figures tables tables-check paper check-paper-log clean
 
 all: verify figures tables tables-check paper
 
 verify-symbolic:
 	$(PYTHON) code/verify_symbolic.py
 
+verify-welfare:
+	$(PYTHON) code/verify_welfare_inequalities.py
+
 verify-numeric:
 	$(PYTHON) code/verify_numeric.py
 
-verify: verify-symbolic verify-numeric
+verify: verify-symbolic verify-welfare verify-numeric
 
 figures:
 	$(PYTHON) code/make_figures.py
@@ -26,7 +29,7 @@ tables:
 	@test -s paper/tables/generated/table_thresholds.tex
 	@test -s paper/tables/generated/table_stability_regions.tex
 
-# Syntax-check generated table fragments without adding them to the manuscript yet.
+# Syntax-check generated table fragments independently of the full manuscript.
 tables-check: tables
 	@mkdir -p build/table-check
 	@printf '%s\n' \
@@ -41,9 +44,6 @@ tables-check: tables
 	@cd build/table-check && $(LATEXMK) $(LATEX_FLAGS) -bibtex- table_check.tex
 	@echo "TABLE LATEX CHECK: PASS"
 
-# The bibliography is wired into main.tex, but the scaffold intentionally has
-# no citations or verified entries yet. BibTeX is enabled automatically once
-# both a citation command and a real .bib entry exist.
 paper:
 	@cd paper && if grep -RqsE '\\cite[a-zA-Z*]*\{' sections appendix main.tex && grep -qsE '^[[:space:]]*@' references.bib; then \
 		$(LATEXMK) $(LATEX_FLAGS) main.tex; \

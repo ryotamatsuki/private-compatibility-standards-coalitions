@@ -47,5 +47,15 @@ jobs:
       - name: Syntax-check generated tables
         run: make tables-check
 
-      - name: Compile manuscript scaffold
+      - name: Compile manuscript
         run: make paper
+
+      - name: Upload manuscript audit artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: manuscript-audit-${{ github.sha }}
+          path: |
+            paper/main.pdf
+            paper/main.log
+          if-no-files-found: error
+          retention-days: 7

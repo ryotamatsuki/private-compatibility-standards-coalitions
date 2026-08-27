@@ -1,6 +1,175 @@
-\section{Welfare Algebra}
+\section{Welfare Sign Certificates}
 \label{app:welfare}
 
-% TODO:
-% - Consumer-surplus and government-welfare derivations.
-% - Preserve the corrected Stage-8 welfare expressions; do not revive the historical error.
+This appendix supplies analytical sign certificates for the canonical welfare comparisons used in Section~\ref{sec:coalition-stability}. They are frozen relationships in the Stage-8 model; the calculations below make their domain-wide sign support explicit rather than relying on numerical sampling.
+
+Recall
+\begin{align*}
+W^{IS}&=K_I+3P,
+& W_M^{SU,N}&=K_M+2A+C,\\
+W_O^{SU,N}&=K_O+2B+D,
+& W^{SW}&=K_W+H+2S.
+\end{align*}
+The corrected international-standardization expression is
+\[
+W^{IS}=\frac{3(5-2v)}{32(1-v)^2}.
+\]
+All denominators below are strictly positive on the canonical domain.
+
+\subsection{An SU member versus separate national standards}
+
+Define the scaled welfare gap
+\begin{align}
+N_{MS}(c,v)
+&\equiv 32(2-3v)^2\left(W_M^{SU,N}-W^{SW}\right)\notag\\
+&=-216c^2v^2+264c^2v-60c^2
++108cv^2-144cv+56c
+-99v^2+84v.
+\label{eq:appendix-n-ms}
+\end{align}
+Its curvature in $c$ is
+\[
+\frac{\partial^2N_{MS}}{\partial c^2}
+=-24(18v^2-22v+5)<0,
+\]
+because $18v^2-22v+5$ is decreasing on $0<v<1/4$ and equals $5/8$ at $v=1/4$. Hence the minimum over the closure of the admissible $c$ interval is attained at an endpoint. At $c=0$,
+\[
+N_{MS}(0,v)=3v(28-33v)>0.
+\]
+At $c_{\max}(v)=(1-3v)/[3(1-v)]$,
+\[
+N_{MS}(c_{\max},v)
+=-\frac{p_{MS}(v)}{3(1-v)^2},
+\]
+where
+\[
+p_{MS}(v)=621v^4-1206v^3+729v^2-92v-36.
+\]
+For $0\le v\le1/4$, $v^4\le v^2/16$ and the term $-1206v^3$ is nonpositive, so
+\[
+p_{MS}(v)
+\le \frac{12285}{16}v^2-92v-36.
+\]
+The quadratic on the right is convex and is negative at both endpoints of $[0,1/4]$; at $v=1/4$ it equals $-2819/256$. Therefore $p_{MS}(v)<0$, and
+\begin{equation}
+\boxed{W_M^{SU,N}>W^{SW}.}
+\label{eq:appendix-su-member-gt-sw}
+\end{equation}
+
+\subsection{International standardization versus separate standards}
+
+Similarly, let
+\begin{align}
+N_{IS}(c,v)
+&\equiv 32(1-v)^2\left(W^{IS}-W^{SW}\right)\notag\\
+&=-28c^2v^2+56c^2v-28c^2
++20cv^2-40cv+20c
+-15v^2+24v.
+\label{eq:appendix-n-is}
+\end{align}
+Since
+\[
+\frac{\partial^2N_{IS}}{\partial c^2}
+=-56(1-v)^2<0,
+\]
+its minimum in $c$ is again at an endpoint. The endpoint values are
+\[
+N_{IS}(0,v)=3v(8-5v)>0
+\]
+and
+\[
+N_{IS}(c_{\max},v)
+=\frac{32+144v-207v^2}{9}>0.
+\]
+The final inequality follows immediately from $v<1/4$, since $207v^2<207/16<32$ while $144v>0$. Thus
+\begin{equation}
+\boxed{W^{IS}>W^{SW}.}
+\label{eq:appendix-is-gt-sw}
+\end{equation}
+
+\subsection{International standardization versus the SU outsider}
+
+Finally define
+\begin{align}
+N_{IO}(c,v)
+&\equiv 32(1-v)^2(2-3v)^2
+\left(W^{IS}-W_O^{SU,N}\right).
+\label{eq:appendix-n-io-definition}
+\end{align}
+The exact polynomial is
+\begin{align}
+N_{IO}(c,v)
+={}&-144c^2v^4+576c^2v^3-912c^2v^2+672c^2v-192c^2\notag\\
+&+288cv^4-912cv^3+1072cv^2-560cv+112c\notag\\
+&-252v^4+666v^3-537v^2+132v.
+\label{eq:appendix-n-io}
+\end{align}
+Its curvature is
+\[
+\frac{\partial^2N_{IO}}{\partial c^2}
+=-96(1-v)^2(3v^2-6v+4)<0.
+\]
+At $c=0$,
+\[
+N_{IO}(0,v)
+=-3v\,p_0(v),
+\qquad
+p_0(v)=84v^3-222v^2+179v-44.
+\]
+The derivative $p_0'(v)=252v^2-444v+179$ is decreasing on $[0,1/4]$ and remains positive at $v=1/4$, where it equals $335/4$. Hence $p_0$ is increasing, while $p_0(1/4)=-189/16<0$; therefore $N_{IO}(0,v)>0$.
+
+At the upper $c$ boundary,
+\[
+N_{IO}(c_{\max},v)
+=-\frac{p_1(v)}{3},
+\]
+where
+\[
+p_1(v)=324v^4-990v^3+843v^2-92v-48.
+\]
+Using $v^4\le v^2/16$ and dropping the nonpositive cubic term gives
+\[
+p_1(v)
+\le \frac{3453}{4}v^2-92v-48.
+\]
+This bounding quadratic is convex and negative at both endpoints of $[0,1/4]$; at $v=1/4$ it equals $-1091/64$. Thus $p_1(v)<0$ and the upper-boundary value of $N_{IO}$ is positive. Concavity in $c$ now yields
+\begin{equation}
+\boxed{W^{IS}>W_O^{SU,N}.}
+\label{eq:appendix-is-gt-su-outsider}
+\end{equation}
+
+\subsection{The outsider post-bypass gap}
+\label{app:j-positive}
+
+Section~\ref{sec:coalition-stability} defines
+\[
+J=K_I+P-K_O-D,
+\]
+so that $W^{IS}-W_O^{SU,O}=J+F$. To establish the strict outsider ranking after bypass it is sufficient to show $J>0$. Multiplying $J$ by its positive denominator gives the sign-equivalent numerator
+\begin{align}
+N_J(c,v)
+={}&-48(1-v)^2c^2
++(48v^3-80v^2+16v+16)c\notag\\
+&+v(68-269v+318v^2-108v^3).
+\label{eq:appendix-j-numerator}
+\end{align}
+For fixed $v$, $N_J$ is concave in $c$ because
+\[
+\frac{\partial^2N_J}{\partial c^2}=-96(1-v)^2<0.
+\]
+Its minimum on the closure of the admissible $c$ interval is therefore attained at an endpoint. At $c=0$ and $c=c_{\max}(v)$,
+\begin{align}
+N_J(0,v)
+&=v(68-269v+318v^2-108v^3),\notag\\
+N_J(c_{\max},v)
+&=\frac v3(284-1095v+1098v^2-324v^3).
+\label{eq:appendix-j-endpoints}
+\end{align}
+Both bracketed polynomials are decreasing on $0<v<1/4$ and remain positive at $v=1/4$, where they equal $303/16$ and $1181/16$. Hence $N_J>0$ and therefore
+\begin{equation}
+\boxed{J>0.}
+\label{eq:appendix-j-positive}
+\end{equation}
+Since $F>0$, this implies $W^{IS}>W_O^{SU,O}$ throughout the canonical domain whenever the outsider-only continuation is relevant.
+
+Equations~\eqref{eq:appendix-su-member-gt-sw}--\eqref{eq:appendix-j-positive} are precisely the sign comparisons invoked in the strict-blocking analysis. The symbolic verification scripts check the scaled-polynomial representations, curvature expressions, and endpoint identities independently from the manuscript text.

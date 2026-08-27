@@ -1,6 +1,63 @@
-\section{Cournot Derivations}
+\section{Cournot Derivations and Domain Checks}
 \label{app:cournot}
 
-% TODO:
-% - Primitive first-order conditions and derivations for all canonical product-market subgames.
-% - Must match code/verify_symbolic.py exactly.
+This appendix records the technical regularity checks underlying Lemma~\ref{lem:cournot-blocks}. The closed-form Cournot solutions themselves are derived in Section~\ref{sec:product-market}; the purpose here is to verify uniqueness, positivity, and interior consumer participation on the canonical parameter domain without interrupting the main argument.
+
+\subsection{Uniqueness of the four product-market configurations}
+
+For a firm belonging to a compatibility group of size at least two, the own-output second derivative of market operating profit is $-2(1-v)$; for a singleton it is $-2$. Both are strictly negative because $0<v<1/4$. Thus the first-order conditions in Section~\ref{sec:product-market} characterize unique best responses.
+
+Complete compatibility is a symmetric linear Cournot system and gives $q_I=1/[4(1-v)]$. In an SU member market, symmetry between the two bloc firms reduces the first-order conditions to
+\begin{align}
+1-3(1-v)x-y&=0,\\
+1-c-2x-2y&=0,
+\end{align}
+whose coefficient determinant is $2(2-3v)>0$. The SU outsider-market system has the same coefficient matrix, with the marginal-cost terms assigned to the bloc firms instead, and hence the same positive determinant. Under separate national standards the reduced native--foreign system has determinant $4$. These systems therefore have unique solutions, which are exactly the quantities reported in Lemma~\ref{lem:cournot-blocks}.
+
+\subsection{Positivity of equilibrium quantities}
+
+The only quantity whose positivity uses the full upper bound on $c$ is the excluded outsider quantity in an SU member market. Its numerator is
+\[
+1-3c-3(1-c)v
+=1-3v-3c(1-v),
+\]
+which is strictly positive when
+\[
+c<\frac{1-3v}{3(1-v)}.
+\]
+The same bound implies
+\[
+\frac{1-3v}{3(1-v)}<\frac13,
+\]
+so $c<1/3$. It follows immediately that $1-2c>0$, which establishes positivity of both $q_C$ and $q_S$. The numerators of $q_I$, $q_M$, $q_D$, and $q_H$ are strictly positive on the same domain. Hence every quantity used in the canonical continuation states is interior.
+
+\subsection{Interior consumer participation}
+
+The total quantities associated with the four configurations are
+\begin{align}
+X_I&=\frac{3}{4(1-v)},&
+X_M&=\frac{3-c-3v+3cv}{2(2-3v)},\\
+X_O&=\frac{3-2c-3v}{2(2-3v)},&
+X_W&=\frac{3-2c}{4}.
+\end{align}
+For complete compatibility,
+\[
+4(1-v)-3=1-4v>0,
+\]
+so $X_I<1$. For an SU member market, the denominator minus the numerator of $X_M$ is
+\[
+2(2-3v)-(3-c-3v+3cv)
+=(1-3v)(1+c)>0.
+\]
+For the SU outsider market,
+\[
+2(2-3v)-(3-2c-3v)
+=1+2c-3v>0,
+\]
+and for separate standards,
+\[
+4-(3-2c)=1+2c>0.
+\]
+Thus $X_M,X_O,X_W<1$ as well. Since the equilibrium quantities are positive, each total quantity is also positive. The marginal participating consumer therefore lies strictly inside the support $[0,1]$ in every product-market configuration used in the paper.
+
+These inequalities establish the regularity claims attached to the canonical domain in Section~\ref{subsec:model-domain}. They are also checked numerically over the domain by \texttt{code/verify\_numeric.py}; the numerical checks are regression tests and are not substitutes for the analytical inequalities above.
