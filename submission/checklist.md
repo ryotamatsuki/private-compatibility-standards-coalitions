@@ -53,14 +53,14 @@ Verified/updated: 2026-08-27
 | Opposed reviewers | NOT REQUIRED | None proposed absent a genuine conflict. |
 | Submission fee | PORTAL RECHECK REQUIRED | Current Guide inaccessible; do not infer free/paid. |
 | Open-access choice/APC | NOT REQUIRED FOR INITIAL SUBMISSION | Decide only if/when publisher requests a publication route. |
-| Paper CI on governance PR | PENDING | Must pass on final PR head. |
-| Submission-file build | PENDING PR GATE | `make submission` must pass on governance PR head. |
-| Clean-room replication QA | PENDING PR GATE | Must pass on governance PR head. |
-| Final PDF visual QA | PENDING BUILD | Inspect exact final package artifact after final build. |
+| Paper CI on governance PR | PASS | Initial PR-head run `33044319506` passed all workflow steps. |
+| Submission-file build | PASS | Full `make submission` gate passed in run `33044319506`. |
+| Clean-room replication QA | PASS | Anonymous replication-package clean-room rebuild/verification passed in run `33044319506`. |
+| Final PDF visual QA | PENDING FINAL PACKAGE | Inspect the exact artifact used for final portal submission after all administrative inputs are resolved. |
 | Final submit authorization | BLOCKED BY DESIGN | Requires explicit author authorization in a separate step. |
 
 ## Readiness rule
 
-AI/provenance governance status is **CONDITIONAL GO** until the PR verification gate passes and the author verifies the current provider/data-control situation for any continued unpublished AI use.
+AI/provenance governance status is **CONDITIONAL GO**. The reproducibility/build gates pass; remaining conditions are the current-provider/data-control check, live IJIO portal recheck, and factual user-input items required for submission.
 
 `BLOCKED BY DESIGN` on the final-submit action is intentional and does not prevent package completion. All `USER INPUT REQUIRED` items must be resolved before portal execution reaches certification/final submission.

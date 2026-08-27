@@ -12,7 +12,7 @@ Theory status: **FROZEN — NO SCIENTIFIC-CONTENT CHANGE IN THIS AUDIT**
 CONDITIONAL GO
 ```
 
-The manuscript can proceed toward IJIO submission from an AI-disclosure and research-provenance standpoint after the changes recorded here. The current paper now separates manuscript-preparation disclosure from research-process/code disclosure, documents pre-AI provenance without using it to minimize AI assistance, and establishes prospective privacy/data-governance rules. Remaining conditions are administrative or factual: historical provider settings are not verified, the current account-level data setting must be checked by the author, the live IJIO Guide/portal still requires a final recheck for inaccessible journal-specific fields, thesis public-dissemination status is not fully verified, and the final PR/CI gate must pass.
+The manuscript can proceed toward IJIO submission from an AI-disclosure and research-provenance standpoint after the changes recorded here. The current paper now separates manuscript-preparation disclosure from research-process/code disclosure, documents pre-AI provenance without using it to minimize AI assistance, and establishes prospective privacy/data-governance rules. Paper CI, the full submission-package build, and clean-room replication-package QA pass on PR #14. Remaining conditions are administrative or factual: historical provider settings are not verified, the current account-level data setting must be checked by the author, the live IJIO Guide/portal still requires a final recheck for inaccessible journal-specific fields, and thesis public-dissemination status is not fully verified.
 
 ## Live policy findings
 
@@ -52,7 +52,7 @@ The IJIO Guide URL remained inaccessible to the automated policy client (HTTP 40
 | Double-anonymous review | **VERIFIED FROM CURRENT ELSEVIER LISTING** | Keep reviewer manuscript/replication package anonymous. |
 | Public GitHub URL in reviewer files | **ABSENT / READY** | Continue to exclude. |
 | Final IJIO portal fields | **PORTAL RECHECK REQUIRED** | Recheck live Guide and Editorial Manager before upload/certification. |
-| Final build / CI | **PENDING PR GATE** | Must pass repository verification and submission package build. |
+| Final build / CI | **PASS** | Paper CI run `33044319506` passed symbolic/numerical verification, LaTeX compilation, full `make submission`, clean-room replication-package QA, and artifact upload on the initial PR head. |
 
 ## Pre-AI research provenance verdict
 
@@ -163,7 +163,7 @@ This does not claim that every current idea existed before AI, and it does not m
 | B — IJIO submission policy | **MINOR / PORTAL RECHECK** | Double-anonymous review is verified from a current Elsevier listing; inaccessible Guide/portal-specific fields remain. |
 | C — Publication ethics / prior work | **MINOR / RECHECK** | Thesis is generally permissible under Elsevier policy and no current-theorem duplication is identified; exact public-dissemination and IJIO-specific thesis rule remain to be confirmed. |
 | D — Scientific authorship / provenance | **PASS** | Pre-AI baseline + extension idea are documented without claiming that current theorems predated AI. |
-| E — Reproducibility engineering | **PENDING CI** | Repository pipeline must pass on the PR head. |
+| E — Reproducibility engineering | **PASS** | Paper CI run `33044319506` passed all verification/build/submission/clean-room QA gates. |
 
 ## Remaining blockers / conditions
 
@@ -172,7 +172,6 @@ Before final portal certification:
 - verify the current AI-provider/account data setting and applicable terms for any continued unpublished work;
 - recheck the live IJIO Guide and Editorial Manager fields;
 - resolve user-input items already tracked in `submission/checklist.md` (funding, conflicts, authorship/contact information, simultaneous-submission certification, etc.);
-- confirm any known thesis repository/public dissemination if the author has such information;
-- require the final PR head to pass Paper CI and submission-package QA.
+- confirm any known thesis repository/public dissemination if the author has such information.
 
 No theory repair is authorized or required by this governance audit.
