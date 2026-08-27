@@ -34,7 +34,8 @@ jobs:
             texlive-latex-extra \
             texlive-publishers \
             texlive-fonts-recommended \
-            poppler-utils
+            poppler-utils \
+            unzip
 
       - name: Symbolic and numerical verification
         run: make verify
@@ -53,6 +54,19 @@ jobs:
 
       - name: Build and audit IJIO submission package
         run: make submission
+
+      - name: Clean-room replication package QA
+        run: |
+          QA_DIR="${RUNNER_TEMP}/ijio-replication-qa"
+          rm -rf "$QA_DIR"
+          mkdir -p "$QA_DIR"
+          unzip -q submission/generated/replication_package_anonymous.zip -d "$QA_DIR"
+          make -C "$QA_DIR" verify
+          make -C "$QA_DIR" figures
+          make -C "$QA_DIR" tables
+          make -C "$QA_DIR" tables-check
+          make -C "$QA_DIR" paper
+          echo "CLEAN-ROOM REPLICATION QA: PASS"
 
       - name: Upload manuscript audit artifacts
         uses: actions/upload-artifact@v4
