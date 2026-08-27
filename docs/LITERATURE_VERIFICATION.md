@@ -1,95 +1,59 @@
-# Literature Verification Record
+# Final IJIO Literature Verification Audit
 
-Verified for the August 2026 front-matter and literature-completion stage and updated during the full-paper referee audit. This file is an audit trail for source identity, publication status, overlap, and claim discipline. It does not modify the frozen theory. Published items were checked against publisher or journal pages where available; the Maggi--Mr\'azov\'a item remains an NBER working paper as verified below.
+Verified: 2026-08-27
 
-## Novelty classification
+Purpose: close the final pre-submission literature gap around strategic compatibility, interoperability, multihoming, standards adoption, and standards-coalition formation without changing the frozen Stage-8 theory.
 
-**B — DISTINCT BUT NARROW.**
+## Search scope
 
-The closest literature already contains each of the ingredients surrounding the paper's mechanism: government standardization policy, standardization unions, regional-versus-multilateral standards, coalition/core stability, costly compliance with multiple standards, private compatibility technologies, endogenous firm adoption of harmonized standards, regulatory blocs, and coalition formation with interoperability. The source-level review did **not** identify a paper that combines these ingredients in the paper's specific causal sequence: a formal regional coalition is held fixed; firms then make a strategic, standard-specific private adoption decision; a directional outsider-only bypass changes effective product-market compatibility without changing formal membership; that bypass removes the member-market exclusion component while leaving reciprocal outsider-market disadvantage intact; and the resulting continuation-payoff change alters formal coalition stability.
+The final sweep covered 2021--2026 work using combinations of:
 
-Accordingly, the safe contribution statement remains:
+- strategic / endogenous product compatibility;
+- compatibility investment and fixed compatibility costs;
+- interoperability and denial of interoperability;
+- endogenous multihoming;
+- multi-standard production and private standard adoption;
+- network-industry Cournot compatibility;
+- standards coalitions, regional standards, regulatory blocs, and coalition stability.
 
-> We identify a selective-erosion mechanism through which firms' private compatibility choices can reverse governments' ranking between regional and international standardization and can thereby alter the strict-blocking stability of formal standards coalitions.
-
-No priority claim such as "first" is warranted by this review.
-
-## Closest-paper kill tests
-
-### Gandal and Shy (2001)
-
-Gandal and Shy analyze government recognition of foreign standards in a three-country environment with network effects and conversion costs, including the endogenous formation of standardization unions. When conversion costs are sufficiently large, a two-country union may exclude the third country's standard. This is exceptionally close to the institutional and compatibility environment of the present paper.
-
-The key distinction is the private-choice margin. When a government does not recognize a foreign standard in Gandal and Shy, the foreign firm must incur the conversion/compliance cost to sell in that market. The conversion response is therefore induced by the government recognition regime rather than selected through a separate standard-specific fixed-cost adoption game. Their model does not generate a continuation-state switch between no bypass and outsider-only strategic adoption while holding the formal coalition fixed, and it does not derive the selective-erosion transformation used in the present paper.
-
-**Overlap risk: HIGH, but central mechanism not absorbed.**
-
-### Takarada, Kawabata, Yanase, and Kurata (2020)
-
-Takarada et al. develop a three-country Cournot model of national, regional, and multilateral standards and use the core to characterize standards-regime stability. Their Section 6.3 also adds fixed costs for setting up production under different standards. It is therefore the closest precedent for the combination of regional-versus-multilateral standards, coalition stability, and fixed multi-standard production costs.
-
-The fixed-cost extension does not, however, introduce a strategic firm adoption stage. Firms sell in all three markets and are assumed to produce under the standards required by the prevailing government standards regime. When two standards coexist, a firm producing under two standards incurs the fixed setup cost mechanically. There is no binary best response in which an outsider may choose the bloc standard while members decline the outsider standard, no directional outsider-only continuation state selected by a fixed-cost interval, and no change in effective compatibility while the formal coalition is held fixed.
-
-Eight-point kill test:
-
-| Question | Takarada et al. (2020) |
-|---|---|
-| Firms privately adapt after formal coalition formation? | Multi-standard production is required by the regime, not a separate strategic adoption stage. |
-| Additional-standard adoption endogenous? | No. |
-| Outsider-only directional bypass? | No. |
-| Formal membership fixed while effective compatibility changes privately? | No. |
-| Private response removes a member-specific exclusion rent? | No selective private-response decomposition. |
-| Reciprocal disadvantage remains after outsider bypass? | No corresponding directional-bypass state. |
-| Private response reverses a government ranking? | No result generated by endogenous private adoption. |
-| Private compatibility changes the stable coalition set across high/intermediate adoption-cost regions? | No. |
-
-**Kill-test result: PASS. Central novelty is not absorbed. Overlap risk: HIGH.**
+The sweep also checked older work returned as especially close to the paper's institutional structure. That step identified Economides and Skrzypacz (2003), which is retained despite predating the recent-search window because its title and mechanism make it a material claim-control antecedent.
 
 ## Source-level verification table
 
-| Citation key | Verified bibliographic record / authoritative locator | Publication status (2026-08) | Main overlap | Relation to this paper | Risk |
-|---|---|---|---|---|---|
-| `gandalShy2001` | Neil Gandal and Oz Shy, “Standardization Policy and International Trade,” *Journal of International Economics* 53(2), 363–383. DOI: https://doi.org/10.1016/S0022-1996(00)00067-2 | Published | Government recognition, conversion costs, network effects, three-country standardization unions | No separate endogenous private additional-standard adoption stage or selective-erosion stability feedback | HIGH |
-| `takaradaEtAl2020` | Yasuhiro Takarada, Yasushi Kawabata, Akihiko Yanase, and Hiroshi Kurata, “Standards Policy and International Trade: Multilateralism versus Regionalism,” *Journal of Public Economic Theory* 22(5), 1420–1441. DOI: https://doi.org/10.1111/jpet.12425 | Published | Three-country regional/multilateral standards, Cournot competition, core stability, fixed-cost extension | Fixed multi-standard production cost is regime-implied, not strategic private adoption; no outsider-only selective erosion | HIGH |
-| `kawabataTakarada2021` | Yasushi Kawabata and Yasuhiro Takarada, “Deep Trade Agreements and Harmonization of Standards,” *Southern Economic Journal* 88(1), 118–143. DOI: https://doi.org/10.1002/soej.12500 | Published | Regional versus multilateral harmonization, building/stumbling blocks, oligopoly | Government standards/tariff agreements; no endogenous private compatibility stage | MEDIUM-HIGH |
-| `barrettYang2001` | Christopher B. Barrett and Yi-Nung Yang, “Rational Incompatibility with International Product Standards,” *Journal of International Economics* 54(1), 171–191. DOI: https://doi.org/10.1016/S0022-1996(00)00082-9 | Published | Redesign costs, network effects, firm and government incentives to deviate from international standards | Establishes firm-government conflict antecedent, not coalition stability after directional private bypass | MEDIUM |
-| `klimenko2009` | Mikhail M. Klimenko, “Policies and International Trade Agreements on Technical Compatibility for Industries with Network Externalities,” *Journal of International Economics* 77(2), 151–166. DOI: https://doi.org/10.1016/j.jinteco.2008.08.005 | Published | Strategic compatibility policy, network effects, international compatibility agreements, imperfect competition | Compatibility is a government policy instrument, not a post-coalition endogenous firm adoption choice | MEDIUM-HIGH |
-| `klimenkoInteroperability2009` | Mikhail M. Klimenko, “Strategic Interoperability Standards and Trade Taxes,” *International Review of Economics & Finance* 18(4), 539–551. DOI: https://doi.org/10.1016/j.iref.2008.09.015 | Published | Government interoperability standard, trade taxes, network effects, costly compatibility-enhancing firm investment | Strong compatibility-investment antecedent, but two-country policy model with no formal standards coalition or post-formation outsider-only bypass | MEDIUM-HIGH |
-| `costinot2008` | Arnaud Costinot, “A Comparative Institutional Analysis of Agreements on Product Standards,” *Journal of International Economics* 75(1), 197–213. DOI: https://doi.org/10.1016/j.jinteco.2007.11.004 | Published | National treatment versus mutual recognition, compatibility and quality standards, Cournot duopoly | Institutional rules govern standards; no regional coalition with endogenous directional private bypass | MEDIUM |
-| `geng2019` | Difei Geng, “International Agreements on Product Standards Under Consumption Externalities: National Treatment Versus Mutual Recognition,” *Economic Inquiry* 57(3), 1284–1301. DOI: https://doi.org/10.1111/ecin.12785 | Published | Product-standards agreements, harmonization, national treatment and mutual recognition | Agreement-design antecedent, not firm-adoption/coalition-stability feedback | LOW-MEDIUM |
-| `bagwellStaiger2001` | Kyle Bagwell and Robert W. Staiger, “Domestic Policies, National Sovereignty, and International Economic Institutions,” *Quarterly Journal of Economics* 116(2), 519–562. DOI: https://doi.org/10.1162/00335530151144096 | Published | International agreements over domestic policies/standards and market access | Broad trade-agreement antecedent; no compatibility-coalition mechanism | LOW-MEDIUM |
-| `grossmanMcCalmanStaiger2021` | Gene M. Grossman, Phillip McCalman, and Robert W. Staiger, “The ‘New’ Economics of Trade Agreements: From Trade Liberalization to Regulatory Convergence?” *Econometrica* 89(1), 215–249. DOI: https://doi.org/10.3982/ECTA17536 | Published | Firm product tailoring, fixed costs, regulatory protectionism, mutual recognition and regulatory convergence | Firm design costs affect regulation, but no post-formation private compatibility adoption changing coalition stability | MEDIUM |
-| `parentiVannoorenberghe2025` | Mathieu Parenti and Gonzague Vannoorenberghe, “A Simple Theory of Deep Trade Integration,” *Journal of the European Economic Association* 23(3), 891–940. DOI: https://doi.org/10.1093/jeea/jvae046 | Published | Imperfect competition, country-specific standards, tailoring costs, regulatory cooperation/blocs | Close regulatory-bloc antecedent; private tailoring does not generate the paper's directional selective-erosion coalition-stability mechanism | MEDIUM-HIGH |
-| `maggiMrazova2024` | Giovanni Maggi and Monika Mrázová, “Harmonization...What Else? The Role for International Regulatory Agreements,” NBER Working Paper 33318. DOI: https://doi.org/10.3386/w33318 | NBER Working Paper, Dec. 2024; no journal version verified in this audit | Fixed costs of regulatory diversity, spontaneous harmonization, regulatory agreements | Shows fixed costs can reshape harmonization without an agreement; no standards-coalition stability via directional private bypass | MEDIUM-HIGH |
-| `fischerSerra2000` | Ronald Fischer and Pablo Serra, “Standards and Protection,” *Journal of International Economics* 52(2), 377–400. DOI: https://doi.org/10.1016/S0022-1996(99)00058-6 | Published | Strategic standards, fixed setup cost of producing at two standard levels | Fixed multi-standard production antecedent but not three-country coalition/private-adoption feedback | MEDIUM |
-| `schmidtSteingress2022` | Julia Schmidt and Walter Steingress, “No Double Standards: Quantifying the Impact of Standard Harmonization on Trade,” *Journal of International Economics* 137, 103619. DOI: https://doi.org/10.1016/j.jinteco.2022.103619 | Published | Harmonized standards, country-specific adaptation costs, endogenous firm adoption, trade | Strong firm-adoption antecedent; does not study formal coalition formation or selective erosion of coalition rents | MEDIUM-HIGH |
-| `farrellSaloner1992` | Joseph Farrell and Garth Saloner, “Converters, Compatibility, and the Control of Interfaces,” *Journal of Industrial Economics* 40(1), 9–35. DOI: https://doi.org/10.2307/2950625 | Published | Private converters/adapters and endogenous compatibility | Classic private-compatibility antecedent; no government standards coalition or formal stability feedback | MEDIUM-HIGH |
-| `doganogluWright2006` | Toker Doğanoglu and Julian Wright, “Multihoming and Compatibility,” *International Journal of Industrial Organization* 24(1), 45–67. DOI: https://doi.org/10.1016/j.ijindorg.2005.07.004 | Published | Multihoming as a technological substitute for compatibility; competition and welfare effects | Supports substitute language, but has no government standards coalition | MEDIUM |
-| `katzShapiro1985` | Michael L. Katz and Carl Shapiro, “Network Externalities, Competition, and Compatibility,” *American Economic Review* 75(3), 424–440. Stable identifier: https://www.jstor.org/stable/1814809 | Published | Canonical network-compatibility competition | Background only; no government coalition mechanism | LOW |
-| `besenFarrell1994` | Stanley M. Besen and Joseph Farrell, “Choosing How to Compete: Strategies and Tactics in Standardization,” *Journal of Economic Perspectives* 8(2), 117–131. DOI: https://doi.org/10.1257/jep.8.2.117 | Published | Firms' strategic compatibility choices and standards competition | Establishes firm-strategy antecedent; no formal international coalition stability | LOW-MEDIUM |
-| `hartKurz1983` | Sergiu Hart and Mordecai Kurz, “Endogenous Formation of Coalitions,” *Econometrica* 51(4), 1047–1064. DOI: https://doi.org/10.2307/1912051 | Published | Endogenous coalition structures / partition-based coalition formation | Solution-concept antecedent; present paper does not claim a new coalition concept | LOW |
-| `guoLiuNault2024` | Hong Guo, Yipeng Liu, and Barrie R. Nault, “Join Up or Stay Away? Coalition Formation for Critical IT Infrastructure,” *Information Systems Research* 35(3), 1344–1362. DOI: https://doi.org/10.1287/isre.2021.0463 | Published | Coalition formation, member-versus-outsider interoperability, post-formation coalition resource investment | Interoperability affects coalition incentives, but there is no formal standards partition followed by firm-level directional private bypass that changes effective compatibility while membership stays fixed | MEDIUM |
+| Source | Verified metadata / authoritative source | Core mechanism | Overlap with current paper | Difference controlling the claim | Manuscript location | Verdict |
+|---|---|---|---|---|---|---|
+| Buccella, Fanti & Gori (2023), “Strategic Product Compatibility in Network Industries” | *Journal of Economics* 140(2), 141--168; DOI `10.1007/s00712-023-00834-x`; Springer version of record, published 3 Aug 2023 | Cournot network duopoly; firms strategically choose compatibility; quasi-fixed compatibility costs; welfare; one-way compatibility can emerge | Very close on endogenous compatibility, Cournot, network effects, and fixed compatibility cost | No government formal standards partition; no post-government private support that leaves membership fixed; no government coalition-stability reversal | Introduction; Related Literature; claim-control matrix | **Technology / firm-game overlap; selective-erosion contribution not absorbed** |
+| Bourreau, Raizonville & Thébaudin (2026), “Interoperability Between Ad-Financed Platforms With Endogenous Multi-Homing” | *The Journal of Industrial Economics* 74(2), 197--215; DOI `10.1111/joie.70018`; Wiley version of record first published 27 Jan 2026 | Competing ad-funded platforms choose interoperability; endogenous consumer multihoming; network effects; platform asymmetry; welfare/policy | Close on interoperability as an endogenous strategic firm margin under network effects | No government standards coalition or post-coalition private compatibility feeding into formal coalition blocking/stability | Introduction; Related Literature; claim-control matrix | **Interoperability-strategy overlap; contribution not absorbed** |
+| Motta & Peitz (2025), “Denial of Interoperability and Future First-Party Entry” | *International Journal of Industrial Organization* 103, 103070; DOI `10.1016/j.ijindorg.2024.103070`; Elsevier article and University of Mannheim repository | Strategic denial of vertical interoperability; dynamic foreclosure; data-enabled network effects; compulsory access/data-sharing policy | Relevant to interoperability, exclusion, network effects, and current IJIO readership | No standards coalition; no additional-standard adoption after a government partition; no continuation-rent / coalition-stability reversal | Introduction; Related Literature; claim-control matrix | **Interoperability / exclusion overlap; contribution not absorbed** |
+| Economides & Skrzypacz (2003), “Standards Coalitions Formation and Market Structure in Network Industries” | NYU Stern Working Paper EC-03-08; official NYU archive; SSRN DOI `10.2139/ssrn.378340` | Firms choose affiliation to technical standards coalitions before oligopoly competition; network effects determine equilibrium coalition structure | Close on standards coalitions, firm compatibility choices, network effects, and oligopoly | Coalition affiliation itself is a firm-side decision. The current paper has a government formal partition first, then private support that changes effective compatibility without changing formal membership | Introduction; Related Literature; claim-control matrix | **Important standards-coalition antecedent; formal/effective-membership distinction survives** |
 
-## Search for omitted close literature
+## Kill-test question
 
-The audit also searched combinations of standards, compatibility, interoperability, regional standards, coalition stability, private adoption, multistandard production, regulatory blocs, imperfect competition, and trade agreements through August 2026. Especially relevant additions to the original claim-control matrix are Grossman, McCalman, and Staiger (2021) on regulatory convergence with product-version fixed costs, Parenti and Vannoorenberghe (2025) on regulatory cooperation/blocs with market-specific tailoring costs, Geng (2019) on product-standards agreements, Klimenko (2009, *International Review of Economics & Finance*) on strategic interoperability standards and costly compatibility-enhancing investment, and Guo, Liu, and Nault (2024) on coalition formation with interoperability in critical IT infrastructure. None supplies the full directional private-bypass-to-standards-coalition-stability mechanism.
+The audit searched for a source containing the full sequence
 
-## Claim controls after verification
+`formal government coalition -> post-coalition strategic private compatibility -> directional outsider-only bypass -> selective erosion of members' exclusion payoff -> government preference reversal -> formal coalition stability reversal`.
 
-Safe:
+No verified source in the search reproduces this complete sequence.
 
-- Government standardization choices, network effects, conversion costs, regional versus multilateral harmonization, fixed multi-standard production costs, private compatibility technologies, endogenous firm standard adoption, coalition/core stability, and interoperability-based coalition formation all have clear antecedents.
-- The paper's narrower contribution is the endogenous continuation-payoff feedback from strategic private compatibility to formal standards-coalition stability.
-- Private compatibility can be described as a technological substitute for formal harmonization only in the narrow sense defined in the model; the political-complement language refers only to the verified government-incentive cross-difference.
+Accordingly:
 
-Do not claim:
+- `BLOCKING_NOVELTY_ISSUE`: **NO**;
+- technology novelty: **LOW / expressly disclaimed**;
+- institutional-feedback novelty: **MATERIAL BUT NARROW**;
+- novelty classification: **B — DISTINCT BUT NARROW**.
 
-- first government standards model;
-- first private compatibility model;
-- first endogenous standards-adoption model;
-- first regional-versus-multilateral standards model;
-- first fixed-cost standards model;
-- first standards-coalition model;
-- first result connecting regional standards and multilateral harmonization;
-- first model combining interoperability and coalition formation;
-- general or universal political complementarity.
+## Citation-selection discipline
+
+The search returned additional work on international-standard adoption, IoT compatibility investment, and other sector-specific standardization topics. Those items were not added merely to enlarge the bibliography because they are less direct than the four sources above and do not materially change the claim boundary.
+
+The final manuscript should therefore treat the new citations as claim-controlling references, not citation padding.
+
+## Source URLs used for verification
+
+- Springer version of record: `https://doi.org/10.1007/s00712-023-00834-x`
+- Wiley version of record: `https://doi.org/10.1111/joie.70018`
+- Elsevier version of record: `https://doi.org/10.1016/j.ijindorg.2024.103070`
+- University of Mannheim repository record for Motta & Peitz: `https://madoc.bib.uni-mannheim.de/67175/`
+- NYU working-paper archive: `https://archive.nyu.edu/bitstream/2451/26158/2/3-8.pdf`
+
+Bibliographic entries used by the manuscript are stored in `paper/references.bib`.
