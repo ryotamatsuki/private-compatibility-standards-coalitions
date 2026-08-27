@@ -49,10 +49,3 @@ jobs:
 
       - name: Compile manuscript scaffold
         run: make paper
-
-      - name: Upload manuscript PDF for visual audit
-        uses: actions/upload-artifact@v4
-        with:
-          name: manuscript-pdf-visual-audit
-          path: paper/main.pdf
-          if-no-files-found: error
