@@ -1,0 +1,47 @@
+\section{私的採用均衡correspondence}
+\label{app:adoption-equilibria}
+
+本Appendixでは、Lemma~\ref{lem:private-adoption} のbest-response thresholdから含意されるdeterministic private-adoption profileを記録する。headline theoremが用いるのは、私的採用がstrict best responseによって選択され、したがってselection freeである領域だけである。ここでは、そのfocusによって何が省略され、何が省略されないかを明確にするため、より広いcorrespondenceを記載する。threshold equalityではweak best responseをcorrespondenceに残す。
+
+\subsection{地域標準化}
+
+対称的なMain Modelで、加盟国 $i,j$ と域外国 $o$ からなるSUを考える。域外国企業のbloc standard support decisionは、加盟企業によるoutsider standard decisionとは独立である。2つの意思決定は互いに重ならないdestination setへ作用するからである。\eqref{eq:su-outsider-main-threshold} より、
+\[
+a_o=
+\begin{cases}
+1,&F<2T_A,\\
+0,&F>2T_A,
+\end{cases}
+\]
+であり、$F=2T_A$ では両方のactionがoptimalである。
+
+2つの加盟企業について、$a_i,a_j\in\{0,1\}$ を域外国標準へのsupportとする。他の加盟企業が採用していないとき、非採用から採用へ変える利得は $T_U-F$ であり、他の加盟企業が採用済みなら $T_A-F$ である。したがってpure-strategy Nash conditionは
+\begin{align}
+(0,0)&\text{ is an equilibrium}\iff F\ge T_U,\label{eq:appendix-su-00}\\
+(1,1)&\text{ is an equilibrium}\iff F\le T_A,\label{eq:appendix-su-11}\\
+(1,0)\text{ and }(0,1)&\text{ are equilibria}\iff T_A\le F\le T_U.\label{eq:appendix-su-asym}
+\end{align}
+である。Equation~\eqref{eq:appendix-su-asym} が非空区間を定めるのは $T_A\le T_U$ の場合だけである。逆に $T_U<T_A$ なら、$T_U<F<T_A$ で対称な2つのpure profile $(0,0)$ と $(1,1)$ の両方がbest-response conditionを満たす。したがってcanonical modelは、加盟企業のadoption gameにstrategic complementarityまたはsubstitutabilityというglobal labelを課さない。適切な記述は、それ以外には制約されていない $T_A$ と $T_U$ の順序関係に依存する。
+
+独立な域外国企業の意思決定と \eqref{eq:appendix-su-00}--\eqref{eq:appendix-su-asym} を組み合わせることで、SUのpure-strategy adoption correspondenceが得られる。特にMain intermediate region
+\[
+F_L<F<2T_A,
+\qquad F_L=\max\{T_W,T_A\},
+\]
+はselection freeである。$T_W>T_U$ なので、この領域では $F>T_U$ かつ $F>T_A$ であり、$(a_i,a_j)=(0,0)$ が一意のmember profileとなる一方、域外国企業はstrictly adoptsする。したがって一意のdeterministic continuation stateは域外国企業のみの採用である。$F_L<2T_A$ の下で $F>2T_A$ なら、3社すべてが厳格に非採用を選ぶ。
+
+\subsection{各国別標準}
+
+SWの下でtarget standard $k$ を固定し、$i,j\ne k$ を2つの外国企業とする。$a_i^k,a_j^k\in\{0,1\}$ をstandard $k$ のadoptionとする。ライバルが採用していないときの採用利得は $T_W-F$、ライバル採用後は $T_A-F$ である。したがって、
+\begin{align}
+(0,0)&\text{ is an equilibrium}\iff F\ge T_W,\label{eq:appendix-sw-00}\\
+(1,1)&\text{ is an equilibrium}\iff F\le T_A,\label{eq:appendix-sw-11}\\
+(1,0)\text{ and }(0,1)&\text{ are equilibria}\iff T_A\le F\le T_W.\label{eq:appendix-sw-asym}
+\end{align}
+である。$T_W<T_A$ なら、代わりに区間 $T_W<F<T_A$ で対称なpure profile $(0,0)$ と $(1,1)$ の両方が成立する。canonical theoryは $T_A$ と $T_W$ の順序関係を課さない。
+
+国内市場が分断され、各追加標準が加算的な固定費用を持つため、global SW pure-strategy correspondenceは3つのtarget-standard subgameのCartesian productである。この分解は正確である。standard $k$ の採用はmarket $k$ の企業の営業利益ブロックだけを変え、1つの $F$ を要する。他の国内標準の採用は別のdestinationへ作用し、別の固定費用を伴う。
+
+headline intermediate regionは $F>F_L\ge T_W$ かつ $F>F_L\ge T_A$ を満たす。したがって、すべてのSW target-standard subgameで $(0,0)$ が一意の結果である。high-$F$ regionも同じno-adoption continuationを持つ。国際標準化は1つの正式標準しか含まないため、additional-standard adoption decisionがない。
+
+上記のcorrespondenceは完全性のために含めるが、Main stability statementはいずれも、headline外の複数のadoption equilibriumから1つを選択することには依存しない。Theorem~\ref{thm:formal-coalition-stability} が用いる両方のfixed-cost regionでは、関連するすべてのprivate actionがstrict best responseである。したがって、headline外の領域でrandomizationを許しても、Main theoremで用いるcontinuation stateは変わらない。

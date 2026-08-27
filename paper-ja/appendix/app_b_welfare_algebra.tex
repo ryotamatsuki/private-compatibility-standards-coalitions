@@ -1,0 +1,178 @@
+\section{厚生比較の符号certificate}
+\label{app:welfare}
+
+本Appendixでは、Section~\ref{sec:coalition-stability} で用いるcanonical welfare comparisonについて解析的なsign certificateを与える。これらはStage-8 modelにおけるfrozen relationshipである。以下の計算はnumerical samplingに依存するのではなく、domain全体での符号の根拠を明示する。
+
+次を再掲する。
+\begin{align*}
+W^{IS}&=K_I+3P,
+& W_M^{SU,N}&=K_M+2A+C,\\
+W_O^{SU,N}&=K_O+2B+D,
+& W^{SW}&=K_W+H+2S.
+\end{align*}
+修正済みのinternational-standardization expressionは
+\[
+W^{IS}=\frac{3(5-2v)}{32(1-v)^2}.
+\]
+である。以下のすべての分母はcanonical domain上で厳格に正である。
+
+\subsection{SU加盟国と各国別標準の比較}
+
+scaled welfare gapを
+\begin{align}
+N_{MS}(c,v)
+&\equiv 32(2-3v)^2\left(W_M^{SU,N}-W^{SW}\right)\notag\\
+&=-216c^2v^2+264c^2v-60c^2
++108cv^2-144cv+56c
+-99v^2+84v.
+\label{eq:appendix-n-ms}
+\end{align}
+と定義する。$c$ に関するcurvatureは
+\[
+\frac{\partial^2N_{MS}}{\partial c^2}
+=-24(18v^2-22v+5)<0,
+\]
+である。$18v^2-22v+5$ は $0<v<1/4$ で減少し、$v=1/4$ で $5/8$ だからである。したがって、許容される $c$ 区間のclosure上のminimumはendpointで達成される。$c=0$ では
+\[
+N_{MS}(0,v)=3v(28-33v)>0.
+\]
+である。$c_{\max}(v)=(1-3v)/[3(1-v)]$ では
+\[
+N_{MS}(c_{\max},v)
+=-\frac{p_{MS}(v)}{3(1-v)^2},
+\]
+であり、ここで
+\[
+p_{MS}(v)=621v^4-1206v^3+729v^2-92v-36.
+\]
+である。$0\le v\le1/4$ では $v^4\le v^2/16$ であり、項 $-1206v^3$ は非正なので、
+\[
+p_{MS}(v)
+\le \frac{12285}{16}v^2-92v-36.
+\]
+を得る。右辺の二次式はconvexで、$[0,1/4]$ の両endpointで負である。$v=1/4$ では $-2819/256$ である。したがって $p_{MS}(v)<0$ であり、
+\begin{equation}
+\boxed{W_M^{SU,N}>W^{SW}.}
+\label{eq:appendix-su-member-gt-sw}
+\end{equation}
+を得る。
+
+\subsection{国際標準化と各国別標準の比較}
+
+同様に、
+\begin{align}
+N_{IS}(c,v)
+&\equiv 32(1-v)^2\left(W^{IS}-W^{SW}\right)\notag\\
+&=-28c^2v^2+56c^2v-28c^2
++20cv^2-40cv+20c
+-15v^2+24v.
+\label{eq:appendix-n-is}
+\end{align}
+とする。
+\[
+\frac{\partial^2N_{IS}}{\partial c^2}
+=-56(1-v)^2<0,
+\]
+なので、その $c$ に関するminimumもendpointにある。endpoint valueは
+\[
+N_{IS}(0,v)=3v(8-5v)>0
+\]
+および
+\[
+N_{IS}(c_{\max},v)
+=\frac{32+144v-207v^2}{9}>0.
+\]
+である。最後の不等式は $v<1/4$ から直ちに従う。$207v^2<207/16<32$ であり、$144v>0$ だからである。したがって、
+\begin{equation}
+\boxed{W^{IS}>W^{SW}.}
+\label{eq:appendix-is-gt-sw}
+\end{equation}
+である。
+
+\subsection{国際標準化とSU域外国の比較}
+
+最後に、
+\begin{align}
+N_{IO}(c,v)
+&\equiv 32(1-v)^2(2-3v)^2
+\left(W^{IS}-W_O^{SU,N}\right).
+\label{eq:appendix-n-io-definition}
+\end{align}
+と定義する。exact polynomialは
+\begin{align}
+N_{IO}(c,v)
+={}&-144c^2v^4+576c^2v^3-912c^2v^2+672c^2v-192c^2\notag\\
+&+288cv^4-912cv^3+1072cv^2-560cv+112c\notag\\
+&-252v^4+666v^3-537v^2+132v.
+\label{eq:appendix-n-io}
+\end{align}
+である。そのcurvatureは
+\[
+\frac{\partial^2N_{IO}}{\partial c^2}
+=-96(1-v)^2(3v^2-6v+4)<0.
+\]
+である。$c=0$ では
+\[
+N_{IO}(0,v)
+=-3v\,p_0(v),
+\qquad
+p_0(v)=84v^3-222v^2+179v-44.
+\]
+となる。導関数 $p_0'(v)=252v^2-444v+179$ は $[0,1/4]$ 上で減少し、$v=1/4$ でも $335/4$ と正である。したがって $p_0$ は増加するが、$p_0(1/4)=-189/16<0$ であるから、$N_{IO}(0,v)>0$ である。
+
+$c$ の上限境界では、
+\[
+N_{IO}(c_{\max},v)
+=-\frac{p_1(v)}{3},
+\]
+であり、
+\[
+p_1(v)=324v^4-990v^3+843v^2-92v-48.
+\]
+である。$v^4\le v^2/16$ を用い、非正の三次項を落とすと、
+\[
+p_1(v)
+\le \frac{3453}{4}v^2-92v-48.
+\]
+となる。このbounding quadraticはconvexで、$[0,1/4]$ の両endpointで負である。$v=1/4$ では $-1091/64$ である。したがって $p_1(v)<0$ であり、$N_{IO}$ の上限境界値は正である。$c$ に関するconcavityから、
+\begin{equation}
+\boxed{W^{IS}>W_O^{SU,N}.}
+\label{eq:appendix-is-gt-su-outsider}
+\end{equation}
+を得る。
+
+\subsection{迂回後の域外国利得差}
+\label{app:j-positive}
+
+Section~\ref{sec:coalition-stability} では
+\[
+J=K_I+P-K_O-D,
+\]
+と定義したので、$W^{IS}-W_O^{SU,O}=J+F$ である。迂回後の域外国の厳格な順位付けを確立するには $J>0$ を示せば十分である。$J$ に正の分母を掛けると、符号同値な分子
+\begin{align}
+N_J(c,v)
+={}&-48(1-v)^2c^2
++(48v^3-80v^2+16v+16)c\notag\\
+&+v(68-269v+318v^2-108v^3).
+\label{eq:appendix-j-numerator}
+\end{align}
+を得る。$v$ を固定すると、
+\[
+\frac{\partial^2N_J}{\partial c^2}=-96(1-v)^2<0.
+\]
+なので $N_J$ は $c$ についてconcaveである。したがって、許容される $c$ 区間のclosure上のminimumはendpointにある。$c=0$ と $c=c_{\max}(v)$ では、
+\begin{align}
+N_J(0,v)
+&=v(68-269v+318v^2-108v^3),\notag\\
+N_J(c_{\max},v)
+&=\frac v3(284-1095v+1098v^2-324v^3).
+\label{eq:appendix-j-endpoints}
+\end{align}
+である。括弧内の両polynomialは $0<v<1/4$ で減少し、$v=1/4$ でもそれぞれ $303/16$ と $1181/16$ で正である。したがって $N_J>0$ であり、ゆえに
+\begin{equation}
+\boxed{J>0.}
+\label{eq:appendix-j-positive}
+\end{equation}
+である。$F>0$ なので、域外国企業のみの継続状態が関連する場合、canonical domain全体で $W^{IS}>W_O^{SU,O}$ が従う。
+
+Equations~\eqref{eq:appendix-su-member-gt-sw}--\eqref{eq:appendix-j-positive} は、strict-blocking analysisで使用した符号比較そのものである。symbolic verification scriptは、manuscript textとは独立に、scaled-polynomial representation、curvature expression、endpoint identityを確認する。
