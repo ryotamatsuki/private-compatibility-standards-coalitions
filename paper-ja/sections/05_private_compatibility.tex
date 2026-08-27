@@ -1,0 +1,137 @@
+\section{私的互換性の意思決定}
+\label{sec:private-compatibility}
+
+本節では、Section~\ref{sec:product-market} のCournot利益ブロックを用いて私的採用段階を解く。正式分割は所与とする。企業は、他の正式標準のいずれかを追加的にサポートするため、その標準について固定費用 $F$ を一度支払うことができ、その後は採用した標準が適用されるすべての市場でそれを利用できる。この固定的な技術投資は、ローカル標準をサポートしていない市場で販売する単位ごとに発生する限界適応費用 $c$ とは異なる。生産物市場は分断され、営業利益は仕向地を通じて加算されるため、私的採用の誘因は、検証済み利益ブロックの差として表すことができる。これらの意思決定によって正式なcoalition membershipが変更されることはない。この表現は、離散的な投資問題をCournot段階からも分離する。採用profileを所与とすれば、Section~\ref{sec:product-market} が各仕向地における関連営業利益をすでに与えているので、企業は採用後の影響を受けるブロックの合計と採用前の対応ブロックの合計を比較し、新たにサポートする標準ごとに1つの固定費用を差し引けばよい。生産物市場の数量選択を採用段階で再び解く必要はない。このblock-difference methodにより、標準の地理的範囲を明示し、市場単位の利益増加と標準単位の固定費用を混同することを避けられる。
+
+国際標準化の下では、$\rho^{IS}$ は1つの正式標準のみを含み、すべての企業がそれを生来的にサポートする。したがって、ISの下では追加標準の採用意思決定は存在しない。この不在は技術的なものであり、$F$ が高いから生じるものではない。
+
+\subsection{採用利得と閾値の記法}
+\label{subsec:private-thresholds}
+
+関連する採用誘因は、3つの市場単位の利益差によって要約できる。
+\begin{equation}
+    T_A\equiv P-B,
+    \qquad
+    T_U\equiv A-C,
+    \qquad
+    T_W\equiv A-S.
+    \label{eq:private-threshold-definitions}
+\end{equation}
+各差には明確な採用前後の解釈がある。$T_A$ は、他の2社がすでに互換である状況で、排除されている高費用のsingletonがローカル標準を採用したときの利得であり、その営業利益ブロックは $B$ から $P$ に変化する。$T_U$ は、地域連合の加盟企業が域外国市場で域外国の標準を単独採用したときの利得であり、そのブロックは $C$ から $A$ に変わる。$T_W$ は、各国別標準の下で外国企業が対象国の標準を単独採用したときの利得であり、そのブロックは $S$ から $A$ に変わる。したがって $T_A$、$T_U$、$T_W$ は、生産物市場均衡から内生的に生じる利益差であり、外生的なswitching-cost parameterではない。これらは市場単位の十分統計量である。関連する採用前状態が分かれば、採用による変動利益の収益は、この3つの対象のいずれかで要約される。3者を区別する必要があるのは、一般に、最初に採用する企業はライバルが採用した後に採用する企業とは異なるCournot構成から出発するからである。特に、$T_U$ と $T_W$ は2つの異なるbaseline regimeからの単独移行を表すのに対し、$T_A$ は排除状態から完全互換へ移る共通の後発採用を表す。
+
+canonical expressionから
+\begin{equation}
+    T_U
+    =\frac{3c(2-c)(1-v)}{4(2-3v)^2},
+    \label{eq:TU-closed-form}
+\end{equation}
+および
+\begin{equation}
+    T_W-T_U
+    =\frac{v(1-2c)^2(8-9v)}{16(2-3v)^2}>0.
+    \label{eq:TW-minus-TU}
+\end{equation}
+を得る。したがって、canonical domain上で $T_W>T_U>0$ である。$T_A$ の正値性も同domainから解析的に従う。排除された企業の数量 $q_B$ は正であり、
+\begin{equation}
+    \frac{\partial q_B}{\partial c}
+    =-\frac{3(1-v)}{2(2-3v)}<0,
+    \label{eq:qB-c-derivative}
+\end{equation}
+を満たすので、$B=q_B^2$ は $c$ とともに減少する。$c=0$ では、
+\begin{equation}
+    \left.(P-B)\right|_{c=0}
+    =\frac{v(36v^2-51v+16)}{16(1-v)(2-3v)^2}>0.
+    \label{eq:TA-at-zero-c}
+\end{equation}
+である。分子の二次式は $0<v<1/4$ で減少し、$v=1/4$ において $11/2$ である。したがって、許容されるすべての $c>0$ について $T_A>0$ である。$T_A$ と $T_U$、または $T_W$ との間に、これ以外の順序関係は課さない。
+
+\subsection{地域標準化}
+\label{subsec:private-su}
+
+地域coalition $C=\{i,j\}$ と域外国 $o$ を考える。域外国企業はブロック標準を採用できる。各coalition加盟国市場で、採用前の営業利益ブロックは $B$、採用後のブロックは $P$ である。ブロック標準を1回採用すれば両加盟国市場をカバーするため、域外国企業は $F$ を1回だけ支払い、2つの仕向地で営業利益の増加を得る。一般の市場質量では、
+\begin{equation}
+    \Delta_o^{SU}
+    =(m_i+m_j)(P-B)-F
+    =(m_i+m_j)T_A-F.
+    \label{eq:su-outsider-adoption-gain}
+\end{equation}
+である。対称的なMain Modelでは、
+\begin{equation}
+    \Delta_o^{SU}=2T_A-F,
+    \qquad
+    a_o=1\iff F<2T_A.
+    \label{eq:su-outsider-main-threshold}
+\end{equation}
+となる。$F=2T_A$ では域外国企業は無差別である。
+\eqref{eq:su-outsider-main-threshold} の係数2は、ブロック標準の地理的範囲の効果であり、固定採用費用を二重に計上したものではない。
+
+2つのcoalition加盟企業は、域外国標準をめぐる別のbinary adoption subgameに直面する。まず、加盟企業 $j$ が採用していないとする。加盟企業 $i$ が単独採用すると、域外国市場における営業利益ブロックは $C$ から $A$ に変わる。したがって、
+\begin{equation}
+    \Delta_i^{SU}(a_j=0)
+    =m_o(A-C)-F
+    =m_oT_U-F.
+    \label{eq:su-member-unilateral-gain}
+\end{equation}
+である。Main Modelでは、$F<T_U$ のとき $i$ は採用する。これに対し、加盟企業 $j$ がすでに域外国標準を採用している場合、加盟企業 $i$ はその市場で排除された高費用のsingletonとなる。その後の採用によって利益は $B$ から $P$ に変化するため、
+\begin{equation}
+    \Delta_i^{SU}(a_j=1)
+    =m_o(P-B)-F
+    =m_oT_A-F.
+    \label{eq:su-member-post-rival-gain}
+\end{equation}
+となる。対応するMain-Model thresholdは $F<T_A$ である。このように、ライバルの先行採用は関連する採用前の生産物市場上の位置を変え、それに応じてbest responseを規律する利益差も変える。域外国企業によるブロック標準の意思決定と、加盟企業による域外国標準のsubgameは、それ以外の点では分離可能である。前者は2つの加盟国市場における域外国企業の位置を変えるのに対し、後者は域外国市場における加盟企業の位置だけを変える。また、各意思決定は異なる追加的な正式標準に関するものであり、それぞれ固有の固定費用を伴う。このため、域外国企業の閾値は $T_A$ を2つ分集計する一方、加盟企業の閾値は域外国市場1つの利得のみを含む。ここでは加盟企業のsubgameを世界的にstrategic complementarityまたはsubstitutabilityと分類しない。そのためには、ここで課していない $T_A$ と $T_U$ の順序関係が必要だからである。以下で用いる領域外の完全な均衡correspondenceは \ref{app:adoption-equilibria} に委ねる。
+
+\subsection{各国別標準}
+\label{subsec:private-sw}
+
+$\rho^{SW}$ の下では、各国が独自の正式標準を持つ。対象国 $k$ を固定し、$i,j\neq k$ を2つの外国企業とする。どちらの外国企業も国 $k$ の標準を採用していない場合、企業 $i$ の単独採用により対象市場での利益は $S$ から $A$ に変わる。したがって、
+\begin{equation}
+    \Delta_i^{SW}(a_j^k=0)
+    =m_k(A-S)-F
+    =m_kT_W-F.
+    \label{eq:sw-unilateral-gain}
+\end{equation}
+である。Main Modelでは単独採用の閾値は $F<T_W$ である。外国企業 $j$ がすでに対象標準を採用している場合、残る外国企業は排除された高費用のsingletonとなる。その採用により利益は $B$ から $P$ に変わる。
+\begin{equation}
+    \Delta_i^{SW}(a_j^k=1)
+    =m_k(P-B)-F
+    =m_kT_A-F.
+    \label{eq:sw-post-rival-gain}
+\end{equation}
+したがって、Main Modelでのpost-rival thresholdは $F<T_A$ である。
+
+このtarget-standard decompositionが正確なのは、市場が分断され、固定費用が追加標準ごとに加算されるからである。SWの下で国 $k$ の標準を採用すると、市場 $k$ の生産物市場構成が変わり、その標準について $F$ を支払う。他国の標準に関する採用意思決定は、別のtarget-standard subgameを構成する。企業は原理的には両方の外国標準をサポートできるが、これら2つの投資は、標準固有の固定費用を2つと、対応する仕向地固有の営業利益変化を単純に加算するだけである。したがって、各target standardについてbinary subgameを解けば、企業の世界全体の私的採用利得を再構成するのに十分である。同じ $T_A$ がSUとSWの両方に現れるのは、1社のライバルが採用した後、残る非採用企業が同じ排除singletonの利益ブロック $B$ から出発し、同じ完全互換ブロック $P$ に到達するからである。この繰り返し現れる閾値は、企業の採用技術に関する追加仮定ではなく、同じ生産物市場状態が繰り返されることの帰結である。
+
+\subsection{関連する固定費用領域}
+\label{subsec:private-regions}
+
+後続分析のため、
+\begin{equation}
+    F_L\equiv\max\{T_W,T_A\},
+    \qquad
+    F^\ast\equiv2T_A.
+    \label{eq:private-F-boundaries}
+\end{equation}
+と定義する。下限 $F_L$ は、$T_W$ によって規律されるSWでの単独採用と、$T_A$ によって規律されるライバル採用後のすべての採用を停止させるのに十分大きい。上限 $F^\ast$ は、SU域外国企業が2か国ブロック標準を採用する閾値である。canonical parameter domainだけから $F_L<F^\ast$ が従うわけではない。以下の特徴付けは、この追加的な順序関係を条件とする。
+
+もし
+\begin{equation}
+    F_L<F<F^\ast,
+    \label{eq:intermediate-F-region}
+\end{equation}
+なら、SU域外国企業は $F<2T_A$ なので採用する。coalition加盟企業は域外国標準を採用しない。$F>F_L\ge T_A$ により他の加盟企業が採用した後の採用が排除され、$F>F_L\ge T_W>T_U$ により単独採用も排除される。したがって、各SUにおける一意の関連私的採用パターンは域外国企業のみの採用である。この記述はselection freeである。各加盟企業は他方の加盟企業の行動にかかわらず非採用を厳格に選好し、域外国企業は採用を厳格に選好する。SWの下では、$F>T_W$ が単独でのtarget-standard adoptionを排除し、$F>T_A$ がライバル採用後の採用を排除する。したがって、各外国企業にとって、ライバルが採用するかどうかにかかわらず非採用がstrict best responseとなり、すべてのtarget-standard subgameは一意の非採用結果を持つ。ISには追加標準の意思決定がない。これに対し、同じ順序関係 $F_L<F^\ast$ の下で $F>F^\ast$ なら、$F>2T_A$、$F>T_A$、$F>T_W$ である。したがってSUでもSWでも私的採用は生じない。この段階における2つの境界の役割は純粋に技術的である。政府比較を行う前に、私的な継続状態を分けている。
+
+\begin{lemma}[私的採用の誘因と関連閾値]
+\label{lem:private-adoption}
+canonical parameter domain上で、$T_A,T_U,T_W>0$ かつ $T_W>T_U$ である。対称的なMain Modelでは、SUの域外国企業は $F<2T_A$ の場合かつその場合に限りブロック標準を採用する。SU加盟企業は、他の加盟企業が採用していないとき $F<T_U$ なら域外国標準を採用し、他の加盟企業が採用しているとき $F<T_A$ なら採用する。SWの下では、外国企業はライバル外国企業が採用していないとき $F<T_W$ なら対象国標準を採用し、ライバルが採用しているとき $F<T_A$ なら採用する。$F_L<F^\ast$ が成立するとき、すべての $F\in(F_L,F^\ast)$ は各SUで域外国企業のみの採用を生じさせ、SWまたはISでは私的採用を生じさせない。同じ順序関係の下で $F>F^\ast$ なら、SUまたはSWで私的採用は生じない。
+\end{lemma}
+
+\begin{proof}
+Equation~\eqref{eq:TU-closed-form} は、canonical domainが $0<c<1/3<2$ および $0<v<1$ を含意するため厳格に正である。Equation~\eqref{eq:TW-minus-TU} は、$v>0$、$c<1/3$ から $1-2c>0$、さらに $v<1/4$ から $8-9v>0$ なので厳格に正である。したがって $T_W>T_U>0$ である。$T_A$ について、\eqref{eq:qB-c-derivative} と $q_B$ の正値性は $B=q_B^2$ が $c$ とともに低下することを意味する。Equation~\eqref{eq:TA-at-zero-c} は、$36v^2-51v+16$ が許容区間で減少し、その上端でも正であるため正である。したがって $T_A>0$ である。Equations~\eqref{eq:su-outsider-adoption-gain}--\eqref{eq:sw-post-rival-gain} は、固定費用を差し引いた後の4つの関連する採用前後の営業利益差を与える。$m_1=m_2=m_3=1$ を課すと、記載したbest-response thresholdが得られる。最後に、\eqref{eq:private-F-boundaries} と $T_W>T_U$ は、\eqref{eq:intermediate-F-region} で用いたすべてのstrict inequalityを含意する。high-$F$ の主張は、$F>2T_A>T_A$ と、$2T_A=F^\ast>F_L\ge T_W$ から従う。
+\end{proof}
+
+閾値等号、すなわち $F=2T_A$、$F=T_U$、$F=T_A$、$F=T_W$ では、関連企業は無差別である。Section~\ref{sec:model} のタイミングと整合的に、私的採用均衡はこの場合、恣意的なselection ruleを課すのではなくcorrespondenceとして理解する。Table~\ref{tab:thresholds} は、本文で用いる採用意思決定と閾値をまとめる。
+
+\input{tables/generated/table_thresholds}
+
+したがって私的採用は、標準固有の固定技術費用と、互換性および限界非互換費用の除去によって生じる営業利益増加とを比較する。1つの正式標準がブロックをカバーする場合、その収益は複数の仕向地に及び得る。また、ライバルが採用すると企業の採用前Cournot上の位置が変わるため、企業の誘因も変わり得る。これらの技術的選択はいずれも正式分割 $\rho$ を変更しない。これらの私的採用結果は、政府が正式な標準化レジームを比較するときに予想する生産物市場構成を決める。Section~\ref{sec:selective-erosion} では、関連する私的応答がこれらの継続比較をどのように変えるかを分析する。

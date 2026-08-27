@@ -1,0 +1,207 @@
+\section{地域coalition rentの選択的侵食}
+\label{sec:selective-erosion}
+
+Section~\ref{sec:private-compatibility} では、企業が追加的な正式標準を私的にサポートする条件を明らかにした。本節では、結果として得られる私的採用状態を所与とし、それが国際標準化と比較した地域標準化からの政府の継続利得をどのように変えるかを考える。この比較は、企業レベルの互換性投資を政府レベルの正式標準化レジームの順位付けへ結び付けるメカニズムを分離する。以下では、地域coalition $C=\{i,j\}$ と域外国 $o$ を考え、
+\begin{equation}
+    M_C\equiv m_i+m_j
+    \label{eq:coalition-market-mass}
+\end{equation}
+をブロック標準がカバーする市場の総質量とする。これは記帳のための記法にすぎず、対称的なMain Modelでは引き続き $m_i=m_j=m_o=1$ を課す。
+
+以下の比較を通じ、正式分割は $\rho_{ij}^{SU}$ のままである。私的採用は企業が生産物市場で使用できる標準を変えるが、政府coalitionへの加盟を変えない。国民厚生はSection~\ref{sec:model} と同じく $W_i=CS_i+\Pi_i$ であり、$\Pi_i$ は自社の採用費用を控除した国 $i$ の国内企業の世界全体の利益である。したがって、域外国企業がブロック標準をサポートするため $F$ を支払っても、その固定費用はcoalition加盟国 $i$ の厚生には直接入らない。加盟国 $i$ にとって、$F$ はどの私的採用の継続状態が選ばれるかを通じて作用する。
+
+\subsection{政府の継続利得}
+\label{subsec:selective-payoffs}
+
+まず、私的迂回がない地域coalitionを考える。国 $i$ の消費者はcoalition加盟国市場にいるため、消費者余剰ブロック $K_M$ を得る。その国内企業は、ブロック標準がカバーする両市場でcoalition加盟企業利益ブロック $A$ を得て、域外国市場ではブロック企業利益ブロック $C$ を得る。したがって、一般の市場質量では継続利得は
+\begin{equation}
+    W_i^{SU,N}
+    =m_iK_M+M_CA+m_oC,
+    \label{eq:welfare-su-member-no-bypass-general}
+\end{equation}
+である。上付きの $N$ はno-bypass continuation stateを表し、新たな正式レジームを意味しない。
+
+国際標準化の下では、3社すべてが共通の正式標準をサポートし、3つの仕向地はいずれも完全互換となる。国 $i$ の消費者は $K_I$ を得て、その国内企業はすべての市場で $P$ を得る。したがって、
+\begin{equation}
+    W_i^{IS}
+    =m_iK_I+(M_C+m_o)P.
+    \label{eq:welfare-is-general}
+\end{equation}
+である。\eqref{eq:welfare-su-member-no-bypass-general} から \eqref{eq:welfare-is-general} を差し引くと、
+\begin{align}
+    W_i^{SU,N}-W_i^{IS}
+    & =m_i(K_M-K_I)+M_C(A-P)+m_o(C-P) \notag\\
+    & =m_i(K_M-K_I)+M_C(A-P)-m_o(P-C).
+    \label{eq:su-no-bypass-direct-gap}
+\end{align}
+を得る。この式は、地域的な取り決めから生じる2つの経済的に異なる帰結を分離している。最初の2項は、coalitionの共通標準がカバーする市場だけから生じる。これらは、地域的な排除が、保護された加盟国市場における国内消費者余剰と国内企業利益の双方をどのように変えるかを捉える。最後の項はcoalition外市場から生じる。そこでは同じ国内企業が完全互換benchmarkに比べて技術的な不利益を受け続ける。私的採用がこれらのmarginに対称的に作用するとは限らないため、両者を分離しておくことが重要である。
+
+\subsection{純排除余剰と相互的不利益}
+\label{subsec:selective-decomposition}
+
+coalition加盟国市場における加盟国の\emph{純排除余剰（net exclusion surplus）}を
+\begin{equation}
+    \mathscr E_i
+    \equiv
+    m_i(K_M-K_I)+M_C(A-P).
+    \label{eq:exclusion-surplus}
+\end{equation}
+と定義する。第1項は、自国市場が完全互換市場ではなく加盟国市場であるときの国 $i$ の消費者余剰の変化である。第2項は、すべてのcoalition加盟国市場を通じた国内企業の営業利益の変化である。したがって $\mathscr E_i$ はnet objectであり、ブロック標準によって保護される市場で生じる消費者側と生産者側の帰結を合わせたものである。「surplus」という名称は符号を仮定するものではない。特に、canonical parameter domainの全域で $\mathscr E_i>0$ と仮定するわけではない。また、$\mathscr E_i$ は域外国から加盟国へのtransferでもない。これはcoalitionがカバーする市場で生じる加盟国政府自身の国民厚生差であり、国 $i$ の消費者余剰と、両加盟国仕向地における国内企業の世界利益を集計している。この会計から、なぜ利益部分には市場質量 $M_C$ が掛かる一方、消費者部分には $m_i$ のみが掛かるのかも明らかである。政府 $i$ は自国消費者だけを数えるが、国内企業の利益はすべての仕向地について数える。
+
+これとは別に、域外国市場におけるcoalition加盟国の\emph{相互的不利益（reciprocal disadvantage）}を
+\begin{equation}
+    \mathscr D_i
+    \equiv
+    m_o(P-C).
+    \label{eq:reciprocal-disadvantage}
+\end{equation}
+と定義する。SUの下では、加盟国の国内企業はブロック標準の下で域外国市場に供給し、適応費用 $c$ を負担するため、その市場で $C$ を得る。ISの下では、同じ企業は $P$ を得る。したがって $P-C$ は、coalition加盟企業が直面する相互的非互換性に伴う市場単位の利益上の不利益であり、$m_o(P-C)$ はそれが国 $i$ の国民厚生に与える寄与である。calligraphicな $\mathscr D_i$ は、Section~\ref{sec:product-market} の生産物市場利益ブロック $D$ とは異なる。
+
+\eqref{eq:exclusion-surplus} と \eqref{eq:reciprocal-disadvantage} を用いると、私的迂回前の比較は
+\begin{equation}
+    \boxed{
+    W_i^{SU,N}-W_i^{IS}
+    =\mathscr E_i-\mathscr D_i.
+    }
+    \label{eq:selective-before}
+\end{equation}
+となる。相互的不利益項には、primitivesで表した透明な符号条件がある。Cournotブロックから
+\begin{equation}
+    P-C
+    =
+    \frac{
+    [4c(1-v)-v]
+    [4(1-c)-v(5-4c)]
+    }{
+    16(1-v)(2-3v)^2
+    }.
+    \label{eq:p-minus-c-factorization}
+\end{equation}
+である。分子の第2因子は $c$ について減少する。canonical upper bound $c=(1-3v)/[3(1-v)]$ では、それは $8/3-v>0$ なので、許容領域全体で厳格に正である。分母も正である。域外国市場の質量が正なら、
+\begin{equation}
+    \boxed{
+    \mathscr D_i>0
+    \iff
+    P>C
+    \iff
+    c>\frac{v}{4(1-v)}.
+    }
+    \label{eq:reciprocal-disadvantage-condition}
+\end{equation}
+となる。この条件は、域外国市場の損失が実際に正である場合を特定するものであり、ネットワーク効果が選択的侵食メカニズムに必要だという主張ではない。また、以下で用いる符号制約が、望む順位付けの単なる言い換えではないことも示している。条件はprimitives $c$ と $v$ で記述され、順位逆転にはこれに加えて独立に定義された加盟国市場対象 $\mathscr E_i$ がその損失を上回ることが必要である。
+
+\subsection{域外国企業のみの私的迂回}
+\label{subsec:selective-outsider-bypass}
+
+次に、域外国企業がブロック標準を私的にサポートする一方、coalition加盟企業は域外国標準をサポートしないとする。Section~\ref{sec:private-compatibility} は、これが関連するSUの継続状態となる固定費用領域を特定している。ブロック標準を1回採用すれば両加盟国市場をカバーする。それぞれの市場で域外国企業は2つの加盟企業と互換となり、限界適応費用も負わなくなる。したがって、生産物市場構成は完全互換となる。国 $i$ の消費者余剰ブロックは $K_M$ から $K_I$ へ変わり、その国内企業のcoalition加盟国市場での利益ブロックは $A$ から $P$ へ変わる。
+
+この変化には方向性がある。coalition加盟企業は域外国の正式標準を採用していないため、加盟国 $i$ の国内企業は域外国市場で引き続き高費用のブロック標準供給者である。その域外国市場の利益ブロックは $C$ のままである。したがって、私的互換性は、coalition市場における域外国企業の排除を取り除く一方、すべての仕向地を対称的にISの構成へ変換するものではない。正式分割も $\rho_{ij}^{SU}$ のままである。この区別は解釈上重要である。域外国企業は正式加盟を得ることなく、またcoalition加盟企業に自国市場での相互採用を強制することなく、coalition標準を技術的に複製できる。本モデルはしたがって、実効的な生産物市場の互換性と制度的調和を分離する。前者は企業レベルで一方的に変化し得るが、後者は政府レベルで固定されたままである。
+
+したがって、加盟国 $i$ の迂回後の継続利得は
+\begin{equation}
+    W_i^{SU,O}
+    =m_iK_I+M_CP+m_oC,
+    \label{eq:welfare-su-member-outsider-bypass-general}
+\end{equation}
+となる。ここで $O$ は域外国企業のみの私的採用を表す。域外国企業が支払う固定費用は \eqref{eq:welfare-su-member-outsider-bypass-general} に現れない。外国企業利益は国 $i$ の国民厚生に含まれないからである。ISと直接比較すると、
+\begin{align}
+    W_i^{SU,O}-W_i^{IS}
+    & =m_iK_I+M_CP+m_oC
+       -\left[m_iK_I+(M_C+m_o)P\right] \notag\\
+    & =m_o(C-P)
+     =-\mathscr D_i.
+    \label{eq:selective-after}
+\end{align}
+を得る。したがって、域外国企業のみの迂回は加盟国市場の構成要素 $\mathscr E_i$ をすべて取り除く一方、相互的不利益 $\mathscr D_i$ を残す。同値に、
+\begin{equation}
+    \boxed{
+    W_i^{SU,O}-W_i^{SU,N}
+    =-\mathscr E_i.
+    }
+    \label{eq:erosion-size}
+\end{equation}
+である。
+
+\subsection{選択的侵食定理}
+\label{subsec:selective-theorem}
+
+Equations~\eqref{eq:selective-before} と \eqref{eq:selective-after} から中心的な変換
+\begin{equation}
+    \boxed{
+    \mathscr E_i-\mathscr D_i
+    \quad\longrightarrow\quad
+    -\mathscr D_i.
+    }
+    \label{eq:selective-erosion-identity}
+\end{equation}
+が得られる。私的互換性は地域coalitionのすべての帰結を消すわけではない。域外国企業を排除することによって加盟国市場で生じていたnet valueだけを選択的に除去し、coalition加盟国が域外国市場で被る不利益は残る。この片側だけの侵食こそが、企業の技術的応答を、正式標準化レジームに対する政府の順位付けの変化へ結び付けるメカニズムである。このメカニズムは、互換性が単に生産物市場の効率性を改善するというものではない。関連する政治的効果は、互換性投資がどのレジーム固有の利得構成要素を除去するかに依存する。ここでは域外国企業の投資が、coalition加盟国の保護された市場に由来する構成要素を取り除く一方、域外国市場における加盟企業の競争上の位置を修復しない。この非対称性によって、私的な技術調整が正式coalitionの相対的な政治価値の変化へ転化する。
+
+\begin{theorem}[選択的侵食]
+\label{thm:selective-erosion}
+地域標準coalition $C=\{i,j\}$ と域外国 $o$ を考える。上記のno-bypass状態と域外国企業のみの私的採用状態を条件とすると、
+\[
+    W_i^{SU,N}-W_i^{IS}=\mathscr E_i-\mathscr D_i,
+    \qquad
+    W_i^{SU,O}-W_i^{IS}=-\mathscr D_i.
+\]
+したがって、域外国企業のみの私的互換性は、coalition加盟国 $i$ のSUの相対的継続価値を正確に $\mathscr E_i$ だけ低下させる。もし
+\[
+    \mathscr E_i>\mathscr D_i>0,
+\]
+なら、
+\[
+    W_i^{SU,N}>W_i^{IS}
+    \qquad\text{and}\qquad
+    W_i^{SU,O}<W_i^{IS}.
+\]
+したがって、私的迂回は、地域標準化と国際標準化の間のcoalition加盟国 $i$ の順位付けを逆転させる。
+\end{theorem}
+
+\begin{proof}
+第1の利得恒等式は、\eqref{eq:welfare-su-member-no-bypass-general} から \eqref{eq:welfare-is-general} を差し引き、\eqref{eq:exclusion-surplus}--\eqref{eq:reciprocal-disadvantage} を適用することで得られる。第2の恒等式は、\eqref{eq:welfare-su-member-outsider-bypass-general} から \eqref{eq:welfare-is-general} を独立に差し引くことで得られ、その結果は $m_o(C-P)=-\mathscr D_i$ である。したがって、私的迂回による相対利得の変化は $-\mathscr E_i$ である。$\mathscr E_i>\mathscr D_i>0$ なら、$\mathscr E_i-\mathscr D_i>0$ である一方、$-\mathscr D_i<0$ であるから、2つの順位付けが得られる。したがって迂回後の順位付けは、仮定として置かれたのではなく、継続利得の会計から導出される。
+\end{proof}
+
+この定理は政府選好に関する結果であり、まだcoalition stabilityに関する結果ではない。正式分割が厳格にblockされることを示すには、関連する私的採用状態を条件とした域外国政府の継続比較と、すべてのdeviatorについてのblocking conditionがさらに必要である。これらは次節に委ねる。
+
+Figure~\ref{fig:selective-erosion} は、定理の順位逆転条件の下での会計ロジックを要約する。この図はconceptualであり、結果は上記の解析的恒等式から従う。
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{../paper/figures/generated/figure_02_selective_erosion.pdf}
+    \caption{地域coalition加盟国の継続優位の選択的侵食。$\mathscr E_i>\mathscr D_i>0$ の下で、迂回前の利得差 $\mathscr E_i-\mathscr D_i$ は、域外国企業のみの私的互換性の後に $-\mathscr D_i$ へ変わる。この図はconceptualであり、順位逆転はTheorem~\ref{thm:selective-erosion} で解析的に示される。}
+    \label{fig:selective-erosion}
+\end{figure}
+
+\subsection{技術的代替、政治的補完}
+\label{subsec:selective-political-complement}
+
+同じ分解から、技術的代替が必ずしも政治的代替を意味しない理由も明らかになる。2つの私的採用状態における国 $i$ の国際標準化への相対利得を
+\begin{equation}
+    G_i^N\equiv W_i^{IS}-W_i^{SU,N},
+    \qquad
+    G_i^O\equiv W_i^{IS}-W_i^{SU,O}.
+    \label{eq:government-is-incentives}
+\end{equation}
+と定義する。Equations~\eqref{eq:selective-before} と \eqref{eq:selective-after} より、
+\begin{equation}
+    G_i^N=\mathscr D_i-\mathscr E_i,
+    \qquad
+    G_i^O=\mathscr D_i,
+    \label{eq:government-is-incentive-levels}
+\end{equation}
+であり、したがって
+\begin{equation}
+    \boxed{
+    G_i^O-G_i^N=\mathscr E_i.
+    }
+    \label{eq:political-incentive-cross-difference}
+\end{equation}
+となる。
+
+\begin{corollary}[技術的代替／政治的補完]
+\label{cor:technological-political}
+$\mathscr E_i>0$ なら、域外国企業のみの私的互換性は、coalition加盟国 $i$ の国際標準化への相対的誘因を正確に $\mathscr E_i$ だけ高める。
+\end{corollary}
+
+私的採用は、coalition加盟国市場におけるSUとISの実効的互換性の差を取り除くという限定された意味で、正式な多国間標準化に対する技術的代替（technological substitute）である。しかし同じ投資は、正式な多国間化に対する政治的補完（political complement）となり得る。加盟国市場の排除構成要素を取り除き、相互的な域外国市場の不利益を変えずに残すことにより、地域的な取り決めを国際標準へ置き換える政府の相対利得を高めるからである。これはbinaryな政府誘因のcross-differenceであり、一般的なsupermodularityやcontinuous-action complementarityを主張するものではない。
+
+したがって固定費用 $F$ は、上記の利得分解とは異なるmarginで作用する。それは域外国企業のみの私的応答が選択されるかどうかを決めるが、その状態を所与とすれば、採用企業は外国企業なのでcoalition加盟国の厚生には直接入らない。正式なmembershipは一貫して変化しない。次節では、この構造的な順位逆転メカニズムをcanonicalな3か国のパラメータ領域へ写像し、正式coalition stabilityに必要な域外国政府の比較を加える。

@@ -1,0 +1,63 @@
+\section{Cournot導出とdomain check}
+\label{app:cournot}
+
+本Appendixでは、Lemma~\ref{lem:cournot-blocks} の基礎となるtechnical regularity checkを記録する。closed-form Cournot solutionそのものはSection~\ref{sec:product-market} で導出している。ここでの目的は、主たる議論を中断することなく、canonical parameter domain上で一意性、正値性、消費者参加の内点性を確認することである。
+
+\subsection{4つの生産物市場構成の一意性}
+
+少なくとも2社からなる互換性グループに属する企業について、市場営業利益の自社数量に関する二階微分は $-2(1-v)$ であり、singletonについては $-2$ である。$0<v<1/4$ なので、いずれも厳格に負である。したがってSection~\ref{sec:product-market} の一階条件は一意なbest responseを特徴付ける。
+
+完全互換は対称な線形Cournot systemであり、$q_I=1/[4(1-v)]$ を与える。SU加盟国市場では、2つのbloc firm間の対称性により、一階条件は
+\begin{align}
+1-3(1-v)x-y&=0,\\
+1-c-2x-2y&=0,
+\end{align}
+へ簡約される。そのcoefficient determinantは $2(2-3v)>0$ である。SU域外国市場のsystemは同じcoefficient matrixを持つが、限界費用項がbloc firm側に割り当てられるため、同じ正のdeterminantを持つ。各国別標準の下では、簡約されたnative--foreign systemのdeterminantは $4$ である。したがってこれらのsystemは一意解を持ち、その解はLemma~\ref{lem:cournot-blocks} に記載した数量と正確に一致する。
+
+\subsection{均衡数量の正値性}
+
+正値性のために $c$ の完全な上限を必要とする唯一の数量は、SU加盟国市場における排除された域外国企業の数量である。その分子は
+\[
+1-3c-3(1-c)v
+=1-3v-3c(1-v),
+\]
+であり、
+\[
+c<\frac{1-3v}{3(1-v)}.
+\]
+のとき厳格に正である。同じ上限は
+\[
+\frac{1-3v}{3(1-v)}<\frac13,
+\]
+を含意するので、$c<1/3$ である。したがって $1-2c>0$ が直ちに従い、$q_C$ と $q_S$ の両方の正値性が得られる。$q_I$、$q_M$、$q_D$、$q_H$ の分子も同じdomain上で厳格に正である。したがって、canonical continuation stateで用いるすべての数量は内点にある。
+
+\subsection{消費者参加の内点性}
+
+4つの構成に対応する総数量は
+\begin{align}
+X_I&=\frac{3}{4(1-v)},&
+X_M&=\frac{3-c-3v+3cv}{2(2-3v)},\\
+X_O&=\frac{3-2c-3v}{2(2-3v)},&
+X_W&=\frac{3-2c}{4}.
+\end{align}
+である。完全互換について、
+\[
+4(1-v)-3=1-4v>0,
+\]
+なので $X_I<1$ である。SU加盟国市場について、$X_M$ の分母から分子を差し引くと
+\[
+2(2-3v)-(3-c-3v+3cv)
+=(1-3v)(1+c)>0.
+\]
+である。SU域外国市場については
+\[
+2(2-3v)-(3-2c-3v)
+=1+2c-3v>0,
+\]
+であり、各国別標準については
+\[
+4-(3-2c)=1+2c>0.
+\]
+である。したがって $X_M,X_O,X_W<1$ でもある。均衡数量は正なので、各総数量も正である。よって、論文で用いるすべての生産物市場構成において、限界参加消費者はsupport $[0,1]$ の内部に厳格に位置する。
+
+以上の不等式は、Section~\ref{subsec:model-domain} のcanonical domainに付随するregularity claimを確立する。これらは \texttt{code/verify\_numeric.py} によってdomain全体でnumericallyにも確認されているが、numerical checkはregression testであり、上記の解析的不等式の代替ではない。

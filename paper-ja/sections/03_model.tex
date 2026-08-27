@@ -1,0 +1,167 @@
+\section{モデル}
+\label{sec:model}
+
+\subsection{国、企業、市場}
+\label{subsec:model-countries}
+
+3か国が存在し、$i\in N\equiv\{1,2,3\}$ で添字付けする。各国には1社の企業が所在し、企業についても $i$ で添字付けする。3社はいずれも3つの国内市場のそれぞれで販売する。市場は分断されているため、ある仕向地について選択された数量は、企業の総利益を通じる場合を除き、別の仕向地の需要には影響しない。$q_i^k$ を企業 $i$ の市場 $k$ における数量、$p_i^k$ を対応する価格とする。市場 $k$ の消費者の質量を $m_k$ とする。Main Modelでは市場規模は対称であり、
+\begin{equation}
+    m_1=m_2=m_3=1.
+    \label{eq:main-market-masses}
+\end{equation}
+と正規化する。集計利益式の記帳上は $m_k$ を残すが、副次的分析より前の本文中のすべての主要結果では \eqref{eq:main-market-masses} を課す。企業は各国内市場で数量競争を行う。
+
+\subsection{正式な標準化レジーム}
+\label{subsec:model-formal-standards}
+
+政府は、どの国々が正式に同一の製品標準を共有するかを決定する。正式な標準化レジーム（formal standards regime）は、$N$ の分割（partition）$\rho$ によって表す。Main Modelでは、3か国の場合に関連する5つの分割を認める。各国別標準（separate national standards）の下では、
+\begin{equation}
+    \rho^{SW}=\bigl\{\{1\},\{2\},\{3\}\bigr\}.
+    \label{eq:partition-sw}
+\end{equation}
+である。地域標準化連合（regional standardization union）の下では、2か国が1つの正式標準を共有し、残る1か国は別の標準を維持する。可能な3つの地域分割を
+\begin{equation}
+    \rho_{12}^{SU},\qquad
+    \rho_{13}^{SU},\qquad
+    \rho_{23}^{SU}.
+    \label{eq:partition-su}
+\end{equation}
+と表す。最後に、国際標準化（international standardization）の下では3か国すべてが1つの正式標準を共有し、
+\begin{equation}
+    \rho^{IS}=\bigl\{\{1,2,3\}\bigr\}.
+    \label{eq:partition-is}
+\end{equation}
+である。したがって $\rho$ における各coalitionは、自国市場と国内企業に同じ正式標準が割り当てられた国の集合を表す。この分割は、企業が競争する基準となる技術環境を決める。同一の正式coalitionに属する企業は同じ標準を生来的にサポートするのに対し、異なるcoalitionに属する企業は異なる標準から出発する。生産物市場は分断されているため、この基準割当ての競争上の帰結は、正式分割が3国経済全体に共通であっても仕向地ごとに異なり得る。
+
+正式な標準化は政府レベルの制度選択である。それは、どの国内市場が正式に共通標準の対象となるか、またどの国内企業がその標準を生来的にサポートするかを変える。これは後に導入する私的互換性（private compatibility）の意思決定とは異なる。私的採用（private adoption）は採用企業の技術的サポート集合だけを変え、政府coalitionへの国の加入をもたらすことも、分割 $\rho$ 自体を変更することもない。制度上の加盟と技術的サポートを分離することが、本モデルの中心的なモデリング上の区別であり、企業を制度設計者にすることなく、企業行動が正式な標準化レジームの魅力へフィードバックすることを可能にする。
+
+\subsection{消費者、互換性、需要}
+\label{subsec:model-demand}
+
+各市場の消費者は $u\sim U[0,1]$ で添字付けされ、高々1単位を購入する。外部選択肢から得られる効用はゼロである。市場 $k$ で企業 $i$ から購入する消費者は、
+\begin{equation}
+    u+g_i^k-p_i^k,
+    \label{eq:consumer-utility}
+\end{equation}
+の効用を得る。ここで $g_i^k$ は、その市場における企業 $i$ の製品に付随する互換性便益（compatibility benefit）である。
+
+互換性は、各企業が各市場で実際に使用する正式標準に依存するため、市場固有である。$G_i^k$ を、市場 $k$ において企業 $i$ と同じ標準を使用する企業の集合とする。この互換性グループに少なくとも2社が属する場合、互換性便益は
+\begin{equation}
+    g_i^k
+    =v\sum_{j\in G_i^k}q_j^k,
+    \qquad |G_i^k|\ge 2,
+    \label{eq:compatibility-benefit}
+\end{equation}
+である。ここで $v>0$ はネットワーク効果または互換性効果の強さを表す。singletonにはこの便益はないため、$|G_i^k|=1$ のとき $g_i^k=0$ である。
+
+$X_k\equiv\sum_{j\in N}q_j^k$ を市場 $k$ の総販売量とする。正の数量が供給される製品について、一般化価格 $p_i^k-g_i^k$ は、参加する限界消費者の支払意思額に等しい。$u$ の一様性から $p_i^k-g_i^k=1-X_k$ が得られる。したがって、市場 $k$ において企業 $i$ が直面する逆需要は
+\begin{equation}
+    p_i^k
+    =1+g_i^k-\sum_{j\in N}q_j^k.
+    \label{eq:inverse-demand}
+\end{equation}
+となる。したがって互換性は、同じ標準を使用する企業グループに対応する需要切片を通じて生産物市場競争に影響する。正式標準は企業間の基準となる互換関係を決めるため競争に影響し、その後の私的採用は選択された市場でその関係を変更し得る。Section~\ref{sec:product-market} で、結果として生じるCournot subgameを解く。
+
+\subsection{生産と非互換費用}
+\label{subsec:model-costs}
+
+生産そのものには限界費用がない。重要なのは、企業が仕向地市場で要求される正式標準をサポートしているか否かである。$r_i^k$ を市場 $k$ における企業 $i$ の関連する限界費用とする。企業 $i$ がローカルの正式標準をサポートし、市場 $k$ でその標準を使用する場合、
+\begin{equation}
+    r_i^k=0.
+    \label{eq:marginal-cost-compatible}
+\end{equation}
+である。ローカルの正式標準をサポートしていない場合、その企業は基準としてサポートする標準の下で市場に供給し、
+\begin{equation}
+    r_i^k=c>0.
+    \label{eq:marginal-cost-incompatible}
+\end{equation}
+の費用を負担する。パラメータ $c$ は非互換費用、変換費用、または適応費用である。これは輸送費でも関税でもない。重要なことに、費用と互換性は論理的に異なる対象である。2つの外国企業が仕向地市場で同じ非ローカル標準を使用し、したがって相互に互換であっても、どちらもその市場のローカル正式標準をサポートしていなければ、それぞれ適応費用 $c$ を負担し得る。
+
+\subsection{私的な標準採用}
+\label{subsec:model-private-adoption}
+
+正式分割は政府が割り当てる標準を固定するが、企業は私的にサポートする正式標準の集合を拡張できる。各企業は、$\rho$ における自らのcoalitionに対応する標準を生来的にサポートする。追加的にサポートする各正式標準について、企業は実質的な固定費用
+\begin{equation}
+    F>0.
+    \label{eq:private-adoption-cost}
+\end{equation}
+を支払う。サポートの意思決定は標準ごとのbinary choiceである。費用は市場固有ではなく標準固有であり、1度ある正式標準を採用すれば、その標準が適用されるすべての市場でその標準を使用できる。特に、2か国が同じ地域標準化連合に属する場合、ブロック標準の1回の採用で両加盟国市場をカバーする。$n_i$ を企業 $i$ が追加的にサポートする正式標準の数とする。
+
+複数標準をサポートする企業を規律するルールを次のように固定する。市場 $k$ において、企業 $i$ がローカルの正式標準をサポートしていれば、その市場ではその標準を使用する。そうでなければ、その企業は基準標準、すなわち自らが生来的に属する正式coalitionに対応する標準を使用する。したがって互換性グループ $G_i^k$ は、市場 $k$ で各企業が実際に使用する標準によって決まる。企業の互換性の状態は仕向地ごとに異なり得る。同じ企業が、ある市場ではローカルにサポートした標準を使用し、別の市場では基準標準を使用し得る。同様に、どちらの企業も仕向地のローカル標準を使用していなくても、2社がその仕向地で相互に互換となり得る。これらの可能性は、生産物市場段階で追加の互換性選択を導入するのではなく、使用標準ルールから機械的に生じる。
+
+この構造により、固定費用 $F$ は限界適応費用 $c$ とは経済的に異なる役割を持つ。$F$ を支払うことで、企業が適応費用ゼロで使用できる正式標準の集合が拡張され、採用した標準が適用されるすべての市場で互換性グループが変わり得る。これに対して $c$ は、企業がローカル標準をサポートしていない市場に販売する単位について支払われる。本モデルはしたがって、離散的な技術投資の意思決定と、その後に非互換な仕向地へ供給する際の変動費用とを分離する。このルールは、企業に正式分割を書き換えることを認めずに、私的互換性を技術的に意味のあるものにする。私的採用は、政府レベルの標準化レジームを変えずに、実効的な生産物市場の互換性を変え得る。
+
+後に用いる \emph{私的迂回（private circumvention）} という語は、この追加的な正式標準をサポートする技術的能力のみを指す。法的要件の回避や正式標準への不遵守を意味しない。
+
+\subsection{タイミング}
+\label{subsec:model-timing}
+
+モデルは次の順序で解かれる。
+\begin{equation}
+    \rho
+    \longrightarrow
+    a^\ast(\rho,F)
+    \longrightarrow
+    q^\ast\bigl(\rho,a^\ast\bigr)
+    \longrightarrow
+    W_i(\rho,F)
+    \longrightarrow
+    \mathcal S(F).
+    \label{eq:model-timing}
+\end{equation}
+第1に、正式な標準分割が指定される。第2に、企業が追加的にどの正式標準をサポートするかを選択する。第3に、結果として得られた市場ごとの互換性パターンを所与として、企業が分断された生産物市場で数量競争を行う。第4に、これらの継続結果が国民厚生を決める。最後に、誘導された継続利得を用いて、正式分割がcoalition deviationに対して安定かどうかを評価する。Figure~\ref{fig:timing} はこの順序を要約する。
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{../paper/figures/generated/figure_01_timing.pdf}
+    \caption{モデルのタイミング。政府が正式な標準分割を決定し、企業が私的互換性を選択し、企業が分断された生産物市場で競争し、国民の継続利得がcoalition stabilityを決定する。}
+    \label{fig:timing}
+\end{figure}
+
+私的採用段階は、原理的には複数均衡を持ち得る。複数性が関連する場合、恣意的な均衡選択ルールを課すのではなく、継続結果をcorrespondenceとして扱う。以下の主要な安定性結果は、関連する比較がselection freeとなるパラメータ領域で述べる。
+
+\subsection{企業利益}
+\label{subsec:model-profits}
+
+企業 $i$ の営業利益は、分断された3市場を通じて集計される。私的採用費用を控除した世界全体の利益は
+\begin{equation}
+    \Pi_i
+    =\sum_{k\in N}m_k\bigl(p_i^k-r_i^k\bigr)q_i^k-Fn_i.
+    \label{eq:firm-profit}
+\end{equation}
+である。固定費用項は、企業が追加的にサポートする正式標準1つにつき1回支払われ、その標準を何市場が共有するかには依存しない。この会計上の区別が重要なのは、正式coalitionが1回の私的採用でカバーされる地理的範囲を変え得るからである。
+
+\subsection{国民厚生}
+\label{subsec:model-welfare}
+
+政府 $i$ は、正式な標準化レジームを国民厚生
+\begin{equation}
+    W_i=CS_i+\Pi_i,
+    \label{eq:national-welfare}
+\end{equation}
+によって評価する。ここで $CS_i$ は国 $i$ の消費者余剰、$\Pi_i$ は \eqref{eq:firm-profit} で定義した国内企業の世界全体の利益である。外国企業の利益は国 $i$ の厚生に含めない。私的採用費用 $Fn_i$ は実質的な資源費用であり、したがって国内企業利益を通じてすでに控除されている。canonical modelには政府間または企業間のtransferは存在しない。この目的関数により、正式標準政策は、国内消費者の結果と、3市場すべてにおける国内企業の競争上の位置の両方に反応する。
+
+\subsection{Coalition stability}
+\label{subsec:model-stability}
+
+各正式分割について私的採用段階と生産物市場段階を解いた後、freeze済みのexclusive-membership ruleの下での厳格ブロッキング（strict blocking）を用いて、結果として得られるpartition gameを評価する。現在の分割 $\rho$ と、集合 $D\subseteq N$ による許容されるcoalition deviationを考え、それが代替分割 $\rho'$ を誘導するとする。このdeviationが $\rho$ をblockするのは、deviating coalitionのすべてのメンバーが、$\rho'$ に対応する継続利得の下で厳格に改善する場合に限られる。
+\begin{equation}
+    W_i(\rho',F)>W_i(\rho,F)
+    \qquad\text{for every }i\in D.
+    \label{eq:strict-blocking}
+\end{equation}
+したがって、deviatorのうち1か国について弱い改善しかない場合は不十分である。$\mathcal S(F)$ を、私的採用費用 $F$ の下で厳格にblockされない正式分割の集合とする。この安定性概念を支える正確な利得比較は、生産物市場subgameと私的採用subgameを解いた後にのみ導出する。
+
+\subsection{パラメータ領域}
+\label{subsec:model-domain}
+
+主要分析では、primitivesを
+\begin{equation}
+    F>0,
+    \qquad
+    0<v<\frac14,
+    \qquad
+    0<c<\frac{1-3v}{3(1-v)}.
+    \label{eq:parameter-domain}
+\end{equation}
+に制限する。これらの制約がcanonical admissible domainを定める。これにより、関連するCournot subgameで必要な数量が厳格に正であること、自己の逆需要が右下がりであること、総市場数量が1未満であり消費者参加が内点となることが保証される。対応する代数的確認はAppendixに委ねる。Main Modelには市場規模の非対称性を必要としない。
