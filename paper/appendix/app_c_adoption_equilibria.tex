@@ -1,6 +1,47 @@
 \section{Private-Adoption Equilibrium Correspondence}
 \label{app:adoption-equilibria}
 
-% TODO:
-% - Full adoption correspondence retained by Lemma L5 in the theorem ledger.
-% - Main text should use only the thresholds needed for the central mechanism.
+This appendix records the deterministic private-adoption profiles implied by the best-response thresholds in Lemma~\ref{lem:private-adoption}. The headline theorem uses only regions in which private adoption is selected by strict best responses and is therefore selection free. The broader correspondence is reported here to make clear what is, and is not, being suppressed by that focus. At threshold equalities, weak best responses are retained in the correspondence.
+
+\subsection{Regional standardization}
+
+Consider an SU with members $i,j$ and outsider $o$ in the symmetric Main Model. The outsider's decision to support the bloc standard is independent of the members' decisions over the outsider standard because the two decisions affect disjoint destination sets. From \eqref{eq:su-outsider-main-threshold},
+\[
+a_o=
+\begin{cases}
+1,&F<2T_A,\\
+0,&F>2T_A,
+\end{cases}
+\]
+with both actions optimal at $F=2T_A$.
+
+For the two members, let $a_i,a_j\in\{0,1\}$ indicate support for the outsider's standard. A member's gain from changing from non-adoption to adoption is $T_U-F$ when the other member has not adopted and $T_A-F$ when the other member has adopted. Hence the pure-strategy Nash conditions are
+\begin{align}
+(0,0)&\text{ is an equilibrium}\iff F\ge T_U,\label{eq:appendix-su-00}\\
+(1,1)&\text{ is an equilibrium}\iff F\le T_A,\label{eq:appendix-su-11}\\
+(1,0)\text{ and }(0,1)&\text{ are equilibria}\iff T_A\le F\le T_U.\label{eq:appendix-su-asym}
+\end{align}
+Equation~\eqref{eq:appendix-su-asym} defines a nonempty interval only when $T_A\le T_U$. If instead $T_U<T_A$, then for $T_U<F<T_A$ both $(0,0)$ and $(1,1)$ satisfy the best-response conditions. This is why the canonical model imposes no global strategic-complementarity or strategic-substitutability label on the member-adoption game: that classification depends on the otherwise unrestricted ordering of $T_A$ and $T_U$.
+
+Combining the independent outsider decision with \eqref{eq:appendix-su-00}--\eqref{eq:appendix-su-asym} gives the SU pure-strategy adoption correspondence. In particular, the Main intermediate region
+\[
+F_L<F<2T_A,
+\qquad F_L=\max\{T_W,T_A\},
+\]
+is selection free. Since $T_W>T_U$, this region has $F>T_U$ and $F>T_A$, so $(a_i,a_j)=(0,0)$ is the unique member profile, while the outsider strictly adopts. The unique deterministic continuation state is therefore outsider-only adoption. For $F>2T_A$ under $F_L<2T_A$, all three firms strictly choose non-adoption.
+
+\subsection{Separate national standards}
+
+Under SW, fix a target standard $k$ and let $i,j\ne k$ be the two foreign firms. Write $a_i^k,a_j^k\in\{0,1\}$ for adoption of standard $k$. The gain from adoption is $T_W-F$ when the rival has not adopted and $T_A-F$ after rival adoption. Thus
+\begin{align}
+(0,0)&\text{ is an equilibrium}\iff F\ge T_W,\label{eq:appendix-sw-00}\\
+(1,1)&\text{ is an equilibrium}\iff F\le T_A,\label{eq:appendix-sw-11}\\
+(1,0)\text{ and }(0,1)&\text{ are equilibria}\iff T_A\le F\le T_W.\label{eq:appendix-sw-asym}
+\end{align}
+If $T_W<T_A$, the interval $T_W<F<T_A$ instead supports both symmetric pure profiles $(0,0)$ and $(1,1)$. The canonical theory does not impose an ordering between $T_A$ and $T_W$.
+
+Because national markets are segmented and each additional standard has its own additive fixed cost, the global SW pure-strategy correspondence is the Cartesian product of the three target-standard subgames. This decomposition is exact: adoption of standard $k$ changes the firm's operating-profit block only in market $k$ and costs one $F$, while adoption of another national standard affects a different destination and carries a separate fixed cost.
+
+The headline intermediate region satisfies $F>F_L\ge T_W$ and $F>F_L\ge T_A$. Consequently $(0,0)$ is the unique outcome in every SW target-standard subgame. The high-$F$ region has the same no-adoption continuation. International standardization contains only one formal standard and therefore has no additional-standard adoption decision.
+
+The correspondence above is included for completeness, but none of the Main stability statements relies on selecting among multiple off-headline adoption equilibria. In both fixed-cost regions used by Theorem~\ref{thm:formal-coalition-stability}, all relevant private actions are strict best responses. Allowing randomization in off-headline regions would therefore not change the continuation states used in the Main theorem.
