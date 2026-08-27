@@ -1,7 +1,7 @@
 \section{Welfare Sign Certificates}
 \label{app:welfare}
 
-This appendix supplies analytical sign certificates for the three canonical no-adoption welfare comparisons used in Section~\ref{sec:coalition-stability}. They are frozen relationships in the Stage-8 model; the calculations below make their domain-wide sign support explicit rather than relying on numerical sampling.
+This appendix supplies analytical sign certificates for the canonical welfare comparisons used in Section~\ref{sec:coalition-stability}. They are frozen relationships in the Stage-8 model; the calculations below make their domain-wide sign support explicit rather than relying on numerical sampling.
 
 Recall
 \[
@@ -24,7 +24,7 @@ All denominators below are strictly positive on the canonical domain.
 Define the scaled welfare gap
 \begin{align}
 N_{MS}(c,v)
-&\equiv32(2-3v)^2\left(W_M^{SU,N}-W^{SW}\right)\notag\\
+&\equiv 32(2-3v)^2\left(W_M^{SU,N}-W^{SW}\right)\notag\\
 &=-216c^2v^2+264c^2v-60c^2
 +108cv^2-144cv+56c
 -99v^2+84v.
@@ -64,7 +64,7 @@ The quadratic on the right is convex and is negative at both endpoints of $[0,1/
 Similarly, let
 \begin{align}
 N_{IS}(c,v)
-&\equiv32(1-v)^2\left(W^{IS}-W^{SW}\right)\notag\\
+&\equiv 32(1-v)^2\left(W^{IS}-W^{SW}\right)\notag\\
 &=-28c^2v^2+56c^2v-28c^2
 +20cv^2-40cv+20c
 -15v^2+24v.
@@ -95,7 +95,7 @@ The final inequality follows immediately from $v<1/4$, since $207v^2<207/16<32$ 
 Finally define
 \begin{align}
 N_{IO}(c,v)
-&\equiv32(1-v)^2(2-3v)^2
+&\equiv 32(1-v)^2(2-3v)^2
 \left(W^{IS}-W_O^{SU,N}\right).
 \label{eq:appendix-n-io-definition}
 \end{align}
@@ -141,4 +141,38 @@ This bounding quadratic is convex and negative at both endpoints of $[0,1/4]$; a
 \label{eq:appendix-is-gt-su-outsider}
 \end{equation}
 
-Equations~\eqref{eq:appendix-su-member-gt-sw}--\eqref{eq:appendix-is-gt-su-outsider} are precisely the no-adoption welfare rankings invoked in the strict-blocking analysis. The companion symbolic verification script checks each scaled-polynomial representation, curvature expression, and endpoint identity independently from the manuscript text.
+\subsection{The outsider post-bypass gap}
+\label{app:j-positive}
+
+Section~\ref{sec:coalition-stability} defines
+\[
+J=K_I+P-K_O-D,
+\]
+so that $W^{IS}-W_O^{SU,O}=J+F$. To establish the strict outsider ranking after bypass it is sufficient to show $J>0$. Multiplying $J$ by its positive denominator gives the sign-equivalent numerator
+\begin{align}
+N_J(c,v)
+={}&-48(1-v)^2c^2
++(48v^3-80v^2+16v+16)c\notag\\
+&+v(68-269v+318v^2-108v^3).
+\label{eq:appendix-j-numerator}
+\end{align}
+For fixed $v$, $N_J$ is concave in $c$ because
+\[
+\frac{\partial^2N_J}{\partial c^2}=-96(1-v)^2<0.
+\]
+Its minimum on the closure of the admissible $c$ interval is therefore attained at an endpoint. At $c=0$ and $c=c_{\max}(v)$,
+\begin{align}
+N_J(0,v)
+&=v(68-269v+318v^2-108v^3),\notag\\
+N_J(c_{\max},v)
+&=\frac v3(284-1095v+1098v^2-324v^3).
+\label{eq:appendix-j-endpoints}
+\end{align}
+Both bracketed polynomials are decreasing on $0<v<1/4$ and remain positive at $v=1/4$, where they equal $303/16$ and $1181/16$. Hence $N_J>0$ and therefore
+\begin{equation}
+\boxed{J>0.}
+\label{eq:appendix-j-positive}
+\end{equation}
+Since $F>0$, this implies $W^{IS}>W_O^{SU,O}$ throughout the canonical domain whenever the outsider-only continuation is relevant.
+
+Equations~\eqref{eq:appendix-su-member-gt-sw}--\eqref{eq:appendix-j-positive} are precisely the sign comparisons invoked in the strict-blocking analysis. The symbolic verification scripts check the scaled-polynomial representations, curvature expressions, and endpoint identities independently from the manuscript text.
