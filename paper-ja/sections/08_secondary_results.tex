@@ -1,0 +1,121 @@
+\section{副次的結果}
+\label{sec:secondary}
+
+Main theoremで用いた対称性は意図的なものである。これは、Theorem~\ref{thm:formal-coalition-stability} のstability reversalに市場規模の異質性が必要ではないことを示している。ここでは別の目的、すなわち地域標準化連合の候補間でpartner rankingを決めるために、1次元の市場規模非対称性を導入する。したがって、このextensionは、選択的侵食メカニズムやMain stability resultのパラメータ要件を変えることなく、望ましいregional partnerのidentityをより明確にする。
+
+\subsection{市場規模の非対称性とpartner ranking}
+\label{subsec:market-size-partner-ranking}
+
+副次的仕様として
+\begin{equation}
+    m_1=m_2=1,
+    \qquad
+    m_3=1-\delta,
+    \qquad
+    0<\delta<1.
+    \label{eq:secondary-market-sizes}
+\end{equation}
+を考える。したがって国1と国2は同じ大きな市場を持ち、国3はより小さな市場を持つ。他のprimitiveに非対称性はない。特に、費用、選好、ネットワーク効果、政府目的は変わらない。この結果がpartner selectionだけを選択的侵食メカニズムから分離するよう、私的な標準採用が生じない継続状態を条件とする。十分に高い固定費用はそのような継続状態の1つを与えるが、以下の利得恒等式に必要なのは私的採用がないことだけである。
+
+この条件付けは、2つの異なる比較問題を分離する。Sections~\ref{sec:private-compatibility}--\ref{sec:coalition-stability} は、企業が所与の正式分割を迂回するかどうかと、その応答が政府の正式レジームに対する誘因をどのように変えるかを問う。本節はそれとは異なり、私的採用状態を固定し、partnerの市場規模だけが異なる2つの地域coalitionを政府がどのように順位付けするかを問う。したがって、$F$ はpartner-ranking differenceには直接入らない。ここでの役割は、比較を評価するno-adoption continuation stateを支えることだけである。この分離により、市場規模の非対称性がMain stability reversalで隠れた役割を果たしていないことが明確になる。
+
+国 $i$ が、partner $j$ とoutsider $k$ からなる地域標準化連合と、partner $k$ とoutsider $j$ からなる、それ以外は同一の地域標準化連合を比較するとする。Section~\ref{sec:selective-erosion} の一般市場質量の継続利得から、国 $i$ は
+\begin{align}
+    W_i^{ij}
+    &=m_iK_M+(m_i+m_j)A+m_kC,
+    \label{eq:partner-payoff-ij}\\
+    W_i^{ik}
+    &=m_iK_M+(m_i+m_k)A+m_jC.
+    \label{eq:partner-payoff-ik}
+\end{align}
+を得る。差を取ると、一般的なpartner comparison identity
+\begin{equation}
+    \boxed{
+    W_i^{ij}-W_i^{ik}
+    =(m_j-m_k)(A-C)
+    =(m_j-m_k)T_U.
+    }
+    \label{eq:general-partner-ranking}
+\end{equation}
+を得る。国 $i$ の自国市場における消費者余剰項は相殺される。小さいpartnerを大きいpartnerに置き換えることは、市場質量をoutsider-profit block $C$ からcoalition-member profit block $A$ へ再配分する。
+
+\eqref{eq:general-partner-ranking} の会計は、この結果が単に「大きな市場を好む」という一般的な効果ではなく、partner size effectである理由も明らかにする。国 $i$ 自身の市場質量と自国市場の消費者余剰は2つのcoalition間で同一である。変わるのは、他国の市場質量が国内企業の世界営業利益のどこに現れるかだけである。coalition partnerに属する市場質量1単位はmember-market block $A$ をもたらし、同じ1単位がoutsiderに属すればoutsider-market block $C$ をもたらす。したがってpartner selectionを規律するのは、国の大きさそのものからの直接的な効用便益ではなく、この2つのprofit opportunityの差である。
+
+符号はSection~\ref{sec:private-compatibility} で導出したprivate-adoption blockから直ちに得られる。
+\begin{equation}
+    A-C=T_U
+    =\frac{3c(2-c)(1-v)}{4(2-3v)^2}>0
+    \label{eq:partner-ranking-tu}
+\end{equation}
+であり、canonical admissible domain全体で正である。同じprimitive profit differenceが、異なるstrategic marginに現れる。Section~\ref{sec:private-compatibility} では $A-C$ は域外国標準を単独採用する誘因を決めた。ここでは、市場質量をoutsider treatmentからcoalition-member treatmentへ移す限界価値を測る。この関連性は、市場規模の非対称性を選択的侵食メカニズムの一部にするものではない。
+
+\subsection{市場規模によるpartner selection}
+\label{subsec:market-size-partner-selection}
+
+\eqref{eq:secondary-market-sizes} の下で、関連する2つの地域coalitionにおける国1の厚生は
+\begin{align}
+    W_1^{12}
+    &=K_M+2A+(1-\delta)C,
+    \label{eq:w1-su12}\\
+    W_1^{13}
+    &=K_M+(2-\delta)A+C.
+    \label{eq:w1-su13}
+\end{align}
+である。したがって、
+\begin{equation}
+    W_1^{12}-W_1^{13}
+    =\delta(A-C)
+    =\delta T_U>0.
+    \label{eq:w1-partner-ranking}
+\end{equation}
+を得る。国2についての対応する比較も同じである。これに対して国3は、2つのpotential partnerの市場質量が等しいため、両者の間で無差別である。
+
+\begin{proposition}[市場規模によるpartner selection]
+\label{prop:market-size-partner-selection}
+$m_1=m_2=1$、$m_3=1-\delta$、$0<\delta<1$ とし、私的な標準採用が生じない継続状態を条件とする。このとき、
+\begin{equation}
+    \boxed{
+    W_1^{12}-W_1^{13}
+    =W_2^{12}-W_2^{23}
+    =\delta(A-C)
+    =\delta T_U>0,
+    }
+    \label{eq:large-country-partner-ranking}
+\end{equation}
+である一方、
+\begin{equation}
+    \boxed{
+    W_3^{13}=W_3^{23}.
+    }
+    \label{eq:small-country-partner-indifference}
+\end{equation}
+である。したがって、大きい2か国はそれぞれ、より小さい国より他方の大きい国をregional-standard partnerとして厳格に選好する一方、小さい国は2つの大きいpartnerの間で無差別である。
+\end{proposition}
+
+\begin{proof}
+Equation~\eqref{eq:general-partner-ranking} より
+\[
+    W_i^{ij}-W_i^{ik}=(m_j-m_k)(A-C).
+\]
+である。国1について $m_2-m_3=\delta$ であり、国2について $m_1-m_3=\delta$ である。$A-C=T_U>0$ かつ $\delta>0$ なので、両方の差は厳格に正である。国3については、2つのpotential partnerの質量が $m_1=m_2$ と等しいため、対応する差はゼロである。
+\end{proof}
+
+Proposition~\ref{prop:market-size-partner-selection} はpartner preferenceに関する結果であり、coalition-stability theoremではない。例えば、$W_1^{12}>W_1^{13}$ だけから、$\rho_{13}^{SU}$ が $\{1,2\}$ によって厳格にblockされるとはいえない。strict blockingにはさらに、同じ誘導deviationにより国2も自らの現在の利得と比べて改善することが必要だからである。したがって、この命題は $\rho_{12}^{SU}$ が一意にstableであることを示さず、Theorem~\ref{thm:formal-coalition-stability} のstable-set resultを修正するものでもない。
+
+この区別が重要なのは、非対称性がある種の無差別を除去しても、それだけで完全なcoalition-formation problemを解くわけではないからである。対称的なhigh-$F$分析では、2つのcoalitionに共通する国が同じmember payoffを得るため、代替regional pairは既存SUを厳格にblockできなかった。Proposition~\ref{prop:market-size-partner-selection} は、prospective partnerの市場規模が異なる場合、この特定の無差別が大きい国について消え得ることを示す。しかし実際のpartner-switching deviationがstrict blockかどうかは、第2のdeviatorの利得にも依存する。その追加不等式を確立することは別の結果であり、Proposition~\ref{prop:market-size-partner-selection} のcorollaryではない。したがって、ここでは未検証のpartner-switching regionを課さない。
+
+2つの比較観察により、非対称性の役割が明確になる。第1に、$\delta\downarrow0$ とすると対称的なMain Modelに戻り、
+\begin{equation}
+    \left.(W_1^{12}-W_1^{13})\right|_{\delta=0}=0,
+    \label{eq:delta-symmetry-restoration}
+\end{equation}
+となる。これは、対称的なhigh-$F$ modelが一意のregional partnerを選べないことと整合的である。第2に、
+\begin{equation}
+    \frac{\partial}{\partial\delta}
+    \left(W_1^{12}-W_1^{13}\right)
+    =T_U>0.
+    \label{eq:delta-partner-comparative-static}
+\end{equation}
+である。したがって、市場規模格差が大きいほど、大きい国が他方の大きいpartnerを好む順位は強くなる。この微分はpotential partner間の利得差だけに関するものであり、国3が縮小することについてのwelfare statementではない。また、より大きな $\delta$ がstable partition setをmonotonicに変えることも意味しない。そのような主張には、非対称な市場規模の下でstrict-blocking inequalityの完全な集合が必要である。
+
+大きいpartnerが価値を持つのは、市場規模の非対称性が選択的侵食を生み出すからではなく、市場質量をoutsider-profit block $C$ からmember-market block $A$ へ再配分するからである。したがって、このextensionはpartner identityを明確にする一方、Main theoretical chainを変えない。対称性は私的互換性によるstability mechanismを確立し、非対称性は政府がどのregional partnerを好むかを精緻化するだけである。

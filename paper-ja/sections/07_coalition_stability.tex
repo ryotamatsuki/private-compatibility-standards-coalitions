@@ -1,0 +1,228 @@
+\section{私的互換性と正式coalition stability}
+\label{sec:coalition-stability}
+
+Section~\ref{sec:selective-erosion} では、選択的侵食メカニズムを継続利得の結果として確立した。すなわち、域外国企業のみの私的互換性は、地域coalition加盟国が加盟国市場で得る純排除余剰を取り除く一方、域外国市場における相互的不利益を残す。本節では、このメカニズムを対称的な3か国Cournot標準モデルに写像し、許容される5つの正式分割について厳格ブロッキングを評価してモデルを閉じる。主要結果は、私的互換性の固定費用が、企業が地域標準を迂回しない高費用領域から、域外国企業だけが地域ブロック標準を迂回する中間費用領域へ移るとき、安定な正式分割の集合が変化することである。
+
+\subsection{3か国モデルによるmicrofoundation}
+\label{subsec:three-country-microfoundation}
+
+本節を通じてMain Modelは対称であり、$m_1=m_2=m_3=1$ とする。任意の地域標準化連合の加盟国について、Section~\ref{sec:selective-erosion} の分解を
+\begin{equation}
+    \mathscr E
+    \equiv (K_M-K_I)+2(A-P),
+    \qquad
+    \mathscr D
+    \equiv P-C,
+    \label{eq:symmetric-erosion-objects}
+\end{equation}
+と特殊化し、さらに
+\begin{equation}
+    \Phi_0
+    \equiv \mathscr E-\mathscr D
+    =W_M^{SU,N}-W^{IS}.
+    \label{eq:phi-zero}
+\end{equation}
+と定義する。第1の等式は、地域的排除による加盟国市場での利得から、相互的な域外国市場の不利益を差し引いたものを表し、第2の等式はSection~\ref{sec:selective-erosion} の継続利得会計から直接従う。
+
+Main stability resultで用いるパラメータ領域は
+\begin{equation}
+    \boxed{
+    \begin{aligned}
+    \Omega_0=\{(c,v):\;&0<v<\tfrac14,\\
+    &0<c<\tfrac{1-3v}{3(1-v)},\\
+    &\Phi_0>0,\quad P>C,\quad \max\{T_W,T_A\}<2T_A\}.
+    \end{aligned}
+    }
+    \label{eq:omega-zero}
+\end{equation}
+である。固定費用 $F$ は $\Omega_0$ の要素ではない。この集合は、利得順位の逆転と、異なるhigh-およびintermediate-$F$領域の存在に必要な $(c,v)$ の条件だけを集めたものである。\eqref{eq:omega-zero} のすべての不等式は厳格であり、canonical expressionはadmissible domainの内部で連続なので、$\Omega_0$ はopenである。
+
+この集合は非空でもある。検証済みのwitness
+\begin{equation}
+    (c,v)=\left(\frac{1}{10},\frac{6}{25}\right)=(0.10,0.24),
+    \label{eq:omega-witness}
+\end{equation}
+では、
+\begin{align}
+    T_U&\approx0.0661011,&
+    T_A&\approx0.0818242,&
+    T_W&\approx0.1003198,\notag\\
+    \mathscr E&\approx0.0161623,&
+    \mathscr D&\approx0.00801809,&
+    \Phi_0&\approx0.00814425.
+    \label{eq:omega-witness-values}
+\end{align}
+を得る。したがって $P>C$、$\Phi_0>0$ であり、
+\[
+    F_L=\max\{T_W,T_A\}=T_W\approx0.1003198
+    <2T_A\approx0.1636485=F^\ast.
+\]
+である。このwitnessは非空性を示すためのものであり、以下の解析的議論の代替として用いるものではない。
+
+\begin{proposition}[3か国モデルによるmicrofoundation]
+\label{prop:three-country-microfoundation}
+すべての $(c,v)\in\Omega_0$ について、対称的な3か国Cournot標準モデルは
+\[
+    \mathscr E>\mathscr D>0
+    \qquad\text{and}\qquad
+    F_L<F^\ast=2T_A.
+\]
+を満たす。したがって、各地域標準化連合が域外国企業のみの私的採用を生じさせ、各国別標準では私的採用が生じない、非空の中間固定費用領域 $F_L<F<F^\ast$ が存在する。また、$F>F^\ast$ ではSUでもSWでも私的採用は生じない。さらに、
+\[
+    W_M^{SU,N}>W^{IS}
+    \qquad\text{and}\qquad
+    W_M^{SU,O}<W^{IS}.
+\]
+したがって、primitive modelは非空のopen set上で選択的侵食による順位逆転を生成する。
+\end{proposition}
+
+\begin{proof}
+$\Omega_0$ の定義により、$\Phi_0=\mathscr E-\mathscr D>0$ かつ $P>C$ である。したがって $\mathscr D=P-C>0$ であり、ゆえに $\mathscr E>\mathscr D>0$ である。同じ定義から $F_L=\max\{T_W,T_A\}<2T_A=F^\ast$ を得る。Lemma~\ref{lem:private-adoption} により、high-およびintermediate-$F$領域で記載した私的採用パターンが従う。最後に、\eqref{eq:phi-zero} から $W_M^{SU,N}-W^{IS}=\Phi_0>0$ であり、Theorem~\ref{thm:selective-erosion} から $W_M^{SU,O}-W^{IS}=-(P-C)<0$ である。
+\end{proof}
+
+Proposition~\ref{prop:three-country-microfoundation} が行うのはmicrofoundationの段階だけである。まだ安定分割を特定してはいない。stabilityにはさらに、域外国政府の継続利得と、すべての許容されるdeviationについてのstrict-blocking comparisonが必要である。
+
+\subsection{域外国政府と厳格ブロッキング}
+\label{subsec:outsider-strict-blocking}
+
+私的迂回がない場合、地域coalitionの域外国は
+\begin{equation}
+    W_O^{SU,N}=K_O+2B+D.
+    \label{eq:outsider-welfare-no-bypass}
+\end{equation}
+を得る。canonical welfare comparisonにより、admissible domain全体で $W^{IS}>W_O^{SU,N}$ である。\ref{app:welfare} で解析的な符号certificateを示す。これに対し、域外国企業のみが迂回する場合には、その域外国の国内企業自身が追加標準の固定費用を支払う。したがって国民厚生は
+\begin{equation}
+    W_O^{SU,O}=K_O+2P+D-F.
+    \label{eq:outsider-welfare-bypass}
+\end{equation}
+となる。ここで $-F$ が現れるのは、採用企業が域外国の国内企業だからである。これはSection~\ref{sec:selective-erosion} の加盟国政府の会計と異なる。そこでは域外国企業の固定費用は外国企業の費用であり、加盟国の国民厚生には含まれなかった。
+
+\eqref{eq:outsider-welfare-bypass} と国際標準化を比較するため、
+\begin{equation}
+    J\equiv K_I+P-K_O-D.
+    \label{eq:j-definition}
+\end{equation}
+と定義する。すると、
+\begin{align}
+    W^{IS}-W_O^{SU,O}
+    &=K_I+3P-\left(K_O+2P+D-F\right)\notag\\
+    &=J+F.
+    \label{eq:outsider-is-gap}
+\end{align}
+である。\ref{app:j-positive} では、canonical $(c,v)$ domain全体で $J>0$ であることをconcavityとendpointの符号議論によって示す。$F>0$ なので、
+\begin{equation}
+    \boxed{W^{IS}>W_O^{SU,O}.}
+    \label{eq:outsider-prefers-is-after-bypass}
+\end{equation}
+である。この域外国の厳格な順位付けによって、加盟国側の選択的侵食結果がgrand-coalition blocking resultへと変換される。
+
+Section~\ref{subsec:model-stability} で定義した厳格ブロッキング概念を用いる。すなわち、deviating coalitionが現在の分割をblockするには、すべてのdeviatorが誘導された代替分割の下で厳格に改善しなければならない。したがって、deviatorのうち1国でも無差別ならblockingは成立しない。
+
+\subsection{高い私的互換性費用}
+\label{subsec:high-f-stability}
+
+$(c,v)\in\Omega_0$ を固定し、
+\begin{equation}
+    F>F^\ast=2T_A.
+    \label{eq:high-f-region-stability}
+\end{equation}
+とする。Lemma~\ref{lem:private-adoption} により、SUでもSWでも私的採用は生じない。したがって、関連する継続利得は、各国別標準の下ではすべての国について $W^{SW}$、国際標準化の下ではすべての国について $W^{IS}$、任意の地域SUの下では国の並べ替えを除いて $(W_M^{SU,N},W_M^{SU,N},W_O^{SU,N})$ である。
+
+各国別標準は安定ではない。なぜなら
+\[
+    W_M^{SU,N}>W^{SW}.
+\]
+だからである。任意の2国は地域SUを形成して両国とも厳格に改善できる。国際標準化も $\Omega_0$ 上で安定ではない。$\Phi_0=W_M^{SU,N}-W^{IS}>0$ なので、任意の2国がISから離脱して地域SUを形成すれば、両国とも厳格に改善する。
+
+次に、域外国 $o$ を持つ任意の地域分割 $\rho_{ij}^{SU}$ を考える。同じ2国によるdeviationはstatus quoを再現するだけなので、それをstrictly blockできない。ISへのgrand-coalition deviationも成立しない。現在の2加盟国はいずれも $W_M^{SU,N}>W^{IS}$ を得ているからである。域外国を含む別のpair、例えば $\{i,o\}$ は、国 $i$ をdeviation前後の両方で地域SUの加盟国にする。対称性により、その国は2つの地域coalitionで同じ $W_M^{SU,N}$ を得るため、厳格に改善するのではなく無差別である。したがって代替pairはblockできない。最後に、SWへのfragmentationは $W_M^{SU,N}>W^{SW}$ により現在の加盟国を悪化させる。また、現在の加盟国をSUの域外国にするdeviationは、その国に $W_O^{SU,N}<W^{IS}<W_M^{SU,N}$ を与える。よって、どの許容されるcoalitionも $\rho_{ij}^{SU}$ を厳格にはblockしない。
+
+したがって、高い私的互換性費用の下では、特定の一意なregional partnerではなく、3つすべての地域SUが存続する。
+
+\subsection{中間的な私的互換性費用}
+\label{subsec:intermediate-f-stability}
+
+次に、
+\begin{equation}
+    F_L<F<2T_A,
+    \qquad F_L=\max\{T_W,T_A\}.
+    \label{eq:intermediate-f-region-stability}
+\end{equation}
+とする。Lemma~\ref{lem:private-adoption} によりselection-freeな継続状態が得られる。すなわち、各地域SUの域外国企業だけがブロック標準を採用し、SU加盟企業は域外国標準を採用せず、SWでは私的採用が生じない。したがってSU加盟国は
+\begin{equation}
+    W_M^{SU,O}=K_I+2P+C
+    =W^{IS}-(P-C),
+    \label{eq:member-intermediate-welfare}
+\end{equation}
+を得る一方、域外国は \eqref{eq:outsider-welfare-bypass} を得る。
+
+このとき、すべての地域SUはgrand coalitionによって厳格にblockされる。2つの加盟国のそれぞれについて、
+\[
+    W^{IS}-W_M^{SU,O}=P-C>0
+\]
+である。これは $(c,v)\in\Omega_0$ だからである。域外国についても、\eqref{eq:outsider-is-gap} と $J>0$ から
+\[
+    W^{IS}-W_O^{SU,O}=J+F>0.
+\]
+である。したがって3国すべてが現在の地域coalitionの継続結果よりISを厳格に選好する。
+
+各国別標準も、admissible domain全体で成立するcanonical comparison $W^{IS}>W^{SW}$ によりgrand coalitionに厳格にblockされる。残るのはIS自身のstability確認である。ISから地域SUへのpair deviationは、2つのdeviatorをSU加盟国にするが、域外国企業のみの迂回によって両国はそれぞれ $W_M^{SU,O}<W^{IS}$ を得る。関連するdeviatorがSUの域外国になるdeviationは $W_O^{SU,O}<W^{IS}$ を与える。SWへのfragmentationは $W^{SW}<W^{IS}$ を与える。したがって、国際標準化を厳格にblockできるcoalitionは存在しない。
+
+\subsection{正式coalition stability}
+\label{subsec:formal-stability-theorem}
+
+以上の比較から、本稿のMain applied stability resultが得られる。
+
+\begin{theorem}[私的互換性と正式coalition stability]
+\label{thm:formal-coalition-stability}
+すべての $(c,v)\in\Omega_0$ について、strict-blocking stable setは私的互換性の固定費用に応じて次のように変化する。
+
+もし
+\[
+    F>2T_A,
+\]
+なら、SUまたはSWの下で私的採用は生じず、
+\begin{equation}
+    \boxed{
+    \mathcal S(F)
+    =\left\{
+    \rho_{12}^{SU},
+    \rho_{13}^{SU},
+    \rho_{23}^{SU}
+    \right\}.
+    }
+    \label{eq:high-f-stable-set}
+\end{equation}
+である。もし
+\[
+    F_L<F<2T_A,
+\]
+なら、すべての地域SUで域外国企業のみの私的採用が生じ、SWでは私的採用は生じず、
+\begin{equation}
+    \boxed{
+    \mathcal S(F)=\{\rho^{IS}\}.
+    }
+    \label{eq:intermediate-f-stable-set}
+\end{equation}
+である。したがって、私的互換性費用がhigh-$F$領域からintermediate領域へ低下すると、すべての地域標準化連合のstabilityが失われ、国際標準化が一意にstableとなり得る。
+\end{theorem}
+
+\begin{proof}
+$F>2T_A$ の場合、私的採用の継続状態はno-bypass stateである。各国別標準は、$W_M^{SU,N}>W^{SW}$ により2国の地域coalitionに厳格にblockされる。国際標準化も、$W_M^{SU,N}-W^{IS}=\Phi_0>0$ により2国の地域coalitionに厳格にblockされる。現在の任意の $\rho_{ij}^{SU}$ について、grand-coalition deviationは2つの加盟国がISより現在のSUを厳格に選好するため成立しない。代替のregional pairは、共通する加盟国が対称なSU間で無差別なので成立しない。fragmentationも、現在の加盟国が $W^{SW}$ または $W_O^{SU,N}$ のいずれかを得ることになり、どちらも $W_M^{SU,N}$ より低いため成立しない。したがって、正確に3つの地域SUがstableである。
+
+$F_L<F<2T_A$ の場合、各地域SUでは域外国企業のみの迂回が生じる。2加盟国は $W^{IS}-W_M^{SU,O}=P-C>0$ によりISを厳格に選好し、域外国も $W^{IS}-W_O^{SU,O}=J+F>0$ によりISを厳格に選好する。したがってgrand coalitionはすべての地域SUを厳格にblockする。同様に、$W^{IS}>W^{SW}$ によりSWも厳格にblockする。最後にISをblockするcoalitionは存在しない。SUへdeviateするpairは $W_M^{SU,O}<W^{IS}$ を得、SUの域外国になるdeviatorは $W_O^{SU,O}<W^{IS}$ を得、SWへのdeviationは $W^{SW}<W^{IS}$ を与える。したがってISが一意にstableである。
+\end{proof}
+
+Figure~\ref{fig:f-regions} は、検証済みwitnessにおける2つのheadline fixed-cost regionを示す。これは定理のnumerical illustrationであり、証明ではない。
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{../paper/figures/generated/figure_03_f_regions.pdf}
+    \caption{検証済みwitness $(c,v)=(0.10,0.24)$ における固定費用領域。$F_L<F<2T_A$ では域外国企業のみの私的互換性により国際標準化が一意にstableとなり、$F>2T_A$ では私的採用が生じず3つすべての地域標準化連合がstableとなる。この図はTheorem~\ref{thm:formal-coalition-stability} のnumerical illustrationであり、証明ではない。}
+    \label{fig:f-regions}
+\end{figure}
+
+Table~\ref{tab:stability-regions} は、定理を境界やlow-$F$ caseへ拡張することなく、同じ解析的領域をまとめる。
+\input{tables/generated/table_stability_regions}
+
+経済的メカニズムは、私的採用が正式coalitionを機械的に統合するというものではない。正式なmembershipは変わらない。代わりに、私的互換性費用が低下すると、域外国企業がブロック標準を技術的に複製できる継続状態が選ばれる。この行動は地域coalitionを支えていた加盟国市場の排除構成要素を取り除くが、域外国市場におけるcoalition加盟企業の位置を相互的に改善しない。その結果、加盟国はISへ順位付けを逆転させ、域外国も自らの採用費用を正しく含めた後でISを厳格に選好する。したがって、私的な技術適応は継続利得の再順位付けを通じて正式な制度のstabilityを変える。
+
+この結果は、headline fixed-cost comparisonに意図的に限定されている。$F\rightarrow0$ でmonotonicにunique-IS stabilityが成立すると主張するものではなく、対称的な市場規模の下で一意のregional partnerを選ぶものでもなく、world-welfare claimでもない。市場規模の非対称性とpartner selectionは次節で別に扱い、十分に低い私的互換性費用については \ref{app:low-f} で別に記録する。
