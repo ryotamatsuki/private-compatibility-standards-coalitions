@@ -2,7 +2,7 @@ PYTHON ?= python
 LATEXMK ?= latexmk
 LATEX_FLAGS := -pdf -interaction=nonstopmode -halt-on-error
 
-.PHONY: all verify verify-symbolic verify-welfare verify-numeric figures tables tables-check paper check-paper-log clean
+.PHONY: all verify verify-symbolic verify-welfare verify-numeric figures tables tables-check paper check-paper-log submission submission-files replication-package check-submission clean
 
 all: verify figures tables tables-check paper
 
@@ -58,8 +58,28 @@ check-paper-log:
 		(echo "LATEX REFERENCE/CITATION/LABEL GATE: FAIL"; exit 1)
 	@echo "LATEX REFERENCE/CITATION/LABEL GATE: PASS"
 
+submission-files: paper
+	@mkdir -p submission/generated
+	@cp paper/main.pdf submission/generated/manuscript.pdf
+	@cd submission && $(LATEXMK) $(LATEX_FLAGS) -bibtex- cover_letter.tex
+	@cd submission && $(LATEXMK) $(LATEX_FLAGS) -bibtex- title_page.tex
+	@cp submission/cover_letter.pdf submission/generated/cover_letter.pdf
+	@cp submission/title_page.pdf submission/generated/title_page.pdf
+
+replication-package:
+	$(PYTHON) code/make_submission_package.py
+
+check-submission:
+	$(PYTHON) code/check_submission_files.py
+
+submission: verify figures tables tables-check submission-files replication-package check-submission
+	@echo "IJIO SUBMISSION PACKAGE BUILD: PASS"
+
 clean:
 	@cd paper && $(LATEXMK) -C main.tex >/dev/null 2>&1 || true
+	@cd submission && $(LATEXMK) -C cover_letter.tex >/dev/null 2>&1 || true
+	@cd submission && $(LATEXMK) -C title_page.tex >/dev/null 2>&1 || true
 	@rm -f paper/figures/generated/*.pdf
 	@rm -f paper/tables/generated/*.tex
+	@rm -rf submission/generated
 	@rm -rf build

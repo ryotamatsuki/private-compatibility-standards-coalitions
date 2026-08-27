@@ -24,7 +24,7 @@ jobs:
       - name: Install Python dependencies
         run: python -m pip install --upgrade pip && pip install -r requirements.txt
 
-      - name: Install LaTeX toolchain
+      - name: Install LaTeX and PDF toolchain
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
@@ -33,7 +33,9 @@ jobs:
             texlive-latex-recommended \
             texlive-latex-extra \
             texlive-publishers \
-            texlive-fonts-recommended
+            texlive-fonts-recommended \
+            poppler-utils \
+            unzip
 
       - name: Symbolic and numerical verification
         run: make verify
@@ -50,6 +52,22 @@ jobs:
       - name: Compile manuscript
         run: make paper
 
+      - name: Build and audit IJIO submission package
+        run: make submission
+
+      - name: Clean-room replication package QA
+        run: |
+          QA_DIR="${RUNNER_TEMP}/ijio-replication-qa"
+          rm -rf "$QA_DIR"
+          mkdir -p "$QA_DIR"
+          unzip -q submission/generated/replication_package_anonymous.zip -d "$QA_DIR"
+          make -C "$QA_DIR" verify
+          make -C "$QA_DIR" figures
+          make -C "$QA_DIR" tables
+          make -C "$QA_DIR" tables-check
+          make -C "$QA_DIR" paper
+          echo "CLEAN-ROOM REPLICATION QA: PASS"
+
       - name: Upload manuscript audit artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -57,5 +75,23 @@ jobs:
           path: |
             paper/main.pdf
             paper/main.log
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Upload IJIO submission package
+        uses: actions/upload-artifact@v4
+        with:
+          name: ijio-submission-${{ github.sha }}
+          path: |
+            submission/generated/manuscript.pdf
+            submission/generated/manuscript_pdfinfo.txt
+            submission/generated/cover_letter.pdf
+            submission/generated/title_page.pdf
+            submission/generated/replication_package_anonymous.zip
+            submission/highlights.txt
+            submission/metadata.md
+            submission/declarations.md
+            submission/checklist.md
+            submission/reviewer_candidates.md
           if-no-files-found: error
           retention-days: 7
