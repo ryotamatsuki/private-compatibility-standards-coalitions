@@ -1,0 +1,169 @@
+\section{生産物市場均衡}
+\label{sec:product-market}
+
+本節では、Section~\ref{sec:model} から引き継がれる互換性構造と限界費用構造を所与としてCournot段階を解く。国内市場は分断されているため、各仕向地は独立したCournot subgameである。正式なレジーム、および後に導入する私的な標準採用によって、継続分析に十分な4つの生産物市場構成が生じ得る。すなわち、完全互換、地域標準化連合の加盟国市場、そのような連合の域外国市場、各国別標準である。これらの構成を一度解き、その結果得られる数量、営業利益ブロック、消費者余剰ブロックを、後続分析で再利用できるよう整理する。ここではまだ私的採用段階を解かず、政府の継続利得も比較しない。必要なブロックがちょうど4つである理由は、Section~\ref{sec:model} の使用標準ルールにある。ある市場は、相互に互換で限界費用ゼロの3社、相互に互換で限界費用ゼロの2社と高費用のsingleton、相互に互換で高費用の2社と限界費用ゼロのsingleton、あるいは3つのsingletonで自国企業が限界費用ゼロ・2つの外国企業が費用 $c$ を負う状態のいずれかとなる。後の採用意思決定は、所与の仕向地でこれらのどの生産物市場環境が成立するかを決める。それによって新たなCournot解が必要になるわけではない。この分離により、採用分析は数量ゲームを繰り返し解くのではなく、少数の検証済み継続値に基づいて行うことができる。
+
+\subsection{生産物市場の一階条件}
+\label{subsec:product-market-focs}
+
+仕向地市場 $k$ を固定する。その市場における企業 $i$ の営業利益は
+\begin{equation}
+    \pi_i^k=(p_i^k-r_i^k)q_i^k.
+    \label{eq:market-operating-profit}
+\end{equation}
+である。企業 $i$ が少なくとも2社からなる互換性グループに属する場合、その互換性便益には自社の生産量が含まれる。\eqref{eq:compatibility-benefit} と \eqref{eq:inverse-demand} より、
+\begin{equation}
+    \frac{\partial p_i^k}{\partial q_i^k}=-(1-v),
+    \qquad |G_i^k|\ge 2.
+    \label{eq:compatible-own-slope}
+\end{equation}
+したがって、内点の一階条件は
+\begin{equation}
+    p_i^k-r_i^k=(1-v)q_i^k.
+    \label{eq:compatible-markup}
+\end{equation}
+となる。singletonについては $g_i^k=0$ であるため、
+\begin{equation}
+    \frac{\partial p_i^k}{\partial q_i^k}=-1,
+    \qquad
+    p_i^k-r_i^k=q_i^k.
+    \label{eq:singleton-markup}
+\end{equation}
+である。これらのmarkup relationは有用な近道を与える。互換性は、同じ標準を共有する企業の需要切片を引き上げる一方、互換企業の限界的な生産拡大は自社の互換性便益も高める。後者の効果により、自社の逆需要の傾きは $-1$ から $-(1-v)$ へと緩やかになる。したがって互換性効果は需要水準と限界収入計算の双方を変える。これに対して非互換費用 $c$ は、margin $p_i^k-r_i^k$ を通じてのみ入る。それは企業の競争上の位置を変えるが、自社需要の傾きを変えない。この2つのmarginは、Cournot段階における経済的に関連する状態変数も特定する。企業の自社需要の傾きは互換性を持つpeerがいるかどうかに依存し、費用項はローカル標準をサポートしているかどうかに依存する。したがって、2つの地域構成は同じ「2社グループ＋singleton」という互換性分割を持つものの、限界費用の割当てが反転するため異なる均衡ブロックを必要とする。$0<v<1/4$ なので、以下で考える各構成において営業利益は自社数量について厳格に凹である。二階微分は互換企業について $-2(1-v)$、singletonについて $-2$ である。
+
+\subsection{完全互換}
+\label{subsec:product-market-complete}
+
+3社すべてが同じ標準を使用し、全社の限界費用がゼロであるとする。対称性から $q_1=q_2=q_3\equiv q_I$ である。総生産量は $3q_I$ であり、各企業の逆需要は $p=1-(1-v)3q_I$ である。\eqref{eq:compatible-markup} を用いると、対称的な一階条件は
+\begin{equation}
+    1-4(1-v)q_I=0.
+    \label{eq:foc-complete}
+\end{equation}
+したがって
+\begin{equation}
+    q_I=\frac{1}{4(1-v)}.
+    \label{eq:qI}
+\end{equation}
+を得る。互換企業のmarkup relationにより、各企業の営業利益は
+\begin{equation}
+    P\equiv(1-v)q_I^2=\frac{1}{16(1-v)}.
+    \label{eq:profit-P}
+\end{equation}
+である。以下では、大文字 $P,A,B,C,D,H,S$ は生産物市場の利益ブロックを表し、正式分割を表すものではない。特に $P$ は完全互換における1企業の利益である。この式はmarkup relationを保持する利点を示している。均衡数量が分かれば、営業利益を得るために価格式へ別途代入する必要がない。
+
+\subsection{地域標準化：加盟国市場}
+\label{subsec:product-market-su-member}
+
+2か国からなる地域標準化連合の加盟国市場を考える。2つのcoalition企業は相互に互換で限界費用ゼロである一方、排除された域外企業はsingletonであり限界費用 $c$ を負担する。$x$ をcoalition企業の共通数量、$y$ を域外企業の数量とする。coalition企業の価格は $1-2(1-v)x-y$、域外企業の価格は $1-2x-y$ である。2つの異なる一階条件は
+\begin{align}
+    1-3(1-v)x-y&=0, \label{eq:foc-su-member-compatible}\\
+    1-c-2x-2y&=0. \label{eq:foc-su-member-outsider}
+\end{align}
+に簡約される。この2方程式体系を解くと、
+\begin{equation}
+    q_M\equiv x=\frac{1+c}{2(2-3v)},
+    \qquad
+    q_B\equiv y=\frac{1-3c-3(1-c)v}{2(2-3v)}.
+    \label{eq:quantities-su-member}
+\end{equation}
+を得る。対応する営業利益ブロックは、\eqref{eq:compatible-markup}--\eqref{eq:singleton-markup} から直ちに
+\begin{equation}
+    A\equiv(1-v)q_M^2
+    =\frac{(1-v)(1+c)^2}{4(2-3v)^2},
+    \qquad
+    B\equiv q_B^2
+    =\frac{[1-3c-3(1-c)v]^2}{4(2-3v)^2}.
+    \label{eq:profits-su-member}
+\end{equation}
+となる。したがって $A$ はcoalition加盟企業がcoalition加盟国市場で得る利益、$B$ は同じ市場で排除された域外企業が得る利益である。$q_M$ と $q_B$ の区別は経済的に実質を持つ。加盟企業は限界費用ゼロと他の加盟企業との互換性を同時に持つ一方、域外企業はその仕向地で技術的に孤立し、かつ限界適応費用も負担する。\eqref{eq:parameter-domain} における $c$ の上限は、この構成における域外企業の数量を厳格に正に保つのにちょうど十分に強い。この段階では、これらのブロックに政府レベルの解釈を付与しない。
+
+\subsection{地域標準化：域外国市場}
+\label{subsec:product-market-su-outsider}
+
+次に域外国の市場を考える。2つのcoalition企業は引き続き相互に互換であるが、どちらも域外国のローカル標準をサポートしていないため、それぞれ限界費用 $c$ を負担する。域外国の自国企業は限界費用ゼロのsingletonである。$x$ をcoalition企業の共通数量、$y$ を域外国の自国企業の数量とする。一階条件は
+\begin{align}
+    1-c-3(1-v)x-y&=0, \label{eq:foc-su-outsider-compatible}\\
+    1-2x-2y&=0. \label{eq:foc-su-outsider-native}
+\end{align}
+である。これより
+\begin{equation}
+    q_C\equiv x=\frac{1-2c}{2(2-3v)},
+    \qquad
+    q_D\equiv y=\frac{1+2c-3v}{2(2-3v)}.
+    \label{eq:quantities-su-outsider}
+\end{equation}
+を得る。対応する利益ブロックは
+\begin{equation}
+    C\equiv(1-v)q_C^2
+    =\frac{(1-v)(1-2c)^2}{4(2-3v)^2},
+    \qquad
+    D\equiv q_D^2
+    =\frac{(1+2c-3v)^2}{4(2-3v)^2}.
+    \label{eq:profits-su-outsider}
+\end{equation}
+である。\eqref{eq:profits-su-outsider} の記号 $D$ は、域外国の自国企業の生産物市場利益ブロックにすぎない。これは後に導入する相互的不利益（reciprocal disadvantage）の対象とは異なる。加盟国市場の構成と比べると、限界費用負担の所在が反転している。相互に互換な2つのcoalition企業が $c$ を支払う一方、native singletonは支払わない。このため、互換性分割が依然として2社グループとsingletonから構成されていても、関連数量は $q_M$ と $q_B$ ではなく $q_C$ と $q_D$ となる。
+
+\subsection{各国別標準}
+\label{subsec:product-market-sw}
+
+各国別標準の下では、3社すべてがsingletonである。どの仕向地市場でも自国企業の限界費用はゼロで、2つの外国企業はそれぞれ限界費用 $c$ を負担する。$h$ を自国企業の生産量、$s$ を外国企業の共通生産量とする。singletonのmarkup conditionから
+\begin{align}
+    1-2h-2s&=0, \label{eq:foc-sw-native}\\
+    1-c-h-3s&=0. \label{eq:foc-sw-foreign}
+\end{align}
+となる。したがって
+\begin{equation}
+    q_H\equiv h=\frac{1+2c}{4},
+    \qquad
+    q_S\equiv s=\frac{1-2c}{4},
+    \label{eq:quantities-sw}
+\end{equation}
+であり、利益ブロックは
+\begin{equation}
+    H\equiv q_H^2=\frac{(1+2c)^2}{16},
+    \qquad
+    S\equiv q_S^2=\frac{(1-2c)^2}{16}.
+    \label{eq:profits-sw}
+\end{equation}
+となる。したがって非互換費用 $c$ は、私的な標準採用を考える前から、正式レジームごとに企業の競争上の位置を異なる形で変化させる。各国別標準の下では互換性による需要シフトがないため、一階条件に $v$ は現れない。自国企業と外国企業の非対称性はすべて費用差から生じる。これは、共有標準がもたらす追加的な生産物市場効果を分離するうえで有用なbenchmarkを与える。
+
+\subsection{消費者余剰とCournot構成ブロック}
+\label{subsec:product-market-blocks}
+
+Section~\ref{sec:model} と同様に $X_k=\sum_j q_j^k$ とする。参加する限界消費者のtypeは $1-X_k$ である。互換性によって製品固有の価格は変わり得るが、すべてのactive productの一般化価格 $p_i^k-g_i^k$ はこの共通の限界typeに等しい。したがって消費者余剰は、各構成を総市場数量のみを通じて反映する。市場質量 $m_k$ の下では、
+\begin{equation}
+    CS_k
+    =m_k\int_{1-X_k}^{1}\left[u-(1-X_k)\right]du
+    =m_k\frac{X_k^2}{2}.
+    \label{eq:consumer-surplus-general}
+\end{equation}
+Main Modelでは $m_k=1$ とする。消費者余剰を計算する前に、対応する総数量はコンパクトに
+\begin{align}
+    X_I&=\frac{3}{4(1-v)}, &
+    X_M&=\frac{3-c-3v+3cv}{2(2-3v)}, \\
+    X_O&=\frac{3-2c-3v}{2(2-3v)}, &
+    X_W&=\frac{3-2c}{4}.
+    \label{eq:total-quantities}
+\end{align}
+と書ける。これらの総数量を代入すると、
+\begin{align}
+    K_I&\equiv\frac{(3q_I)^2}{2}
+        =\frac{9}{32(1-v)^2}, \label{eq:KI}\\
+    K_M&\equiv\frac{(2q_M+q_B)^2}{2}
+        =\frac{(3-c-3v+3cv)^2}{8(2-3v)^2}, \label{eq:KM}\\
+    K_O&\equiv\frac{(2q_C+q_D)^2}{2}
+        =\frac{(3-2c-3v)^2}{8(2-3v)^2}, \label{eq:KO}\\
+    K_W&\equiv\frac{(q_H+2q_S)^2}{2}
+        =\frac{(3-2c)^2}{32}. \label{eq:KW}
+\end{align}
+
+\begin{lemma}[Cournot均衡の構成ブロック]
+\label{lem:cournot-blocks}
+\eqref{eq:parameter-domain} のcanonical parameter domain上で、上記4つの生産物市場構成はいずれも一意の内点Cournot均衡を持つ。均衡数量は \eqref{eq:qI}、\eqref{eq:quantities-su-member}、\eqref{eq:quantities-su-outsider}、\eqref{eq:quantities-sw}、企業利益ブロックは \eqref{eq:profit-P}、\eqref{eq:profits-su-member}、\eqref{eq:profits-su-outsider}、\eqref{eq:profits-sw}、消費者余剰ブロックは \eqref{eq:KI}--\eqref{eq:KW} で与えられる。
+\end{lemma}
+
+以上の導出により、一階条件体系とそのclosed-form solutionが得られた。厳格な凹性により、各企業のbest responseは一意である。2つの地域構成では、簡約された $2\times2$ coefficient matrixのdeterminantは $2(2-3v)>0$ であり、各国別標準では対応するdeterminantは $4$ である。また完全互換は \eqref{eq:foc-complete} により直接決まる。したがって、記載した線形体系はいずれも一意解を持つ。内点性もcanonical domainから明瞭に従う。特に $q_B$ の分子は \eqref{eq:parameter-domain} より $1-3v-3c(1-v)>0$ である。同じdomainから $c<1/3$ が従い、これは $q_C>0$ と $q_S>0$ に十分である。他の数量はすべて直ちに正である。\eqref{eq:total-quantities} より、$X_I<1$ は $v<1/4$ から従い、残る3つの総数量も指定domain上で1未満である。詳細なdomain algebraは \ref{app:cournot} にまとめる。Table~\ref{tab:cournot-blocks} は、論文の残り全体で使用するブロックを要約する。
+
+\input{tables/generated/table_cournot_blocks}
+
+これらの式は、生産物市場チャネルを明確に分離する。互換性は同じ標準を共有する企業の需要を引き上げ、自社数量に関する傾きを変える一方、限界非互換費用は仕向地でどの企業が競争上有利となるかを変える。その結果、私的採用を考える前から正式coalitionごとに異なる企業利益ブロックと消費者余剰ブロックが生じる。Section~\ref{sec:private-compatibility} では、これらのブロックを用いて私的互換性を分析する。
