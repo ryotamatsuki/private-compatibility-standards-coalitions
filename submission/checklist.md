@@ -4,7 +4,7 @@ Verified/updated: 2026-09-07
 
 | Item | Status | Note |
 |---|---|---|
-| Frozen Stage-8 theory unchanged | READY | Technical-return repair does not alter model primitives, formulas, equilibrium concepts, theorem statements, or paper-body arguments. |
+| Frozen Stage-8 theory unchanged | READY | Technical-return repair and declaration finalization do not alter model primitives, formulas, equilibrium concepts, theorem statements, or paper-body arguments. |
 | IJIO technical return | ACTIONED IN REPOSITORY | Editorial office requested LaTeX source material and author information on the title page of the main document before external review. |
 | Author name | READY | Ryota Matsuki. |
 | Affiliation | READY | Independent Researcher, Matsuyama, Ehime, Japan. |
@@ -16,7 +16,7 @@ Verified/updated: 2026-09-07
 | Canonical anonymous manuscript | PRESERVED | `paper/main.tex` remains `Anonymous Author`; it is not the returned identified main document. |
 | Anonymous replication package | PRESERVED | `generated/replication_package_anonymous.zip` remains identity-free and separate from the IJIO EM source archive. |
 | Separate title page | READY | Populated with Ryota Matsuki, Independent Researcher, Matsuyama, Ehime, Japan, email, and corresponding-author designation. |
-| Cover letter identity fields | READY | Signature populated; final originality/funding/competing-interest certifications remain factual user inputs. |
+| Cover letter identity fields | READY | Signature populated; funding and competing-interest statements finalized. Final originality/prior-dissemination certifications remain live-portal confirmations. |
 | Author-identifying repository link absent from manuscript | READY | No public repository URL is added to the generated IJIO main manuscript. |
 | Abstract | READY | 161 words. |
 | Keywords | READY | Six indexing terms. |
@@ -27,9 +27,9 @@ Verified/updated: 2026-09-07
 | Manuscript-preparation AI declaration | READY | Existing disclosure retained in the paper. |
 | Research-process AI disclosure | READY | Existing computational-verification/AI-assisted research-methods disclosure retained. |
 | AI-generated figure declaration | NOT REQUIRED | Figures are ordinary Python/Matplotlib analytical outputs. |
-| Funding declaration | USER INPUT REQUIRED | Must be factual; not inferred. |
-| Competing-interest declaration | USER INPUT REQUIRED | Must be factual; not inferred. |
-| CRediT statement | USER INPUT REQUIRED | Confirm single-author roles if the live portal requires them. |
+| Funding declaration | READY | This research received no external funding. |
+| Competing-interest declaration | READY | The author declares no competing interests. |
+| CRediT statement | READY | Ryota Matsuki: Conceptualization, Methodology, Formal analysis, Software, Validation, Visualization, Writing – original draft, Writing – review & editing. |
 | ORCID | PORTAL / USER RECHECK | Enter only if a verified ORCID is available/required. |
 | Other prior preprint/dissemination status | USER INPUT REQUIRED | Confirm SSRN/arXiv/RePEc/working-paper/conference/public manuscript status. |
 | Not under review elsewhere | USER CONFIRMATION REQUIRED | Explicit certification required at final approval. |
