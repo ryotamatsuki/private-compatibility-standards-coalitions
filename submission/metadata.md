@@ -32,24 +32,22 @@ Abstract word count: 161.
 - C71 — Cooperative Games
 
 ## Authors
-TBD -- USER INPUT REQUIRED
+Ryota Matsuki
 
 ## Author order
-TBD -- USER INPUT REQUIRED
+1. Ryota Matsuki
 
 ## Affiliations
-TBD -- USER INPUT REQUIRED
+Independent Researcher, Matsuyama, Ehime, Japan
+
+## Email
+ryota.matsuki@gmail.com
 
 ## Corresponding author
-TBD -- USER INPUT REQUIRED
+Ryota Matsuki
 
-Required fields to supply before upload:
-- official author name spelling;
-- department/institution;
-- full postal affiliation address;
-- professional email;
-- ORCID if applicable;
-- corresponding-author designation.
+## ORCID
+Not supplied. Enter only if the live Editorial Manager account has a verified ORCID to use.
 
 ## Funding
 TBD -- USER INPUT REQUIRED
@@ -58,7 +56,7 @@ TBD -- USER INPUT REQUIRED
 TBD -- USER INPUT REQUIRED
 
 ## CRediT
-TBD -- USER INPUT REQUIRED. A role template is provided in `declarations.md`; do not assign roles until authorship is confirmed.
+TBD -- USER INPUT REQUIRED. A role template is provided in `declarations.md`; do not assign roles until the declaration is confirmed.
 
 ## Data availability
 No empirical data were used for the research described in this article.
@@ -84,8 +82,17 @@ TBD -- USER CONFIRMATION REQUIRED:
 - not previously published other than any permitted preprint/working-paper form;
 - all human authors approve the submission.
 
+## Technical return — 2026-09-07
+The IJIO editorial office returned the submission before external review and requested two corrections:
+1. provide the LaTeX source material, including any figure files used by the manuscript;
+2. place author name, affiliation, email address, and corresponding-author designation on the title page of the main document.
+
+The repository therefore generates a separate identified, flat Editorial Manager source package while preserving the canonical anonymous research/replication source separately.
+
 ## Submission notes
-- Reviewer manuscript is anonymous.
-- Keep the public GitHub URL out of the reviewer manuscript until IJIO's anonymization model is confirmed.
-- Current official Guide for Authors is linked but was inaccessible to the automated client (HTTP 403); recheck live portal-specific labels and fee fields before upload.
+- Upload the identified `generated/manuscript.pdf` and the flat `generated/ijio_em_source.zip` for the technical return.
+- The Editorial Manager source archive must contain no subfolders; all TeX, BibTeX, table, and figure dependencies are flattened to one level.
+- The main document identifies Ryota Matsuki as corresponding author with the affiliation `Independent Researcher, Matsuyama, Ehime, Japan` and email `ryota.matsuki@gmail.com`.
+- Keep the anonymous replication package separate from the identified Editorial Manager manuscript source.
+- Recheck live portal-specific labels, declarations, and fee fields before final approval.
 - Do not press the final Submit/Approve/Confirm action without explicit author authorization.
