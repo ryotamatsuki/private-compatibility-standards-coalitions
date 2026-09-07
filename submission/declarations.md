@@ -46,32 +46,17 @@ Historical ChatGPT/OpenAI account-level data settings are not verifiable from re
 
 The paper's figures are analytical outputs generated reproducibly with Python/Matplotlib. No generative-image system is used by the figure-generation pipeline.
 
-## Funding — USER INPUT REQUIRED
+## Funding — READY
 
-TBD -- USER INPUT REQUIRED.
+This research received no external funding.
 
-Do not insert a no-funding statement unless the author confirms that no specific grant or other reportable funding supported the work.
+## Competing interests — READY
 
-## Competing interests — USER INPUT REQUIRED
+The author declares no competing interests.
 
-TBD -- USER INPUT REQUIRED.
+## CRediT authorship contribution statement — READY
 
-Do not insert a no-conflict statement unless the author confirms it.
-
-## CRediT authorship contribution statement — USER INPUT REQUIRED
-
-Authorship has not been supplied in repository metadata. If this is a single-author paper and factually accurate, candidate roles to confirm are:
-
-- Conceptualization
-- Methodology
-- Formal analysis
-- Software
-- Validation
-- Visualization
-- Writing – original draft
-- Writing – review & editing
-
-If there are coauthors, assign only roles that accurately reflect each person's contribution.
+Ryota Matsuki: Conceptualization, Methodology, Formal analysis, Software, Validation, Visualization, Writing – original draft, Writing – review & editing.
 
 ## Originality and simultaneous submission — USER CONFIRMATION REQUIRED
 
