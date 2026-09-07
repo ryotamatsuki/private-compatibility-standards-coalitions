@@ -50,13 +50,13 @@ Ryota Matsuki
 Not supplied. Enter only if the live Editorial Manager account has a verified ORCID to use.
 
 ## Funding
-TBD -- USER INPUT REQUIRED
+This research received no external funding.
 
 ## Competing interests
-TBD -- USER INPUT REQUIRED
+The author declares no competing interests.
 
 ## CRediT
-TBD -- USER INPUT REQUIRED. A role template is provided in `declarations.md`; do not assign roles until the declaration is confirmed.
+Ryota Matsuki: Conceptualization, Methodology, Formal analysis, Software, Validation, Visualization, Writing – original draft, Writing – review & editing.
 
 ## Data availability
 No empirical data were used for the research described in this article.
@@ -93,6 +93,7 @@ The repository therefore generates a separate identified, flat Editorial Manager
 - Upload the identified `generated/manuscript.pdf` and the flat `generated/ijio_em_source.zip` for the technical return.
 - The Editorial Manager source archive must contain no subfolders; all TeX, BibTeX, table, and figure dependencies are flattened to one level.
 - The main document identifies Ryota Matsuki as corresponding author with the affiliation `Independent Researcher, Matsuyama, Ehime, Japan` and email `ryota.matsuki@gmail.com`.
+- Funding, competing-interests, and CRediT declarations are finalized in repository metadata and manuscript declarations.
 - Keep the anonymous replication package separate from the identified Editorial Manager manuscript source.
 - Recheck live portal-specific labels, declarations, and fee fields before final approval.
 - Do not press the final Submit/Approve/Confirm action without explicit author authorization.

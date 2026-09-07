@@ -12,6 +12,7 @@ OUT_ROOT = ROOT / "submission" / "generated"
 OUT_DIR = OUT_ROOT / "ijio_em_source"
 ZIP_PATH = OUT_ROOT / "ijio_em_source.zip"
 
+IDENTIFIED_AUTHOR = "Ryota Matsuki"
 AUTHOR_BLOCK = r"""\author[aff1]{Ryota Matsuki\corref{cor1}}
 \ead{ryota.matsuki@gmail.com}
 \cortext[cor1]{Corresponding author}
@@ -59,6 +60,13 @@ def rewrite_tex(path: Path, text: str, queue: deque[Path], seen: dict[str, Path]
         if r"\author{Anonymous Author}" not in text:
             fail("canonical anonymous author marker not found in paper/main.tex")
         text = text.replace(r"\author{Anonymous Author}", AUTHOR_BLOCK, 1)
+
+    # The canonical research/replication source remains anonymous.  The IJIO
+    # editorial-office return, however, explicitly requires author identity in
+    # the main document.  Convert any anonymous author label in copied TeX
+    # dependencies (notably the CRediT statement) only in this identified EM
+    # package.
+    text = text.replace("Anonymous Author", IDENTIFIED_AUTHOR)
 
     def input_repl(match: re.Match[str]) -> str:
         dep = resolve_input(match.group(1))
@@ -118,11 +126,11 @@ def main() -> None:
     ):
         if required not in main_tex:
             fail(f"identified main.tex is missing {required!r}")
-    if "Anonymous Author" in main_tex:
-        fail("identified main.tex still contains Anonymous Author")
 
     for tex_path in OUT_DIR.glob("*.tex"):
         text = tex_path.read_text(encoding="utf-8")
+        if "Anonymous Author" in text:
+            fail(f"identified IJIO source still contains Anonymous Author in {tex_path.name}")
         for match in INPUT_RE.finditer(text):
             if "/" in match.group(1) or "\\" in match.group(1):
                 fail(f"subfolder input remains in {tex_path.name}: {match.group(1)}")
