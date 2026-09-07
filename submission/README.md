@@ -4,27 +4,54 @@ Target: *International Journal of Industrial Organization* (IJIO)
 
 This directory contains the upload-ready administrative and reproducibility layer for **Private Compatibility and the Stability of Standards Coalitions**. It does not change the frozen Stage-8 economic model.
 
-## Intended upload set
+## Technical return dated 2026-09-07
 
-After the remaining author metadata are supplied and the live Editorial Manager screens are rechecked, the generated upload set is:
+The IJIO editorial office returned the submission before external review for two technical corrections:
 
-- `generated/manuscript.pdf` — anonymous reviewer manuscript.
-- `generated/title_page.pdf` — separate non-anonymous title page; currently contains explicit `TBD -- USER INPUT REQUIRED` placeholders.
-- `generated/cover_letter.pdf` — IJIO-specific cover letter; currently contains a corresponding-author placeholder and a certification placeholder.
+1. provide the LaTeX source material, including any figure files actually used by the manuscript;
+2. place author name, affiliation, email address, and corresponding-author designation on the title page of the main document.
+
+The submission pipeline therefore now produces a separate identified Editorial Manager manuscript/source package while preserving the canonical anonymous research manuscript and anonymous replication package separately.
+
+## Author metadata for the returned submission
+
+- Author: Ryota Matsuki
+- Affiliation: Independent Researcher, Matsuyama, Ehime, Japan
+- Email: ryota.matsuki@gmail.com
+- Corresponding author: Ryota Matsuki
+
+## Intended upload set for the technical return
+
+- `generated/manuscript.pdf` — identified main manuscript generated from the Editorial Manager source package.
+- `generated/ijio_em_source.zip` — flat, one-level LaTeX/BibTeX/source archive for Editorial Manager; contains the identified `main.tex` and all source dependencies actually referenced by the manuscript.
+- `generated/title_page.pdf` — separate identified title page, retained in case the live portal requests it as a distinct file.
+- `generated/cover_letter.pdf` — IJIO-specific cover letter with corresponding-author details populated; final certification text still requires factual confirmation before submission.
 - `highlights.txt` — five Elsevier-compliant highlights, each <=85 characters.
-- `generated/replication_package_anonymous.zip` — reviewer-safe source/code package with no git history or repository-owner identifiers.
+- `generated/replication_package_anonymous.zip` — separate reviewer-safe source/code package with no git history or repository-owner identifiers.
 
 ## Administrative source files
 
-- `metadata.md` — copy/paste submission-system metadata.
+- `metadata.md` — copy/paste submission-system metadata and the technical-return record.
 - `declarations.md` — data/code/AI statements and author-dependent declarations.
 - `checklist.md` — READY / NOT REQUIRED / USER INPUT REQUIRED / PORTAL RECHECK status.
 - `reviewer_candidates.md` — subject-fit candidate pool; conflicts must be confirmed by the author before use.
 - `reproducibility_readme.md` — README embedded in the anonymous replication package.
 - `cover_letter.tex` and `title_page.tex` — sources for generated PDFs.
 
+## Build logic
+
+`make submission` now:
+
+1. verifies the frozen symbolic and numerical model;
+2. generates figures and tables;
+3. constructs a flat one-level Editorial Manager source archive from the canonical paper sources;
+4. replaces only the anonymous author marker in the generated EM copy with the identified author block;
+5. compiles `generated/manuscript.pdf` from that flat identified source package;
+6. keeps `paper/main.tex` anonymous for the separate replication package;
+7. runs source-archive, author-metadata, PDF, and anonymization gates.
+
+This separation is deliberate: the IJIO technical return requires author information in the main document, while the reproducibility archive remains identity-free.
+
 ## Hard rule
 
-This package may be used to prepare a draft submission, but **no final Submit / Approve Submission / Confirm action is authorized without explicit author approval**.
-
-The current Guide for Authors URL returned HTTP 403 to the automated verification client. Any item marked `PORTAL RECHECK REQUIRED` must therefore be rechecked against the live IJIO Editorial Manager workflow immediately before upload.
+No final Submit / Approve Submission / Confirm action is authorized without explicit author approval. Recheck the live Editorial Manager file labels and any remaining declaration/fee fields immediately before approval.
