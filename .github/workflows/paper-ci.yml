@@ -49,11 +49,27 @@ jobs:
       - name: Syntax-check generated tables
         run: make tables-check
 
-      - name: Compile manuscript
+      - name: Compile canonical anonymous manuscript
         run: make paper
 
       - name: Build and audit IJIO submission package
         run: make submission
+
+      - name: Clean-room IJIO Editorial Manager source QA
+        run: |
+          QA_DIR="${RUNNER_TEMP}/ijio-em-source-qa"
+          rm -rf "$QA_DIR"
+          mkdir -p "$QA_DIR"
+          unzip -q submission/generated/ijio_em_source.zip -d "$QA_DIR"
+          if grep -qsE '\\cite[a-zA-Z*]*\{' "$QA_DIR"/*.tex && grep -qsE '^[[:space:]]*@' "$QA_DIR/references.bib"; then
+            (cd "$QA_DIR" && latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex)
+          else
+            (cd "$QA_DIR" && latexmk -pdf -interaction=nonstopmode -halt-on-error -bibtex- main.tex)
+          fi
+          pdftotext "$QA_DIR/main.pdf" - | grep -F "Ryota Matsuki"
+          pdftotext "$QA_DIR/main.pdf" - | grep -F "Independent Researcher"
+          pdftotext "$QA_DIR/main.pdf" - | grep -F "ryota.matsuki@gmail.com"
+          echo "CLEAN-ROOM IJIO EM SOURCE QA: PASS"
 
       - name: Clean-room replication package QA
         run: |
@@ -85,6 +101,7 @@ jobs:
           path: |
             submission/generated/manuscript.pdf
             submission/generated/manuscript_pdfinfo.txt
+            submission/generated/ijio_em_source.zip
             submission/generated/cover_letter.pdf
             submission/generated/title_page.pdf
             submission/generated/replication_package_anonymous.zip
