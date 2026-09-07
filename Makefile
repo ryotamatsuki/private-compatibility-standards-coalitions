@@ -2,7 +2,7 @@ PYTHON ?= python
 LATEXMK ?= latexmk
 LATEX_FLAGS := -pdf -interaction=nonstopmode -halt-on-error
 
-.PHONY: all verify verify-symbolic verify-welfare verify-numeric figures tables tables-check paper check-paper-log submission submission-files replication-package check-submission clean
+.PHONY: all verify verify-symbolic verify-welfare verify-numeric figures tables tables-check paper check-paper-log ijio-em-source submission submission-files replication-package check-submission clean
 
 all: verify figures tables tables-check paper
 
@@ -58,9 +58,23 @@ check-paper-log:
 		(echo "LATEX REFERENCE/CITATION/LABEL GATE: FAIL"; exit 1)
 	@echo "LATEX REFERENCE/CITATION/LABEL GATE: PASS"
 
-submission-files: paper
-	@mkdir -p submission/generated
-	@cp paper/main.pdf submission/generated/manuscript.pdf
+# IJIO technical return (2026-09-07): EM cannot process TeX submissions
+# containing subfolders. Build a one-level, identified source archive whose
+# main document contains author, affiliation, email, and corresponding-author
+# information. The canonical paper/main.tex remains anonymous for the separate
+# replication package.
+ijio-em-source: figures tables
+	$(PYTHON) code/make_ijio_em_source_package.py
+	@test -s submission/generated/ijio_em_source.zip
+	@test -s submission/generated/ijio_em_source/main.tex
+
+submission-files: ijio-em-source
+	@cd submission/generated/ijio_em_source && if grep -qsE '\\cite[a-zA-Z*]*\{' *.tex && grep -qsE '^[[:space:]]*@' references.bib; then \
+		$(LATEXMK) $(LATEX_FLAGS) main.tex; \
+	else \
+		$(LATEXMK) $(LATEX_FLAGS) -bibtex- main.tex; \
+	fi
+	@cp submission/generated/ijio_em_source/main.pdf submission/generated/manuscript.pdf
 	@cd submission && $(LATEXMK) $(LATEX_FLAGS) -bibtex- cover_letter.tex
 	@cd submission && $(LATEXMK) $(LATEX_FLAGS) -bibtex- title_page.tex
 	@cp submission/cover_letter.pdf submission/generated/cover_letter.pdf
