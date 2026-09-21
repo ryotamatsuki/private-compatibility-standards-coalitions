@@ -167,6 +167,18 @@ B1 = (1-v)*qB1**2
 C1 = (1-v)*qC1**2
 KM1 = (2*qM1+qB1)**2/2
 
+# S1 remains interior on the old canonical feasible domain.
+# K(v)>0 for 0<v<1/4 because K is decreasing there and K(1/4)=11/16.
+assert sp.diff(K,v).subs(v,sp.Rational(1,4)) < 0
+assert K.subs(v,sp.Rational(1,4)) == sp.Rational(11,16)
+# qB1 numerator is exactly the old feasibility slack.
+assert eq(1-3*v-3*c*(1-v), (1-3*v)-3*c*(1-v))
+# qC1/qS1 numerator is bounded below by 1/3 at the old c ceiling.
+assert eq((1-2*v-2*c*(1-v)).subs(c,vbar), sp.Rational(1,3))
+# qM1 and qD1 numerators exceed their c=0 values, which stay positive for v<1/4.
+assert (1-2*sp.Rational(1,4)) > 0
+assert (1-3*sp.Rational(1,4)) > 0
+
 qm, qb = sp.symbols("qm qb", real=True)
 sol = sp.solve([
     sp.Eq(1 - 2*(1-v)*qm - qb, (1-v)*qm),
@@ -202,6 +214,7 @@ f1 = 4*c*(1-v)**2-v**2
 f2 = 4*c*(1-v)**2-(7*v**2-12*v+4)
 nd1, dd1 = sp.fraction(D1)
 assert eq(nd1, f1*f2)
+assert eq(dd1, 16*(v-1)*K**2)
 assert eq(f2.subs(c,(1-3*v)/(3*(1-v))),
           -(9*v**2-20*v+8)/3)
 # On 0<v<1/4, 9v^2-20v+8 is decreasing and remains positive
