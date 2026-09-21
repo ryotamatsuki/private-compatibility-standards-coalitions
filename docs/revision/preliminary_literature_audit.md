@@ -27,7 +27,7 @@ These already rule out novelty claims based merely on fixed compatibility costs,
 
 ### Buccella, Fanti & Gori (2023)
 
-*Strategic product compatibility in network industries*, Journal of Economics 140, 141–168. DOI: \`10.1007/s00712-023-00834-x\`.
+*Strategic product compatibility in network industries*, Journal of Economics 140, 141–168. DOI: `10.1007/s00712-023-00834-x`.
 
 Publisher evidence confirms a Cournot compatibility-decision game with network consumption externalities and quasi-fixed compatibility costs, including multiple compatibility regimes and an explanation for one-way compatibility.
 
@@ -43,7 +43,7 @@ Publisher issue metadata confirms the article and one-way/two-way compatibility 
 
 ### Farrell & Simcoe (2012)
 
-*Four Paths to Compatibility*, in *The Oxford Handbook of the Digital Economy*, pp. 34–58. DOI: \`10.1093/oxfordhb/9780195397840.013.0002\`.
+*Four Paths to Compatibility*, in *The Oxford Handbook of the Digital Economy*, pp. 34–58. DOI: `10.1093/oxfordhb/9780195397840.013.0002`.
 
 Oxford's abstract explicitly treats alternative ways to achieve compatibility, including decentralized/private routes and formal standard-setting routes.
 
@@ -51,7 +51,7 @@ Oxford's abstract explicitly treats alternative ways to achieve compatibility, i
 
 ### Cho & McCardle (2009)
 
-*The Adoption of Multiple Dependent Technologies*, Operations Research 57(1), 157–169. DOI: \`10.1287/opre.1080.0534\`.
+*The Adoption of Multiple Dependent Technologies*, Operations Research 57(1), 157–169. DOI: `10.1287/opre.1080.0534`.
 
 INFORMS describes economies or diseconomies of scope in fixed adoption costs as creating economic dependence among technology-adoption decisions.
 
@@ -59,7 +59,7 @@ INFORMS describes economies or diseconomies of scope in fixed adoption costs as 
 
 ### Gorman (1985)
 
-*Conditions for Economies of Scope in the Presence of Fixed Costs*, RAND Journal of Economics 16(3), 431–436. DOI: \`10.2307/2555569\`.
+*Conditions for Economies of Scope in the Presence of Fixed Costs*, RAND Journal of Economics 16(3), 431–436. DOI: `10.2307/2555569`.
 
 Preliminary bibliographic search identifies this as a parent-class source on fixed costs and economies of scope.
 
@@ -75,7 +75,7 @@ This is a direct warning that "standardization across markets" and strategic eff
 
 ### Maggi & Mrázová
 
-*Harmonization...What Else? The Role for International Regulatory Agreements*, NBER Working Paper 33318, DOI \`10.3386/w33318\`.
+*Harmonization...What Else? The Role for International Regulatory Agreements*, NBER Working Paper 33318, DOI `10.3386/w33318`.
 
 NBER states that firms incur fixed costs of regulatory diversity and that harmonization can arise without an agreement; the paper asks what role remains for formal regulatory agreements.
 
@@ -93,11 +93,11 @@ NBER states that firms incur fixed costs of regulatory diversity and that harmon
 
 ## Preliminary novelty judgment
 
-The old classification \`DISTINCT BUT NARROW\` remains a useful historical description, but it is no longer enough to support a new theorem claim.
+The old classification `DISTINCT BUT NARROW` remains a useful historical description, but it is no longer enough to support a new theorem claim.
 
 For R2, the presumptive classification is:
 
-\`THEOREM NOVELTY UNRESOLVED — HIGH ABSORPTION RISK\`
+`THEOREM NOVELTY UNRESOLVED — HIGH ABSORPTION RISK`
 
 A G1 result can count as substantive new theory only if it does more than:
 
