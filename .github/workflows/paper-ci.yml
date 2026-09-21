@@ -39,6 +39,9 @@ jobs:
       - name: R5 competition-portability verification
         run: python code/revision/check_r5_competition_portability.py
 
+      - name: R6 coalition-stability robustness verification
+        run: python code/revision/check_r6_coalition_stability.py
+
       - name: Install LaTeX and PDF toolchain
         run: |
           sudo apt-get update
