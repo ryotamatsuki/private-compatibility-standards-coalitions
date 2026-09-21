@@ -55,6 +55,7 @@ jobs:
           cd formal/r7
           lake update
           lake exe cache get
+          lake build Mathlib
           lake env lean R7Formal.lean
           if grep -RInE '\\b(sorry|admit)\\b' --include='*.lean' .; then
             echo "Forbidden Lean placeholder found"
