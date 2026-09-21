@@ -7,9 +7,9 @@
 - Trigger: desk rejection before external review, IJIO-D-26-00585
 - Integration branch: `revision/research-track`
 - Base commit candidate for submitted source: `28bed286bd03b43bce8294b9eaebfcc7ceb6ca2a`
-- Current status: **R0 COMPLETE WITH ARTIFACT-PROVENANCE LIMITATION; R1 COMPLETE; R2 COMPLETE; R3 COMPLETE; R4 COMPLETE; R5 COMPLETE — NON-PORTABILITY IDENTIFIED; R6 COMPLETE — INSTITUTIONAL DEPENDENCE IDENTIFIED; R7 AUTHORIZED, NOT STARTED**
+- Current status: **R0 COMPLETE WITH ARTIFACT-PROVENANCE LIMITATION; R1 COMPLETE; R2 COMPLETE; R3 COMPLETE; R4 COMPLETE; R5 COMPLETE — NON-PORTABILITY IDENTIFIED; R6 COMPLETE — INSTITUTIONAL DEPENDENCE IDENTIFIED; R7 COMPLETE — ROUTE B (LIMITED GENERALIZATION); R8 AUTHORIZED, NOT STARTED**
 - IJIO resubmission: **not an objective**
-- Production-manuscript rewrite before theory re-certification: **prohibited**
+- Production-manuscript rewrite: **authorized only under R8 after R7 re-certification; R8 not started**
 - Governing reusable workflow: **research-paper-workflow v2.2 @ 42574d6c5931275ccff3ef7e8b4acc188077332a**
 - Workflow lock: `docs/revision/00_workflow_lock.md`
 
@@ -491,6 +491,27 @@ Confirm that R2 and R3 conclusions hold simultaneously under the same primitives
 Close the formal-verification applicability decision under the adopted standard workflow. If formal verification is used, map proved statements to assumptions explicitly. Do not treat formal verification as evidence of economic significance or novelty.
 
 Only after these gates pass may the new theory be frozen. Preserve the old freeze record.
+
+### R7 closure record
+
+R7 is **COMPLETE**. The final route is:
+
+[
+oxed{	extbf{Route B — LIMITED GENERALIZATION}}
+]
+
+The closure is based on:
+
+- independent clean-room reconstruction of the canonical product-market states and the R3–R6 headline identities/witnesses;
+- exact quantifier/scope audit separating existence, uniqueness, selected-equilibrium, locality, and functional-form dependence;
+- proposition-level novelty re-kill against converter/one-way-compatibility, fixed-cost-scope, standards-policy, harmonization, firm-adoption, and coalition-stability parent literatures;
+- targeted Lean 4 + mathlib verification of five proof-critical algebra/order/logical cores;
+- explicit acceptance of the R5 differentiated-demand non-portability result as binding scope evidence;
+- explicit retention of the R4 singleton/network and R6 blocking/symmetry limitations.
+
+The resulting R8 claim architecture is not a general theorem that private compatibility promotes formal standardization. It is a conditional mechanism paper centered on the canonical residual-rent partition, with positive and negative boundary results carried into the manuscript.
+
+R8 is authorized. No R8 manuscript rewrite has been performed in R7.
 
 ---
 
