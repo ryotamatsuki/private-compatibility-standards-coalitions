@@ -17,9 +17,14 @@ import math
 import sympy as sp
 
 
-def interval_width(upper: float, lower: float) -> float:
-    """Width of the positive common-F dominance interval."""
+def feasibility_slack(upper: float, lower: float) -> float:
+    """Upper threshold minus the nonnegative lower threshold."""
     return upper - max(0.0, lower)
+
+
+def interval_width(upper: float, lower: float) -> float:
+    """Actual length of the positive common-F dominance interval."""
+    return max(0.0, feasibility_slack(upper, lower))
 
 
 def optional_value(net_market_values: list[float]) -> float:
@@ -37,6 +42,7 @@ assert interval_width(U0, L0) > 0
 U1 = 1.90
 L1 = 0.70
 assert (U1 - U0) > (max(0.0, L1) - max(0.0, L0))
+assert feasibility_slack(U1, L1) > feasibility_slack(U0, L0)
 assert interval_width(U1, L1) > interval_width(U0, L0)
 
 # A positive direct outsider gain is insufficient if the strongest reverse
@@ -44,7 +50,15 @@ assert interval_width(U1, L1) > interval_width(U0, L0)
 U2 = 1.90
 L2 = 1.20
 assert U2 > U0
+assert feasibility_slack(U2, L2) < feasibility_slack(U0, L0)
 assert interval_width(U2, L2) < interval_width(U0, L0)
+
+# A slack improvement need not create a region if the starting slack is negative.
+U_empty, L_empty = 0.40, 0.80
+U_less_bad, L_less_bad = 0.60, 0.80
+assert feasibility_slack(U_less_bad, L_less_bad) > feasibility_slack(U_empty, L_empty)
+assert interval_width(U_empty, L_empty) == 0.0
+assert interval_width(U_less_bad, L_less_bad) == 0.0
 
 # Package adoption can be harmed by an added negative-net-value market.
 package_before = sum([0.80, 0.70])
