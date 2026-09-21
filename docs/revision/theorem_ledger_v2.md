@@ -13,6 +13,7 @@ Status vocabulary used here:
 - `OUT OF SCOPE FOR CURRENT STAGE`
 - `REFUTED`
 - `UNRESOLVED`
+- `CONDITIONAL`
 
 | ID | Result | Status | Exact scope / dependency | Next certification requirement |
 |---|---|---|---|---|
@@ -31,7 +32,14 @@ Status vocabulary used here:
 | G2-L | ranking reversal survives positive residual adaptation cost locally around full bypass | PROVED IN R3 — PENDING R7 RECERTIFICATION | canonical Cournot extension with d=lambda c and full compatibility | independent adversarial re-derivation at R7 |
 | G2-S | residual-rent function R(d) separates reversal, incentive-strengthening-only, and incentive-weakening regions | PROVED IN R3 — PENDING R7 RECERTIFICATION | Proposition R3.1 and thresholds d_D,d_E | test parent-theorem absorption and independent proof at R7 |
 | G2-J | incomplete adoption and government ranking reversal coexist with a selection-free firm equilibrium on a nonempty open set | PROVED IN R3 — PENDING R7 RECERTIFICATION | exact witness (c,v,lambda,F)=(1/10,6/25,1/2,9/100) plus continuity | retain as joint-region certificate |
-| R5-B | portability to one differentiated-Bertrand model | AUTHORIZED AFTER R4 IF ROUTE A SURVIVES | R2/R3 provisional Route A | execute one pre-specified differentiated-Bertrand test |
+| N1 | zero-network initial SU advantage is impossible on the boundary extension | PROVED | \(v=0,\ 0<c<1/3\): \(\Phi=c(13c-6)/32<0\) | retain as R4 baseline certificate |
+| N2 | complete fixed-c characterization of \(\mathcal V_{SU}(c)\) | PROVED | unique feasible root \(v_{SU}(c)\) for \(0<c<c^\ast\); upper interval above it | R7 independent re-derivation |
+| N3 | initial SU advantage exists for some feasible \(v\) iff \(0<c<c^\ast\) | PROVED | \(c^\ast\) is the unique root of \(17c^3+109c^2-89c+11\) in \((0,1/3)\) | preserve exact root isolation |
+| N4 | joint initial-SU and reciprocal-disadvantage region | PROVED | nonempty iff \(c_\dagger<c<c^\ast\), with piecewise \(v\)-interval | preserve exact root isolation and joint quantifier |
+| N5 | one-way private adoption remains possible at \(v=0\) | PROVED | \(3c(2-c)/16<F<3c(2-3c)/8\) for \(0<c<1/3\) | do not conflate with government reversal |
+| N6 | R3 partial-erosion identity survives the zero-network boundary | PROVED | \(R(d,0)=d(5d+2)/32\); incentive change can survive even though initial SU preference does not | R7 re-certify jointly with G2 |
+| N7 | singleton-network assumption materially affects the initial SU ranking | CONDITIONAL | minimal S1 alternative is fully certified and gives \(\Phi_{S1}<0\) on the old canonical domain; no universal theorem over all alternatives | carry specification warning into R5/R7 |
+| R5-B | portability to one differentiated-Bertrand model | AUTHORIZED — R4 GO | R2/R3 provisional Route A survives R4 with explicit network/singleton specification dependence | execute one pre-specified differentiated-Bertrand test only; no redesign-to-success |
 
 ## Quantifier discipline
 
@@ -66,3 +74,12 @@ R(d)=rac{d[(5-4v)d+2(1-4v)]}{32(1-v)^2}.
 ]
 
 The new government effect is conditional: reversal iff (R(d)<mathscr D), incentive strengthening without reversal when (mathscr D<R(d)<mathscr E), and incentive weakening when (R(d)>mathscr E). The firm-adoption and ranking conditions have a verified nonempty open intersection with (0<lambda<1). These are R3 research results, not yet R7-certified final-paper theorems.
+
+
+## R4 closure
+
+R4 verdict: **COMPLETE — GO TO R5**. The canonical pre-adoption welfare gap has exactly one feasible \(v\)-root whenever an SU-advantage region exists. Writing \(c^\ast\) for the unique root of \(17c^3+109c^2-89c+11\) in \((0,1/3)\), the SU-advantage set is \((v_{SU}(c),\bar v(c))\) for \(0<c<c^\ast\) and empty otherwise. The reciprocal-disadvantage intersection is nonempty exactly for \(c_\dagger<c<c^\ast\), where \(c_\dagger\) is the unique root of \(512c^3-224c^2-241c+18\) in \((0,1/3)\).
+
+At \(v=0\), selection-free one-way adoption remains possible, but the member government never initially prefers SU to IS. The R3 residual-rent identity also survives at \(v=0\), so firm circumvention, erosion of the relative IS incentive, and actual SU-to-IS ranking reversal are distinct objects.
+
+The singleton-network S1 sensitivity is a certified specification warning: giving singleton firms the same own-group network formula eliminates the initial SU advantage throughout the old canonical feasible domain while leaving a one-way-adoption interval at an exact witness. This does not refute R2/R3, but it narrows the interpretation of the current Cournot microfoundation. Route A remains provisional; R5 is authorized and R7 remains the certification gate. Production-manuscript rewriting remains prohibited.
