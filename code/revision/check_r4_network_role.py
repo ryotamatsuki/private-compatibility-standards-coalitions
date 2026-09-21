@@ -92,9 +92,14 @@ for z in b[1:]:
 assert Q.subs(c, sp.Rational(1,8)) > 0
 assert Q.subs(c, sp.Rational(1,6)) < 0
 
-# Rational witnesses on both sides.
+# Rational witnesses on both sides of the derived boundaries.
+# v_SU boundary at c=1/10.
 assert Phi.subs({c:sp.Rational(1,10), v:sp.Rational(1,5)}) < 0
 assert Phi.subs({c:sp.Rational(1,10), v:sp.Rational(6,25)}) > 0
+# c* existence boundary: an interior positive point just below c*, and
+# an interior negative point above c*.
+assert Phi.subs({c:sp.Rational(3,20), v:sp.Rational(43,200)}) > 0
+assert Phi.subs({c:sp.Rational(4,25), v:sp.Rational(1,5)}) < 0
 assert N.subs({c:sp.Rational(3,20), v:vbar.subs(c,sp.Rational(3,20))}) > 0
 assert N.subs({c:sp.Rational(4,25), v:vbar.subs(c,sp.Rational(4,25))}) < 0
 
@@ -118,6 +123,15 @@ assert N.subs({c:sp.Rational(7,100), v:vD.subs(c,sp.Rational(7,100))}) < 0
 assert N.subs({c:sp.Rational(9,125), v:vD.subs(c,sp.Rational(9,125))}) > 0
 assert Phi.subs({c:sp.Rational(3,40), v:sp.Rational(9,40)}) > 0
 assert Drec.subs({c:sp.Rational(3,40), v:sp.Rational(9,40)}) > 0
+# D=0 boundary at c=1/20 has v_D=1/6: both witnesses are feasible.
+assert Drec.subs({c:sp.Rational(1,20), v:sp.Rational(3,20)}) > 0
+assert Drec.subs({c:sp.Rational(1,20), v:sp.Rational(9,50)}) < 0
+# Joint-region c_dagger boundary: below it D can be positive while Phi is
+# negative; above it an exact rational point satisfies both strict signs.
+assert Drec.subs({c:sp.Rational(7,100), v:sp.Rational(217,1000)}) > 0
+assert Phi.subs({c:sp.Rational(7,100), v:sp.Rational(217,1000)}) < 0
+assert Drec.subs({c:sp.Rational(9,125), v:sp.Rational(111,500)}) > 0
+assert Phi.subs({c:sp.Rational(9,125), v:sp.Rational(111,500)}) > 0
 
 # v=0 private adoption.
 TA0, TU0, TW0 = [sp.factor(z.subs(v,0)) for z in (T_A,T_U,T_W)]
@@ -127,7 +141,11 @@ assert eq(TW0, TU0)
 assert eq(TU0-TA0, 3*c**2/8)
 assert eq(2*TA0-TW0, 3*c*(2-5*c)/16)
 cw, Fw = sp.Rational(1,10), sp.Rational(1,20)
-assert TW0.subs(c,cw) < Fw < (2*TA0).subs(c,cw)
+lower0 = TW0.subs(c,cw)
+upper0 = (2*TA0).subs(c,cw)
+assert lower0 < Fw < upper0
+assert sp.Rational(1,40) < lower0
+assert sp.Rational(7,100) > upper0
 
 # R3 residual rent.
 R = d*((5-4*v)*d + 2*(1-4*v))/(32*(1-v)**2)
