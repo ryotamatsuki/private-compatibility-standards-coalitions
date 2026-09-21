@@ -33,6 +33,9 @@ jobs:
       - name: R3 partial erosion verification
         run: python code/revision/check_r3_partial_erosion.py
 
+      - name: R4 network-role verification
+        run: python code/revision/check_r4_network_role.py
+
       - name: Install LaTeX and PDF toolchain
         run: |
           sudo apt-get update
