@@ -24,7 +24,7 @@ jobs:
       - name: Install Python dependencies
         run: python -m pip install --upgrade pip && pip install -r requirements.txt
 
-      - name: Install LaTeX and PDF toolchain
+      - name: Post-IJIO revision symbolic prechecks\n        run: python code/revision/check_network_zero.py\n\n      - name: Install LaTeX and PDF toolchain
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
