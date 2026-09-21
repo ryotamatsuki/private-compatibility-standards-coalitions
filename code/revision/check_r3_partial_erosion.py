@@ -99,6 +99,45 @@ assert sp.simplify(T_A_R_d.subs(d, 0) - T_A) == 0
 # Difference between SW unilateral and SU reverse unilateral is invariant in d.
 assert sp.simplify((T_W_d - T_U_d) - (C - S)) == 0
 
+
+# Independent FOC reconstruction for the new partial-adoption blocks.
+xm, yo = sp.symbols("xm yo", real=True)
+sol_member = sp.solve(
+    [
+        sp.Eq(1 - t * (2 * xm + yo), t * xm),
+        sp.Eq(1 - t * (2 * xm + yo) - d, t * yo),
+    ],
+    [xm, yo],
+    dict=True,
+)[0]
+assert sp.simplify(sol_member[xm] - q_member) == 0
+assert sp.simplify(sol_member[yo] - q_outsider) == 0
+
+qn, qa, qs = sp.symbols("qn qa qs", real=True)
+sol_pair = sp.solve(
+    [
+        sp.Eq(1 - t * (qn + qa) - qs, t * qn),
+        sp.Eq(1 - t * (qn + qa) - qs - d, t * qa),
+        sp.Eq(1 - c - qn - qa - 2 * qs, 0),
+    ],
+    [qn, qa, qs],
+    dict=True,
+)[0]
+assert sp.simplify(sol_pair[qn] - q_native) == 0
+assert sp.simplify(sol_pair[qa] - q_adopter) == 0
+assert sp.simplify(sol_pair[qs] - q_single) == 0
+
+qb, qn2 = sp.symbols("qb qn2", real=True)
+sol_both = sp.solve(
+    [
+        sp.Eq(1 - t * (2 * qb + qn2) - d, t * qb),
+        sp.Eq(1 - t * (2 * qb + qn2), t * qn2),
+    ],
+    [qb, qn2],
+    dict=True,
+)[0]
+assert sp.simplify(sol_both[qb] - q_both_member) == 0
+
 # ---------------------------------------------------------------------------
 # Exact nonlocal witness
 # ---------------------------------------------------------------------------
