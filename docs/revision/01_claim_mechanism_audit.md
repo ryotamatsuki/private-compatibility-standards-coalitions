@@ -12,13 +12,13 @@ The key change in research posture is:
 
 ## Inputs
 
-- historical submission-source state: \`28bed286bd03b43bce8294b9eaebfcc7ceb6ca2a\`;
-- \`docs/CANONICAL_MODEL.md\`;
-- \`docs/THEOREM_LEDGER.md\`;
+- historical submission-source state: `28bed286bd03b43bce8294b9eaebfcc7ceb6ca2a`;
+- `docs/CANONICAL_MODEL.md`;
+- `docs/THEOREM_LEDGER.md`;
 - Sections 5–8 of the submitted manuscript;
-- \`docs/LITERATURE_POSITIONING.md\`;
-- sanitized IJIO editorial assessment in \`00_ijio_outcome.md\`;
-- research-paper-workflow v2.2 at \`42574d6...\`.
+- `docs/LITERATURE_POSITIONING.md`;
+- sanitized IJIO editorial assessment in `00_ijio_outcome.md`;
+- research-paper-workflow v2.2 at `42574d6...`.
 
 ## Editor criticism mapped to the manuscript
 
@@ -111,7 +111,7 @@ The old theorem ledger contains a historical killed claim labelled "network effe
 
 Until a concrete alternative microfoundation is established, the revision must not use the broad phrase "network effects are unnecessary for the mechanism" without explaining this distinction.
 
-See \`04_network_role_precheck.md\`.
+See `04_network_role_precheck.md`.
 
 ## Application-neutral canonicalization
 
