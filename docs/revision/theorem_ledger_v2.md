@@ -22,7 +22,7 @@ Status vocabulary used here:
 | V2-I1 | exact selective-erosion identity | LEGACY CERTIFIED / REOPENED FOR GENERALIZATION | exact post-bypass member-market equality to IS; outsider market unchanged | R3 must relax exact erosion |
 | V2-T1 | old ranking-reversal theorem | LEGACY CERTIFIED / REOPENED FOR GENERALIZATION | \(\mathscr E_i>\mathscr D_i>0\) plus V2-I1 | separate incentive increase from actual reversal |
 | V2-P1 | three-country Cournot microfoundation | LEGACY CERTIFIED | \((c,v)\in\Omega_0\) | becomes microfoundation if G1/G2 survive |
-| V2-T2 | strict-blocking stable-set reversal | SECONDARY | symmetry, strict blocking, old institutional menu | R6 alternative blocking/asymmetry audit |
+| V2-T2 | strict-blocking stable-set reversal | SECONDARY / R6 AUDITED | symmetry, strict blocking, old institutional menu | R6 shows high-F multiplicity is rule/symmetry sensitive; intermediate unique-IS result is robust within canonical microfoundation |
 | V2-N0 | zero-network baseline gap | PROVED IN PRECHECK | \(v=0,\;0<c<1/3\) in old symmetric Cournot model | preserve symbolic regression test |
 | G1-E | outsider-only adoption is a strict Nash equilibrium under profile-specific net-gain inequalities | PROVED | segmented-market locality; Proposition R2.1 | retained as certification result, not standalone novelty |
 | G1-U | outsider adoption/member non-adoption are strict dominant actions under robust gain bounds; outsider-only adoption is unique | PROVED — SUFFICIENT, NOT NECESSARY | finite binary action space; Theorem R2.2 | use as selection-free R3 continuation condition |
@@ -46,6 +46,13 @@ Status vocabulary used here:
 | R5-E | private adoption strengthens the relative IS incentive under R5 | REFUTED ON FROZEN R5 BOX | E^C<0 and E^B<0 exactly; adoption weakens relative IS incentive | surface sign of member-market term as portability condition |
 | R5-R | SU-to-IS ranking reversal under R5-C or R5-B | REFUTED ON FROZEN R5 BOX | initial SU preference fails in both modes; post-adoption IS preference remains | do not infer that all differentiated or Bertrand models fail |
 | R5-X | R5 political failure is a competition-mode effect | REFUTED | same failure occurs under R5-C and R5-B with identical demand primitives | attribute failure to frozen demand/welfare microfoundation, not price competition alone |
+| R6-S | legacy symmetric strict-blocking stable sets | PROVED | high F: three SUs; intermediate F: IS only | retain only as institution-specific canonical result |
+| R6-WH | symmetric high-F stable set under weak/Pareto blocking | PROVED EMPTY | every SU is weakly blocked by an alternative SU; SW and IS also blocked | record exact institutional fragility; do not repair by changing rule |
+| R6-WI | symmetric intermediate-F stable set under weak/Pareto blocking | PROVED | IS uniquely stable | strict payoff gaps, not indifference, drive result |
+| R6-I | source of high-F strict-blocking stability | PROVED | common member is indifferent across symmetric SUs while former outsider strictly gains | label symmetry-induced indifference explicitly |
+| R6-AH | small market-size asymmetry in high-F region | PROVED LOCALLY | m1=m2=1, m3=1-delta; SU12 uniquely stable under both blocking rules for sufficiently small delta>0 | exact witness line is stronger: all 0<delta<1 at c=1/10,v=6/25,F=1/5 |
+| R6-AI | small market-size asymmetry in intermediate-F region | PROVED LOCALLY | outsider-only adoption remains selection free locally; IS uniquely stable under both rules | exact witness certifies 0<delta<=1/2 at c=1/10,v=6/25,F=3/25 |
+| R6-WF | intermediate-region welfare ranking | PROVED / MENU-LOCAL | IS Pareto-dominates SW and all SU continuations within the five-partition menu on certified neighborhood | no unrestricted first-best claim |
 
 ## Quantifier discipline
 
@@ -98,3 +105,16 @@ R5 verdict: **COMPLETE — NON-PORTABILITY IDENTIFIED; R6 AUTHORIZED, NOT STARTE
 The one pre-specified differentiated-demand environment uses gamma=1/2 and solves Cournot and Bertrand from the same inverse-demand, compatibility, cost, and welfare primitives. Exact analysis shows that the selection-free outsider-only adoption interval remains nonempty in both strategic-variable versions. However, the pre-adoption SU advantage fails everywhere on the frozen audit box in both R5-C and R5-B, and the member-market term satisfies E^C<0 and E^B<0. Thus private adoption weakens rather than strengthens the relative incentive for IS in this environment.
 
 Because the same political failure already occurs under R5-C, R5 does not support a claim that Bertrand competition itself destroys the mechanism. The result is a model-specific demand/welfare portability failure. Route A is materially weakened but the final route decision remains reserved for R7. R6 may proceed only as an institutional robustness audit of the still-valid canonical preference results; production-manuscript rewriting remains prohibited.
+
+
+## R6 closure
+
+R6 verdict: **COMPLETE — INSTITUTIONAL DEPENDENCE IDENTIFIED; GO TO R7**.
+
+Under exact symmetry and high fixed cost, the legacy strict-blocking stable set of the three regional SUs is reproduced. Under weak/Pareto blocking, however, the high-F stable set is empty: an alternative SU gives the common member the same payoff and the former outsider a strict gain. Hence the exact symmetric high-F stability correspondence depends on both the strict-blocking rule and symmetry-induced indifference.
+
+The specified market-size perturbation m1=m2=1, m3=1-delta breaks that equality. For sufficiently small delta>0, SU12 is uniquely stable under both blocking concepts. At the exact witness (c,v,F)=(1/10,6/25,1/5), this stronger conclusion holds for every 0<delta<1.
+
+In the intermediate region, every SU country strictly prefers IS after outsider-only bypass, and IS remains uniquely stable under both blocking concepts and small asymmetry. At (c,v,F)=(1/10,6/25,3/25), the result is certified for 0<delta<=1/2 with the private-adoption continuation re-solved after every deviation.
+
+R6 therefore separates a comparatively robust preference/unique-IS result from a fragile exact high-F symmetric stable-set correspondence. It does not repair the R5 portability failure. R7 is the next and only authorized stage; production-manuscript rewriting remains prohibited.

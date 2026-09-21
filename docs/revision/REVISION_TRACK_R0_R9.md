@@ -7,7 +7,7 @@
 - Trigger: desk rejection before external review, IJIO-D-26-00585
 - Integration branch: `revision/research-track`
 - Base commit candidate for submitted source: `28bed286bd03b43bce8294b9eaebfcc7ceb6ca2a`
-- Current status: **R0 COMPLETE WITH ARTIFACT-PROVENANCE LIMITATION; R1 COMPLETE; R2 COMPLETE; R3 COMPLETE; R4 COMPLETE; R5 COMPLETE — NON-PORTABILITY IDENTIFIED; ROUTE A MATERIALLY WEAKENED; R6 AUTHORIZED, NOT STARTED**
+- Current status: **R0 COMPLETE WITH ARTIFACT-PROVENANCE LIMITATION; R1 COMPLETE; R2 COMPLETE; R3 COMPLETE; R4 COMPLETE; R5 COMPLETE — NON-PORTABILITY IDENTIFIED; R6 COMPLETE — INSTITUTIONAL DEPENDENCE IDENTIFIED; R7 AUTHORIZED, NOT STARTED**
 - IJIO resubmission: **not an objective**
 - Production-manuscript rewrite before theory re-certification: **prohibited**
 - Governing reusable workflow: **research-paper-workflow v2.2 @ 42574d6c5931275ccff3ef7e8b4acc188077332a**
@@ -432,6 +432,29 @@ The model is a static institutional comparison in which firm behavior is re-solv
 Recheck welfare language. If every country strictly prefers IS to every alternative in the specified institutional set, world-welfare ranking within that set may follow; do not extend this to unrestricted first-best policy claims.
 
 ---
+
+
+### R6 closure record
+
+**R6 COMPLETE — INSTITUTIONAL DEPENDENCE IDENTIFIED; R7 AUTHORIZED, NOT STARTED.**
+
+Certified results:
+
+- under symmetric high F, the legacy strict-blocking stable set is the three regional SUs;
+- under weak/Pareto blocking at the same symmetric high-F continuation, the stable set is empty because alternative SUs weakly block one another through a common indifferent member and a strictly improving former outsider;
+- under symmetric intermediate F, IS is uniquely stable under both strict and weak/Pareto blocking;
+- the high-F three-SU correspondence is therefore driven partly by symmetry-induced indifference and the strict-blocking convention;
+- with m1=m2=1 and m3=1-delta, sufficiently small delta>0 breaks the indifference and selects SU12 as the unique high-F stable partition under both blocking rules;
+- the intermediate-F unique-IS result survives sufficiently small market-size asymmetry under both blocking concepts, with private adoption re-solved after every induced partition;
+- at (c,v,F)=(1/10,6/25,1/5), the asymmetric high-F SU12 result holds for every 0<delta<1;
+- at (c,v,F)=(1/10,6/25,3/25), outsider-only adoption and unique-IS stability are certified for every 0<delta<=1/2;
+- within the five-partition institutional menu, IS Pareto-dominates all other formal partitions in the certified intermediate region; no unrestricted first-best claim is authorized.
+
+Interpretation: the canonical preference reversal and intermediate unique-IS conclusion are more institutionally robust than the exact symmetric high-F stable-set correspondence. R6 does not repair the R5 competition/demand portability failure and does not change the final Route A/B/C decision, which remains reserved for R7.
+
+Artifacts: `docs/revision/06_r6_design_freeze.md`, `docs/revision/06_r6_results.md`, and `code/revision/check_r6_coalition_stability.py`.
+
+R7 may proceed to novelty reassessment and theory re-certification. Production-manuscript rewriting remains prohibited.
 
 ## 9. R7 — Novelty reassessment and theory re-certification
 
