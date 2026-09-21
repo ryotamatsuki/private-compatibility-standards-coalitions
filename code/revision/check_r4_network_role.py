@@ -174,7 +174,8 @@ assert K.subs(v,sp.Rational(1,4)) == sp.Rational(11,16)
 # qB1 numerator is exactly the old feasibility slack.
 assert eq(1-3*v-3*c*(1-v), (1-3*v)-3*c*(1-v))
 # qC1/qS1 numerator is bounded below by 1/3 at the old c ceiling.
-assert eq((1-2*v-2*c*(1-v)).subs(c,vbar), sp.Rational(1,3))
+cbar = (1-3*v)/(3*(1-v))
+assert eq((1-2*v-2*c*(1-v)).subs(c,cbar), sp.Rational(1,3))
 # qM1 and qD1 numerators exceed their c=0 values, which stay positive for v<1/4.
 assert (1-2*sp.Rational(1,4)) > 0
 assert (1-3*sp.Rational(1,4)) > 0
