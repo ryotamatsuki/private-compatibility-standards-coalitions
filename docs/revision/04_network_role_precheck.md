@@ -66,4 +66,4 @@ Full R4 must still:
 3. audit the assumption that singleton firms receive zero network benefit;
 4. separate any alternative network specification from verification of the old model.
 
-Reproducible symbolic check: \`code/revision/check_network_zero.py\`.
+Reproducible symbolic check: `code/revision/check_network_zero.py`.
