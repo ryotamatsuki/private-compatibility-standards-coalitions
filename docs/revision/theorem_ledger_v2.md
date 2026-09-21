@@ -39,7 +39,13 @@ Status vocabulary used here:
 | N5 | one-way private adoption remains possible at \(v=0\) | PROVED | \(3c(2-c)/16<F<3c(2-3c)/8\) for \(0<c<1/3\) | do not conflate with government reversal |
 | N6 | R3 partial-erosion identity survives the zero-network boundary | PROVED | \(R(d,0)=d(5d+2)/32\); incentive change can survive even though initial SU preference does not | R7 re-certify jointly with G2 |
 | N7 | singleton-network assumption materially affects the initial SU ranking | CONDITIONAL | minimal S1 alternative is fully certified and gives \(\Phi_{S1}<0\) on the old canonical domain; no universal theorem over all alternatives | carry specification warning into R5/R7 |
-| R5-B | portability to one differentiated-Bertrand model | AUTHORIZED — R4 GO | R2/R3 provisional Route A survives R4 with explicit network/singleton specification dependence | execute one pre-specified differentiated-Bertrand test only; no redesign-to-success |
+| R5-D | frozen differentiated-demand environment is regular and interior on the audit box | PROVED | gamma=1/2; 0<c<1/3, 0<=v<1/4; exact positive-definite and quantity checks | retain as scope condition; do not generalize beyond frozen demand |
+| R5-C | pre-adoption SU advantage under the differentiated Cournot comparator | REFUTED ON FROZEN R5 BOX | exact proof gives Phi^C<0 throughout the audit box | use to prevent attribution of R5 failure solely to Bertrand |
+| R5-B | portability to the pre-specified differentiated-Bertrand model | REFUTED ON FROZEN R5 BOX | exact Bernstein certificate gives Phi^B<0 throughout the audit box | model-specific non-portability result; no universal Bertrand claim |
+| R5-A | one-way outsider-only adoption under the frozen differentiated demand | PROVED | positive selection-free fixed-cost interval exists for both R5-C and R5-B | carry firm/political separation to R7 |
+| R5-E | private adoption strengthens the relative IS incentive under R5 | REFUTED ON FROZEN R5 BOX | E^C<0 and E^B<0 exactly; adoption weakens relative IS incentive | surface sign of member-market term as portability condition |
+| R5-R | SU-to-IS ranking reversal under R5-C or R5-B | REFUTED ON FROZEN R5 BOX | initial SU preference fails in both modes; post-adoption IS preference remains | do not infer that all differentiated or Bertrand models fail |
+| R5-X | R5 political failure is a competition-mode effect | REFUTED | same failure occurs under R5-C and R5-B with identical demand primitives | attribute failure to frozen demand/welfare microfoundation, not price competition alone |
 
 ## Quantifier discipline
 
@@ -83,3 +89,12 @@ R4 verdict: **COMPLETE — GO TO R5**. The canonical pre-adoption welfare gap ha
 At \(v=0\), selection-free one-way adoption remains possible, but the member government never initially prefers SU to IS. The R3 residual-rent identity also survives at \(v=0\), so firm circumvention, erosion of the relative IS incentive, and actual SU-to-IS ranking reversal are distinct objects.
 
 The singleton-network S1 sensitivity is a certified specification warning: giving singleton firms the same own-group network formula eliminates the initial SU advantage throughout the old canonical feasible domain while leaving a one-way-adoption interval at an exact witness. This does not refute R2/R3, but it narrows the interpretation of the current Cournot microfoundation. Route A remains provisional; R5 is authorized and R7 remains the certification gate. Production-manuscript rewriting remains prohibited.
+
+
+## R5 closure
+
+R5 verdict: **COMPLETE — NON-PORTABILITY IDENTIFIED; R6 AUTHORIZED, NOT STARTED**.
+
+The one pre-specified differentiated-demand environment uses gamma=1/2 and solves Cournot and Bertrand from the same inverse-demand, compatibility, cost, and welfare primitives. Exact analysis shows that the selection-free outsider-only adoption interval remains nonempty in both strategic-variable versions. However, the pre-adoption SU advantage fails everywhere on the frozen audit box in both R5-C and R5-B, and the member-market term satisfies E^C<0 and E^B<0. Thus private adoption weakens rather than strengthens the relative incentive for IS in this environment.
+
+Because the same political failure already occurs under R5-C, R5 does not support a claim that Bertrand competition itself destroys the mechanism. The result is a model-specific demand/welfare portability failure. Route A is materially weakened but the final route decision remains reserved for R7. R6 may proceed only as an institutional robustness audit of the still-valid canonical preference results; production-manuscript rewriting remains prohibited.

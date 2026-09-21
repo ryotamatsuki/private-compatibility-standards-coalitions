@@ -7,7 +7,7 @@
 - Trigger: desk rejection before external review, IJIO-D-26-00585
 - Integration branch: `revision/research-track`
 - Base commit candidate for submitted source: `28bed286bd03b43bce8294b9eaebfcc7ceb6ca2a`
-- Current status: **R0 COMPLETE WITH ARTIFACT-PROVENANCE LIMITATION; R1 COMPLETE; R2 COMPLETE; R3 COMPLETE; R4 COMPLETE — ROUTE A MAINTAINED WITH SPECIFICATION DEPENDENCE; R5 AUTHORIZED, NOT STARTED**
+- Current status: **R0 COMPLETE WITH ARTIFACT-PROVENANCE LIMITATION; R1 COMPLETE; R2 COMPLETE; R3 COMPLETE; R4 COMPLETE; R5 COMPLETE — NON-PORTABILITY IDENTIFIED; ROUTE A MATERIALLY WEAKENED; R6 AUTHORIZED, NOT STARTED**
 - IJIO resubmission: **not an objective**
 - Production-manuscript rewrite before theory re-certification: **prohibited**
 - Governing reusable workflow: **research-paper-workflow v2.2 @ 42574d6c5931275ccff3ef7e8b4acc188077332a**
@@ -376,6 +376,30 @@ A finite numerical search without success is:
 `UNRESOLVED WITHIN SEARCH BUDGET`
 
 not a proof of nonexistence.
+
+### R5 closure record
+
+**R5 COMPLETE — NON-PORTABILITY IDENTIFIED; R6 AUTHORIZED, NOT STARTED.**
+
+The pre-specified R5 model fixed a single differentiated linear demand environment with (gamma=1/2), retained the canonical compatibility/cost/adoption rules, and used a coherent quasi-linear consumer-surplus measure. To separate a demand-microfoundation change from a competition-mode change, the same R5 demand was solved under both quantity competition (R5-C) and price competition (R5-B).
+
+Certified results on the frozen audit box (0<c<1/3, 0le v<1/4):
+
+- all required product-market equilibria are unique and interior;
+- a positive selection-free fixed-cost interval for outsider-only SU adoption exists in both R5-C and R5-B;
+- the pre-adoption member-government SU advantage fails everywhere in both R5-C and R5-B;
+- the reciprocal disadvantage remains positive in both modes;
+- the member-market term is negative, (mathscr E^C<0) and (mathscr E^B<0), so private adoption weakens rather than strengthens the relative incentive for IS;
+- an SU-to-IS ranking reversal therefore does not arise in either strategic-variable version of the frozen R5 model;
+- because the failure is already present in R5-C, it cannot be attributed solely to Bertrand competition.
+
+The Bertrand sign results are certified by exact rational tensor-product Bernstein coefficients over the full audit rectangle, not by a numerical grid. The Cournot signs are certified by exact convexity and endpoint arguments. A common exact firm-adoption witness is ((c,v,F)=(1/10,6/25,1/5)).
+
+Interpretation: the structural one-way-adoption mechanism is portable to this differentiated-demand environment, but the political selective-erosion/ranking-reversal mechanism is not. This is a model-specific specification-dependence result; it does not imply that all Bertrand or all differentiated-product models fail.
+
+Route decision: **Route A is materially weakened, but the final Route A/B/C decision remains reserved for R7.** R6 may proceed only as an institutional robustness audit of the canonical preference results. R6 must not be used to claim competition-form generality. Production-manuscript rewriting remains prohibited.
+
+Artifacts: `docs/revision/05_r5_design_freeze.md`, `docs/revision/05_r5_results.md`, and `code/revision/check_r5_competition_portability.py`.
 
 ---
 

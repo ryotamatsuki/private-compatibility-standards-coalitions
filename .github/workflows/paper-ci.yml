@@ -36,6 +36,9 @@ jobs:
       - name: R4 network-role verification
         run: python code/revision/check_r4_network_role.py
 
+      - name: R5 competition-portability verification
+        run: python code/revision/check_r5_competition_portability.py
+
       - name: Install LaTeX and PDF toolchain
         run: |
           sudo apt-get update
