@@ -139,6 +139,10 @@ assert eq(BC["Dis"], 8*c*(3-2*c)*(1-v)/(9*(3-4*v)**2))
 assert eq(BC["E"], EC/(18*(3-4*v)**2))
 assert eq(sp.Poly(NC,c).coeff_monomial(c**2), 2*(18*v**2-44*v+27))
 assert eq(sp.Poly(EC,c).coeff_monomial(c**2), 2*(18*v**2-28*v+11))
+assert sp.diff(18*v**2-44*v+27,v).subs(v,sp.Rational(1,4)) < 0
+assert (18*v**2-44*v+27).subs(v,sp.Rational(1,4)) > 0
+assert sp.diff(18*v**2-28*v+11,v).subs(v,sp.Rational(1,4)) < 0
+assert (18*v**2-28*v+11).subs(v,sp.Rational(1,4)) > 0
 assert eq(NC.subs(c,0), 9*v*(4*v-3))
 assert eq(NC.subs(c,sp.Rational(1,3)), (144*v**2+29*v-126)/9)
 assert eq(EC.subs(c,0), 9*v*(4*v-3))
@@ -154,15 +158,22 @@ MTA = sp.factor(-BC["TA"]*9*(3-4*v)**2)
 assert eq(sp.Poly(MTA,c).coeff_monomial(c**2), (6*v-5)**2)
 assert eq(MTA.subs(c,0), 9*v*(4*v-3))
 assert eq(MTA.subs(c,sp.Rational(1,3)), (144*v**2-15*v-65)/9)
+assert (144*v**2-15*v-65).subs(v,0) < 0
+assert (144*v**2-15*v-65).subs(v,sp.Rational(1,4)) < 0
 assert eq(MTA.subs(v,0), c*(25*c-30))
 assert eq(BC["TU"], 5*c*(2-c)*(1-v)/(3*(3-4*v)**2))
 assert eq(BC["TW"]-BC["TU"], v*(3-4*c)**2*(15-16*v)/(81*(3-4*v)**2))
 gapC = sp.factor(2*BC["TA"]-BC["TW"])
 MCgap = sp.factor(-gapC*81*(3-4*v)**2)
+assert sp.diff(sp.Poly(MCgap,c).coeff_monomial(c**2),v).subs(v,sp.Rational(1,4)) < 0
 assert sp.Poly(MCgap,c).coeff_monomial(c**2).subs(v,sp.Rational(1,4)) > 0
 assert eq(MCgap.subs(c,0), 9*v*(56*v-39))
+assert 56*sp.Rational(1,4)-39 < 0
 assert eq(MCgap.subs(c,sp.Rational(1,3)), (2192*v**2-570*v-495)/9)
+assert (2192*v**2-570*v-495).subs(v,0) < 0
+assert (2192*v**2-570*v-495).subs(v,sp.Rational(1,4)) < 0
 assert eq(MCgap.subs(v,0), c*(315*c-270))
+assert 315*sp.Rational(1,3)-270 < 0
 
 # Exact Bernstein certificates on [0,1/3] x [0,1/4].
 x, y = sp.symbols("x y")
