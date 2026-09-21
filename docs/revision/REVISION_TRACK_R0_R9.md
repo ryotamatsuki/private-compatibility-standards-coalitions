@@ -7,9 +7,11 @@
 - Trigger: desk rejection before external review, IJIO-D-26-00585
 - Integration branch: `revision/research-track`
 - Base commit candidate for submitted source: `28bed286bd03b43bce8294b9eaebfcc7ceb6ca2a`
-- Current status: **GOVERNANCE RECORDED — R0 NOT YET COMPLETED**
+- Current status: **R0 COMPLETE WITH ARTIFACT-PROVENANCE LIMITATION; R1 COMPLETE; R2 DESIGN FROZEN; R2 THEORY NOT YET EXECUTED**
 - IJIO resubmission: **not an objective**
 - Production-manuscript rewrite before theory re-certification: **prohibited**
+- Governing reusable workflow: **research-paper-workflow v2.2 @ 42574d6c5931275ccff3ef7e8b4acc188077332a**
+- Workflow lock: `docs/revision/00_workflow_lock.md`
 
 ## Research objective
 

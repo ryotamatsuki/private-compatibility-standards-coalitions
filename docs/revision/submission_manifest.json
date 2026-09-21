@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0",
+  "paper": {
+    "title": "Private Compatibility and the Stability of Standards Coalitions",
+    "journal": "International Journal of Industrial Organization",
+    "manuscript_number": "IJIO-D-26-00585"
+  },
+  "dates": {
+    "initial_submission": {
+      "value": "2026-09-05",
+      "status": "verified_from_portal_record_observed_in_submission_workflow"
+    },
+    "technical_return": {
+      "value": "2026-09-07",
+      "status": "repository_record_date_portal_transition_spanned_2026-09-07_to_2026-09-08"
+    },
+    "corrected_author_approval": {
+      "value": "2026-09-09",
+      "status": "workflow_evidence_exact_portal_timestamp_not_archived_in_repository"
+    },
+    "desk_rejection": {
+      "value": "2026-09-21",
+      "status": "author_provided_editorial_decision_email"
+    }
+  },
+  "repository_source": {
+    "candidate_submission_commit": "28bed286bd03b43bce8294b9eaebfcc7ceb6ca2a",
+    "technical_return_record_commit": "139136cddb82b15589d313ed929d083b182e6596",
+    "status": "substantive_manuscript_source_identified_exact_portal_source_zip_bytes_not_fully_verified"
+  },
+  "artifacts": [
+    {
+      "name": "Editorial Manager generated submission PDF",
+      "local_filename": "IJIO-D-26-00585.pdf",
+      "sha256": "f191aed95fc5b8bcb935d405436e88515325b9b0a389ceadab95de245e469c26",
+      "bytes": 2307854,
+      "status": "preserved_outside_public_repo"
+    },
+    {
+      "name": "repository-generated identified manuscript PDF",
+      "local_filename": "generated/manuscript.pdf",
+      "sha256": "dcd5a092155228b56a2e4b08add67edcdab2178374c065cded4d442f3fafcf48",
+      "bytes": 566502,
+      "status": "content_matched_to_editorial_manager_manuscript_pages"
+    },
+    {
+      "name": "candidate Editorial Manager LaTeX source ZIP",
+      "local_filename": "generated/ijio_em_source.zip",
+      "sha256": "b06cd69772526ff8b8a80e626003d31b90e2532fd5dfe8ca66a181810c8f102a",
+      "bytes": 94073,
+      "status": "candidate_exact_uploaded_bytes_unverified"
+    },
+    {
+      "name": "flat DOS-metadata rebuild of LaTeX source ZIP",
+      "local_filename": "latex_sources_IJIO.zip",
+      "sha256": "6eab04d757969ab403542fe41f1cb19193c5b2d6e80bc736617964c4200598fa",
+      "bytes": 94073,
+      "status": "technical_rebuild_exact_uploaded_bytes_unverified"
+    },
+    {
+      "name": "code-only supplementary ZIP",
+      "local_filename": "ijio_replication_code.zip",
+      "sha256": "28a6fca7583918341964676cfc8b5239fb082404f4b00b2dfd8ab0ad415e7ab0",
+      "bytes": 16981,
+      "status": "prepared_for_corrected_submission"
+    }
+  ],
+  "cross_checks": {
+    "editorial_manager_manuscript_pages": "2-74",
+    "repository_manuscript_pages": 73,
+    "normalized_text_equal": true,
+    "normalized_text_length_each": 132147,
+    "sequence_match_ratio": 1.0,
+    "removed_portal_boilerplate_for_comparison": "Manuscript Click here to view linked References"
+  },
+  "limitations": [
+    "The final Editorial Manager PDF identifies the source attachment filename but does not prove the exact bytes of the uploaded source ZIP.",
+    "The full editorial correspondence is intentionally not stored in this public manifest."
+  ],
+  "r0_status": "COMPLETE_WITH_ARTIFACT_PROVENANCE_LIMITATION"
+}
