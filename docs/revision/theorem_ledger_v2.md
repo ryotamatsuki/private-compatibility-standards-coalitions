@@ -7,6 +7,7 @@ Status vocabulary used here:
 - `LEGACY CERTIFIED`
 - `LEGACY CERTIFIED / REOPENED FOR GENERALIZATION`
 - `CANDIDATE — UNPROVED`
+- `PROVED`
 - `PROVED IN PRECHECK`
 - `SECONDARY`
 - `OUT OF SCOPE FOR CURRENT STAGE`
@@ -22,10 +23,11 @@ Status vocabulary used here:
 | V2-P1 | three-country Cournot microfoundation | LEGACY CERTIFIED | \((c,v)\in\Omega_0\) | becomes microfoundation if G1/G2 survive |
 | V2-T2 | strict-blocking stable-set reversal | SECONDARY | symmetry, strict blocking, old institutional menu | R6 alternative blocking/asymmetry audit |
 | V2-N0 | zero-network baseline gap | PROVED IN PRECHECK | \(v=0,\;0<c<1/3\) in old symmetric Cournot model | preserve symbolic regression test |
-| G1-E | outsider-only adoption is a strict Nash equilibrium under profile-specific net-gain inequalities | CANDIDATE — UNPROVED | R2 generic segmented-market adoption model | derive formally and map old model |
-| G1-U | outsider adoption/member non-adoption are strict dominant actions under robust gain bounds; outsider-only adoption is unique | CANDIDATE — UNPROVED | stronger R2 conditions | prove all pure/mixed alternatives excluded |
-| G1-S | bloc-scope expansion increases outsider adoption attractiveness under a discrete marginal-gain condition | CANDIDATE — UNPROVED | scope change \(C\to C\cup\{k\}\) | characterize interaction and cost terms; find failure case |
-| G1-C | asymmetric adopter costs preserve one-way adoption when robust gain-cost ordering remains strict | CANDIDATE — UNPROVED | R2 cost asymmetry | derive rather than assume interval |
+| G1-E | outsider-only adoption is a strict Nash equilibrium under profile-specific net-gain inequalities | PROVED | segmented-market locality; Proposition R2.1 | retained as certification result, not standalone novelty |
+| G1-U | outsider adoption/member non-adoption are strict dominant actions under robust gain bounds; outsider-only adoption is unique | PROVED — SUFFICIENT, NOT NECESSARY | finite binary action space; Theorem R2.2 | use as selection-free R3 continuation condition |
+| G1-S | coalition expansion changes the one-way feasibility slack by \(\Delta U-\Delta L_+\); interval creation also requires positive final slack | PROVED — CONDITIONAL | R2 scope/competition decomposition | monotonic larger-bloc claim is rejected; carry condition to R3 |
+| G1-C | asymmetric adopter costs preserve selection-free one-way adoption when outsider value is positive and member costs exceed robust reverse gains | PROVED | Proposition R2.4 | robustness only; not a novelty claim |
+| G1-O | additive optional deployment has value \(\sum_k\max\{u_k,0\}\); pure option-set expansion is weakly nondecreasing | PROVED | R2 optional-deployment boundary test | H2.4 strong form refined; negative scope needs package or payoff feedback |
 | G2-L | preference result survives small residual adaptation cost around full bypass | CANDIDATE — UNPROVED | R3 only | continuity/regularity proof plus joint adoption region |
 | G2-S | economically interpretable boundary between incentive increase, preference reversal, and failure | CANDIDATE — UNPROVED | R3 only | equilibrium-derived partial erosion |
 | R5-B | portability to one differentiated-Bertrand model | OUT OF SCOPE FOR CURRENT STAGE | conditional on R2/R3 route | execute only if Route A/B justifies it |
@@ -48,3 +50,7 @@ For G2, three statements remain separate:
 3. the firm-adoption equilibrium that produces the change exists for the same primitives.
 
 The R2 and R3 parameter sets must eventually have a verified nonempty intersection before a joint headline claim is certified.
+
+## R2 closure
+
+R2 verdict: **CONDITIONAL GO TO R3**. G1 is retained as a supporting structural lemma with high prior-art overlap. The common-cost scope-dominance condition and the scope-versus-reverse-threshold comparative static are mathematically certified for the stated R2 model, but no standalone theorem-novelty claim is authorized. See `02_r2_results.md` and `02_r2_literature_absorption.md`.
