@@ -228,3 +228,24 @@ Current phase: **repository governance and canonical-theory freeze**.
 Manuscript prose, LaTeX scaffold, figures, and verification code are deliberately outside this phase.
 
 The next authorized phase is: **modular LaTeX manuscript scaffold and reproducible verification pipeline**.
+
+
+## Post-IJIO Revision Track Authorization
+
+An explicit post-Stage-8 theory-redevelopment decision has now been authorized on the integration branch `revision/research-track`.
+
+The governing plan for that branch is:
+
+- `docs/revision/REVISION_TRACK_R0_R9.md`
+
+This authorization does **not** unfreeze or rewrite the historical Stage-8 theory on `main`. Instead:
+
+- the old canonical theory and theorem ledger remain historical frozen records;
+- the revision branch may reopen assumptions and test extensions only within the staged R0–R9 governance;
+- new parameters, Bertrand competition, partial compatibility/residual adaptation cost, alternative blocking rules, and other previously prohibited extensions are permitted only when explicitly authorized by the relevant Revision Track stage;
+- uncertified research claims must not be inserted into the production manuscript;
+- failed extensions, counterexamples, additional equilibria, and non-results must be retained in the research record;
+- R7 re-certification is required before the revised theory is treated as frozen;
+- IJIO resubmission is not the objective of this track.
+
+Where this section conflicts with the earlier freeze rules, this section is a branch-specific authorization for `revision/research-track` only. The earlier freeze rules continue to govern the historical `main` version.
