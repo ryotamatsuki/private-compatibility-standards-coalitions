@@ -2,7 +2,7 @@
 
 ## Status
 
-**R2 DESIGN FROZEN — THEORY EXECUTION NOT YET STARTED**
+**R2 DESIGN FROZEN — EXECUTED; CONDITIONAL GO TO R3**
 
 This document fixes the first R2 model family, candidate propositions, novelty tests, search budget and stop rules. Changing them after substantive derivation begins requires an explicit design amendment.
 
@@ -294,3 +294,8 @@ Potential proof-critical targets if G1 survives:
 - boundary/threshold ordering.
 
 No proof-assistant implementation is authorized until R2/R3 theorem statements stabilize and R7 reassesses applicability.
+
+
+## Execution closure
+
+R2 was executed without changing the pre-registered model/search budget. Results are in `02_r2_results.md`; theorem-absorption mapping is in `02_r2_literature_absorption.md`; verification code is `code/revision/check_r2_adoption.py`. The outcome is **CONDITIONAL GO TO R3**: the adoption theory is valid and yields an operative scope-versus-reverse-incentive condition, but G1 has high prior-art overlap and is not a standalone headline contribution.
