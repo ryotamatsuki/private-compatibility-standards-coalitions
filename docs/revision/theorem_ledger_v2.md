@@ -29,9 +29,9 @@ Status vocabulary used here:
 | G1-S | coalition expansion changes the one-way feasibility slack by \(\Delta U-\Delta L_+\); interval creation also requires positive final slack | PROVED — CONDITIONAL | R2 scope/competition decomposition | monotonic larger-bloc claim is rejected; carry condition to R3 |
 | G1-C | asymmetric adopter costs preserve selection-free one-way adoption when outsider value is positive and member costs exceed robust reverse gains | PROVED | Proposition R2.4 | robustness only; not a novelty claim |
 | G1-O | additive optional deployment has value \(\sum_k\max\{u_k,0\}\); pure option-set expansion is weakly nondecreasing | PROVED | R2 optional-deployment boundary test | H2.4 strong form refined; negative scope needs package or payoff feedback |
-| G2-L | ranking reversal survives positive residual adaptation cost locally around full bypass | PROVED IN R3 — PENDING R7 RECERTIFICATION | canonical Cournot extension with d=lambda c and full compatibility | independent adversarial re-derivation at R7 |
-| G2-S | residual-rent function R(d) separates reversal, incentive-strengthening-only, and incentive-weakening regions | PROVED IN R3 — PENDING R7 RECERTIFICATION | Proposition R3.1 and thresholds d_D,d_E | test parent-theorem absorption and independent proof at R7 |
-| G2-J | incomplete adoption and government ranking reversal coexist with a selection-free firm equilibrium on a nonempty open set | PROVED IN R3 — PENDING R7 RECERTIFICATION | exact witness (c,v,lambda,F)=(1/10,6/25,1/2,9/100) plus continuity | retain as joint-region certificate |
+| G2-L | ranking reversal survives positive residual adaptation cost locally around full bypass | PROVED — R7 RECERTIFIED | canonical Cournot extension with d=lambda c and full compatibility | freeze for R8; do not generalize beyond the certified canonical microfoundation |
+| G2-S | residual-rent function R(d) separates reversal, incentive-strengthening-only, and incentive-weakening regions | PROVED — R7 RECERTIFIED | canonical Cournot extension; exact residual-rent classification | principal surviving conditional mechanism result; no portability claim beyond certified scope |
+| G2-J | incomplete adoption and government ranking reversal coexist with a selection-free firm equilibrium on a nonempty open set | PROVED — R7 RECERTIFIED | exact witness (c,v,lambda,F)=(1/10,6/25,1/2,9/100) plus strict inequalities and continuity | retain as existence/open-set certificate; not a global characterization |
 | N1 | zero-network initial SU advantage is impossible on the boundary extension | PROVED | \(v=0,\ 0<c<1/3\): \(\Phi=c(13c-6)/32<0\) | retain as R4 baseline certificate |
 | N2 | complete fixed-c characterization of \(\mathcal V_{SU}(c)\) | PROVED | unique feasible root \(v_{SU}(c)\) for \(0<c<c^\ast\); upper interval above it | R7 independent re-derivation |
 | N3 | initial SU advantage exists for some feasible \(v\) iff \(0<c<c^\ast\) | PROVED | \(c^\ast\) is the unique root of \(17c^3+109c^2-89c+11\) in \((0,1/3)\) | preserve exact root isolation |
@@ -53,6 +53,15 @@ Status vocabulary used here:
 | R6-AH | small market-size asymmetry in high-F region | PROVED LOCALLY | m1=m2=1, m3=1-delta; SU12 uniquely stable under both blocking rules for sufficiently small delta>0 | exact witness line is stronger: all 0<delta<1 at c=1/10,v=6/25,F=1/5 |
 | R6-AI | small market-size asymmetry in intermediate-F region | PROVED LOCALLY | outsider-only adoption remains selection free locally; IS uniquely stable under both rules | exact witness certifies 0<delta<=1/2 at c=1/10,v=6/25,F=3/25 |
 | R6-WF | intermediate-region welfare ranking | PROVED / MENU-LOCAL | IS Pareto-dominates SW and all SU continuations within the five-partition menu on certified neighborhood | no unrestricted first-best claim |
+
+| R7-CR | independent clean-room reconstruction of the R3–R6 headline inputs and exact witnesses | PROVED | independent SymPy evaluator reconstructs Cournot states, welfare blocks, R3 residual-rent identity, R4 boundary identities, frozen R5 witness signs, and R6 deviation identities without importing R2–R6 verification modules | CI regression gate in R8/R9 |
+| R7-FV1 | zero-network initial-SU gap is negative for 0<c<1/3 | FORMALLY VERIFIED | Lean 4 + mathlib; theorem `FV1_zeroNetworkGapNegative` | algebra/order core only; economic derivation remains clean-room responsibility |
+| R7-FV2 | residual-rent function is strictly increasing in residual adaptation cost on the certified network domain | FORMALLY VERIFIED | Lean 4 + mathlib; theorem `FV2_residualRentStrictlyIncreasing` | canonical residual-rent expression only |
+| R7-FV3 | R<D implies the post-adoption SU-minus-IS gap -D+R is negative | FORMALLY VERIFIED | Lean 4 + mathlib; theorem `FV3_postGapNegative` | logical/algebraic implication |
+| R7-FV4 | E>D>0 and R<D imply both stronger relative IS incentive and preference reversal | FORMALLY VERIFIED | Lean 4 + mathlib; theorem `FV4_preferenceEffect` | logical/algebraic implication; no claim that antecedents are general |
+| R7-FV5 | weak blocking admits one indifferent plus one strict gainer whereas strict blocking does not | FORMALLY VERIFIED | Lean 4 + mathlib; theorem `FV5_indifferenceSeparatesBlockingRules` | two-deviator predicate core only |
+| R7-N | proposition-level novelty re-kill | COMPLETE — LIMITED NOVELTY SURVIVES | G1 substantially overlaps converter/one-way-compatibility and fixed-cost-scope parent classes; G2 exact government-ranking partition not directly absorbed in located closest literature but is model-specific | no priority/first claim; R8 must position as conditional mechanism |
+| R7-R | final research route | ROUTE B — LIMITED GENERALIZATION | adoption logic broadens, but preference reversal is tied to the restricted canonical market structure and fails in the frozen R5 differentiated-demand test | R8 authorized as conditional-mechanism manuscript reconstruction |
 
 ## Quantifier discipline
 
@@ -86,7 +95,7 @@ R3 verdict: **GO**. The exact full-bypass identity has been replaced by an equil
 R(d)=rac{d[(5-4v)d+2(1-4v)]}{32(1-v)^2}.
 ]
 
-The new government effect is conditional: reversal iff (R(d)<mathscr D), incentive strengthening without reversal when (mathscr D<R(d)<mathscr E), and incentive weakening when (R(d)>mathscr E). The firm-adoption and ranking conditions have a verified nonempty open intersection with (0<lambda<1). These are R3 research results, not yet R7-certified final-paper theorems.
+The new government effect is conditional: reversal iff (R(d)<mathscr D), incentive strengthening without reversal when (mathscr D<R(d)<mathscr E), and incentive weakening when (R(d)>mathscr E). The firm-adoption and ranking conditions have a verified nonempty open intersection with (0<lambda<1). These R3 results were subsequently independently re-derived and re-certified at R7 within the explicitly frozen canonical scope.
 
 
 ## R4 closure
@@ -118,3 +127,16 @@ The specified market-size perturbation m1=m2=1, m3=1-delta breaks that equality.
 In the intermediate region, every SU country strictly prefers IS after outsider-only bypass, and IS remains uniquely stable under both blocking concepts and small asymmetry. At (c,v,F)=(1/10,6/25,3/25), the result is certified for 0<delta<=1/2 with the private-adoption continuation re-solved after every deviation.
 
 R6 therefore separates a comparatively robust preference/unique-IS result from a fragile exact high-F symmetric stable-set correspondence. It does not repair the R5 portability failure. R7 is the next and only authorized stage; production-manuscript rewriting remains prohibited.
+
+
+## R7 closure
+
+R7 verdict: **COMPLETE — ROUTE B (LIMITED GENERALIZATION); R8 AUTHORIZED, NOT STARTED**.
+
+R7 independently reconstructed the surviving R2–R6 theory using a clean-room evaluator rather than importing the stage-specific verification modules. The canonical R3 residual-rent identity, the incomplete-adaptation joint witness, the R4 zero-network and reciprocal-disadvantage identities, the frozen R5 negative-portability witness, and the R6 blocking/asymmetry identities were reproduced independently.
+
+Targeted Lean 4 + mathlib verification was judged applicable and completed for five proof-critical algebra/order/logical cores: the zero-network sign, monotonicity of the residual-rent expression, the reversal implication, the incentive-strengthening/reversal implication, and the strict-versus-weak blocking distinction. The formal layer is deliberately narrower than the economic equilibrium derivation and does not certify novelty, exhaustive equilibrium enumeration, or the R5 Bernstein certificate.
+
+The novelty re-kill finds heavy prior-art overlap for one-way compatibility/adoption and fixed-cost scope. The exact R3 government-ranking partition was not directly absorbed by the closest located parent literature, but R5 establishes that its sign is not portable to the pre-specified differentiated-demand comparator. Consequently Route A is rejected and the final route is **Route B**.
+
+The R8 admissible claim set is frozen to a conditional mechanism paper: selection-free one-way adoption is supporting structure; the canonical residual-rent success/intermediate/failure partition is the central mechanism; incomplete adaptation is non-knife-edge within that microfoundation; and the R4/R5/R6 failures are explicit boundaries. Production-manuscript rewriting is authorized only under R8 and has not yet started.

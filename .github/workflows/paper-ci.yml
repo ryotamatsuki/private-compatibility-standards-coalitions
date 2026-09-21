@@ -42,6 +42,27 @@ jobs:
       - name: R6 coalition-stability robustness verification
         run: python code/revision/check_r6_coalition_stability.py
 
+      - name: R7 clean-room theory recertification
+        run: python code/revision/check_r7_cleanroom.py
+
+      - name: Install Lean 4
+        run: |
+          curl https://elan.lean-lang.org/elan-init.sh -sSf | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: R7 targeted formal verification
+        run: |
+          cd formal/r7
+          lake update
+          lake exe cache get
+          lake build Mathlib.Basic.Real.Basic Mathlib.Tactic.Linarith Mathlib.Tactic.NormNum Mathlib.Tactic.Positivity Mathlib.Tactic.Ring
+          lake env lean R7Formal.lean
+          if grep -RInE '\\b(sorry|admit)\\b' --include='*.lean' .; then
+            echo "Forbidden Lean placeholder found"
+            exit 1
+          fi
+          echo "R7 FORMAL VERIFICATION: PASS"
+
       - name: Install LaTeX and PDF toolchain
         run: |
           sudo apt-get update
