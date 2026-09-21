@@ -1,0 +1,11 @@
+name = "r7formal"
+version = "0.1.0"
+defaultTargets = ["r7formal"]
+
+[[lean_lib]]
+name = "R7Formal"
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.34.0"
