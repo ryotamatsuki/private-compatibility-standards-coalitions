@@ -6,7 +6,7 @@ import Mathlib.Tactic.Ring
 
 namespace R7
 
-def residualRent (d v : ℝ) : ℝ :=
+noncomputable def residualRent (d v : ℝ) : ℝ :=
   d * ((5 - 4 * v) * d + 2 * (1 - 4 * v)) / (32 * (1 - v)^2)
 
 theorem FV1_zeroNetworkGapNegative
@@ -16,8 +16,8 @@ theorem FV1_zeroNetworkGapNegative
     nlinarith
   have hmul : c * (13 * c - 6) < 0 :=
     mul_neg_of_pos_of_neg hc0 hlin
-  norm_num at hmul ⊢
-  exact hmul
+  have h32 : (0 : ℝ) < 32 := by norm_num
+  exact div_neg_of_neg_of_pos hmul h32
 
 theorem residualNumeratorStrictlyIncreasing
     (d₁ d₂ v : ℝ)
