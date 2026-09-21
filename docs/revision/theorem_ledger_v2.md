@@ -1,17 +1,17 @@
 # Revision Theorem Ledger v2
 
-This ledger governs **new research status only**. It does not overwrite \`docs/THEOREM_LEDGER.md\`, which remains the historical Stage-8/IJIO-version record.
+This ledger governs **new research status only**. It does not overwrite `docs/THEOREM_LEDGER.md`, which remains the historical Stage-8/IJIO-version record.
 
 Status vocabulary used here:
 
-- \`LEGACY CERTIFIED\`
-- \`LEGACY CERTIFIED / REOPENED FOR GENERALIZATION\`
-- \`CANDIDATE — UNPROVED\`
-- \`PROVED IN PRECHECK\`
-- \`SECONDARY\`
-- \`OUT OF SCOPE FOR CURRENT STAGE\`
-- \`REFUTED\`
-- \`UNRESOLVED\`
+- `LEGACY CERTIFIED`
+- `LEGACY CERTIFIED / REOPENED FOR GENERALIZATION`
+- `CANDIDATE — UNPROVED`
+- `PROVED IN PRECHECK`
+- `SECONDARY`
+- `OUT OF SCOPE FOR CURRENT STAGE`
+- `REFUTED`
+- `UNRESOLVED`
 
 | ID | Result | Status | Exact scope / dependency | Next certification requirement |
 |---|---|---|---|---|
