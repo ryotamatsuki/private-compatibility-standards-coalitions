@@ -181,17 +181,17 @@ upper_line = sp.factor((2 * T_O_d).subs(line_subs))
 tw_line = sp.factor(T_W_d.subs(line_subs))
 ta_line = sp.factor(T_A_R_d.subs(line_subs))
 
-assert gap_line == (202 * lam**2 + 40 * lam - 741) / 92416
+assert sp.simplify(gap_line - (202 * lam**2 + 40 * lam - 741) / sp.Integer(92416)) == 0
 
 diff_tw = sp.factor(upper_line - tw_line)
 diff_ta = sp.factor(upper_line - ta_line)
 
-assert diff_tw == (
-    3 * (16725 * lam**2 - 78350 * lam + 164283) / 7782400
-)
-assert diff_ta == (
-    3 * (33825 * lam**2 - 166550 * lam + 212263) / 7782400
-)
+assert sp.simplify(diff_tw - (
+    3 * (16725 * lam**2 - 78350 * lam + 164283) / sp.Integer(7782400)
+)) == 0
+assert sp.simplify(diff_ta - (
+    3 * (33825 * lam**2 - 166550 * lam + 212263) / sp.Integer(7782400)
+)) == 0
 
 # Analytic interval certificates:
 # gap numerator is increasing on [0,1], with value -499 at lambda=1.
