@@ -163,10 +163,12 @@ assert eq(den1, 32*(1-v)**2*K**2)
 
 # Phi1<0 over the original canonical domain.
 s1p1 = sp.Poly(sp.cancel(M1.subs(v,U1*x/(1+x))*(1+x)**5), x)
-for z in s1p1.all_coeffs():
-    assert z.subs(c,sp.Rational(1,18)) < 0
-    rr = sp.count_roots(z, sp.Rational(0), sp.Rational(1,9))
-    assert rr in (0,1)
+s1a = [sp.factor(z) for z in s1p1.all_coeffs()]
+for z in s1a[:-1]:
+    assert sp.count_roots(z, sp.Rational(0), sp.Rational(1,9)) == 0
+    assert z.subs(c, sp.Rational(1,18)) < 0
+assert eq(s1a[-1], 4*c*(13*c-6))
+assert s1a[-1].subs(c, sp.Rational(1,18)) < 0
 
 s1raw2 = sp.cancel(M1.subs(v,vbar*x/(1+x))*(1+x)**5)
 s1n2, s1d2 = sp.fraction(s1raw2)
@@ -184,16 +186,39 @@ nd1, dd1 = sp.fraction(D1)
 assert eq(nd1, f1*f2)
 assert eq(f2.subs(c,(1-3*v)/(3*(1-v))),
           -(9*v**2-20*v+8)/3)
+# On 0<v<1/4, 9v^2-20v+8 is decreasing and remains positive
+# at v=1/4. Since f2 increases in c, canonical feasibility implies f2<0.
+assert (18*sp.Rational(1,4)-20) < 0
+assert 9*sp.Rational(1,4)**2-20*sp.Rational(1,4)+8 > 0
+# K(v)>0 on the same interval, so all cleared denominators used above
+# have the asserted fixed signs.
+assert (6*sp.Rational(1,4)-6) < 0
+assert K.subs(v,sp.Rational(1,4)) > 0
 
 # S1 adoption thresholds.
 qS1 = (1-2*v-2*c*(1-v))/(2*(2-v)*(1-2*v))
 S1 = (1-v)*qS1**2
+
+# Independent SW FOC reconstruction (one zero-cost native, two cost-c foreign
+# singleton firms under S1).
+qh, qs = sp.symbols("qh qs", real=True)
+sol_sw = sp.solve([
+    sp.Eq(1-2*(1-v)*qh-2*qs, 0),
+    sp.Eq(1-qh-(3-2*v)*qs-c, 0),
+], [qh, qs], dict=True)[0]
+assert eq(sol_sw[qs], qS1)
+
 TA1 = sp.factor(P-B1)
 TU1 = sp.factor(A1-C1)
 TW1 = sp.factor(A1-S1)
+# In the one-adopter state the remaining singleton earns B1; after it adopts,
+# all three are compatible and it earns P. Hence the post-rival threshold is TA1.
 w = {c:sp.Rational(1,10), v:sp.Rational(6,25)}
-assert Phi1.subs(w) < 0
-assert D1.subs(w) > 0
+assert sp.factor(Phi1.subs(w)) == -sp.Rational(60921623,2423193728)
+assert sp.factor(D1.subs(w)) == sp.Rational(547149,15942064)
+assert sp.factor(TA1.subs(w)) == sp.Rational(5183091,63768256)
+assert sp.factor(TU1.subs(w)) == sp.Rational(295659,3356224)
+assert sp.factor(TW1.subs(w)) == sp.Rational(7226119311,68631424576)
 assert max(TU1.subs(w), TA1.subs(w), TW1.subs(w)) < 2*TA1.subs(w)
 
 print("R4 canonical Phi reconstruction: PASS")
