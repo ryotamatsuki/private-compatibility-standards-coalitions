@@ -1,5 +1,5 @@
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic.Nlinarith
+import Mathlib.Basic.Real.Basic
+import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.Ring
