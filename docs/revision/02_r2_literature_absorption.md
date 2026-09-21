@@ -22,11 +22,13 @@ The interval is nonempty iff
 U(C)>\max\{0,L_U(C)\}.
 \]
 
-For coalition expansion \(C\to C\cup\{h\}\), the width of the selection-free interval rises iff
+For coalition expansion \(C\to C\cup\{h\}\), the feasibility slack rises iff
 
 \[
 \Delta_hU(C)>\Delta_hL_+(C).
 \]
+
+If the interval is nonempty both before and after expansion, this is also the condition for its length to rise; if the initial interval is empty, the increased slack must additionally cross zero.
 
 The novelty audit asks whether these statements amount to more than known fixed-cost scope effects plus known one-way compatibility.
 
@@ -96,12 +98,12 @@ This residual is too narrow to be a standalone headline contribution at R2.
 **Candidate:**
 
 \[
-H(C\cup\{h\})-H(C)
+S(C\cup\{h\})-S(C)
 =
 \Delta_hU(C)-\Delta_hL_+(C).
 \]
 
-**Canonical form:** scope expansion changes both the adopter's upper threshold and the strongest counter-adopter threshold.
+**Canonical form:** scope expansion changes both the adopter's upper threshold and the strongest counter-adopter threshold; their difference is a feasibility slack, not an interval length unless it is positive.
 
 **Closest prior class:** van Wegberg (2004) plus general multi-market scope theory.
 
