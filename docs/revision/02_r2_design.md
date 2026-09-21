@@ -232,7 +232,7 @@ Before calling G1 new, map the application-neutral result against at least:
 
 Required output:
 
-\`candidate G1 statement → canonical mathematical form → closest parent theorem/model → mapping → residual novelty, if any\`.
+`candidate G1 statement → canonical mathematical form → closest parent theorem/model → mapping → residual novelty, if any`.
 
 Absorption by prior theory is not a failed research stage; it is a result that changes the contribution classification.
 
@@ -284,7 +284,7 @@ Use this, not a negative theorem, when proof, equilibrium characterization, or s
 
 ## Preliminary formal-verification mapping
 
-Formal verification remains \`PRELIMINARY APPLICABLE\`.
+Formal verification remains `PRELIMINARY APPLICABLE`.
 
 Potential proof-critical targets if G1 survives:
 
