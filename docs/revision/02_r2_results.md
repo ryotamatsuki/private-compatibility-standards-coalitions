@@ -309,10 +309,10 @@ It is stronger than the statement "adopt if net benefit is positive": it asks wh
 
 ## 6. Scope–competition decomposition
 
-Define the width of the selection-free common-cost interval by
+Define the **feasibility slack**
 
 \[
-H(C)
+S(C)
 =
 U(C)-\max\{0,L_U(C)\}.
 \]
@@ -320,7 +320,13 @@ U(C)-\max\{0,L_U(C)\}.
 A nonempty interval exists exactly when
 
 \[
-H(C)>0.
+S(C)>0.
+\]
+
+Its actual length is
+
+\[
+W(C)=\max\{0,S(C)\}.
 \]
 
 Consider a formal-coalition expansion from \(C\) to \(C'=C\cup\{h\}\).
@@ -362,7 +368,7 @@ Therefore
 
 \[
 \boxed{
-H(C')-H(C)
+S(C')-S(C)
 =
 \Delta_h U(C)-\Delta_h L_+(C).
 }
@@ -370,7 +376,7 @@ H(C')-H(C)
 
 ### Proposition R2.3 — Scope expansion criterion
 
-A coalition expansion enlarges the selection-free outsider-only common-cost region if and only if
+A coalition expansion raises the **feasibility slack** if and only if
 
 \[
 \boxed{
@@ -378,7 +384,17 @@ A coalition expansion enlarges the selection-free outsider-only common-cost regi
 }
 \]
 
-It shrinks the region if the inequality is reversed and leaves the width unchanged at equality.
+If the common-cost one-way interval is nonempty before and after the expansion, the same condition is necessary and sufficient for the interval to widen.
+
+If the initial interval is empty, an expansion creates a nonempty interval if and only if
+
+\[
+\boxed{
+\Delta_h U(C)-\Delta_h L_+(C)>-S(C).
+}
+\]
+
+Thus an improvement in feasibility slack need not create an equilibrium interval when the starting gap is too large.
 
 ### Economic content
 
@@ -665,7 +681,7 @@ This shows exactly which part of the old \(2T_A\) result is a scope effect and w
 | Hypothesis | R2 outcome | Reason |
 |---|---|---|
 | H2.1 nonempty outsider-only region can arise from scope/common cost | **SUPPORTED** | common-\(F\) interval exists iff \(U(C)>\max\{0,L_U(C)\}\); homogeneous specialization gives \(M_Cr_o>m_or_m\) |
-| H2.2 bloc scope raises outsider adoption only conditionally | **SUPPORTED AND STRENGTHENED** | relevant condition is \(\Delta U>\Delta L_+\), not merely \(\Delta U>0\) |
+| H2.2 bloc scope raises outsider adoption only conditionally | **SUPPORTED AND STRENGTHENED** | \(\Delta U>\Delta L_+\) raises feasibility slack; creation of a previously empty interval additionally requires crossing zero |
 | H2.3 adopter-specific costs need not eliminate one-way adoption | **SUPPORTED** | Proposition R2.4 |
 | H2.4 optional deployment can weaken/eliminate scope advantage | **PARTLY REFUTED / REFINED** | under additive pure option-set expansion, value is weakly increasing; an added bad market is skipped |
 | H2.5 generic result may be absorbed by prior scope/adoption theory | **SUPPORTED** | literature audit finds substantial direct and partial absorption |
@@ -740,7 +756,7 @@ The robust common-cost condition is
 U(C)>\max\{0,L_U(C)\}.
 \]
 
-The effect of coalition expansion is governed by
+The change in the coalition-expansion feasibility slack is governed by
 
 \[
 \Delta U-\Delta L_+,
