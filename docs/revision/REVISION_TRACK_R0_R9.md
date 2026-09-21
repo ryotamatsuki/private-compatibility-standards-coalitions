@@ -7,7 +7,7 @@
 - Trigger: desk rejection before external review, IJIO-D-26-00585
 - Integration branch: `revision/research-track`
 - Base commit candidate for submitted source: `28bed286bd03b43bce8294b9eaebfcc7ceb6ca2a`
-- Current status: **R0 COMPLETE WITH ARTIFACT-PROVENANCE LIMITATION; R1 COMPLETE; R2 COMPLETE; R3 COMPLETE — PROVISIONAL ROUTE A; NEXT R4**
+- Current status: **R0 COMPLETE WITH ARTIFACT-PROVENANCE LIMITATION; R1 COMPLETE; R2 COMPLETE; R3 COMPLETE; R4 COMPLETE — ROUTE A MAINTAINED WITH SPECIFICATION DEPENDENCE; R5 AUTHORIZED, NOT STARTED**
 - IJIO resubmission: **not an objective**
 - Production-manuscript rewrite before theory re-certification: **prohibited**
 - Governing reusable workflow: **research-paper-workflow v2.2 @ 42574d6c5931275ccff3ef7e8b4acc188077332a**
@@ -320,6 +320,27 @@ Planned output:
 - feasible region;
 - specification-dependence table;
 - verification code.
+
+### R4 closure record
+
+**R4 COMPLETE — GO TO R5.**
+
+Certified results:
+
+- fixed-c feasibility is \(0<c<1/3\), \(0<v<\bar v(c)\), with the upper-bound formula switching at \(c=1/9\);
+- the canonical welfare gap has a unique feasible \(v\)-root whenever the SU-advantage region exists;
+- \(\mathcal V_{SU}(c)=(v_{SU}(c),\bar v(c))\) for \(0<c<c^\ast\) and is empty for \(c^\ast\le c<1/3\);
+- \(c^\ast\) is the unique root in \((0,1/3)\) of \(17c^3+109c^2-89c+11\);
+- the joint \(\Phi>0\), \(\mathscr D>0\) region is nonempty exactly for \(c_\dagger<c<c^\ast\), where \(c_\dagger\) is the unique root in \((0,1/3)\) of \(512c^3-224c^2-241c+18\);
+- at \(v=0\), one-way private adoption remains possible but the pre-adoption SU advantage does not;
+- the R3 residual-rent identity remains valid at \(v=0\);
+- the canonical zero-benefit singleton convention is materially relevant to the initial SU ranking: the pre-specified minimal S1 self-network alternative eliminates the SU advantage on the old canonical feasible domain while preserving a one-way-adoption witness.
+
+Interpretation: positive network effects are required for the pre-adoption SU advantage in the current symmetric Cournot microfoundation, not for private circumvention itself or for the R3 partial-erosion identity. The singleton audit is a specification-dependence result, not a universal negative theorem over alternative network specifications.
+
+Route decision: **Route A remains provisionally open with explicit specification dependence.** R5 may execute only the pre-specified alternative-competition portability test. No R5 work is performed in R4. R7 remains the theory re-certification gate, and production-manuscript rewriting remains prohibited.
+
+Artifacts: `docs/revision/04_network_role.md`, `docs/revision/04_singleton_network_sensitivity.md`, and `code/revision/check_r4_network_role.py`.
 
 ---
 
