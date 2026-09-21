@@ -1,4 +1,8 @@
-import Mathlib
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Nlinarith
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Positivity
+import Mathlib.Tactic.Ring
 
 namespace R7
 
