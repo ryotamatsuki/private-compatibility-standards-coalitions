@@ -86,8 +86,12 @@ forbidden = [
     "international standardization is globally first best",
     "international standardization is global first best",
 ]
+scope_scan = low.replace(
+    "nothing here establishes that international standardization is globally first best.",
+    "",
+)
 for token in forbidden:
-    if token in low:
+    if token in scope_scan:
         raise AssertionError(f"R9 prohibited overclaim: {token}")
 
 # Check abstract word count against the selected JICT rule.
