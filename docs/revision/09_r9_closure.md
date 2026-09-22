@@ -2,19 +2,19 @@
 
 ## Decision
 
-**R9 COMPLETE SUBJECT TO INTEGRATION — FINAL AUDIT PASSED; JICT PACKAGE TECHNICALLY READY; RESEARCH TRACK CLOSED AFTER MERGE CI**
+**R9 COMPLETE SUBJECT TO INTEGRATION — FINAL AUDIT PASSED; JICT PACKAGE TECHNICALLY READY; RESEARCH TRACK CLOSES AFTER MERGE CI**
 
 Input integration commit:
 
-`602ed89d1a03df2b3f6d2eda26d37bb59aa53a01`
+\`602ed89d1a03df2b3f6d2eda26d37bb59aa53a01\`
 
 Execution branch:
 
-`revision/r9-execution`
+\`revision/r9-execution\`
 
 Governing workflow:
 
-`research-paper-workflow v2.2 @ 42574d6c5931275ccff3ef7e8b4acc188077332a`
+\`research-paper-workflow v2.2 @ 42574d6c5931275ccff3ef7e8b4acc188077332a\`
 
 Selected first target:
 
@@ -29,17 +29,17 @@ Actual journal submission:
 R9 independently rechecked the manuscript-facing algebra for:
 
 - the pre-adaptation decomposition
-  [
-  W_M^{SU,N}-W^{IS}=mathscr E-mathscr D;
-  ]
+  \[
+  W_M^{SU,N}-W^{IS}=\mathscr E-\mathscr D;
+  \]
 - the post-adaptation residual-rent identity
-  [
-  W_M^{SU,O}(d)-W^{IS}=-mathscr D+R(d,v);
-  ]
+  \[
+  W_M^{SU,O}(d)-W^{IS}=-\mathscr D+R(d,v);
+  \]
 - monotonicity of
-  [
-  R(d,v)=rac{d[(5-4v)d+2(1-4v)]}{32(1-v)^2};
-  ]
+  \[
+  R(d,v)=\frac{d[(5-4v)d+2(1-4v)]}{32(1-v)^2};
+  \]
 - the zero-network boundary;
 - the exact incomplete-adaptation joint witness;
 - the re-solved partial-adaptation fixed-cost thresholds;
@@ -54,13 +54,11 @@ No downstream mathematical failure was found. No prior stage was reopened and no
 A 2026-09-22 refresh searched the closest standards, compatibility, converters, fixed-cost adoption, regulatory-harmonization, and coalition literatures, including recent work.
 
 No newly located paper directly absorbs the full equilibrium-derived mapping
-
-[
-mathscr E-mathscr D
-longrightarrow
--mathscr D+R(d,v)
-]
-
+\[
+\mathscr E-\mathscr D
+\longrightarrow
+-\mathscr D+R(d,v)
+\]
 together with the success/intermediate/failure partition and the same-primitives incomplete-adaptation/adoption open-set result.
 
 The R7 classification is therefore retained:
@@ -112,8 +110,13 @@ The journal-specific compacting occurs only in the generated JICT reviewer packa
 
 ## 5. Reproducibility and CI
 
-Branch Paper CI #331 (`35679508359`) passed all final gates on commit
-`a61f507e6866b1685d8d11b0d3a842be536ce2af`:
+Branch Paper CI #331 (\`35679508359\`) passed all final gates on commit
+\`a61f507e6866b1685d8d11b0d3a842be536ce2af\`.
+
+PR validation CI #335 (\`35680015881\`) subsequently passed on R9 head
+\`b437ae5d2ba29e98bf9dc94cb627f00f23bec2a1\`.
+
+The verified gates include:
 
 - post-IJIO symbolic prechecks;
 - R2 one-way-adoption verification;
@@ -148,12 +151,12 @@ These do not reopen the research track unless they reveal a substantive conflict
 
 ## 7. Closure rule
 
-This closure record itself must pass full branch CI, be merged by PR to `revision/research-track`, and pass post-merge integration CI.
+This closure record must be merged by PR to \`revision/research-track\` and the resulting integration commit must pass post-merge Paper CI.
 
-After those gates, the R0–R9 research redevelopment track is formally closed with:
+After those gates, the R0–R9 research redevelopment track is formally closed with
 
-[
-oxed{	ext{ROUTE B — LIMITED GENERALIZATION; JICT PACKAGE TECHNICALLY READY}}
-]
+\[
+\boxed{\text{ROUTE B — LIMITED GENERALIZATION; JICT PACKAGE TECHNICALLY READY}}
+\]
 
 No actual JICT submission is performed by R9.
