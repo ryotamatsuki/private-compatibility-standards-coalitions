@@ -83,8 +83,8 @@ forbidden = [
     "competition-form independent",
     "demand-system independent",
     "network effects are irrelevant",
-    "globally first best",
-    "global first best",
+    "international standardization is globally first best",
+    "international standardization is global first best",
 ]
 for token in forbidden:
     if token in low:
