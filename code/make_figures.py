@@ -105,8 +105,8 @@ def residual_rent_figure() -> None:
 
     fig, ax = plt.subplots(figsize=(10.5, 4.2))
     ax.plot(xs, ys, linewidth=1.6, label=r"$R(d,v)$")
-    ax.axhline(D, linewidth=1.0, linestyle="--", label=r"$\mathscr{D}$")
-    ax.axhline(E, linewidth=1.0, linestyle=":", label=r"$\mathscr{E}$")
+    ax.axhline(D, linewidth=1.0, linestyle="--", label=r"$\mathcal{D}$")
+    ax.axhline(E, linewidth=1.0, linestyle=":", label=r"$\mathcal{E}$")
     ax.axvline(d_d, linewidth=0.9)
     ax.axvline(d_e, linewidth=0.9)
 
@@ -122,7 +122,7 @@ def residual_rent_figure() -> None:
     ax.text(
         c / 2,
         -0.00030,
-        r"Illustration: $(c,v)=(0.073,0.225)$. Analytical boundaries are $R=\mathscr D$ and $R=\mathscr E$.",
+        r"Illustration: $(c,v)=(0.073,0.225)$. Analytical boundaries are $R=\mathcal D$ and $R=\mathcal E$.",
         ha="center",
         va="top",
         fontsize=8.8,
