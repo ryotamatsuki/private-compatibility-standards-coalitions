@@ -22,12 +22,15 @@ figures:
 	@test -s paper/figures/generated/figure_01_timing.pdf
 	@test -s paper/figures/generated/figure_02_selective_erosion.pdf
 	@test -s paper/figures/generated/figure_03_f_regions.pdf
+	@test -s paper/figures/generated/figure_04_assumption_dependence.pdf
 
 tables:
 	$(PYTHON) code/make_tables.py
 	@test -s paper/tables/generated/table_cournot_blocks.tex
 	@test -s paper/tables/generated/table_thresholds.tex
 	@test -s paper/tables/generated/table_stability_regions.tex
+	@test -s paper/tables/generated/table_residual_rent_regions.tex
+	@test -s paper/tables/generated/table_scope_robustness.tex
 
 # Syntax-check generated table fragments independently of the full manuscript.
 tables-check: tables
@@ -40,6 +43,8 @@ tables-check: tables
 		'\input{../../paper/tables/generated/table_cournot_blocks}' \
 		'\input{../../paper/tables/generated/table_thresholds}' \
 		'\input{../../paper/tables/generated/table_stability_regions}' \
+		'\input{../../paper/tables/generated/table_residual_rent_regions}' \
+		'\input{../../paper/tables/generated/table_scope_robustness}' \
 		'\end{document}' > build/table-check/table_check.tex
 	@cd build/table-check && $(LATEXMK) $(LATEX_FLAGS) -bibtex- table_check.tex
 	@echo "TABLE LATEX CHECK: PASS"
