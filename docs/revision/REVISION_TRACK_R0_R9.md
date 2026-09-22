@@ -7,7 +7,7 @@
 - Trigger: desk rejection before external review, IJIO-D-26-00585
 - Integration branch: `revision/research-track`
 - Base commit candidate for submitted source: `28bed286bd03b43bce8294b9eaebfcc7ceb6ca2a`
-- Current status: **R0 COMPLETE WITH ARTIFACT-PROVENANCE LIMITATION; R1 COMPLETE; R2 COMPLETE; R3 COMPLETE; R4 COMPLETE; R5 COMPLETE — NON-PORTABILITY IDENTIFIED; R6 COMPLETE — INSTITUTIONAL DEPENDENCE IDENTIFIED; R7 COMPLETE — ROUTE B (LIMITED GENERALIZATION); R8 COMPLETE — MANUSCRIPT RECONSTRUCTED; R9 COMPLETE SUBJECT TO INTEGRATION — FINAL AUDIT PASSED / JICT PACKAGE TECHNICALLY READY**
+- Current status: **R0 COMPLETE WITH ARTIFACT-PROVENANCE LIMITATION; R1 COMPLETE; R2 COMPLETE; R3 COMPLETE; R4 COMPLETE; R5 COMPLETE — NON-PORTABILITY IDENTIFIED; R6 COMPLETE — INSTITUTIONAL DEPENDENCE IDENTIFIED; R7 COMPLETE — ROUTE B (LIMITED GENERALIZATION); R8 COMPLETE — MANUSCRIPT RECONSTRUCTED; R9 COMPLETE — CLOSED; FINAL AUDIT PASSED / JICT PACKAGE TECHNICALLY READY**
 - IJIO resubmission: **not an objective**
 - Production-manuscript rewrite: **R8 canonical reconstruction preserved; R9 journal-specific JICT reviewer package generated with technical derivations retained in the anonymous Online Supplement**
 - Governing reusable workflow: **research-paper-workflow v2.2 @ 42574d6c5931275ccff3ef7e8b4acc188077332a**
