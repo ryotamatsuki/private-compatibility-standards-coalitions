@@ -7,7 +7,7 @@
 - Trigger: desk rejection before external review, IJIO-D-26-00585
 - Integration branch: `revision/research-track`
 - Base commit candidate for submitted source: `28bed286bd03b43bce8294b9eaebfcc7ceb6ca2a`
-- Current status: **R0 COMPLETE WITH ARTIFACT-PROVENANCE LIMITATION; R1 COMPLETE; R2 COMPLETE; R3 COMPLETE; R4 COMPLETE; R5 COMPLETE — NON-PORTABILITY IDENTIFIED; R6 COMPLETE — INSTITUTIONAL DEPENDENCE IDENTIFIED; R7 COMPLETE — ROUTE B (LIMITED GENERALIZATION); R8 COMPLETE — MANUSCRIPT RECONSTRUCTED; R9 COMPLETE SUBJECT TO INTEGRATION — FINAL AUDIT PASSED / JICT PACKAGE TECHNICALLY READY**
+- Current status: **R0 COMPLETE WITH ARTIFACT-PROVENANCE LIMITATION; R1 COMPLETE; R2 COMPLETE; R3 COMPLETE; R4 COMPLETE; R5 COMPLETE — NON-PORTABILITY IDENTIFIED; R6 COMPLETE — INSTITUTIONAL DEPENDENCE IDENTIFIED; R7 COMPLETE — ROUTE B (LIMITED GENERALIZATION); R8 COMPLETE — MANUSCRIPT RECONSTRUCTED; R9 COMPLETE — FORMALLY CLOSED; FINAL AUDIT PASSED / JICT PACKAGE TECHNICALLY READY**
 - IJIO resubmission: **not an objective**
 - Production-manuscript rewrite: **R8 canonical reconstruction preserved; R9 journal-specific JICT reviewer package generated with technical derivations retained in the anonymous Online Supplement**
 - Governing reusable workflow: **research-paper-workflow v2.2 @ 42574d6c5931275ccff3ef7e8b4acc188077332a**
@@ -583,7 +583,7 @@ After selecting a target, recheck current official submission rules and prepare 
 
 ### R9 closure record
 
-**R9 COMPLETE SUBJECT TO INTEGRATION — FINAL AUDIT PASSED; JICT PACKAGE TECHNICALLY READY.**
+**R9 COMPLETE — FORMALLY CLOSED; FINAL AUDIT PASSED; JICT PACKAGE TECHNICALLY READY.**
 
 The final mathematical/claim audit re-certified the manuscript-facing R3 mechanism and exact witness while preserving all R4–R6 failure boundaries. The novelty refresh found no newly located direct absorption of the full residual-rent government-ranking partition and therefore retained **Route B — LIMITED GENERALIZATION** without any priority claim.
 
@@ -591,7 +591,7 @@ Journal repositioning selected the *Journal of Industry, Competition and Trade* 
 
 Actual journal submission is not part of R9. Live-portal originality/simultaneous-submission/prior-dissemination/contact declarations remain author confirmations immediately before submission.
 
-R9 becomes formally repository-closed after its PR is merged to `revision/research-track` and post-merge integration CI passes. No R10 exists in this paper-specific redevelopment track.
+PR #29 was squash-merged to `revision/research-track` at `cd60091cd64a2b22a0bae09c744ad5fd72095729`, and post-merge Paper CI #338 (`35682426639`) passed all gates. R9 and the R0–R9 paper-specific redevelopment track are therefore formally closed. No R10 exists in this track.
 
 ---
 
