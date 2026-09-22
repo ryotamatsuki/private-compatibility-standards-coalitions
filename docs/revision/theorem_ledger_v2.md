@@ -62,6 +62,9 @@ Status vocabulary used here:
 | R7-FV5 | weak blocking admits one indifferent plus one strict gainer whereas strict blocking does not | FORMALLY VERIFIED | Lean 4 + mathlib; theorem `FV5_indifferenceSeparatesBlockingRules` | two-deviator predicate core only |
 | R7-N | proposition-level novelty re-kill | COMPLETE — LIMITED NOVELTY SURVIVES | G1 substantially overlaps converter/one-way-compatibility and fixed-cost-scope parent classes; G2 exact government-ranking partition not directly absorbed in located closest literature but is model-specific | no priority/first claim; R8 must position as conditional mechanism |
 | R7-R | final research route | ROUTE B — LIMITED GENERALIZATION | adoption logic broadens, but preference reversal is tied to the restricted canonical market structure and fails in the frozen R5 differentiated-demand test | R8 authorized as conditional-mechanism manuscript reconstruction |
+| R9-M | final manuscript-facing mathematical/claim re-audit | PROVED / PASS | independent R9 reconstruction of residual-rent identity, monotonicity, zero-network sign, exact joint witness and partial-adoption thresholds | no stale downstream result; preserve Route B scope |
+| R9-N | 2026-09-22 novelty refresh | COMPLETE — NO NEW DIRECT ABSORPTION LOCATED | closest compatibility, standards-policy, fixed-cost adoption and regulatory-harmonization parent classes rechecked | retain limited-novelty classification; no priority claim |
+| R9-J | journal repositioning and package gate | JICT TARGET / TECHNICALLY READY | 40-page anonymous reviewer manuscript + 15-page anonymous Online Supplement; canonical 61-page research artifact retained | actual submission separate; live-portal author confirmations required |
 
 ## Quantifier discipline
 
@@ -160,3 +163,11 @@ Manuscript mapping:
 R8 claim-scope status: **PASS**. The manuscript does not promote one-way adoption to headline novelty, does not claim competition- or demand-system independence, does not claim network-effect irrelevance, does not treat the high-F symmetric stable set as institutionally robust, does not claim unrestricted first-best welfare, and makes no priority/"first" claim.
 
 The production manuscript, new residual-cost and robustness appendices, reproducible figures/tables, and R8 claim-scope audit pass the full repository build and verification gate. R9 is the only authorized next stage.
+
+
+## R9 closure
+
+R9 verdict: **COMPLETE SUBJECT TO INTEGRATION — FINAL AUDIT PASSED; JICT PACKAGE TECHNICALLY READY; RESEARCH TRACK CLOSED AFTER MERGE CI**.
+
+No theorem was added or strengthened in R9. The stage re-audited the certified Route B manuscript, refreshed novelty against the closest literature, selected JICT as the first target, and built a journal-specific double-blind package. The reviewer version satisfies the current 40-page hard gate by relocating technical derivations to an anonymous 15-page Online Supplement; the full 61-page canonical research manuscript remains preserved. Branch CI #331 passes all R2–R9, Lean, manuscript, source, journal-package, and replication gates.
+
