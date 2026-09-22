@@ -16,7 +16,7 @@ Private Compatibility and Government Incentives for Standards Harmonization
 
 ## Short title
 
-Private Compatibility and Standards Coalitions
+Private Compatibility and Standards Harmonization
 
 ## Abstract
 
