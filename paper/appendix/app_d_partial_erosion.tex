@@ -1,0 +1,168 @@
+\section{Residual-Cost Extension and Adoption Thresholds}
+\label{app:partial-erosion}
+
+This appendix records the product-market and private-adoption algebra underlying Section~\ref{sec:selective-erosion}. The extension changes one primitive relative to the canonical full-bypass technology: after a firm adopts a foreign formal standard, it becomes fully compatible with firms using that standard but may retain residual marginal adaptation cost
+\[
+d=\lambda c,
+\qquad
+0\leq\lambda\leq1.
+\]
+Native support under the formal partition continues to carry zero adaptation cost.
+
+\subsection{Member market after outsider adoption}
+
+After the outsider adopts the bloc standard, all three firms are compatible in a member market. The two member firms have zero marginal cost and the outsider has marginal cost $d$. Let $x$ denote each member's output and $y$ the outsider's output. The compatible-firm first-order conditions reduce to
+\[
+1-4(1-v)x+d=0
+\quad\text{for the members,}
+\]
+together with the outsider condition implied by the common compatible-demand slope. Solving the linear system gives
+\begin{equation}
+x(d)=\frac{1+d}{4(1-v)},
+\qquad
+y(d)=\frac{1-3d}{4(1-v)}.
+\label{eq:appendix-partial-quantities}
+\end{equation}
+Operating profits and consumer surplus are therefore
+\begin{align}
+A_R(d)&=\frac{(1+d)^2}{16(1-v)},\
+B_R(d)&=\frac{(1-3d)^2}{16(1-v)},\
+K_R(d)&=\frac{(3-d)^2}{32(1-v)^2}.
+\label{eq:appendix-partial-blocks}
+\end{align}
+At $d=0$, these reduce to $A_R(0)=B_R(0)=P$ and $K_R(0)=K_I$.
+
+Substitution into
+\[
+W_M^{SU,O}(d)=K_R(d)+2A_R(d)+C
+\]
+gives
+\begin{equation}
+W_M^{SU,O}(d)-W^{IS}
+=
+-\mathscr D+
+\frac{d[(5-4v)d+2(1-4v)]}{32(1-v)^2},
+\label{eq:appendix-residual-identity}
+\end{equation}
+which is equation~\eqref{eq:partial-erosion-identity}.
+
+\subsection{Outsider adoption threshold}
+
+Before adoption, the outsider earns $B$ in each member market. After adoption with residual cost $d$, it earns $B_R(d)$. Define
+\begin{equation}
+T_O(d)=B_R(d)-B.
+\label{eq:appendix-TOd}
+\end{equation}
+Because one bloc-standard investment covers both member markets, the symmetric outsider strictly adopts iff
+\begin{equation}
+F<2T_O(d).
+\label{eq:appendix-outsider-partial-threshold}
+\end{equation}
+At $d=0$, $T_O(0)=P-B=T_A$.
+
+\subsection{Reverse adoption by one SU member}
+
+Now consider the outsider market. Suppose one SU member adopts the outsider standard and bears residual marginal cost $d$, while the other member does not adopt and continues to bear cost $c$. Let $q_N(d)$ be the native outsider's quantity, $q_A(d)$ the adopting member's quantity, and $q_S(d)$ the non-adopting member's quantity. The unique interior Cournot solution is
+\begin{align}
+q_N(d)
+&=
+\frac{(1-v)(1+c)+d(1-2v)}
+     {2(1-v)(2-3v)},\
+q_A(d)
+&=
+\frac{(1-v)(1+c)-d(3-4v)}
+     {2(1-v)(2-3v)},\
+q_S(d)
+&=
+\frac{1-3v-3c(1-v)+d}
+     {2(2-3v)}.
+\label{eq:appendix-one-adopter-quantities}
+\end{align}
+The adopting member earns
+\[
+A_A(d)=(1-v)q_A(d)^2.
+\]
+Hence the unilateral reverse-adoption threshold under SU is
+\begin{equation}
+T_U(d)=A_A(d)-C.
+\label{eq:appendix-TUd}
+\end{equation}
+Starting from separate national standards, the same post-adoption state is reached but the foreign firm's pre-adoption profit is $S$, so
+\begin{equation}
+T_W(d)=A_A(d)-S.
+\label{eq:appendix-TWd}
+\end{equation}
+Consequently,
+\begin{equation}
+T_W(d)-T_U(d)=C-S>0
+\label{eq:appendix-TW-TU-partial}
+\end{equation}
+on the canonical domain.
+
+\subsection{Adoption after the other member has adopted}
+
+If both SU members adopt the outsider standard, the two adopted members each bear residual cost $d$ and all three firms are compatible. Each adopted member produces
+\begin{equation}
+q_{AA}(d)=\frac{1-2d}{4(1-v)}
+\end{equation}
+and earns
+\begin{equation}
+A_{AA}(d)=\frac{(1-2d)^2}{16(1-v)}.
+\end{equation}
+Before the second member adopts, it is the singleton in the one-adopter state and earns $q_S(d)^2$. Its post-rival adoption threshold is therefore
+\begin{equation}
+T_A^R(d)=A_{AA}(d)-q_S(d)^2.
+\label{eq:appendix-TARd}
+\end{equation}
+At $d=0$,
+\[
+T_U(0)=T_U,
+\qquad
+T_W(0)=T_W,
+\qquad
+T_A^R(0)=T_A.
+\]
+
+\subsection{Selection-free interval and exact witness}
+
+Define
+\[
+F_L(d)=\max\{0,T_W(d),T_A^R(d)\},
+\qquad
+F^*(d)=2T_O(d).
+\]
+If $F_L(d)<F<F^*(d)$, outsider adoption is strictly optimal and both member non-adoption and SW non-adoption are strict against every relevant rival action.
+
+At
+\[
+(c,v,\lambda,F)
+=
+\left(
+\frac1{10},
+\frac6{25},
+\frac12,
+\frac9{100}
+\right),
+\qquad
+d=\frac1{20},
+\]
+the exact thresholds are
+\begin{align}
+T_U(d)&=\frac{42273}{1245184},\
+T_W(d)&=\frac{2122041}{31129600},\
+T_A^R(d)&=\frac{2024181}{31129600},\
+F^*(d)&=\frac{459189}{3891200}.
+\end{align}
+Thus
+\[
+F_L(d)
+=
+\frac{2122041}{31129600}
+<
+\frac9{100}
+<
+\frac{459189}{3891200}
+=
+F^*(d).
+\]
+Together with the strict pre- and post-adaptation welfare inequalities reported in Proposition~\ref{prop:incomplete-adaptation-open-set}, this establishes the nonempty joint open set used in the main text.
