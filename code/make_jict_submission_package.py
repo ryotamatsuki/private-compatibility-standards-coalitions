@@ -180,7 +180,7 @@ def main() -> None:
 \input{appendix/app_f_low_f}
 \end{document}
 """
-    supplement_origin = PAPER / "_jict_online_supplement_main.tex"
+    supplement_origin = PAPER / "main.tex"
     flatten(supplement_main, supplement_origin, SUPP_DIR, transform_supplement_dependency)
 
     make_zip(MAIN_DIR, MAIN_ZIP)
