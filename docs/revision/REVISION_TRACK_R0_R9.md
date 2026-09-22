@@ -3,13 +3,13 @@
 ## Status
 
 - Repository: `ryotamatsuki/private-compatibility-standards-coalitions`
-- Paper: *Private Compatibility and the Stability of Standards Coalitions*
+- Paper: *Private Compatibility and Government Incentives for Standards Harmonization*
 - Trigger: desk rejection before external review, IJIO-D-26-00585
 - Integration branch: `revision/research-track`
 - Base commit candidate for submitted source: `28bed286bd03b43bce8294b9eaebfcc7ceb6ca2a`
-- Current status: **R0 COMPLETE WITH ARTIFACT-PROVENANCE LIMITATION; R1 COMPLETE; R2 COMPLETE; R3 COMPLETE; R4 COMPLETE; R5 COMPLETE — NON-PORTABILITY IDENTIFIED; R6 COMPLETE — INSTITUTIONAL DEPENDENCE IDENTIFIED; R7 COMPLETE — ROUTE B (LIMITED GENERALIZATION); R8 COMPLETE — MANUSCRIPT RECONSTRUCTED; R9 AUTHORIZED, NOT STARTED**
+- Current status: **R0 COMPLETE WITH ARTIFACT-PROVENANCE LIMITATION; R1 COMPLETE; R2 COMPLETE; R3 COMPLETE; R4 COMPLETE; R5 COMPLETE — NON-PORTABILITY IDENTIFIED; R6 COMPLETE — INSTITUTIONAL DEPENDENCE IDENTIFIED; R7 COMPLETE — ROUTE B (LIMITED GENERALIZATION); R8 COMPLETE — MANUSCRIPT RECONSTRUCTED; R9 COMPLETE SUBJECT TO INTEGRATION — FINAL AUDIT PASSED / JICT PACKAGE TECHNICALLY READY**
 - IJIO resubmission: **not an objective**
-- Production-manuscript rewrite: **R8 reconstruction complete on the certified Route B scope; R9 final audit pending**
+- Production-manuscript rewrite: **R8 canonical reconstruction preserved; R9 journal-specific JICT reviewer package generated with technical derivations retained in the anonymous Online Supplement**
 - Governing reusable workflow: **research-paper-workflow v2.2 @ 42574d6c5931275ccff3ef7e8b4acc188077332a**
 - Workflow lock: `docs/revision/00_workflow_lock.md`
 
@@ -576,6 +576,22 @@ Build the journal candidate set from the surviving contribution, readership, art
 Passing R2–R3 is not sufficient for an upper-tier journal judgment. Evaluate novelty, generality, economic significance, and explanatory economy separately.
 
 After selecting a target, recheck current official submission rules and prepare the package. Do not mark submission-ready while journal-rule questions remain open. Actual submission is separate from completion of this research track.
+
+---
+
+
+
+### R9 closure record
+
+**R9 COMPLETE SUBJECT TO INTEGRATION — FINAL AUDIT PASSED; JICT PACKAGE TECHNICALLY READY.**
+
+The final mathematical/claim audit re-certified the manuscript-facing R3 mechanism and exact witness while preserving all R4–R6 failure boundaries. The novelty refresh found no newly located direct absorption of the full residual-rent government-ranking partition and therefore retained **Route B — LIMITED GENERALIZATION** without any priority claim.
+
+Journal repositioning selected the *Journal of Industry, Competition and Trade* as the first target. The canonical complete manuscript remains 61 pages. A JICT-specific double-blind reviewer version moves technical derivations to an anonymous Online Supplement and passes the current hard page gate at 40 pages, with a 15-page supplement. The JICT reviewer source, supplement source, cover letter/title page, anonymous replication package, and full verification suite passed branch CI #331.
+
+Actual journal submission is not part of R9. Live-portal originality/simultaneous-submission/prior-dissemination/contact declarations remain author confirmations immediately before submission.
+
+R9 becomes formally repository-closed after its PR is merged to `revision/research-track` and post-merge integration CI passes. No R10 exists in this paper-specific redevelopment track.
 
 ---
 

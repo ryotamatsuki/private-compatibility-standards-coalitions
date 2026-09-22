@@ -2,7 +2,7 @@ PYTHON ?= python
 LATEXMK ?= latexmk
 LATEX_FLAGS := -pdf -interaction=nonstopmode -halt-on-error
 
-.PHONY: all verify verify-symbolic verify-welfare verify-numeric figures tables tables-check paper check-paper-log ijio-em-source submission submission-files replication-package check-submission clean
+.PHONY: all verify verify-symbolic verify-welfare verify-numeric figures tables tables-check paper check-paper-log ijio-em-source submission submission-files replication-package check-submission jict-source jict-submission-files check-jict-submission jict-submission clean
 
 all: verify figures tables tables-check paper
 
@@ -22,12 +22,15 @@ figures:
 	@test -s paper/figures/generated/figure_01_timing.pdf
 	@test -s paper/figures/generated/figure_02_selective_erosion.pdf
 	@test -s paper/figures/generated/figure_03_f_regions.pdf
+	@test -s paper/figures/generated/figure_04_assumption_dependence.pdf
 
 tables:
 	$(PYTHON) code/make_tables.py
 	@test -s paper/tables/generated/table_cournot_blocks.tex
 	@test -s paper/tables/generated/table_thresholds.tex
 	@test -s paper/tables/generated/table_stability_regions.tex
+	@test -s paper/tables/generated/table_residual_rent_regions.tex
+	@test -s paper/tables/generated/table_scope_robustness.tex
 
 # Syntax-check generated table fragments independently of the full manuscript.
 tables-check: tables
@@ -36,10 +39,13 @@ tables-check: tables
 		'\documentclass{article}' \
 		'\usepackage{booktabs}' \
 		'\usepackage{graphicx}' \
+		'\usepackage{mathrsfs}' \
 		'\begin{document}' \
 		'\input{../../paper/tables/generated/table_cournot_blocks}' \
 		'\input{../../paper/tables/generated/table_thresholds}' \
 		'\input{../../paper/tables/generated/table_stability_regions}' \
+		'\input{../../paper/tables/generated/table_residual_rent_regions}' \
+		'\input{../../paper/tables/generated/table_scope_robustness}' \
 		'\end{document}' > build/table-check/table_check.tex
 	@cd build/table-check && $(LATEXMK) $(LATEX_FLAGS) -bibtex- table_check.tex
 	@echo "TABLE LATEX CHECK: PASS"
@@ -89,10 +95,40 @@ check-submission:
 submission: verify figures tables tables-check submission-files replication-package check-submission
 	@echo "IJIO SUBMISSION PACKAGE BUILD: PASS"
 
+
+jict-source: figures tables
+	$(PYTHON) code/make_jict_submission_package.py
+	@test -s submission/generated/jict_source.zip
+	@test -s submission/generated/jict_online_supplement_source.zip
+	@test -s submission/generated/jict_source/main.tex
+	@test -s submission/generated/jict_online_supplement_source/main.tex
+
+jict-submission-files: jict-source replication-package
+	@cd submission/generated/jict_source && if grep -qsE '\\cite[a-zA-Z*]*\{' *.tex && grep -qsE '^[[:space:]]*@' references.bib; then \
+		$(LATEXMK) $(LATEX_FLAGS) main.tex; \
+	else \
+		$(LATEXMK) $(LATEX_FLAGS) -bibtex- main.tex; \
+	fi
+	@cp submission/generated/jict_source/main.pdf submission/generated/jict_manuscript.pdf
+	@cd submission/generated/jict_online_supplement_source && $(LATEXMK) $(LATEX_FLAGS) -bibtex- main.tex
+	@cp submission/generated/jict_online_supplement_source/main.pdf submission/generated/jict_online_supplement.pdf
+	@cd submission && $(LATEXMK) $(LATEX_FLAGS) -bibtex- jict_cover_letter.tex
+	@cd submission && $(LATEXMK) $(LATEX_FLAGS) -bibtex- jict_title_page.tex
+	@cp submission/jict_cover_letter.pdf submission/generated/jict_cover_letter.pdf
+	@cp submission/jict_title_page.pdf submission/generated/jict_title_page.pdf
+
+check-jict-submission:
+	$(PYTHON) code/check_jict_submission.py
+
+jict-submission: verify figures tables tables-check jict-submission-files check-jict-submission
+	@echo "JICT SUBMISSION PACKAGE BUILD: PASS"
+
 clean:
 	@cd paper && $(LATEXMK) -C main.tex >/dev/null 2>&1 || true
 	@cd submission && $(LATEXMK) -C cover_letter.tex >/dev/null 2>&1 || true
 	@cd submission && $(LATEXMK) -C title_page.tex >/dev/null 2>&1 || true
+	@cd submission && $(LATEXMK) -C jict_cover_letter.tex >/dev/null 2>&1 || true
+	@cd submission && $(LATEXMK) -C jict_title_page.tex >/dev/null 2>&1 || true
 	@rm -f paper/figures/generated/*.pdf
 	@rm -f paper/tables/generated/*.tex
 	@rm -rf submission/generated

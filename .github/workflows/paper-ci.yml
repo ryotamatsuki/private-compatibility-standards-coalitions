@@ -66,6 +66,9 @@ jobs:
       - name: R8 manuscript claim-scope audit
         run: python code/revision/check_r8_claim_scope.py
 
+      - name: R9 final mathematical and claim audit
+        run: python code/revision/check_r9_final_audit.py
+
       - name: Install LaTeX and PDF toolchain
         run: |
           sudo apt-get update
@@ -94,6 +97,11 @@ jobs:
       - name: Compile canonical anonymous manuscript
         run: make paper
 
+      - name: Report canonical manuscript page count
+        run: |
+          pdfinfo paper/main.pdf | grep '^Pages:'
+          echo "R9 PAGE COUNT REPORT: complete"
+
       - name: Build and audit IJIO submission package
         run: make submission
 
@@ -112,6 +120,35 @@ jobs:
           pdftotext "$QA_DIR/main.pdf" - | grep -F "Independent Researcher"
           pdftotext "$QA_DIR/main.pdf" - | grep -F "ryota.matsuki@gmail.com"
           echo "CLEAN-ROOM IJIO EM SOURCE QA: PASS"
+
+      - name: Build and audit JICT submission package
+        run: make jict-submission
+
+      - name: Clean-room JICT reviewer-source QA
+        run: |
+          QA_DIR="${RUNNER_TEMP}/jict-review-source-qa"
+          rm -rf "$QA_DIR"
+          mkdir -p "$QA_DIR"
+          unzip -q submission/generated/jict_source.zip -d "$QA_DIR"
+          if grep -qsE '\\cite[a-zA-Z*]*\{' "$QA_DIR"/*.tex && grep -qsE '^[[:space:]]*@' "$QA_DIR/references.bib"; then
+            (cd "$QA_DIR" && latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex)
+          else
+            (cd "$QA_DIR" && latexmk -pdf -interaction=nonstopmode -halt-on-error -bibtex- main.tex)
+          fi
+          PAGES=$(pdfinfo "$QA_DIR/main.pdf" | awk '/^Pages:/ {print $2}')
+          test "$PAGES" -le 40
+          ! pdftotext "$QA_DIR/main.pdf" - | grep -Eiq 'Ryota Matsuki|ryota\.matsuki@gmail\.com|github\.com/ryotamatsuki'
+          echo "CLEAN-ROOM JICT REVIEW SOURCE QA: PASS ($PAGES pages)"
+
+      - name: Clean-room JICT supplement-source QA
+        run: |
+          QA_DIR="${RUNNER_TEMP}/jict-supplement-source-qa"
+          rm -rf "$QA_DIR"
+          mkdir -p "$QA_DIR"
+          unzip -q submission/generated/jict_online_supplement_source.zip -d "$QA_DIR"
+          (cd "$QA_DIR" && latexmk -pdf -interaction=nonstopmode -halt-on-error -bibtex- main.tex)
+          ! pdftotext "$QA_DIR/main.pdf" - | grep -Eiq 'Ryota Matsuki|ryota\.matsuki@gmail\.com|github\.com/ryotamatsuki'
+          echo "CLEAN-ROOM JICT SUPPLEMENT SOURCE QA: PASS"
 
       - name: Clean-room replication package QA
         run: |
@@ -133,6 +170,22 @@ jobs:
           path: |
             paper/main.pdf
             paper/main.log
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Upload JICT submission package
+        uses: actions/upload-artifact@v4
+        with:
+          name: jict-submission-${{ github.sha }}
+          path: |
+            submission/generated/jict_manuscript.pdf
+            submission/generated/jict_online_supplement.pdf
+            submission/generated/jict_source.zip
+            submission/generated/jict_online_supplement_source.zip
+            submission/generated/jict_cover_letter.pdf
+            submission/generated/jict_title_page.pdf
+            submission/generated/replication_package_anonymous.zip
+            submission/jict_metadata.md
           if-no-files-found: error
           retention-days: 7
 
