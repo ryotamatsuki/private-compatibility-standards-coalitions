@@ -39,6 +39,7 @@ tables-check: tables
 		'\documentclass{article}' \
 		'\usepackage{booktabs}' \
 		'\usepackage{graphicx}' \
+		'\usepackage{mathrsfs}' \
 		'\begin{document}' \
 		'\input{../../paper/tables/generated/table_cournot_blocks}' \
 		'\input{../../paper/tables/generated/table_thresholds}' \
