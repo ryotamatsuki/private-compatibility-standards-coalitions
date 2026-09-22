@@ -122,7 +122,7 @@ def residual_rent_figure() -> None:
     ax.text(
         c / 2,
         -0.00030,
-        r"Illustration: $(c,v)=(0.073,0.225)$. Analytical boundaries are $R=\mathcal D$ and $R=\mathcal E$.",
+        r"Illustration: $(c,v)=(0.073,0.225)$. Analytical boundaries are $R=\mathcal{D}$ and $R=\mathcal{E}$.",
         ha="center",
         va="top",
         fontsize=8.8,
