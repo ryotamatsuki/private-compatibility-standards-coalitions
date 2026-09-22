@@ -93,6 +93,12 @@ def transform_reviewer_main(text: str) -> str:
     return text
 
 
+def transform_reviewer_dependency(text: str) -> str:
+    for old, new in MAIN_APPENDIX_REFS.items():
+        text = text.replace(old, new)
+    return text
+
+
 def transform_supplement_dependency(text: str) -> str:
     for old, new in SUPPLEMENT_MAIN_REF_REPLACEMENTS.items():
         text = text.replace(old, new)
@@ -161,7 +167,7 @@ def main() -> None:
 
     canonical = (PAPER / "main.tex").read_text(encoding="utf-8")
     reviewer_main = transform_reviewer_main(canonical)
-    flatten(reviewer_main, PAPER / "main.tex", MAIN_DIR, lambda x: x)
+    flatten(reviewer_main, PAPER / "main.tex", MAIN_DIR, transform_reviewer_dependency)
 
     supplement_main = r"""\documentclass[11pt]{article}
 \input{preamble}
