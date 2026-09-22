@@ -1,121 +1,124 @@
-\section{Secondary Results}
+\section{Scope and Robustness}
 \label{sec:secondary}
 
-The symmetry used for the Main theorem is deliberate: it shows that market-size heterogeneity is not needed for the stability reversal in Theorem~\ref{thm:formal-coalition-stability}. We now introduce a one-dimensional market-size asymmetry for a separate purpose---to determine partner rankings among regional standards unions. This extension therefore sharpens the identity of a preferred regional partner without changing the selective-erosion mechanism or the parameter requirements of the Main stability result.
+The residual-rent result is exact inside the canonical Cournot microfoundation, but R7 does not certify it as a general theorem across demand systems or coalition institutions. This section makes that boundary explicit. The negative results are not repairs to a failed proof; they identify which parts of the economic mechanism are portable and which parts are specification dependent.
 
-\subsection{Market-size asymmetry and partner ranking}
-\label{subsec:market-size-partner-ranking}
+\subsection{Zero-network boundary}
+\label{subsec:zero-network}
 
-Consider the secondary specification
+At the boundary $v=0$, the pre-adoption member payoff difference simplifies to
 \begin{equation}
-    m_1=m_2=1,
-    \qquad
-    m_3=1-\delta,
-    \qquad
-    0<\delta<1.
-    \label{eq:secondary-market-sizes}
+    W_M^{SU,N}-W^{IS}
+    =
+    \frac{c(13c-6)}{32}.
+    \label{eq:zero-network-gap}
 \end{equation}
-Countries 1 and 2 therefore have equal larger markets, while country 3 has the smaller market. No other primitive is asymmetric. In particular, costs, preferences, network effects, and government objectives remain unchanged. We condition on a continuation state with no private standard adoption so that the result isolates partner selection from the selective-erosion mechanism. A sufficiently high fixed cost provides one such continuation state, but the payoff identity below requires only that no private adoption occurs.
+For every $0<c<1/3$ this expression is strictly negative. Thus the canonical political reversal cannot begin at zero network effects because the regional union is not initially preferred.
 
-This conditioning separates two distinct comparative questions. Sections~\ref{sec:private-compatibility}--\ref{sec:coalition-stability} ask whether firms circumvent a given formal partition and how that response changes governments' incentives over formal regimes. The present section instead holds the private-adoption state fixed and asks how a government ranks two regional coalitions that differ only in the market size of its partner. Consequently, $F$ does not enter the partner-ranking difference directly. Its role here is only to support the no-adoption continuation state under which the comparison is evaluated. This separation is useful because it makes clear that market-size asymmetry is not doing hidden work in the Main stability reversal.
-
-Let country $i$ compare two otherwise identical regional standards unions, one with partner $j$ and outsider $k$, and the other with partner $k$ and outsider $j$. From the general-mass continuation payoff in Section~\ref{sec:selective-erosion}, country $i$ obtains
-\begin{align}
-    W_i^{ij}
-    &=m_iK_M+(m_i+m_j)A+m_kC,
-    \label{eq:partner-payoff-ij}\\
-    W_i^{ik}
-    &=m_iK_M+(m_i+m_k)A+m_jC.
-    \label{eq:partner-payoff-ik}
-\end{align}
-Subtracting gives the general partner-comparison identity
+This does not mean that private one-way adoption disappears when $v=0$. The adoption thresholds reduce to
 \begin{equation}
-    \boxed{
-    W_i^{ij}-W_i^{ik}
-    =(m_j-m_k)(A-C)
-    =(m_j-m_k)T_U.
-    }
-    \label{eq:general-partner-ranking}
+T_A(0)=\frac{3c(2-3c)}{16},
+\qquad
+T_U(0)=T_W(0)=\frac{3c(2-c)}{16},
+\label{eq:zero-network-adoption-thresholds}
 \end{equation}
-The consumer-surplus term in country $i$'s own market cancels. Replacing a smaller partner with a larger partner instead reallocates market mass from the outsider-profit block $C$ to the coalition-member profit block $A$.
-
-The accounting in \eqref{eq:general-partner-ranking} also clarifies why the result is a partner-size effect rather than a generic preference for larger markets. Country $i$'s own market mass and its own-market consumer surplus are identical across the two coalitions. The only change is where the other countries' market mass appears in the domestic firm's worldwide operating profit. A unit of market mass attached to a coalition partner contributes the member-market block $A$; the same unit of mass attached to the outsider contributes the outsider-market block $C$. Partner selection is therefore governed by the difference between these two profit opportunities, not by a direct utility benefit from country size itself.
-
-The sign is immediate from the private-adoption block already derived in Section~\ref{sec:private-compatibility}:
+and
 \begin{equation}
-    A-C=T_U
-    =\frac{3c(2-c)(1-v)}{4(2-3v)^2}>0
-    \label{eq:partner-ranking-tu}
+T_U(0)<2T_A(0)
+\qquad (0<c<1/3).
 \end{equation}
-throughout the canonical admissible domain. The same primitive profit difference thus appears on a different strategic margin. In Section~\ref{sec:private-compatibility}, $A-C$ determines the unilateral incentive to adopt the outsider standard. Here it measures the marginal value of moving market mass from outsider treatment to coalition-member treatment. This connection does not make market-size asymmetry part of the selective-erosion mechanism.
+Hence a positive fixed-cost interval can still generate outsider-only adoption. The boundary therefore separates the private-adoption logic from the initial government-ranking condition.
 
-\subsection{Market-Size Partner Selection}
-\label{subsec:market-size-partner-selection}
-
-Under \eqref{eq:secondary-market-sizes}, country 1's welfare in the two relevant regional coalitions is
-\begin{align}
-    W_1^{12}
-    &=K_M+2A+(1-\delta)C,
-    \label{eq:w1-su12}\\
-    W_1^{13}
-    &=K_M+(2-\delta)A+C.
-    \label{eq:w1-su13}
-\end{align}
-Hence
-\begin{equation}
-    W_1^{12}-W_1^{13}
-    =\delta(A-C)
-    =\delta T_U>0.
-    \label{eq:w1-partner-ranking}
-\end{equation}
-The analogous comparison for country 2 is identical. Country 3, by contrast, faces two potential partners of equal market mass and is therefore indifferent between them.
-
-\begin{proposition}[Market-Size Partner Selection]
-\label{prop:market-size-partner-selection}
-Suppose $m_1=m_2=1$, $m_3=1-\delta$, with $0<\delta<1$, and condition on a continuation state with no private standard adoption. Then
-\begin{equation}
-    \boxed{
-    W_1^{12}-W_1^{13}
-    =W_2^{12}-W_2^{23}
-    =\delta(A-C)
-    =\delta T_U>0,
-    }
-    \label{eq:large-country-partner-ranking}
-\end{equation}
-while
-\begin{equation}
-    \boxed{
-    W_3^{13}=W_3^{23}.
-    }
-    \label{eq:small-country-partner-indifference}
-\end{equation}
-Thus each larger country strictly prefers the other larger country to the smaller country as its regional-standard partner, whereas the smaller country is indifferent between the two larger partners.
-\end{proposition}
-
-\begin{proof}
-Equation~\eqref{eq:general-partner-ranking} gives
+R4 gives the stronger fixed-$c$ characterization. Let
 \[
-    W_i^{ij}-W_i^{ik}=(m_j-m_k)(A-C).
+\bar v(c)
+=
+\min\left\{\frac14,\frac{1-3c}{3(1-c)}\right\}.
 \]
-For country 1, $m_2-m_3=\delta$, and for country 2, $m_1-m_3=\delta$. Since $A-C=T_U>0$ and $\delta>0$, both differences are strictly positive. For country 3, the two potential partners have equal masses, $m_1=m_2$, so the corresponding difference is zero.
-\end{proof}
-
-Proposition~\ref{prop:market-size-partner-selection} is a partner-preference result, not a coalition-stability theorem. For example, $W_1^{12}>W_1^{13}$ by itself does not imply that $\rho_{13}^{SU}$ is strictly blocked by $\{1,2\}$: strict blocking would additionally require country 2 to gain from the same induced deviation relative to its own current payoff. The proposition therefore does not establish a uniquely stable $\rho_{12}^{SU}$ and does not modify the stable-set result in Theorem~\ref{thm:formal-coalition-stability}.
-
-This distinction matters because the asymmetry removes one source of indifference without, by itself, solving the full coalition-formation problem. In the symmetric high-$F$ analysis, an alternative regional pair could not strictly block an existing SU because the country common to the two coalitions received the same member payoff. Proposition~\ref{prop:market-size-partner-selection} shows that this particular indifference can disappear for a larger country when the prospective partners have different market sizes. Whether an actual partner-switching deviation is a strict block, however, also depends on the payoff of the second deviator. Establishing that additional inequality would be a separate result, not a corollary of Proposition~\ref{prop:market-size-partner-selection}; we therefore do not impose an unverified partner-switching region here.
-
-Two comparative observations make the role of the asymmetry transparent. First, letting $\delta\downarrow0$ restores the symmetric Main Model and
+There is a unique feasible threshold $v_{SU}(c)$ whenever the initial SU-advantage region exists, and
 \begin{equation}
-    \left.(W_1^{12}-W_1^{13})\right|_{\delta=0}=0,
-    \label{eq:delta-symmetry-restoration}
+\mathcal V_{SU}(c)
+=
+\begin{cases}
+(v_{SU}(c),\bar v(c)),&0<c<c^*,\\
+\varnothing,&c^*\le c<1/3,
+\end{cases}
+\label{eq:vsu-region}
 \end{equation}
-which is consistent with the inability of the symmetric high-$F$ model to select a unique regional partner. Second,
-\begin{equation}
-    \frac{\partial}{\partial\delta}
-    \left(W_1^{12}-W_1^{13}\right)
-    =T_U>0.
-    \label{eq:delta-partner-comparative-static}
-\end{equation}
-A larger market-size gap therefore strengthens the larger country's ranking in favor of the other larger partner. This derivative concerns only the payoff difference across potential partners; it is not a welfare statement about shrinking country 3. Nor does it imply that a larger $\delta$ monotonically changes the stable partition set, because such a claim would require the complete set of strict-blocking inequalities under asymmetric market sizes.
+where $c^*\approx0.1529167823$ is the unique root in $(0,1/3)$ of
+\[
+17c^3+109c^2-89c+11=0.
+\]
+Positive network effects are therefore necessary for the initial SU advantage in this canonical microfoundation, not for private circumvention itself.
 
-A larger partner is valuable not because market-size asymmetry creates selective erosion, but because it reallocates market mass from the outsider-profit block $C$ to the member-market block $A$. The extension consequently sharpens partner identity while leaving the Main theoretical chain intact: symmetry establishes the private-compatibility stability mechanism, whereas asymmetry only refines which regional partner a government prefers.
+\subsection{Singleton-network specification}
+\label{subsec:singleton-network-sensitivity}
+
+The canonical network term assigns zero network benefit to a singleton compatibility group. R4 tests one pre-specified alternative specification in which every nonempty group, including a singleton, receives
+\[
+g_i=v\sum_{j\in G_i}q_j.
+\]
+No other primitive is changed.
+
+Under this alternative, the one-way-adoption logic remains feasible at an exact witness, but the pre-adoption member gap satisfies
+\begin{equation}
+    \Phi_{S1}<0
+\end{equation}
+throughout the old canonical feasible domain. The political reversal route is therefore eliminated before private adoption occurs.
+
+This is a specification-sensitivity result, not a universal theorem about singleton network benefits. R7 certifies only that the canonical zero-singleton convention is substantively relevant to the initial government ranking.
+
+\subsection{Differentiated-demand portability test}
+\label{subsec:differentiated-portability}
+
+R5 tests one alternative demand environment fixed before solving it. The substitution parameter is set to $\gamma=1/2$, compatibility enters a quadratic utility system, and both quantity and price competition are solved under the same differentiated demand. This construction separates a change in strategic variable from a change in the demand microfoundation.
+
+Let $X\in\{C,B\}$ index the differentiated Cournot and differentiated Bertrand versions. R5 proves throughout the frozen audit box
+\begin{equation}
+    \Phi^X
+    =
+    W_M^{SU,N,X}-W^{IS,X}<0,
+    \label{eq:r5-negative-phi}
+\end{equation}
+and
+\begin{equation}
+    \mathscr E^X<0.
+    \label{eq:r5-negative-e}
+\end{equation}
+Thus the member-market component that drives the canonical political effect changes sign in both versions. At the same time, outsider-only private adoption remains feasible and selection free at the common exact witness used in R5.
+
+The failure therefore cannot be attributed to Bertrand competition alone. Nor does it establish that every differentiated-product model eliminates the mechanism. The certified conclusion is narrower: the political preference effect is not portable to this one pre-specified differentiated-demand environment even though one-way private adoption survives.
+
+\subsection{Coalition-rule and symmetry dependence}
+\label{subsec:institutional-scope}
+
+Section~\ref{sec:coalition-stability} already shows that the high-$F$ symmetric stable set is sensitive to the blocking rule. Under strict blocking, all three SUs are stable because a common member is indifferent when switching partners. Under weak/Pareto blocking, the same indifference no longer prevents a deviation, and the high-$F$ stable set is empty.
+
+A small market-size perturbation,
+\[
+m_1=m_2=1,
+\qquad
+m_3=1-\delta,
+\]
+breaks the equality:
+\begin{equation}
+    W_1^{12,N}-W_1^{13,N}
+    =
+    \delta(A-C)>0.
+    \label{eq:robustness-asymmetry-gap}
+\end{equation}
+At the certified high-$F$ witness, the two-large-country union $\rho_{12}^{SU}$ is uniquely stable under both blocking concepts for every $0<\delta<1$. In the intermediate region, the unique-IS result is supported by strict payoff differences and survives the same perturbation over the certified range.
+
+The institutional conclusion is therefore asymmetric. The intermediate full-bypass application is relatively robust within the canonical product-market model. The exact symmetric high-$F$ multiplicity is not.
+
+\input{tables/generated/table_scope_robustness}
+
+Figure~\ref{fig:assumption-dependence} summarizes this hierarchy.
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{figures/generated/figure_04_assumption_dependence.pdf}
+    \caption{Assumption dependence of the main results. One-way private adoption survives more of the specification checks than the initial SU advantage and the resulting government-ranking reversal. The high-$F$ stable-set multiplicity is additionally sensitive to the blocking rule and exact symmetry.}
+    \label{fig:assumption-dependence}
+\end{figure}
+
+The robustness exercises support a deliberately limited interpretation. The firm-level circumvention logic is comparatively portable. The government-ranking effect requires the canonical market structure to generate a positive initial member-market component, and the exact stable-set correspondence also depends on the coalition institution. The paper therefore treats the success and failure boundaries as part of the result rather than as caveats to be hidden after the theorem.
