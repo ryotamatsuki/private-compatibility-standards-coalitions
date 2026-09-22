@@ -66,6 +66,9 @@ jobs:
       - name: R8 manuscript claim-scope audit
         run: python code/revision/check_r8_claim_scope.py
 
+      - name: R9 final mathematical and claim audit
+        run: python code/revision/check_r9_final_audit.py
+
       - name: Install LaTeX and PDF toolchain
         run: |
           sudo apt-get update
@@ -93,6 +96,11 @@ jobs:
 
       - name: Compile canonical anonymous manuscript
         run: make paper
+
+      - name: Report canonical manuscript page count
+        run: |
+          pdfinfo paper/main.pdf | grep '^Pages:'
+          echo "R9 PAGE COUNT REPORT: complete"
 
       - name: Build and audit IJIO submission package
         run: make submission
