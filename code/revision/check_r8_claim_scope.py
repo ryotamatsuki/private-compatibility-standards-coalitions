@@ -61,7 +61,7 @@ if "full-bypass" not in coalition.lower():
 # portability limitation.
 main = (PAPER / "main.tex").read_text(encoding="utf-8")
 abstract = main.split(r"\begin{abstract}", 1)[1].split(r"\end{abstract}", 1)[0]
-for term in ["residual", "not generally portable", "weak/Pareto blocking"]:
+for term in ["residual", "not generally portable", "blocking rule"]:
     if term.lower() not in abstract.lower():
         raise AssertionError(f"Abstract missing R8 scope signal: {term}")
 
