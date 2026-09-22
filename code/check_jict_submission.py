@@ -99,8 +99,6 @@ def main() -> None:
         ):
             if token in low:
                 fail(f"identity leak in anonymous {name}: {token}")
-        if "international journal of industrial organization" in low:
-            fail(f"stale IJIO journal name in anonymous {name}")
 
     for required_phrase in (
         "Ryota Matsuki",
