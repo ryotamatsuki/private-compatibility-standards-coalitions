@@ -2,7 +2,7 @@ PYTHON ?= python
 LATEXMK ?= latexmk
 LATEX_FLAGS := -pdf -interaction=nonstopmode -halt-on-error
 
-.PHONY: all verify verify-symbolic verify-welfare verify-numeric figures tables tables-check paper check-paper-log ijio-em-source submission submission-files replication-package check-submission clean
+.PHONY: all verify verify-symbolic verify-welfare verify-numeric figures tables tables-check paper check-paper-log ijio-em-source submission submission-files replication-package check-submission jict-source jict-submission-files check-jict-submission jict-submission clean
 
 all: verify figures tables tables-check paper
 
@@ -94,10 +94,40 @@ check-submission:
 submission: verify figures tables tables-check submission-files replication-package check-submission
 	@echo "IJIO SUBMISSION PACKAGE BUILD: PASS"
 
+
+jict-source: figures tables
+	$(PYTHON) code/make_jict_submission_package.py
+	@test -s submission/generated/jict_source.zip
+	@test -s submission/generated/jict_online_supplement_source.zip
+	@test -s submission/generated/jict_source/main.tex
+	@test -s submission/generated/jict_online_supplement_source/main.tex
+
+jict-submission-files: jict-source replication-package
+	@cd submission/generated/jict_source && if grep -qsE '\\cite[a-zA-Z*]*\{' *.tex && grep -qsE '^[[:space:]]*@' references.bib; then \
+		$(LATEXMK) $(LATEX_FLAGS) main.tex; \
+	else \
+		$(LATEXMK) $(LATEX_FLAGS) -bibtex- main.tex; \
+	fi
+	@cp submission/generated/jict_source/main.pdf submission/generated/jict_manuscript.pdf
+	@cd submission/generated/jict_online_supplement_source && $(LATEXMK) $(LATEX_FLAGS) -bibtex- main.tex
+	@cp submission/generated/jict_online_supplement_source/main.pdf submission/generated/jict_online_supplement.pdf
+	@cd submission && $(LATEXMK) $(LATEX_FLAGS) -bibtex- jict_cover_letter.tex
+	@cd submission && $(LATEXMK) $(LATEX_FLAGS) -bibtex- jict_title_page.tex
+	@cp submission/jict_cover_letter.pdf submission/generated/jict_cover_letter.pdf
+	@cp submission/jict_title_page.pdf submission/generated/jict_title_page.pdf
+
+check-jict-submission:
+	$(PYTHON) code/check_jict_submission.py
+
+jict-submission: verify figures tables tables-check jict-submission-files check-jict-submission
+	@echo "JICT SUBMISSION PACKAGE BUILD: PASS"
+
 clean:
 	@cd paper && $(LATEXMK) -C main.tex >/dev/null 2>&1 || true
 	@cd submission && $(LATEXMK) -C cover_letter.tex >/dev/null 2>&1 || true
 	@cd submission && $(LATEXMK) -C title_page.tex >/dev/null 2>&1 || true
+	@cd submission && $(LATEXMK) -C jict_cover_letter.tex >/dev/null 2>&1 || true
+	@cd submission && $(LATEXMK) -C jict_title_page.tex >/dev/null 2>&1 || true
 	@rm -f paper/figures/generated/*.pdf
 	@rm -f paper/tables/generated/*.tex
 	@rm -rf submission/generated
