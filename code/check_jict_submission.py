@@ -77,6 +77,7 @@ def main() -> None:
         GEN / "jict_cover_letter.pdf",
         GEN / "jict_source.zip",
         GEN / "jict_online_supplement_source.zip",
+        GEN / "replication_package_anonymous.zip",
         SUB / "jict_metadata.md",
     ]
     for path in required:
