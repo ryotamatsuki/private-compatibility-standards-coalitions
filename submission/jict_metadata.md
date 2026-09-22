@@ -12,7 +12,7 @@ Original Paper / ordinary unsolicited research article, subject to the live port
 
 ## Title
 
-Private Compatibility and the Stability of Standards Coalitions
+Private Compatibility and Government Incentives for Standards Harmonization
 
 ## Short title
 
