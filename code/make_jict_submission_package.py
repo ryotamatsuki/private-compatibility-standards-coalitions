@@ -175,7 +175,7 @@ def main() -> None:
 
     supplement_main = r"""\documentclass[11pt]{article}
 \input{preamble}
-\title{Online Supplement to Private Compatibility and the Stability of Standards Coalitions}
+\title{Online Supplement to Private Compatibility and Government Incentives for Standards Harmonization}
 \author{}
 \date{}
 \begin{document}
