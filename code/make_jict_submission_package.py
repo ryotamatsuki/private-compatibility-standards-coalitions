@@ -39,6 +39,10 @@ SUPPLEMENT_MAIN_REF_REPLACEMENTS = {
     r"equation~\eqref{eq:partial-erosion-identity}": "the residual-rent identity in the main article",
     r"Proposition~\ref{prop:incomplete-adaptation-open-set}": "the incomplete-adaptation open-set proposition in the main article",
     r"Section~\ref{sec:secondary}": "the Scope and Robustness section of the main article",
+    r"Sections~\ref{sec:selective-erosion}--\ref{sec:coalition-stability}": "the government-incentive and coalition-stability sections of the main article",
+    r"\eqref{eq:su-outsider-main-threshold}": "the SU outsider-adoption threshold in the main article",
+    r"\ref{sec:selective-erosion}": "the Private Adaptation and Government Incentives section of the main article",
+    r"\ref{sec:coalition-stability}": "the Coalition-Stability Application section of the main article",
 }
 
 
