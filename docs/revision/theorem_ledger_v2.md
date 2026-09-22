@@ -140,3 +140,23 @@ Targeted Lean 4 + mathlib verification was judged applicable and completed for f
 The novelty re-kill finds heavy prior-art overlap for one-way compatibility/adoption and fixed-cost scope. The exact R3 government-ranking partition was not directly absorbed by the closest located parent literature, but R5 establishes that its sign is not portable to the pre-specified differentiated-demand comparator. Consequently Route A is rejected and the final route is **Route B**.
 
 The R8 admissible claim set is frozen to a conditional mechanism paper: selection-free one-way adoption is supporting structure; the canonical residual-rent success/intermediate/failure partition is the central mechanism; incomplete adaptation is non-knife-edge within that microfoundation; and the R4/R5/R6 failures are explicit boundaries. Production-manuscript rewriting is authorized only under R8 and has not yet started.
+
+
+## R8 closure
+
+R8 verdict: **COMPLETE — MANUSCRIPT RECONSTRUCTED; R9 AUTHORIZED, NOT STARTED**.
+
+R8 adds no new theorem. It maps the R7-certified claim set into the English production manuscript and makes the certification boundaries visible in the paper itself.
+
+Manuscript mapping:
+
+- G1-U / canonical adoption thresholds: supporting selection-free continuation structure;
+- G2-S: central residual-rent success/intermediate/failure proposition;
+- G2-J: incomplete-adaptation joint open-set proposition;
+- N1/N2–N4/N7: zero-network, exact canonical network region, and singleton-specification boundaries;
+- R5: explicit differentiated-demand non-portability boundary;
+- R6: explicit strict/weak blocking and market-size-asymmetry institutional boundary.
+
+R8 claim-scope status: **PASS**. The manuscript does not promote one-way adoption to headline novelty, does not claim competition- or demand-system independence, does not claim network-effect irrelevance, does not treat the high-F symmetric stable set as institutionally robust, does not claim unrestricted first-best welfare, and makes no priority/"first" claim.
+
+The production manuscript, new residual-cost and robustness appendices, reproducible figures/tables, and R8 claim-scope audit pass the full repository build and verification gate. R9 is the only authorized next stage.

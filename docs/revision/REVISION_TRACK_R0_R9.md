@@ -7,9 +7,9 @@
 - Trigger: desk rejection before external review, IJIO-D-26-00585
 - Integration branch: `revision/research-track`
 - Base commit candidate for submitted source: `28bed286bd03b43bce8294b9eaebfcc7ceb6ca2a`
-- Current status: **R0 COMPLETE WITH ARTIFACT-PROVENANCE LIMITATION; R1 COMPLETE; R2 COMPLETE; R3 COMPLETE; R4 COMPLETE; R5 COMPLETE — NON-PORTABILITY IDENTIFIED; R6 COMPLETE — INSTITUTIONAL DEPENDENCE IDENTIFIED; R7 COMPLETE — ROUTE B (LIMITED GENERALIZATION); R8 AUTHORIZED, NOT STARTED**
+- Current status: **R0 COMPLETE WITH ARTIFACT-PROVENANCE LIMITATION; R1 COMPLETE; R2 COMPLETE; R3 COMPLETE; R4 COMPLETE; R5 COMPLETE — NON-PORTABILITY IDENTIFIED; R6 COMPLETE — INSTITUTIONAL DEPENDENCE IDENTIFIED; R7 COMPLETE — ROUTE B (LIMITED GENERALIZATION); R8 COMPLETE — MANUSCRIPT RECONSTRUCTED; R9 AUTHORIZED, NOT STARTED**
 - IJIO resubmission: **not an objective**
-- Production-manuscript rewrite: **authorized only under R8 after R7 re-certification; R8 not started**
+- Production-manuscript rewrite: **R8 reconstruction complete on the certified Route B scope; R9 final audit pending**
 - Governing reusable workflow: **research-paper-workflow v2.2 @ 42574d6c5931275ccff3ef7e8b4acc188077332a**
 - Workflow lock: `docs/revision/00_workflow_lock.md`
 
@@ -542,6 +542,20 @@ Use figures for:
 Numerical figures are not proofs.
 
 Proceed section-by-section: save, integrate, compile, audit. Candidate research propositions must not silently become finalized manuscript theorems.
+
+---
+
+### R8 closure record
+
+**R8 COMPLETE — MANUSCRIPT RECONSTRUCTED; R9 AUTHORIZED, NOT STARTED.**
+
+The English production manuscript has been reconstructed around the R7-certified Route B claim scope. The central paper result is now the canonical residual-rent classification under incomplete adaptation, with selection-free one-way adoption treated as supporting structure. R4 zero-network and singleton-network dependence, R5 differentiated-demand non-portability, and R6 blocking-rule/symmetry dependence are integrated into the main text as explicit boundaries.
+
+Routine Cournot derivations were compressed in the main text and retained in appendices. New Appendix D records the residual-cost equilibrium and adoption thresholds; Appendix E records the robustness calculations. Reproducible figures and tables were updated to show the residual-rent regions and assumption-dependence hierarchy.
+
+An R8 claim-scope CI gate rejects R7-prohibited overclaims. The reconstructed manuscript compiles and passes the inherited mathematical, Lean, reproducibility, source-package, and clean-room QA gates.
+
+The Japanese translation is not a canonical R8 artifact and was intentionally left unchanged. R9 is authorized only for final audit and journal repositioning; no R9 work is included here.
 
 ---
 

@@ -1,0 +1,149 @@
+\section{Robustness and Institutional Boundary Calculations}
+\label{app:robustness}
+
+This appendix collects the exact calculations underlying the scope statements in Section~\ref{sec:secondary}. They are boundary and falsification results, not additional headline extensions.
+
+\subsection{Zero-network boundary}
+
+Setting $v=0$ in the canonical member welfare gap gives
+\begin{equation}
+W_M^{SU,N}-W^{IS}
+=
+\frac{c(13c-6)}{32}.
+\label{eq:appendix-zero-network-gap}
+\end{equation}
+For $0<c<1/3$, $13c-6<13/3-6=-5/3<0$, so the gap is strictly negative.
+
+The zero-network adoption thresholds are
+\begin{equation}
+T_A(0)=\frac{3c(2-3c)}{16},
+\qquad
+T_U(0)=T_W(0)=\frac{3c(2-c)}{16}.
+\label{eq:appendix-zero-network-thresholds}
+\end{equation}
+Moreover
+\[
+2T_A(0)-T_W(0)
+=
+\frac{3c(2-5c)}{16}>0
+\]
+for the relevant canonical zero-network range used in the R4 witness analysis, and exact R4 verification identifies positive one-way-adoption intervals even though the initial SU advantage is absent. The full fixed-$c$ root characterization is certified by the Descartes/Sturm calculation in 	exttt{code/revision/check\_r4\_network\_role.py}.
+
+\subsection{Alternative singleton network rule}
+
+R4 pre-specifies one alternative network rule,
+\[
+g_i=v\sum_{j\in G_i}q_j
+\]
+for every nonempty compatibility group, including a singleton. Let
+\[
+K(v)=3v^2-6v+2.
+\]
+In an SU member market the resulting quantities are
+\begin{align}
+q_M^{S1}
+&=
+\frac{1+c-2v}{2K(v)},\
+q_B^{S1}
+&=
+\frac{1-3v-3c(1-v)}{2K(v)},
+\end{align}
+and in an SU outsider market they are
+\begin{align}
+q_C^{S1}
+&=
+\frac{1-2v-2c(1-v)}{2K(v)},\
+q_D^{S1}
+&=
+\frac{1+2c-3v}{2K(v)}.
+\end{align}
+The old canonical domain keeps all of these quantities strictly positive. The transformed-domain exact sign certificate in the R4 verification script proves
+\[
+\Phi_{S1}<0
+\]
+throughout that domain. At the exact point $(c,v)=(1/10,6/25)$, however, the adoption thresholds still satisfy
+\[
+\max\{T_U^{S1},T_A^{S1},T_W^{S1}\}<2T_A^{S1},
+\]
+so a positive outsider-only adoption interval remains. The conclusion is therefore specification dependence of the initial political ranking, not failure of private adaptation.
+
+\subsection{Frozen differentiated-demand comparison}
+
+R5 fixes $\gamma=1/2$ and defines, for each compatibility partition,
+\[
+p=\mathbf 1-M_G(v)q,
+\qquad
+M_G(v)=B-vC_G,
+\]
+where
+\[
+B=(1-\gamma)I+\gamma\mathbf 1\mathbf 1^\top.
+\]
+Consumer surplus is
+\[
+CS(q)=\frac12 q^\top M_G(v)q.
+\]
+The same demand system is solved once with quantity competition and once with price competition, where direct demand is
+\[
+q=M_G(v)^{-1}(\mathbf 1-p).
+\]
+
+For both strategic-variable versions $X\in\{C,B\}$, the exact R5 sign certificates establish
+\[
+\Phi^X<0,
+\qquad
+\mathscr E^X<0
+\]
+throughout the frozen audit box $0<c<1/3$, $0\le v<1/4$ subject to the relevant interiority conditions. At
+\[
+(c,v,F)
+=
+\left(
+\frac1{10},
+\frac6{25},
+\frac15
+\right),
+\]
+both versions also satisfy the strict inequalities required for outsider-only adoption. This is the basis for the main-text statement that adoption portability survives while the political sign does not.
+
+\subsection{Strict versus weak blocking}
+
+Let
+\[
+\operatorname{SB}(x_1,x_2;y_1,y_2)
+\]
+denote strict blocking by two deviators, requiring $y_k>x_k$ for both $k$, and let weak/Pareto blocking require $y_k\ge x_k$ for both with at least one strict inequality.
+
+Under exact symmetry and high $F$, moving from $SU_{12}$ to $SU_{13}$ yields
+\[
+W_1^{13,N}=W_1^{12,N},
+\qquad
+W_3^{13,N}>W_3^{12,N}.
+\]
+Hence the deviation is not a strict block but is a weak/Pareto block. The same argument applies by permutation to every symmetric SU. The logical distinction is independently formalized in the Lean theorem 	exttt{FV5\_indifferenceSeparatesBlockingRules}.
+
+With
+\[
+m_1=m_2=1,
+\qquad
+m_3=1-\delta,
+\]
+the common-member equality becomes
+\[
+W_1^{12,N}-W_1^{13,N}
+=
+\delta(A-C)>0.
+\]
+The R6 exhaustive deviation enumeration then proves the exact witness ranges stated in Section~\ref{sec:coalition-stability}. In the intermediate full-bypass region, the member and outsider gaps relative to IS are
+\[
+W_i^{IS}-W_i^{SU,O}
+=
+m_o(P-C)>0
+\]
+and
+\[
+W_o^{IS}-W_o^{SU,O}
+=
+m_oJ+F>0,
+\]
+which are strict and therefore do not rely on symmetry-induced indifference.

@@ -136,10 +136,65 @@ def stability_table() -> str:
     )
 
 
+
+def residual_rent_table() -> str:
+    return "\n".join(
+        [
+            r"\begin{table}[htbp]",
+            r"\centering",
+            r"\small",
+            r"\caption{Government-incentive regions under incomplete private adaptation. The classification assumes the initial condition $\mathscr E>\mathscr D>0$ and the selection-free outsider-only continuation.}",
+            r"\label{tab:residual-rent-regions}",
+            r"\resizebox{\textwidth}{!}{%",
+            r"\begin{tabular}{lll}",
+            r"\toprule",
+            r"Residual-rent condition & Post-adaptation ranking & Change in relative IS incentive \\",
+            r"\midrule",
+            r"$R(d,v)<\mathscr D$ & IS strictly preferred & Strengthens; ranking reverses \\",
+            r"$\mathscr D<R(d,v)<\mathscr E$ & SU remains strictly preferred & Strengthens without reversal \\",
+            r"$R(d,v)>\mathscr E$ & SU strictly preferred & Weakens \\",
+            r"$R(d,v)=\mathscr D$ or $R(d,v)=\mathscr E$ & Boundary case & Indifference in the corresponding comparison \\",
+            r"\bottomrule",
+            r"\end{tabular}%",
+            r"}",
+            r"\end{table}",
+        ]
+    )
+
+
+def scope_robustness_table() -> str:
+    return "\n".join(
+        [
+            r"\begin{table}[htbp]",
+            r"\centering",
+            r"\scriptsize",
+            r"\caption{Scope and robustness of the revision results. A check marked as surviving is only a result for the specified perturbation, not a universal theorem over the entire model class.}",
+            r"\label{tab:scope-robustness}",
+            r"\resizebox{\textwidth}{!}{%",
+            r"\begin{tabular}{llll}",
+            r"\toprule",
+            r"Check & One-way private adoption & Initial SU advantage / political effect & Institutional implication \\",
+            r"\midrule",
+            r"Canonical baseline & Survives & Survives on certified parameter region & Intermediate full-bypass region gives unique IS under strict blocking \\",
+            r"$v=0$ boundary & Survives & Fails: $W_M^{SU,N}<W^{IS}$ & Reversal route cannot start \\",
+            r"Singleton-network alternative S1 & Survives at exact witness & Fails throughout old canonical domain & No political reversal route in S1 \\",
+            r"Differentiated demand, Cournot & Survives at exact witness & Fails throughout frozen audit box & No certified reversal route \\",
+            r"Differentiated demand, Bertrand & Survives at exact witness & Fails throughout frozen audit box & Failure is not attributable to price competition alone \\",
+            r"Weak/Pareto blocking, symmetric high $F$ & Not the margin tested & Canonical payoffs unchanged & High-$F$ stable set becomes empty \\",
+            r"Small market-size asymmetry & Re-solved and survives on certified ranges & Intermediate strict gaps survive & High-$F$ partner indifference is broken; intermediate unique IS survives \\",
+            r"\bottomrule",
+            r"\end{tabular}%",
+            r"}",
+            r"\end{table}",
+        ]
+    )
+
 def main() -> None:
     write("table_cournot_blocks.tex", cournot_table())
     write("table_thresholds.tex", threshold_table())
     write("table_stability_regions.tex", stability_table())
+    write("table_residual_rent_regions.tex", residual_rent_table())
+    write("table_scope_robustness.tex", scope_robustness_table())
     print("TABLE GENERATION: PASS")
 
 
