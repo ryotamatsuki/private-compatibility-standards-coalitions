@@ -140,6 +140,7 @@ def build(require_supplement: bool = True) -> None:
                 "Sections~the Private Adaptation and Government Incentives section of the main article and the Coalition-Stability Application section of the main article",
                 "Sections 4 and 5 of the short main article",
             )
+            body = body.replace("Sections~the Private Adaptation and Government Incentives section of the short main article and the Coalition Stability and Scope section of the short main article", "Sections 4 and 5 of the short main article")
             # Only the short review supplement receives display repairs.
             # Single TeX control-space commands in the inherited R9 appendix
             # made multi-line align formulas render as one overfull line.
