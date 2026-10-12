@@ -1,0 +1,23 @@
+\section{Model and product-market payoffs}\label{sec:short-model}
+Three countries $N=\{1,2,3\}$ each have one firm selling in all three segmented, unit-size national markets; quantities in destination $k$ are $q_i^k$. Governments choose a formal standards partition $\rho$: separate standards $SW=\{\{1\},\{2\},\{3\}\}$, one of three two-country regional unions $SU_{ij}=\{\{i,j\},\{o\}\}$, or international standardization $IS=\{N\}$. A firm natively supports its own coalition's standard. It can pay real fixed cost $F>0$ \emph{per additional standard}, with that adoption covering every country using the additional standard. In each destination the firm uses the destination's standard if it supports it, and its native standard otherwise. The legal/formal partition is unchanged by private adoption.
+
+In each market consumers have heterogeneous valuations $u\sim U[0,1]$, buy at most one unit, and obtain $u+g_i^k-p_i^k$ from firm $i$. For a compatibility group $G_i^k$ of firms using the same standard, let $g_i^k=v\sum_{j\in G_i^k}q_j^k$ if $|G_i^k|\ge2$, and $g_i^k=0$ for a singleton. With total quantity $Q_k=\sum_jq_j^k$, the interior inverse demand is
+\begin{equation}\label{eq:short-demand}
+p_i^k=1-Q_k+g_i^k,\qquad 0<v<\tfrac14.
+\end{equation}
+The intrinsic production cost is zero. Selling without supporting the destination's standard entails marginal cost $c>0$; native support is costless. A firm that newly adopts a standard obtains full compatibility but may retain residual marginal cost $d=\lambda c$, $0\le\lambda\le1$. Complete relief is $d=0$, whereas $\lambda=1$ still changes compatibility even without marginal-cost relief. We impose
+\begin{equation}\label{eq:short-domain}
+0<c<\frac{1-3v}{3(1-v)},\quad F>0,
+\end{equation}
+which ensures interior equilibria of the canonical Cournot configurations. Firms choose additional standards simultaneously after $\rho$ is specified, then compete in quantities; all product-market and adoption stages are re-solved for each candidate formal partition.
+
+For market mass $m_k$ (unity in the symmetric benchmark), the worldwide profit of home firm $i$ is $\Pi_i=\sum_k m_k(p_i^k-r_i^k)q_i^k-Fn_i$, with $r_i^k\in\{0,c,d\}$ its actual destination cost and $n_i$ the number of additional standards. National welfare is $W_i=CS_i+\Pi_i$; in this linear unit-demand environment $CS_k=Q_k^2/2$ (times $m_k$ when markets differ in size). Foreign producer profit is excluded from domestic national welfare. No transfers are allowed.
+
+Let $P$ and $K_I$ be the per-firm operating profit and member consumer surplus under $IS$. Under a symmetric $SU$, before adoption, $A$ and $B$ are respectively a member and the outsider's profits in a member market; $C$ and $D$ are respectively a member's and the native outsider's profits in the outsider market. Write $K_M$ for a member market's consumer surplus and $K_O$ for outsider-market surplus. Direct Cournot first-order conditions give
+\begin{align}\label{eq:short-blocks}
+P&=\frac1{16(1-v)},& K_I&=\frac9{32(1-v)^2},\nonumber\\
+A&=\frac{(1-v)(1+c)^2}{4(2-3v)^2},&B&=\frac{[1-3c-3(1-c)v]^2}{4(2-3v)^2},\nonumber\\
+C&=\frac{(1-v)(1-2c)^2}{4(2-3v)^2},&D&=\frac{(1+2c-3v)^2}{4(2-3v)^2},\nonumber\\
+K_M&=\frac{(3-c-3v+3cv)^2}{8(2-3v)^2},&K_O&=\frac{(3-2c-3v)^2}{8(2-3v)^2}.
+\end{align}
+For example, a member-market Cournot equilibrium has two identical member quantities $x=(1+c)/[2(2-3v)]$ and outsider quantity $y=[1-3c-3(1-c)v]/[2(2-3v)]$. Their first-order conditions are $1-3(1-v)x-y=0$ and $1-2x-2y-c=0$, giving $A=(1-v)x^2$, $B=y^2$ and $K_M=(2x+y)^2/2$. This supplies a direct derivation bridge to the government welfare comparisons. All other market configurations, strict interiority and uniqueness proofs are in Online Supplement A--B.
