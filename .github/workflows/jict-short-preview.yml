@@ -31,7 +31,7 @@ jobs:
           sudo apt-get install -y --no-install-recommends latexmk texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-publishers texlive-fonts-recommended poppler-utils unzip
       - name: Generate reproducible figures and tables
         run: make figures tables
-      - name: Compile and independently check shortened anonymous manuscript and unchanged supplement
+      - name: Compile 17--19-page manuscript and Appendix G coalition-proof supplement
         run: python code/revision/build_jict_short.py
       - name: Clean-room short-source compilation
         run: |
@@ -39,8 +39,17 @@ jobs:
           unzip -q submission/generated/jict_short_source.zip -d "${RUNNER_TEMP}/short-source-check"
           (cd "${RUNNER_TEMP}/short-source-check" && latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex)
           PAGES=$(pdfinfo "${RUNNER_TEMP}/short-source-check/main.pdf" | awk '/^Pages:/ {print $2}')
-          test "$PAGES" -lt 20
+          test "$PAGES" -ge 17
+          test "$PAGES" -le 19
           echo "SHORT MANUSCRIPT CLEAN ROOM: PASS ($PAGES pages)"
+      - name: Clean-room supplementary-source compilation and blocking proof QA
+        run: |
+          mkdir -p "${RUNNER_TEMP}/short-supplement-check"
+          unzip -q submission/generated/jict_short_online_supplement_source.zip -d "${RUNNER_TEMP}/short-supplement-check"
+          (cd "${RUNNER_TEMP}/short-supplement-check" && latexmk -pdf -interaction=nonstopmode -halt-on-error -bibtex- main.tex)
+          pdftotext "${RUNNER_TEMP}/short-supplement-check/main.pdf" - | grep -F "Explicit Coalition-Deviation and Payoff Ledger"
+          ! pdftotext "${RUNNER_TEMP}/short-supplement-check/main.pdf" - | grep -Eiq 'Ryota Matsuki|ryota.matsuki@gmail.com|github.com/ryotamatsuki'
+          echo "SHORT SUPPLEMENT CLEAN ROOM: PASS"
       - uses: actions/upload-artifact@v4
         with:
           name: jict-short-preview-${{ github.sha }}
