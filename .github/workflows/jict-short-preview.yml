@@ -5,11 +5,13 @@ on:
     paths:
       - 'paper/jict_short/**'
       - 'code/revision/build_jict_short.py'
+      - 'code/revision/make_jict_short_figure.py'
       - '.github/workflows/jict-short-preview.yml'
   push:
     paths:
       - 'paper/jict_short/**'
       - 'code/revision/build_jict_short.py'
+      - 'code/revision/make_jict_short_figure.py'
       - '.github/workflows/jict-short-preview.yml'
 
 permissions:
@@ -41,6 +43,8 @@ jobs:
           PAGES=$(pdfinfo "${RUNNER_TEMP}/short-source-check/main.pdf" | awk '/^Pages:/ {print $2}')
           test "$PAGES" -ge 17
           test "$PAGES" -le 19
+          ! pdftotext "${RUNNER_TEMP}/short-source-check/main.pdf" - | grep -F "Preprint submitted to Elsevier"
+          pdftotext "${RUNNER_TEMP}/short-source-check/main.pdf" - | grep -F "ChatGPT (OpenAI)"
           echo "SHORT MANUSCRIPT CLEAN ROOM: PASS ($PAGES pages)"
       - name: Clean-room supplementary-source compilation and blocking proof QA
         run: |
@@ -58,4 +62,8 @@ jobs:
             submission/generated/jict_short_online_supplement.pdf
             submission/generated/jict_short_source.zip
             submission/generated/jict_short_online_supplement_source.zip
+            submission/generated/jict_short_identified_title_page.pdf
+            submission/generated/jict_short_cover_letter.pdf
+            submission/generated/jict_short_upload_manifest.md
+            submission/generated/replication_package_anonymous.zip
           retention-days: 14
