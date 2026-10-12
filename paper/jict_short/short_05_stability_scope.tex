@@ -1,0 +1,87 @@
+\section{Coalition stability and scope}\label{sec:short-stability}
+The institutional application fixes complete cost relief ($d=0$); unlike
+Proposition~\ref{prop:incomplete-adaptation-open-set}, it is not a
+positive-residual-cost coalition-stability theorem. The formal menu comprises
+$SW$, $SU_{12}$, $SU_{13}$, $SU_{23}$, and $IS$. Write a partition as a
+collection of disjoint nonempty country blocs. A nonempty group of deviating
+countries $\mathcal D\subseteq N$ forms exactly one new bloc, while the
+nondeviators in each former bloc remain together. Consequently the induced
+partition is
+\begin{equation}\label{eq:short-deviation-rule}
+\rho'(\rho,\mathcal D)
+=\{\mathcal D\}\cup
+\bigl\{B\setminus\mathcal D:B\in\rho,\ B\setminus\mathcal D\ne\varnothing\bigr\}.
+\end{equation}
+Deviations that reproduce $\rho$ do not block. All firms re-solve their adoption
+and product-market choices after $\rho'$ is determined; coalitions cannot make
+transfers. A \emph{strict block} requires
+$W_i(\rho')>W_i(\rho)$ for every $i\in\mathcal D$; a
+\emph{weak/Pareto block} instead requires $W_i(\rho')\ge W_i(\rho)$ for
+all deviators and strict inequality for at least one. The stable set
+$\mathcal S_S(F)$ contains partitions with no strict block.
+
+Let $\Omega_0$ be the nonempty part of the canonical domain where
+$W_M^{SU,N}>W^{IS}$, $P>C$, and
+$F_L<F^*=2T_A$ (with $F_L$ from~\eqref{eq:short-F-region}).
+For $F>F^*$ no firm adapts, so, by symmetry,
+\begin{align}\label{eq:short-institution-welfare}
+W^{SW}&=K_W+H+2S,& W^{IS}&=K_I+3P,\nonumber\\
+W_M^{SU,N}&=K_M+2A+C,&W_O^{SU,N}&=K_O+2B+D.
+\end{align}
+On $\Omega_0$, the exact sign certificates give
+$W_M^{SU,N}>W^{IS}>W^{SW}$ and
+$W^{IS}>W_O^{SU,N}$; see Online Supplement B.
+For $F_L<F<F^*$, outsider-only adoption is uniquely selected under every
+$SU$ while none occurs under $SW$. In this full-bypass continuation,
+\begin{align}\label{eq:short-IS-dominates-SU}
+W_M^{SU,O}&=K_I+2P+C=W^{IS}-(P-C),\nonumber\\
+W_O^{SU,O}&=K_O+2P+D-F=W^{IS}-(J+F),
+\end{align}
+where $J=K_I+P-K_O-D>0$ on the canonical domain. Hence $IS$
+strictly dominates the continuation of any $SU$ for all three countries;
+it also strictly dominates $SW$. This proves the critical payoff bridge.
+
+\begin{theorem}[Full-bypass stability application]\label{thm:short-stability}
+On $\Omega_0$ and under strict blocking, the stable sets are
+\begin{enumerate}
+\item $F>F^*$: $\mathcal S_S(F)=\{SU_{12},SU_{13},SU_{23}\}$;
+\item $F_L<F<F^*$: $\mathcal S_S(F)=\{IS\}$.
+\end{enumerate}
+The high-$F$ symmetric result needs strict blocking. The unique
+intermediate-$F$ result survives weak blocking and small asymmetry.
+\end{theorem}
+
+\noindent\emph{Proof and exhaustive five-partition blocking check.}
+Equation~\eqref{eq:short-deviation-rule} reduces all nontrivial changes to
+splitting a regional bloc, switching one member to the outsider, or forming the
+grand bloc. The following table shows, up to relabeling, a blocking deviation
+or the reason none exists; the full finite coalition-by-coalition ledger is in
+Online Supplement G.
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.18}
+\begin{tabular}{@{}p{0.18\linewidth}p{0.76\linewidth}@{}}
+\toprule
+Initial regime & Strict-deviation test and outcome \\
+\midrule
+$SW$, either $F$ & $\mathcal D=N$ yields $IS$; every country gains since $W^{IS}>W^{SW}$. Hence $SW$ is blocked. \\
+$IS$, high $F$ & Any pair $\mathcal D=\{i,j\}$ forms $SU_{ij}$; both members gain because $W_M^{SU,N}>W^{IS}$. Hence $IS$ is blocked. \\
+$SU_{ij}$, high $F$ & A member leaving alone obtains $SW$ and loses; all-country $IS$ loses for members. A partner switch to another $SU$ leaves the common member indifferent. No strict block exists. \\
+$SU_{ij}$, intermediate $F$ & $\mathcal D=N$ forms $IS$; both members gain $P-C>0$ and the outsider gains $J+F>0$. Hence every $SU$ is blocked. \\
+$IS$, intermediate $F$ & A one- or two-country deviation creates some $SU$; each deviator loses by~\eqref{eq:short-IS-dominates-SU}. The grand deviation changes nothing. Hence $IS$ is stable. \\
+\bottomrule
+\end{tabular}
+\end{center}
+These tests exhaust the three regional partitions by permutation; the payoff
+inequalities also show $IS$ strictly Pareto-dominates all four other partitions
+at intermediate $F$ within this five-partition menu. At high $F$, changing
+$SU_{12}$ to $SU_{13}$ via $\{1,3\}$ leaves country 1 indifferent and
+strictly benefits country 3. It is thus a weak but not a strict block,
+and the symmetric weak-blocking stable set is empty. Under
+$m_1=m_2=1$, $m_3=1-\delta$, the indifference becomes
+$W_1^{12,N}-W_1^{13,N}=\delta(A-C)>0$; sufficiently small
+$\delta>0$ restores unique $SU_{12}$ stability under both rules in the
+high-cost region. Intermediate-$F$ inequalities remain strict under the
+certified small perturbations (Online Supplement G).
+
+\paragraph{Limits of the political result} First, setting $v=0$ gives $W_M^{SU,N}-W^{IS}=c(13c-6)/32<0$ for $0<c<1/3$: a regionally favorable initial ranking is absent, although private one-way adoption can still occur. Second, allowing singleton compatibility groups to enjoy their own network effects also eliminates the initial regional advantage throughout the tested canonical parameter domain; this is a particular alternative network microfoundation, not a universal absence result. Third, in a pre-specified differentiated-demand setting with substitution $\gamma=1/2$, the initial regional member advantage and member-market exclusion component are negative throughout the audited parameter box under both differentiated Cournot and Bertrand competition, despite feasible outsider-only private adoption. These are substantive portability failures, not merely imperfect proofs. The differentiated-demand and singleton tests do not establish that every other specification fails; full calculations and parameter-domain certificates are provided in Online Supplement E.

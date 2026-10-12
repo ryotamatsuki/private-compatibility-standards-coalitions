@@ -1,0 +1,245 @@
+\section{Private Adaptation and Government Incentives}
+\label{sec:short-incentives}
+
+We now turn from the firm's adoption decision to the government's comparison of formal standards regimes. This is the paper's central mechanism. The key question is not simply whether the outsider adopts the bloc standard, but how much of the member-market rent survives after adoption.
+
+Consider a symmetric regional standards union with two members and one outsider. Let $W_M^{SU,N}$ denote a member government's continuation payoff before private bypass and $W^{IS}$ its payoff under international standardization.
+
+\subsection{Pre-adoption decomposition}
+\label{subsec:selective-decomposition}
+
+Using the Cournot blocks from Section~\ref{sec:short-model},
+\begin{equation}
+    W_M^{SU,N}=K_M+2A+C,
+    \qquad
+    W^{IS}=K_I+3P.
+    \label{eq:canonical-welfare-pairs}
+\end{equation}
+Define the member-market component
+\begin{equation}
+    \mathscr E
+    \equiv
+    (K_M-K_I)+2(A-P)
+    \label{eq:exclusion-surplus}
+\end{equation}
+and the reciprocal outsider-market disadvantage
+\begin{equation}
+    \mathscr D
+    \equiv
+    P-C.
+    \label{eq:reciprocal-disadvantage}
+\end{equation}
+Then
+\begin{equation}
+    \boxed{
+    W_M^{SU,N}-W^{IS}
+    =\mathscr E-\mathscr D.
+    }
+    \label{eq:selective-before}
+\end{equation}
+The labels are descriptive rather than sign assumptions. $\mathscr E$ is a net national-welfare effect combining member-market consumer surplus and the domestic firm's profits in both member markets. $\mathscr D$ captures the domestic firm's profit disadvantage in the outsider market relative to IS.
+
+For the political reversal studied below, the relevant initial configuration satisfies
+\begin{equation}
+    \mathscr E>\mathscr D>0.
+    \label{eq:initial-preference-condition}
+\end{equation}
+The first inequality means the member initially prefers the regional union; the second ensures a genuine reciprocal disadvantage remains outside the bloc.
+
+\subsection{Incomplete private adaptation}
+\label{subsec:partial-adaptation}
+
+The full-bypass baseline assumes that adopting the bloc standard both creates full compatibility and eliminates the outsider's marginal adaptation cost in member markets. To separate those two effects, let adoption create full compatibility but leave residual marginal cost
+\begin{equation}
+    d=\lambda c,
+    \qquad
+    0\leq\lambda\leq1.
+    \label{eq:residual-cost-definition}
+\end{equation}
+Thus $\lambda=0$ reproduces complete cost relief, $0<\lambda<1$ represents incomplete relief, and $\lambda=1$ changes compatibility without reducing the original marginal adaptation burden. The endpoint $\lambda=1$ is therefore not the no-adoption state.
+
+After outsider adoption, all three firms use the bloc standard in a member market. The two member firms have zero marginal cost and the outsider has cost $d$. Re-solving the Cournot subgame gives
+\begin{equation}
+    q_R^M(d)=\frac{1+d}{4(1-v)},
+    \qquad
+    q_R^O(d)=\frac{1-3d}{4(1-v)}.
+    \label{eq:partial-erosion-quantities}
+\end{equation}
+The corresponding member-firm profit, outsider profit, and consumer surplus are
+\begin{align}
+    A_R(d)&=\frac{(1+d)^2}{16(1-v)},\
+    B_R(d)&=\frac{(1-3d)^2}{16(1-v)},\
+    K_R(d)&=\frac{(3-d)^2}{32(1-v)^2}.
+    \label{eq:partial-erosion-blocks}
+\end{align}
+Because $0\leq d\leq c<1/3$, the outsider remains active throughout the certified canonical domain.
+
+A regional member has not adopted the outsider's standard, so its outsider-market profit remains $C$. Hence
+\begin{equation}
+    W_M^{SU,O}(d)
+    =
+    K_R(d)+2A_R(d)+C.
+    \label{eq:partial-erosion-welfare}
+\end{equation}
+Subtracting $W^{IS}$ produces the exact identity
+\begin{equation}
+    \boxed{
+    W_M^{SU,O}(d)-W^{IS}
+    =
+    -\mathscr D+R(d,v),
+    }
+    \label{eq:partial-erosion-identity}
+\end{equation}
+where
+\begin{equation}
+    \boxed{
+    R(d,v)
+    =
+    \frac{d\bigl[(5-4v)d+2(1-4v)\bigr]}
+         {32(1-v)^2}.
+    }
+    \label{eq:residual-rent}
+\end{equation}
+The term $R(d,v)$ is not imposed as an erosion parameter. It is the equilibrium residual member-market rent implied by incomplete private adaptation.
+
+On $0\leq v<1/4$ and $d\geq0$,
+\begin{equation}
+    R(0,v)=0,
+    \qquad
+    \frac{\partial R}{\partial d}
+    =
+    \frac{2(5-4v)d+2(1-4v)}
+         {32(1-v)^2}>0.
+    \label{eq:residual-rent-monotonicity}
+\end{equation}
+The amount of residual rent therefore rises monotonically with the remaining adaptation cost.
+
+\subsection{Success, intermediate, and failure regions}
+\label{subsec:residual-rent-regions}
+
+The government's response follows directly from equations~\eqref{eq:selective-before} and \eqref{eq:partial-erosion-identity}.
+
+\begin{proposition}[Residual-rent government effect]
+\label{thm:selective-erosion}
+Suppose $\mathscr E>\mathscr D>0$. Then private outsider adaptation with residual cost $d$ has three distinct effects:
+\begin{enumerate}
+    \item if $R(d,v)<\mathscr D$, the member's ranking reverses from SU before adoption to IS after adoption;
+    \item if $\mathscr D<R(d,v)<\mathscr E$, the relative incentive for IS increases, but SU remains preferred;
+    \item if $R(d,v)>\mathscr E$, private adaptation weakens the relative incentive for IS.
+\end{enumerate}
+The equalities $R(d,v)=\mathscr D$ and $R(d,v)=\mathscr E$ are indifference boundaries.
+\end{proposition}
+
+\begin{proof}
+Before adoption the SU-minus-IS gap is $\mathscr E-\mathscr D>0$. After adoption it is $-\mathscr D+R(d,v)$, so the post-adoption ranking favors IS exactly when $R(d,v)<\mathscr D$. The change in the relative incentive for IS is
+\[
+\bigl(W^{IS}-W_M^{SU,O}(d)\bigr)
+-
+\bigl(W^{IS}-W_M^{SU,N}\bigr)
+=
+\mathscr E-R(d,v),
+\]
+which is positive exactly when $R(d,v)<\mathscr E$. Since $\mathscr E>\mathscr D$, the three regions follow.
+\end{proof}
+
+For any target $Z>0$, strict monotonicity implies a unique positive solution to $R(d,v)=Z$:
+\begin{equation}
+    d_Z
+    =
+    \frac{
+      -(1-4v)+
+      \sqrt{(1-4v)^2+32(5-4v)(1-v)^2Z}
+    }{5-4v}.
+    \label{eq:residual-cost-threshold}
+\end{equation}
+Let $d_D=d_{\mathscr D}$ and $d_E=d_{\mathscr E}$. Under \eqref{eq:initial-preference-condition},
+\[
+0<d_D<d_E.
+\]
+Thus the success, intermediate, and failure regions can equivalently be read from the position of $d$ relative to $d_D$ and $d_E$, truncated to the economically admissible interval $0\leq d\leq c$.
+
+\input{table_residual_rent_regions}
+
+Figure~\ref{fig:selective-erosion} illustrates this logic. It is a numerical visualization of the analytical thresholds, not a proof.
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{figure_02_selective_erosion.pdf}
+    \caption{Residual rent and government incentives. The increasing function $R(d,v)$ is compared with the two certified payoff thresholds $\mathscr D$ and $\mathscr E$. The three regions correspond to ranking reversal, incentive strengthening without reversal, and incentive weakening. The parameterization $(c,v)=(0.073,0.225)$ is illustrative. For $d<d_{\mathscr D}$, the government ranking reverses toward $IS$; for $d_{\mathscr D}<d<d_{\mathscr E}$, the $IS$ incentive strengthens without reversal; for $d>d_{\mathscr E}$, the incentive weakens. These thresholds are analytical in Proposition~\ref{thm:selective-erosion}.}
+    \label{fig:selective-erosion}
+\end{figure}
+
+\subsection{The firm continuation must hold at the same primitives}
+\label{subsec:joint-adoption-government}
+
+A government-ranking condition alone is not enough. The outsider-only adoption state must itself be selected by firms after residual costs are introduced. Let
+\begin{equation}
+    T_O(d)=B_R(d)-B
+    \label{eq:partial-outsider-threshold}
+\end{equation}
+denote the outsider's per-member-market gain from adopting the bloc standard. Re-solving reverse adoption under residual cost gives thresholds $T_U(d)$, $T_W(d)$, and $T_A^R(d)$ for unilateral SU-member adoption, unilateral SW adoption, and adoption after the other member has already adopted. Their closed forms are reported in Online Supplement, Appendix D.
+
+Define
+\begin{equation}
+    F_L(d)
+    =
+    \max\{0,T_W(d),T_A^R(d)\},
+    \qquad
+    F^*(d)=2T_O(d).
+    \label{eq:partial-fixed-cost-region}
+\end{equation}
+If
+\begin{equation}
+    F_L(d)<F<F^*(d),
+    \label{eq:partial-selection-free-region}
+\end{equation}
+the outsider strictly adopts the bloc standard, SU members strictly do not adopt the outsider standard against either member action, and SW has no private adoption. The continuation is therefore selection free.
+
+Combining \eqref{eq:partial-selection-free-region} with Proposition~\ref{thm:selective-erosion} gives the economically relevant joint region.
+
+\begin{proposition}[Incomplete adaptation with actual preference reversal]
+\label{prop:incomplete-adaptation-open-set}
+There exists a nonempty open set of primitives with $0<\lambda<1$ such that: (i) a regional member initially prefers SU to IS; (ii) the outsider-only SU adoption profile is selection free; (iii) SW induces no private adoption; and (iv) after outsider adoption the regional member strictly prefers IS.
+\end{proposition}
+
+\begin{proof}
+At
+\[
+(c,v,\lambda,F)
+=
+\left(
+\frac1{10},
+\frac6{25},
+\frac12,
+\frac9{100}
+\right),
+\qquad
+d=\frac1{20},
+\]
+the pre-adoption gap is
+\[
+W_M^{SU,N}-W^{IS}
+=
+\frac{2408509}{295731200}>0,
+\]
+while the post-adoption gap is
+\[
+W_M^{SU,O}(d)-W^{IS}
+=
+-\frac{1341}{184832}<0.
+\]
+The re-solved fixed-cost thresholds satisfy
+\[
+F_L(d)
+=
+\frac{2122041}{31129600}
+<
+\frac9{100}
+<
+\frac{459189}{3891200}
+=
+F^*(d).
+\]
+All inequalities are strict and all relevant expressions are continuous on the interior domain. A nonempty open neighborhood therefore preserves the same adoption pattern and ranking reversal.
+\end{proof}
+
+The proposition rules out the interpretation that the government effect is an artifact of exact cost elimination. It does not establish portability across demand systems or competition modes. Section~\ref{sec:short-stability} reports the tests that limit that broader interpretation.
