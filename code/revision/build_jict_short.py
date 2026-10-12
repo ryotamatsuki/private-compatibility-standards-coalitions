@@ -32,6 +32,8 @@ def pages(path: Path) -> int:
 
 
 def build(require_supplement: bool = True) -> None:
+    # The short edition has an independently regenerated, legible figure.
+    run(sys.executable, str(ROOT / "code/revision/make_jict_short_figure.py"), cwd=ROOT)
     if FLAT.exists():
         shutil.rmtree(FLAT)
     FLAT.mkdir(parents=True, exist_ok=True)
@@ -39,13 +41,25 @@ def build(require_supplement: bool = True) -> None:
     inputs.update({"preamble.tex": ROOT / "paper/preamble.tex",
                    "notation.tex": ROOT / "paper/notation.tex",
                    "references.bib": ROOT / "paper/references.bib",
-                   "figure_02_selective_erosion.pdf": ROOT / "paper/figures/generated/figure_02_selective_erosion.pdf",
+                   "figure_02_selective_erosion.pdf": ROOT / "paper/jict_short/generated/figure_02_selective_erosion.pdf",
                    "table_residual_rent_regions.tex": ROOT / "paper/tables/generated/table_residual_rent_regions.tex"})
     for name, src in inputs.items():
         if not src.is_file():
             raise SystemExit(f"SHORT JICT FAIL: missing {src}; run 'make figures tables' first")
         shutil.copy2(src, FLAT / name)
-    # Treat this zip as an Editorial Manager-compatible, single-directory TeX source bundle.
+    # Springer JICT permits bibliography entries for published/accepted work.
+    # Preserve the canonical R9 bibliography untouched; omit unverified
+    # unpublished techreports ONLY in this short-reviewer source.
+    short_bib = FLAT / "references.bib"
+    filtered = short_bib.read_text(encoding="utf-8")
+    for key in ("maggiMrazova2024", "economidesSkrzypacz2003"):
+        filtered, n = re.subn(
+            rf"(?ms)^@techreport\{{{key},.*?^\}}\s*", "", filtered
+        )
+        if n != 1:
+            raise SystemExit(f"SHORT JICT FAIL: missing unpublished bibliography entry {key}")
+    short_bib.write_text(filtered, encoding="utf-8")
+    # Treat this zip as a journal-compatible, single-directory TeX source bundle.
     with zipfile.ZipFile(OUT / "jict_short_source.zip", "w", zipfile.ZIP_DEFLATED) as z:
         for p in sorted(FLAT.iterdir()):
             z.write(p, arcname=p.name)
@@ -61,6 +75,15 @@ def build(require_supplement: bool = True) -> None:
     for word in ("Ryota Matsuki", "ryota.matsuki@gmail.com", "github.com/ryotamatsuki"):
         if word.lower() in txt.lower():
             raise SystemExit(f"SHORT JICT FAIL: author information in anonymous manuscript: {word}")
+    if "Preprint submitted to Elsevier" in txt:
+        raise SystemExit("SHORT JICT FAIL: non-JICT publisher footer")
+    if "ChatGPT (OpenAI)" not in txt or "AI-assisted methods" not in txt:
+        raise SystemExit("SHORT JICT FAIL: substantive AI research methods disclosure missing")
+    if "Maggi and Mr" not in txt or "Working Paper 33318" not in txt:
+        raise SystemExit("SHORT JICT FAIL: working-paper discussion dropped")
+    bbl = (FLAT / "main.bbl").read_text(encoding="utf-8")
+    if "maggiMrazova2024" in bbl or "economidesSkrzypacz2003" in bbl:
+        raise SystemExit("SHORT JICT FAIL: unpublished working paper retained in reference list")
     for key in ("Residual-rent government effect", "Incomplete adaptation with actual preference reversal", "Full-bypass stability application", "Differentiated-demand"):
         if key.lower() not in txt.lower():
             # Figure/proposition text may split at page or hyphenation; check source for precise presence.
@@ -112,6 +135,11 @@ def build(require_supplement: bool = True) -> None:
             body = tex.read_text(encoding="utf-8")
             for old, new in pointer_updates.items():
                 body = body.replace(old, new)
+            # Repair prose malformed by inherited full-to-short substitutions.
+            body = body.replace(
+                "Sections~the Private Adaptation and Government Incentives section of the main article and the Coalition-Stability Application section of the main article",
+                "Sections 4 and 5 of the short main article",
+            )
             # Only the short review supplement receives display repairs.
             # Single TeX control-space commands in the inherited R9 appendix
             # made multi-line align formulas render as one overfull line.
@@ -151,7 +179,37 @@ def build(require_supplement: bool = True) -> None:
         with zipfile.ZipFile(OUT / "jict_short_online_supplement_source.zip", "w", zipfile.ZIP_DEFLATED) as z:
             for tex in sorted(short_si.glob("*.tex")):
                 z.write(tex, arcname=tex.name)
-    print(f"JICT SHORT PACKAGE: PASS (reviewer={n} pages, anonymous, bibliography resolved; original R9 proofs plus Appendix G blocking ledger)")
+    # Build a complete, version-matched human-reviewed upload set.
+    # Title page and cover letter are separate identified files, NOT reviewer inputs.
+    for stem, dest in (
+        ("jict_title_page", "jict_short_identified_title_page.pdf"),
+        ("jict_cover_letter", "jict_short_cover_letter.pdf"),
+    ):
+        run("latexmk", "-pdf", "-interaction=nonstopmode", "-halt-on-error",
+            "-bibtex-", stem + ".tex", cwd=ROOT / "submission")
+        shutil.copy2(ROOT / "submission" / (stem + ".pdf"), OUT / dest)
+    run(sys.executable, str(ROOT / "code/make_submission_package.py"), cwd=ROOT)
+    manifest = """# JICT short-manuscript upload checklist
+
+Generated from the 17--19-page short-edition branch. Upload ONLY these short
+review files for manuscript and Online Supplement. The original 39-page
+submission files remain archived for rollback.
+
+1. ANONYMOUS REVIEWER PDF: jict_short_manuscript.pdf
+2. ANONYMOUS REVIEWER SOURCE: jict_short_source.zip (flat LaTeX and bibliography)
+3. ANONYMOUS ONLINE SUPPLEMENT PDF: jict_short_online_supplement.pdf
+4. ANONYMOUS ONLINE SUPPLEMENT SOURCE: jict_short_online_supplement_source.zip
+5. IDENTIFIED TITLE PAGE / DECLARATIONS: jict_short_identified_title_page.pdf
+6. IDENTIFIED COVER LETTER: jict_short_cover_letter.pdf
+7. ANONYMOUS CANONICAL PROOF REPLICATION: replication_package_anonymous.zip
+
+Source identity, declarations, funding, conflicts, final portal categories,
+author email, originality and simultaneous-submission statements REQUIRE the
+author's explicit validation in the live journal portal. All main/SI files
+must be reviewed as anonymous; author identity belongs only on named files.
+"""
+    (OUT / "jict_short_upload_manifest.md").write_text(manifest, encoding="utf-8")
+    print(f"JICT SHORT PACKAGE: PASS (reviewer={n} pages, anonymous; original R9 proofs + Appendix G; complete identified/anonymous upload manifest)")
 
 
 if __name__ == "__main__":
