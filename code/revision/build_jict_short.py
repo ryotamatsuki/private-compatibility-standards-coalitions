@@ -55,8 +55,8 @@ def build(require_supplement: bool = True) -> None:
         raise SystemExit("SHORT JICT FAIL: unresolved LaTeX references, citations or duplicate labels")
     pdf = FLAT / "main.pdf"
     n = pages(pdf)
-    if n >= 20:
-        raise SystemExit(f"SHORT JICT FAIL: reviewer manuscript {n} pages, target <20")
+    if not 17 <= n <= 19:
+        raise SystemExit(f"SHORT JICT FAIL: reviewer manuscript {n} pages, required 17--19")
     txt = subprocess.run(["pdftotext", str(pdf), "-"], text=True, capture_output=True, check=True).stdout
     for word in ("Ryota Matsuki", "ryota.matsuki@gmail.com", "github.com/ryotamatsuki"):
         if word.lower() in txt.lower():
@@ -112,6 +112,27 @@ def build(require_supplement: bool = True) -> None:
             body = tex.read_text(encoding="utf-8")
             for old, new in pointer_updates.items():
                 body = body.replace(old, new)
+            # Only the short review supplement receives display repairs.
+            # Single TeX control-space commands in the inherited R9 appendix
+            # made multi-line align formulas render as one overfull line.
+            if tex.name == "app_d_partial_erosion.tex":
+                for symbol in ("q_A(d)", "q_S(d)", "T_W(d)", "T_A^R(d)", "F^*(d)"):
+                    needle = ",\\\n" + symbol
+                    if needle not in body:
+                        raise SystemExit(f"SHORT JICT FAIL: expected appendix TeX alignment {symbol}")
+                    body = body.replace(needle, ",\\\\\n" + symbol, 1)
+            if tex.name == "app_e_robustness.tex":
+                # Preserve exact code/Lean names, with line-breakable links.
+                replacements = {
+                    "code/revision/check\\_r4\\_network\\_role.py":
+                        "code/revision/check_r4_network_role.py",
+                    "FV5\\_indifferenceSeparatesBlockingRules":
+                        "FV5_indifferenceSeparatesBlockingRules",
+                }
+                for escaped_name, natural_name in replacements.items():
+                    for prefix in (r"\texttt{", "\texttt{"):
+                        body = body.replace(prefix + escaped_name + "}",
+                                            r"\path{" + natural_name + "}")
             tex.write_text(body, encoding="utf-8")
         run("latexmk", "-pdf", "-interaction=nonstopmode", "-halt-on-error", "-bibtex-", "main.tex", cwd=short_si)
         supplement_pdf = short_si / "main.pdf"
