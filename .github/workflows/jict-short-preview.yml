@@ -1,0 +1,52 @@
+name: JICT Short Manuscript Preview
+
+on:
+  pull_request:
+    paths:
+      - 'paper/jict_short/**'
+      - 'code/revision/build_jict_short.py'
+      - '.github/workflows/jict-short-preview.yml'
+  push:
+    paths:
+      - 'paper/jict_short/**'
+      - 'code/revision/build_jict_short.py'
+      - '.github/workflows/jict-short-preview.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  short-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+      - name: Install LaTeX PDF source tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends latexmk texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-publishers texlive-fonts-recommended poppler-utils unzip
+      - name: Generate reproducible figures and tables
+        run: make figures tables
+      - name: Compile and independently check shortened anonymous manuscript and unchanged supplement
+        run: python code/revision/build_jict_short.py
+      - name: Clean-room short-source compilation
+        run: |
+          mkdir -p "${RUNNER_TEMP}/short-source-check"
+          unzip -q submission/generated/jict_short_source.zip -d "${RUNNER_TEMP}/short-source-check"
+          (cd "${RUNNER_TEMP}/short-source-check" && latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex)
+          PAGES=$(pdfinfo "${RUNNER_TEMP}/short-source-check/main.pdf" | awk '/^Pages:/ {print $2}')
+          test "$PAGES" -lt 20
+          echo "SHORT MANUSCRIPT CLEAN ROOM: PASS ($PAGES pages)"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jict-short-preview-${{ github.sha }}
+          path: |
+            submission/generated/jict_short_manuscript.pdf
+            submission/generated/jict_short_online_supplement.pdf
+            submission/generated/jict_short_source.zip
+            submission/generated/jict_short_online_supplement_source.zip
+          retention-days: 14
