@@ -1,0 +1,89 @@
+\section{Explicit Coalition-Deviation and Payoff Ledger}\label{app:short-coalition-ledger}
+This supplementary appendix closes the finite coalition-stability proof in
+Section 5 of the short main article. It retains the five formal partitions and
+all admissible deviation coalitions, rather than relying on source code as a
+substitute for a game-theoretic argument. The formal deviation map is
+$\rho'(\rho,\mathcal D)=\{\mathcal D\}\cup
+\{B\setminus\mathcal D:B\in\rho,B\setminus\mathcal D\ne\varnothing\}$.
+All firms optimize again after a change of partition; no transfers are available.
+
+\subsection{Complete enumeration by symmetry}
+With $N=\{1,2,3\}$, the seven possible nonempty deviation coalitions are
+$\{1\},\{2\},\{3\},\{1,2\},\{1,3\},\{2,3\},N$. The table below
+shows the induced outcomes for a representative $SU_{12}$; all other unions
+follow by relabeling. A dash indicates the same original partition.
+\begin{center}\small
+\begin{tabular}{@{}lll@{}}\toprule
+From & Deviators $\mathcal D$ & Induced partition \\
+\midrule
+$SW$ & any singleton; any pair; $N$ & $SW$; $SU_{ij}$; $IS$\\
+$IS$ & any singleton; any pair; $N$ & $SU_{jk}$; $SU_{ij}$; $IS$\\
+$SU_{12}$ & $\{1\},\{2\}$ & $SW$\\
+$SU_{12}$ & $\{3\},\{1,2\}$ & $SU_{12}$ (no change)\\
+$SU_{12}$ & $\{1,3\}$ & $SU_{13}$\\
+$SU_{12}$ & $\{2,3\}$ & $SU_{23}$\\
+$SU_{12}$ & $N$ & $IS$\\
+\bottomrule\end{tabular}
+\end{center}
+Here $\{i,j\}$ denotes any pair and $k$ its complement. Singleton
+breakaways from $IS$ produce a regional union of the two countries remaining
+together (the singleton deviator becomes its outsider).
+
+\subsection{Continuation welfare by regime}
+For the symmetric benchmark let $H=(1+2c)^2/16$,
+$S=(1-2c)^2/16$, and $K_W=(3-2c)^2/32$. The government-welfare
+rows are
+\begin{align*}
+W^{SW}&=K_W+H+2S,&W^{IS}&=K_I+3P,\\
+W_M^{SU,N}&=K_M+2A+C,&W_O^{SU,N}&=K_O+2B+D,\\
+W_M^{SU,O}&=K_I+2P+C,&W_O^{SU,O}&=K_O+2P+D-F.
+\end{align*}
+The following signs are exact throughout the canonical admissible domain
+where explicitly invoked: $W^{IS}>W^{SW}$ and
+$W_M^{SU,N}>W^{SW}$ (Appendix B). On $\Omega_0$ additionally
+$W_M^{SU,N}>W^{IS}>W_O^{SU,N}$ and $P-C>0$.
+The last inequality with $J=K_I+P-K_O-D>0$ gives
+\[
+W^{IS}-W_M^{SU,O}=P-C>0,\quad
+W^{IS}-W_O^{SU,O}=J+F>0.
+\]
+These exact comparisons, rather than the calculation of new numerical
+examples, determine each deviation sign.
+
+\subsection{Five-partition proof under strict and weak blocking}
+\emph{High $F>2T_A$:} Every $SW$ is blocked by the grand coalition $N$
+forming $IS$. Every $IS$ is blocked by a two-country coalition forming
+$SU_{ij}$, since both its members strictly gain. For a regional $SU_{ij}$:
+(i) each member's solo breakaway produces $SW$ and reduces welfare;
+(ii) an outsider-only deviation and the incumbent members' re-forming the
+same pair leave the partition unchanged;
+(iii) switching partner from $SU_{ij}$ to $SU_{ik}$ makes $i$ indifferent
+by symmetry, so it fails the strict-blocking test;
+(iv) the grand coalition would make each incumbent member worse off
+because $W_M^{SU,N}>W^{IS}$. These cases exhaust the seven deviating
+coalitions, and all three SUs are strictly unblocked. For weak/Pareto
+blocking, in a switch from $SU_{12}$ to $SU_{13}$, country 1 is indifferent
+and country 3 strictly improves from outsider to member because
+$W_M^{SU,N}>W^{IS}>W_O^{SU,N}$. This weakly blocks every SU, so the weak
+stable set is empty at exact symmetry.
+
+\emph{Intermediate $F_L<F<2T_A$:} Every $SW$ is blocked by $N$ forming
+$IS$. Every $SU$ is blocked by $N$ forming $IS$ because the two members
+gain $P-C>0$ and the outsider gains $J+F>0$. From $IS$ each proper
+nontrivial coalition creates some $SU$, but all deviators lose in its
+continuation; $\mathcal D=N$ reproduces $IS$. Thus $IS$ is uniquely
+unblocked under either strict or weak/Pareto blocking. No sufficiency or
+necessity is inferred outside these fixed-cost regimes.
+
+\subsection{Small asymmetry}
+For $m_1=m_2=1$ and $m_3=1-\delta$, re-solve the private-adoption games
+for each induced partition. At high $F$ the partner-switching payoff
+difference is exactly
+$W_1^{12,N}-W_1^{13,N}=\delta(A-C)>0$.
+For sufficiently small $\delta>0$, strict inequalities in all other
+cases persist by continuity, giving unique $SU_{12}$ under both concepts.
+At intermediate $F$, for member $i$ and outsider $o$, the relevant
+signs are $W_i^{IS}-W_i^{SU,O}=m_o(P-C)>0$ and
+$W_o^{IS}-W_o^{SU,O}=m_oJ+F>0$. The original R6 exhaustive check certifies
+these conclusions for its stated exact witness ranges; we make no claim of
+new bounds or of endogenous membership renegotiation.
