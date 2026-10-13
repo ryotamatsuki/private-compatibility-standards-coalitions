@@ -7,6 +7,8 @@ on:
       - 'code/revision/build_jict_short.py'
       - 'code/revision/make_jict_short_figure.py'
       - 'code/revision/check_jict_short_independent.py'
+      - 'code/revision/audit_jict_short_package.py'
+      - 'submission/r9_final_polish/**'
       - '.github/workflows/jict-short-preview.yml'
   push:
     paths:
@@ -14,6 +16,8 @@ on:
       - 'code/revision/build_jict_short.py'
       - 'code/revision/make_jict_short_figure.py'
       - 'code/revision/check_jict_short_independent.py'
+      - 'code/revision/audit_jict_short_package.py'
+      - 'submission/r9_final_polish/**'
       - '.github/workflows/jict-short-preview.yml'
 
 permissions:
@@ -24,6 +28,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -66,6 +72,15 @@ jobs:
           test -f formal/r7/R7Formal.lean
           test -f code/revision/check_r4_network_role.py
           test -f code/revision/check_r5_competition_portability.py
+          for audit in check_network_zero check_r2_adoption check_r3_partial_erosion check_r4_network_role check_r5_competition_portability check_r6_coalition_stability check_r7_cleanroom check_r8_claim_scope check_r9_final_audit; do
+            python "code/revision/${audit}.py"
+          done
+          make verify
+      - name: Audit the final sources, anonymity, spacing, fonts and package
+        run: python code/revision/audit_jict_short_package.py
+      - name: Export final bytes for the authorized review branch
+        if: github.event_name == 'push' && github.ref_name == 'revision/r9-jict-astra-final-polish'
+        run: python code/revision/audit_jict_short_package.py --export-blobs
       - uses: actions/upload-artifact@v4
         with:
           name: jict-short-preview-${{ github.sha }}
@@ -77,6 +92,10 @@ jobs:
             submission/generated/jict_short_identified_title_page.pdf
             submission/generated/jict_short_cover_letter.pdf
             submission/generated/jict_short_upload_manifest.md
+            submission/generated/jict_short_identified_source.zip
+            submission/generated/r9_jict_submission_set.zip
+            submission/generated/r9_final_package_qa.json
+            submission/generated/r9_final_source_changes.patch
             submission/generated/replication_package_anonymous.zip
             submission/generated/jict_short_replication_package_anonymous.zip
             submission/generated/ESM_1.pdf

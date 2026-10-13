@@ -12,6 +12,8 @@ from functools import lru_cache
 from itertools import product, combinations
 from math import comb
 import json
+import re
+import zipfile
 from pathlib import Path
 import sympy as s
 
@@ -164,6 +166,18 @@ def main():
     M1=s.cancel(S1['phi']*32*(1-v)**2*K**2)
     Q1=s.cancel(-9*M1.subs(c,x*(1-3*v)/(3*(1-v))))
     report['S1']=bernstein(Q1.subs(v,y/4),(2,5),{(0,0)},s.Rational(571,512))
+    root = Path(__file__).resolve().parents[2]
+    template = root / "paper/jict_short/short_supplement_robustness.tex"
+    if template.exists():
+        printed = template.read_text(encoding="utf-8")
+    else:
+        with zipfile.ZipFile(root / "jict_short_online_supplement_source.zip") as z:
+            printed = z.read("app_e_robustness.tex").decode("utf-8")
+    array = re.search(r"\\begin\{pmatrix\}(.*?)\\end\{pmatrix\}", printed, re.S).group(1)
+    entries = [s.Rational(z.strip()) for z in re.split(r"\\\\|&", array) if z.strip()]
+    independently_derived = list(report['S1']['coefficients'].values())
+    assert [str(z) for z in entries] == independently_derived
+    report['printed_S1_array'] = 'PASS'
     for mode in ('C','B'):
         z=blocks('differentiated',mode)
         if mode=='C':

@@ -1,5 +1,10 @@
-\documentclass[review,authoryear,nopreprintline]{elsarticle}
+\documentclass[12pt,review,authoryear,nopreprintline]{elsarticle}
 \input{preamble}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\makeatletter
+\AtBeginDocument{\doublespacing\global\let\@blstr\baselinestretch}
+\makeatother
 \usepackage{float}
 \usepackage[labelfont=bf,labelsep=space]{caption}
 \renewcommand{\figurename}{Fig.}
@@ -17,6 +22,9 @@ private compatibility \sep standards \sep interoperability \sep imperfect compet
 \JEL L13 \sep L15 \sep F15 \sep C71
 \end{keyword}
 \end{frontmatter}
+\makeatletter
+\typeout{JICT BODY FONT=\f@size; BASELINE=\the\baselineskip}
+\makeatother
 \input{short_01_introduction}
 \input{short_02_model}
 \input{short_03_adoption}

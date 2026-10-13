@@ -8,6 +8,8 @@ transparent Appendix E and retains the additional coalition ledger G.
 from __future__ import annotations
 
 import argparse
+from datetime import datetime
+from zoneinfo import ZoneInfo
 from pathlib import Path
 import re
 import shutil
@@ -116,6 +118,9 @@ def build(require_supplement: bool = True) -> None:
     log = (FLAT / "main.log").read_text(errors="replace")
     if re.search(r"LaTeX Warning: (Reference|Citation).*undefined|There were undefined references|multiply defined", log, re.I):
         raise SystemExit("SHORT JICT FAIL: unresolved LaTeX references, citations or duplicate labels")
+    spacing = re.search(r"JICT BODY FONT=(\d+); BASELINE=([\d.]+)pt", log)
+    if not spacing or int(spacing.group(1)) != 12 or float(spacing.group(2)) < 23.9:
+        raise SystemExit("SHORT JICT FAIL: body must be 12-point and genuinely double-spaced")
     pdf = FLAT / "main.pdf"
     n = pages(pdf)
     if not 17 <= n <= 19:
@@ -168,6 +173,12 @@ def build(require_supplement: bool = True) -> None:
         shutil.copy2(ledger, short_si / ledger.name)
         supplement_main = short_si / "main.tex"
         main_source = supplement_main.read_text(encoding="utf-8")
+        main_source = main_source.replace(
+            r"\maketitle",
+            r"\maketitle" + "\n" +
+            r"\noindent\textbf{Online Resource 1: Journal of Industry, Competition and Trade}\par",
+            1,
+        )
         if main_source.count(r"\end{document}") != 1:
             raise SystemExit("SHORT JICT FAIL: unexpected supplement document boundary")
         supplement_main.write_text(
@@ -253,20 +264,34 @@ def build(require_supplement: bool = True) -> None:
                 z.write(tex, arcname=tex.name)
     # Build a complete, version-matched human-reviewed upload set.
     # Title page and cover letter are separate identified files, NOT reviewer inputs.
+    identified = OUT / "jict_short_identified_source"
+    if identified.exists():
+        shutil.rmtree(identified)
+    identified.mkdir(parents=True)
+    date = datetime.now(ZoneInfo("Asia/Tokyo")).strftime("%B %d, %Y").replace(" 0", " ")
     for stem, dest in (
         ("jict_title_page", "jict_short_identified_title_page.pdf"),
         ("jict_cover_letter", "jict_short_cover_letter.pdf"),
     ):
+        text = (ROOT / "submission" / (stem + ".tex")).read_text(encoding="utf-8")
+        if stem == "jict_cover_letter":
+            text = text.replace(r"\begin{document}", r"\date{" + date + "}\n" + r"\begin{document}", 1)
+        (identified / (stem + ".tex")).write_text(text, encoding="utf-8")
         run("latexmk", "-pdf", "-interaction=nonstopmode", "-halt-on-error",
-            "-bibtex-", stem + ".tex", cwd=ROOT / "submission")
-        shutil.copy2(ROOT / "submission" / (stem + ".pdf"), OUT / dest)
+            "-bibtex-", stem + ".tex", cwd=identified)
+        shutil.copy2(identified / (stem + ".pdf"), OUT / dest)
+    with zipfile.ZipFile(OUT / "jict_short_identified_source.zip", "w", zipfile.ZIP_DEFLATED) as z:
+        for tex in sorted(identified.glob("*.tex")):
+            z.write(tex, tex.name)
     run(sys.executable, str(ROOT / "code/make_submission_package.py"), cwd=ROOT)
     if require_supplement:
         short_replication()
         shutil.copy2(OUT / "jict_short_online_supplement.pdf", OUT / "ESM_1.pdf")
     manifest = """# JICT short-manuscript upload checklist
 
-Generated from the 17--19-page short-edition branch. Upload ONLY these short
+Generated from the 17--19-page short-edition branch with 12-point double-spaced
+body text. The historical 18-page version used 1.5 spacing; current page counts
+therefore are not a same-format compression comparison. Upload ONLY these short
 review files for manuscript and Online Supplement. The original 39-page
 submission files remain archived for rollback.
 
@@ -281,6 +306,8 @@ submission files remain archived for rollback.
    and the actual short main/supplement source ZIPs)
 8. NUMBERED SI ALIAS: ESM_1.pdf (Online Resource 1; same supplement bytes)
 9. SEPARATE VECTOR ARTWORK: Fig1.eps (same numerical figure as Fig1.pdf)
+10. EDITABLE IDENTIFIED SOURCES: jict_short_identified_source.zip
+    (separate from the anonymous reviewer source ZIPs)
 
 Source identity, declarations, funding, conflicts, final portal categories,
 author email, originality and simultaneous-submission statements REQUIRE the
