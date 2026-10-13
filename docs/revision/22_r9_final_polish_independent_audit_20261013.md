@@ -200,8 +200,12 @@ JICT 公開規定と scope:
 該当表示にclipping/重なりはない。大きな proof heading のoverflowとN_MS/Appendix Dの
 壊れたalignはshort-only presentationで解消した。
 
-ローカル最終表示確認後に実行環境がオフラインになった。
-最終反映・source ZIP clean-room/配布ZIP監査は新しい GitHub CI にも移した。
+ローカル最終表示確認後に実行環境が一時的にオフラインになったが復旧した。
+最終反映・source ZIP clean-room/配布ZIP監査は新しい GitHub CI にも移し、
+head90081d2のShort Preview [38332921253](https://github.com/ryotamatsuki/private-compatibility-standards-coalitions/actions/runs/38332921253)
+で19頁・22頁、actual replication ZIPの全R2–R9、独立再構成、file QAが成功した。
+同headのPaper CI [38332921250](https://github.com/ryotamatsuki/private-compatibility-standards-coalitions/actions/runs/38332921250)
+も成功した。復旧対応用のbyte-export処理は削除し、最新headのCIも確認する。
 この運用障害を数学的成功の根拠にしたり、未実行検査を PASS と扱ったりしない。
 machine evidence は `r9_final_package_qa.json`、`independent-certificates.json`、
 原文・改稿文の全差分は `r9_final_source_changes.patch` と PR Files changed に残る。

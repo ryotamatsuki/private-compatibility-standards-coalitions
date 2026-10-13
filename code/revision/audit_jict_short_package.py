@@ -1,7 +1,5 @@
 """Release-file audit for the short edition; does not change theory or original sources."""
 from __future__ import annotations
-import argparse
-import base64
 import hashlib
 import io
 import json
@@ -68,20 +66,8 @@ def clean_source(name, shipped, bib):
         return {"status":"PASS","pages":page_count(regenerated),"text_matches_shipped":True}
 
 def main():
-    parser=argparse.ArgumentParser()
-    parser.add_argument("--export-blobs",action="store_true")
-    args=parser.parse_args()
     bundle = OUT/"r9_jict_submission_set.zip"
     exports = ("jict_short_manuscript.pdf","jict_short_online_supplement.pdf","r9_jict_submission_set.zip")
-    if args.export_blobs:
-        # Read-only export to this private repository's job log; no token or ref write.
-        for name in exports:
-            encoded=base64.b64encode((OUT/name).read_bytes()).decode("ascii")
-            print("R9_EXPORT_BEGIN "+name,flush=True)
-            for i in range(0,len(encoded),48000):
-                print("R9_EXPORT_CHUNK "+encoded[i:i+48000],flush=True)
-            print("R9_EXPORT_END "+name,flush=True)
-        return
     protected = ["paper/main.tex","paper/sections","paper/appendix","paper/preamble.tex",
                  "paper/notation.tex","paper/references.bib","code/canonical.py",
                  "code/revision/check_network_zero.py","code/revision/check_r2_adoption.py",

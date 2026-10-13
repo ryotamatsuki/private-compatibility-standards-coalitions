@@ -78,9 +78,6 @@ jobs:
           make verify
       - name: Audit the final sources, anonymity, spacing, fonts and package
         run: python code/revision/audit_jict_short_package.py
-      - name: Export final bytes for the authorized review branch
-        if: github.event_name == 'push' && github.ref_name == 'revision/r9-jict-astra-final-polish'
-        run: python code/revision/audit_jict_short_package.py --export-blobs
       - uses: actions/upload-artifact@v4
         with:
           name: jict-short-preview-${{ github.sha }}
