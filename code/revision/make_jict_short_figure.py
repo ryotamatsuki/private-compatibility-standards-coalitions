@@ -52,7 +52,7 @@ def main() -> None:
     ax.set_ylabel(r"Residual rent $R(d,v)$", labelpad=7)
     ax.set_xticks([0, dD, dE, c],
                   [r"$0$", r"$d_{\mathcal{D}}$", r"$d_{\mathcal{E}}$", r"$c$"])
-    ax.legend(loc="upper left", fontsize=9, frameon=False, ncol=3)
+    ax.legend(loc="upper left", fontsize=10, frameon=False, ncol=3)
     # Caption (rather than chart annotations) names the three regimes:
     # the high-d regime is very narrow at this numerical illustration.
     ax.grid(alpha=0.12)

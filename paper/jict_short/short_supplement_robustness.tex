@@ -1,0 +1,311 @@
+\section{Robustness and Institutional Boundary Calculations}
+\label{app:robustness}
+This appendix supplies the proof bridges for the scope statements in Section 5
+of the short article. Each alternative is fixed before the comparison and
+re-solved at its own primitives. These are specification boundaries, not
+theorems about all network or differentiated-demand models.
+
+\subsection{Canonical network strength}
+Use the canonical blocks in Section 2 and define
+\[
+\Phi(c,v)=K_M+2A+C-K_I-3P,
+\qquad N(c,v)=32(1-v)^2(2-3v)^2\Phi(c,v).
+\]
+Thus $N$ is a polynomial of degree four in $v$, obtained from the displayed
+Cournot solutions, and its sign is the government's SU-minus-IS ranking:
+the cleared denominator is strictly positive. At $v=0$,
+\[
+\Phi(c,0)=\frac{c(13c-6)}{32}<0\quad(0<c<1/3).
+\]
+The adoption thresholds nevertheless obey
+\begin{align*}
+T_A(0)&=\frac{3c(2-3c)}{16},&
+T_U(0)=T_W(0)&=\frac{3c(2-c)}{16},\\
+2T_A(0)-T_W(0)&=\frac{3c(2-5c)}{16}>0.
+\end{align*}
+Consequently one-way adoption can occur without a favorable initial SU ranking.
+
+For completeness, the fixed-$c$ network comparison has a precise root target.
+Feasibility is $0<v<U(c)$, where
+$U(c)=\min\{1/4,(1-3c)/[3(1-c)]\}$. The change
+$v=U(c)t/(1+t)$ maps this open interval to $t>0$.
+For $0<c\le1/9$, the polynomial
+\[
+L_1(t;c)=(1+t)^4N\left(c,\frac{t}{4(1+t)}\right)
+\]
+has leading coefficient $9(145c^2-18c+3)/64>0$ and four remaining
+coefficients strictly negative; its constant is $4c(13c-6)$.
+For $1/9<c<1/3$, use
+\[
+L_2(t;c)=9(1-c)^3(1+t)^4
+N\left(c,\frac{(1-3c)t}{3(1-c)(1+t)}\right).
+\]
+Its leading coefficient is $Q(c)=17c^3+109c^2-89c+11$ and all
+remaining coefficients are strictly negative. These coefficient claims are
+exact univariate sign checks: the coefficients of $t^j$, $j=1,2,3$, have no
+root in their stated $c$ interval and are negative at $c=1/18$ for $L_1$
+and $c=1/8$ for $L_2$. The endpoint $c=1/9$ uses $L_1$.
+Root counts use Sturm's sequence $s_0=a$, $s_1=a'$,
+$s_{k+1}=-\operatorname{rem}(s_{k-1},s_k)$; the difference in sign
+variations at rational endpoints, after omitting zeros, counts roots.
+The constants are $4c(13c-6)$ for $L_1$ and
+$36c(1-c)^3(13c-6)$ for $L_2$, strictly negative for $0<c<1/3$;
+the excluded endpoint $c=0$ is not used as a negative test value.
+
+There is exactly one root $c^*$ of $Q$ in $(0,1/3)$, with opposite signs
+at the rational endpoints of its isolating interval
+\[
+c^*\in(1529167/10^7,1529168/10^7).
+\]
+Descartes' rule therefore gives exactly one feasible network threshold when
+$0<c<c^*$: $\Phi<0$ below it and $\Phi>0$ above it. When
+$c\ge c^*$, all nonzero coefficients of $L_2$ are negative and no
+initial SU advantage exists. The excluded upper endpoint $v=U(c)$ is not an
+interior equilibrium claim. The mechanical coefficient/root-count checks are
+in \path{code/revision/check_r4_network_role.py}; the mathematical target is
+$N$, not a numerical grid.
+
+\subsection{Exact polynomial sign certificates}
+The certificates below use an additional exact route, independent of the
+canonical root calculation. For a polynomial
+$f(x,y)=\sum_{k=0}^{n}\sum_{\ell=0}^{m}a_{k\ell}x^ky^\ell$, write
+\begin{align*}
+f(x,y)&=\sum_{i=0}^{n}\sum_{j=0}^{m}
+ b_{ij}\binom ni x^i(1-x)^{n-i}\binom mj y^j(1-y)^{m-j},\\
+b_{ij}&=\sum_{k\le i,\,\ell\le j}a_{k\ell}
+ \frac{\binom ik}{\binom nk}\frac{\binom j\ell}{\binom m\ell}.
+\end{align*}
+All operations are rational. On $[0,1]^2$ the basis weights are nonnegative
+and sum to one. Nonnegative coefficients with at least one positive active
+weight prove positivity. The reported minimum positive coefficient and the
+complete zero-index set specify the certificate; the conversion formula and
+the polynomial definitions specify its input. Long coefficient lists may be
+regenerated, but neither the object nor the inference is delegated to code.
+
+\subsection{Network benefits for singleton groups}
+The alternative rule is $g_i=v\sum_{j\in G_i}q_j$ for every nonempty
+group, including singletons. Inverse demand remains $p_i=1-\sum_jq_j+g_i$.
+The own-output derivative gives operating profit $(1-v)q_i^2$ at an
+interior Cournot equilibrium. In a member market the two equal member outputs
+$x$ and outsider output $y$ solve
+\[
+1-3(1-v)x-y=0,\qquad 1-c-2x-2(1-v)y=0.
+\]
+Put $K=3v^2-6v+2$. The member and outsider markets yield, respectively,
+\begin{align*}
+q_M^{S1}&=\frac{1+c-2v}{2K},&
+q_B^{S1}&=\frac{1-3v-3c(1-v)}{2K},\\
+q_C^{S1}&=\frac{1-2v-2c(1-v)}{2K},&
+q_D^{S1}&=\frac{1+2c-3v}{2K}.
+\end{align*}
+The complete-compatibility IS blocks remain $P=1/[16(1-v)]$ and
+$K_I=9/[32(1-v)^2]$. Define explicitly
+\begin{align*}
+A_1&=(1-v)(q_M^{S1})^2,& C_1&=(1-v)(q_C^{S1})^2,\\
+K_{M1}&=(2q_M^{S1}+q_B^{S1})^2/2,&
+\Phi_{S1}&=K_{M1}+2A_1+C_1-K_I-3P.
+\end{align*}
+On the canonical domain $0<c<c_{\max}(v)=(1-3v)/[3(1-v)]$,
+$0\le v<1/4$, $K\ge K(1/4)=11/16>0$. The outsider numerator is
+the feasibility slack; the $q_C^{S1}$ numerator exceeds its value $1/3$
+at $c=c_{\max}(v)$, and the other two are positive directly.
+Thus these are interior, uniquely solved Cournot configurations.
+
+Let $M_1=32(1-v)^2K^2\Phi_{S1}$ and
+\[
+Q_1(x,y)=-9M_1\left(xc_{\max}(y/4),y/4\right).
+\]
+Cancellation makes $Q_1$ a polynomial of degree $(2,5)$. Its exact Bernstein
+coefficient array (rows $i=0,1,2$; columns $j=0,\ldots,5$) is
+\[
+\begin{pmatrix}
+0&54/5&63/5&1611/160&8019/1280&1539/512\\
+36&138/5&387/20&1947/160&8439/1280&1467/512\\
+20&74/5&201/20&979/160&4023/1280&571/512
+\end{pmatrix}.
+\]
+Here $0<x<1$ and $0\le y<1$. Positive weights occur even at $y=0$
+because $x>0$. Hence $Q_1>0$, $M_1<0$, and $\Phi_{S1}<0$ throughout
+the claimed domain. The equality at $(c,v)=(0,0)$ is excluded.
+This proves a specification failure of the initial regional ranking.
+
+Private adoption need not fail. Under $SW$ the foreign singleton quantity is
+\[
+q_S^{S1}=\frac{1-2v-2c(1-v)}{2(2-v)(1-2v)}.
+\]
+Set $B_1=(1-v)(q_B^{S1})^2$, $S_1=(1-v)(q_S^{S1})^2$ and
+$(T_A^{S1},T_U^{S1},T_W^{S1})=(P-B_1,A_1-C_1,A_1-S_1)$.
+At $(c,v)=(1/10,6/25)$ their exact values are
+\[
+\left(\frac{5183091}{63768256},
+\frac{295659}{3356224},
+\frac{7226119311}{68631424576}\right),
+\]
+and their maximum is less than $2T_A^{S1}$. Against the two possible
+rival actions the reverse gains are $T_U^{S1}$ and $T_A^{S1}$; the $SW$
+gains are $T_W^{S1}$ and $T_A^{S1}$. Thus choosing $F$ strictly between
+that maximum and $2T_A^{S1}$ selects outsider-only adoption.
+
+\subsection{Differentiated Cournot and Bertrand demand}
+Fix $\gamma=1/2$. Let $C_G$ have entry one for two firms in the same
+compatibility group of size at least two, including that group's diagonal,
+and zero otherwise. In a market with cost vector $r$, set
+\[
+M_G=\tfrac12 I+\tfrac12\mathbf1\mathbf1^\top-vC_G,
+\qquad p=\mathbf1-M_Gq,
+\qquad CS=\tfrac12q^\top M_Gq.
+\]
+The four configurations needed for all blocks are
+\begin{center}\small
+\begin{tabular}{@{}lll@{}}\toprule
+Configuration & Compatibility groups & Cost vector $r$\\\midrule
+$I$ (IS) & $\{1,2,3\}$ & $(0,0,0)$\\
+$M$ (SU member market) & $\{1,2\},\{3\}$ & $(0,0,c)$\\
+$O$ (SU outsider market) & $\{1,2\},\{3\}$ & $(c,c,0)$\\
+$W$ (SW market) & $\{1\},\{2\},\{3\}$ & $(0,c,c)$\\\bottomrule
+\end{tabular}\end{center}
+The audited domain is the full box $0<c<1/3$, $0\le v<1/4$.
+For $I,M,O$, the first two leading principal minors are $1-v$ and
+$3/4-v$; the determinants are $(2-3v)/4$ for $I$ and
+$(1-2v)/2$ for $M,O$. For $W$, the matrix has eigenvalues
+$2,1/2,1/2$. All are positive, so demand is positive definite.
+
+\paragraph{Quantity competition.}
+Firm $i$ maximizes $(p_i-r_i)q_i$. Its first-order condition and solution are
+\[
+1-r_i-2M_{ii}q_i-\sum_{j\ne i}M_{ij}q_j=0,
+\qquad q^{C}=(M+\operatorname{diag}(M_{ii}))^{-1}(\mathbf1-r).
+\]
+Own profit curvature is $-2M_{ii}<0$, and the coefficient matrix is positive
+definite. The outputs in configurations $I,M,O,W$ are
+\begin{align*}
+q^C_I&=\frac{\mathbf1}{3-4v},\\
+q^C_M&=\frac{(c+3,c+3,3-6v-c(5-6v))^\top}{3(3-4v)},\\
+q^C_O&=\frac{(3-4c,3-4c,3+2c-6v)^\top}{3(3-4v)},\\
+q^C_W&=\frac{(3+2c,3-4c,3-4c)^\top}{9}.
+\end{align*}
+All outputs are positive: the potentially binding $q^C_M$ numerator exceeds
+$4/3-4v>0$, its value at $c=1/3$; the other bounds are immediate.
+Equilibrium operating profit is $M_{ii}(q_i^C)^2$.
+
+\paragraph{Price competition.}
+Direct demand is $q=D_G(\mathbf1-p)$ with $D_G=M_G^{-1}$, not the
+canonical unit-demand formula. Maximizing $(p_i-r_i)q_i$ yields
+\[
+q_i-D_{ii}(p_i-r_i)=0,\qquad
+p^B=(D+\operatorname{diag}(D_{ii}))^{-1}
+ [D\mathbf1+\operatorname{diag}(D_{ii})r].
+\]
+Own profit curvature is $-2D_{ii}<0$. Positive definiteness gives a unique
+solution of these interior price conditions. Write $h=8v^2-16v+7$,
+$\ell=(1-2v)h$, $a=3-4v$, and
+\begin{align*}
+b_M&=7-12v+c(3-4v),& b_C&=7-12v+c(16v-10),\\
+b_B&=16v^2-24v+7-c(16v^2-32v+13),\\
+b_D&=16v^2-24v+7+c(6-8v).
+\end{align*}
+The resulting quantities are
+\begin{align*}
+q_I^B&=\frac{a\mathbf1}{4(1-v)(2-3v)},&
+q_W^B&=\frac{3(7+6c,7-10c,7-10c)^\top}{56},\\
+q_M^B&=\frac{a(b_M,b_M,b_B)^\top}{8\ell},&
+q_O^B&=\frac{a(b_C,b_C,b_D)^\top}{8\ell}.
+\end{align*}
+Here $h\ge h(1/4)=7/2>0$, so every displayed denominator is positive.
+The lower bound for $b_B$ at $c=1/3$ is
+$\tfrac83(4v-1)(v-1)>0$; $b_C>2$, $b_D>2$, and $b_M>4$.
+All quantities are therefore interior on the stated box. Operating profit is
+$(q_i^B)^2/D_{ii}$, obtained from the price first-order condition.
+
+\paragraph{Welfare targets and strict signs.}
+For each mode $X\in\{C,B\}$, obtain $P^X$ from firm 1 in $I$,
+$A^X,B^X$ from firms 1 and 3 in $M$, $C^X,D^X$ from firms 1 and 3
+in $O$, and $S^X$ from firm 2 in $W$. Let $K_I^X,K_M^X$ be the
+corresponding quadratic consumer surpluses. National welfare then gives
+\begin{align*}
+\Phi^X&=K_M^X+2A^X+C^X-K_I^X-3P^X,\\
+\mathscr E^X&=K_M^X-K_I^X+2(A^X-P^X),&
+\mathscr D^X&=P^X-C^X.
+\end{align*}
+In quantity competition the two sign numerators are explicitly
+\begin{align*}
+N_C&=2(18v^2-44v+27)c^2-12(6v^2-10v+5)c+9v(4v-3),\\
+E_C&=2(18v^2-28v+11)c^2-12(6v^2-6v+1)c+9v(4v-3),
+\end{align*}
+with $(\Phi^C,\mathscr E^C)=(N_C,E_C)/[18(3-4v)^2]$ and
+$\mathscr D^C=8c(3-2c)(1-v)/[9(3-4v)^2]>0$.
+
+For price competition define the strictly positive denominator
+$D_+=(1-v)^2(1-2v)(2-3v)h^2$ and the polynomial targets
+\[
+Q_\Phi=\frac{64D_+\Phi^B}{4v-3},\qquad
+Q_E=\frac{64D_+\mathscr E^B}{4v-3},\qquad
+Q_D=\frac{32D_+\mathscr D^B}{3-4v}.
+\]
+These definitions, together with the explicit equilibrium and profit formulas,
+identify the polynomials without printing their long expansions. Apply the
+Bernstein conversion above with $(c,v)=(x/3,y/4)$. Exact certificates are
+\begin{center}\small
+\begin{tabular}{@{}llll@{}}\toprule
+Polynomial & Degree $(n,m)$ & Zero indices & Minimum positive $b_{ij}$\\\midrule
+$-N_C$ & $(2,2)$ & $(0,0)$ & $27/8$\\
+$-E_C$ & $(2,2)$ & $(0,0)$ & $14/9$\\
+$Q_\Phi$ & $(2,7)$ & $(0,0)$ & $51/8$\\
+$Q_E$ & $(2,7)$ & $(0,0),(2,7)$ & $11/6$\\
+$Q_D$ & $(2,5)$ & $(0,0)$ & $1$\\\bottomrule
+\end{tabular}\end{center}
+Every unlisted coefficient is positive. For $0<x<1$, $0<y<1$ the
+positive weights prove strict positivity; at $y=0$ the positive coefficients
+with $i>0,j=0$ do so. The corner $(x,y)=(1,1)$ is outside the audited
+domain, and equality at $(0,0)$ does not weaken any claim with $c>0$.
+Since $4v-3<0$, the signs are
+$\Phi^C,\Phi^B,\mathscr E^C,\mathscr E^B<0$ and
+$\mathscr D^C,\mathscr D^B>0$ throughout the claimed box.
+
+For full-cost-relief outsider adoption the member market becomes $I$ but the
+outsider market remains $O$, giving the bridge
+\[
+W_M^{SU,O,X}-W^{IS,X}=-\mathscr D^X<0,\qquad
+\Delta(W^{IS,X}-W_M^{SU,X})=\mathscr E^X<0.
+\]
+The member prefers IS both before and after adoption; adoption weakens its
+relative IS incentive. With $T_A^X=P^X-B^X$, $T_U^X=A^X-C^X$ and
+$T_W^X=A^X-S^X$, exact substitution at $(c,v)=(1/10,6/25)$ gives
+\[
+\max\{T_A^X,T_U^X,T_W^X\}<1/5<2T_A^X
+\quad(X=C,B).
+\]
+The same two reverse/$SW$ deviation cases as above show that $F=1/5$
+selects outsider-only adoption. Thus the political failure is compatible
+with privately optimal adaptation. It occurs under both competition modes
+at the same demand primitives, so it cannot be attributed to Bertrand alone.
+No claim is made for other $\gamma$, network rules, or residual-cost
+coalition games.
+
+\paragraph{Verification artifacts.}
+The original R4/R5 checks are retained in the replication package.
+\path{code/revision/check_jict_short_independent.py} separately reconstructs
+the matrix equilibria, the S1 triangular-domain certificate, the displayed
+Bernstein certificates, and every firm action at the exact witnesses. Its
+optional JSON output includes all rational coefficients and a reconstruction
+of each polynomial from the Bernstein basis. Witness calculations certify
+existence at those primitives; the sign certificates certify entire domains.
+Neither a numerical grid nor a Lean statement is used to certify these
+alternative-demand equilibria.
+
+\subsection{Blocking-rule boundary}
+At high $F$, a switch from $SU_{12}$ to $SU_{13}$ gives
+$W_1^{13,N}=W_1^{12,N}$ and $W_3^{13,N}>W_3^{12,N}$.
+It is a weak/Pareto block but not a strict block. The Lean theorem
+\path{FV5_indifferenceSeparatesBlockingRules} verifies this logical predicate
+distinction, conditional on the payoff comparisons; it does not derive them.
+For $m_1=m_2=1$, $m_3=1-\delta$,
+\[
+W_1^{12,N}-W_1^{13,N}=\delta(A-C)>0.
+\]
+In the intermediate full-bypass continuation the IS gains are
+$m_o(P-C)>0$ for a member and $m_oJ+F>0$ for the outsider, where
+$J=K_I+P-K_O-D$. Appendix G enumerates the induced partitions and
+the exact asymmetric witness ranges. These statements concern $d=0$;
+the positive-$d$ government-ranking result is not an incomplete-adaptation
+coalition-stability theorem.

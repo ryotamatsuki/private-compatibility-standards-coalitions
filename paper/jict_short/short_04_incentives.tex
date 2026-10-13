@@ -67,8 +67,8 @@ After outsider adoption, all three firms use the bloc standard in a member marke
 \end{equation}
 The corresponding member-firm profit, outsider profit, and consumer surplus are
 \begin{align}
-    A_R(d)&=\frac{(1+d)^2}{16(1-v)},\
-    B_R(d)&=\frac{(1-3d)^2}{16(1-v)},\
+A_R(d)&=\frac{(1+d)^2}{16(1-v)},&
+B_R(d)&=\frac{(1-3d)^2}{16(1-v)},\nonumber\\
     K_R(d)&=\frac{(3-d)^2}{32(1-v)^2}.
     \label{eq:partial-erosion-blocks}
 \end{align}
@@ -100,7 +100,12 @@ where
     }
     \label{eq:residual-rent}
 \end{equation}
-The term $R(d,v)$ is not imposed as an erosion parameter. It is the equilibrium residual member-market rent implied by incomplete private adaptation.
+The residual rent combines lower home consumer surplus with higher domestic operating profit relative to IS:
+\[
+R(d,v)=\underbrace{-\frac{d(6-d)}{32(1-v)^2}}_{K_R-K_I}
+       +\underbrace{\frac{d(2+d)}{8(1-v)}}_{2(A_R-P)}.
+\]
+The outsider's remaining cost protects member firms in both member markets. Its removal erodes that protection while leaving their outsider-market disadvantage $\mathscr D$ unchanged. Thus $R$ is an equilibrium welfare component, not an imposed erosion parameter.
 
 On $0\leq v<1/4$ and $d\geq0$,
 \begin{equation}
@@ -127,7 +132,7 @@ Suppose $\mathscr E>\mathscr D>0$. Then private outsider adaptation with residua
     \item if $\mathscr D<R(d,v)<\mathscr E$, the relative incentive for IS increases, but SU remains preferred;
     \item if $R(d,v)>\mathscr E$, private adaptation weakens the relative incentive for IS.
 \end{enumerate}
-The equalities $R(d,v)=\mathscr D$ and $R(d,v)=\mathscr E$ are indifference boundaries.
+At $R(d,v)=\mathscr D$, the member is indifferent between SU and IS after adoption. At $R(d,v)=\mathscr E$, adoption leaves its relative IS incentive unchanged.
 \end{proposition}
 
 \begin{proof}
@@ -158,13 +163,13 @@ Let $d_D=d_{\mathscr D}$ and $d_E=d_{\mathscr E}$. Under \eqref{eq:initial-prefe
 \]
 Thus the success, intermediate, and failure regions can equivalently be read from the position of $d$ relative to $d_D$ and $d_E$, truncated to the economically admissible interval $0\leq d\leq c$.
 
-\input{table_residual_rent_regions}
+Table~\ref{tab:residual-rent-regions} summarizes the regions and their boundaries.
 
 Figure~\ref{fig:selective-erosion} illustrates this logic. It is a numerical visualization of the analytical thresholds, not a proof.
-\begin{figure}[t]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=\linewidth]{figure_02_selective_erosion.pdf}
-    \caption{Residual rent and government incentives. The increasing function $R(d,v)$ is compared with the two certified payoff thresholds $\mathscr D$ and $\mathscr E$. The three regions correspond to ranking reversal, incentive strengthening without reversal, and incentive weakening. The parameterization $(c,v)=(0.073,0.225)$ is illustrative. For $d<d_{\mathscr D}$, the government ranking reverses toward $IS$; for $d_{\mathscr D}<d<d_{\mathscr E}$, the $IS$ incentive strengthens without reversal; for $d>d_{\mathscr E}$, the incentive weakens. These thresholds are analytical in Proposition~\ref{thm:selective-erosion}.}
+    \includegraphics[width=\linewidth]{Fig1.pdf}
+    \caption{Residual rent and government incentives. The solid curve $R(d,v)$ is compared with the dashed threshold $\mathscr D$ and dotted threshold $\mathscr E$; vertical lines mark $d_{\mathscr D}$ and $d_{\mathscr E}$. At $(c,v)=(0.073,0.225)$, the three regions show ranking reversal, incentive strengthening without reversal, and incentive weakening. This is a numerical illustration of Proposition~\ref{thm:selective-erosion}, not an adoption-equilibrium certificate}
     \label{fig:selective-erosion}
 \end{figure}
 
