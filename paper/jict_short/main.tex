@@ -1,5 +1,8 @@
 \documentclass[review,authoryear,nopreprintline]{elsarticle}
 \input{preamble}
+\usepackage{float}
+\usepackage[labelfont=bf,labelsep=space]{caption}
+\renewcommand{\figurename}{Fig.}
 \providecommand{\DOIprefix}{}
 \providecommand{\doi}[1]{\url{https://doi.org/#1}}
 \begin{document}
@@ -30,8 +33,9 @@ manuscript. Exact symbolic checks, independent Cournot re-derivations, and
 formal verification of selected logical claims are documented in the
 anonymous replication package. No empirical data are used.
 
-\section*{Online Supplement}
-The anonymous Online Supplement provides the complete original Cournot derivations, all firm-stage deviation checks, full coalition-stability comparisons, and formal sign and portability certificates (Appendices A--G). Appendix G provides an explicit five-partition deviation and payoff ledger. The short presentation retains the principal assumptions, results, and essential proof bridges; it does not alter the full research manuscript.
+\section*{Online Supplement (Online Resource 1)}
+The anonymous Online Resource 1 provides Cournot derivations, firm-stage deviation checks, coalition-stability comparisons, and exact sign certificates (Appendices A--G). Appendix E identifies the alternative equilibria and their polynomial sign proofs; Appendix G supplies the five-partition deviation ledger. The replication package includes the R2--R9 checks, independent matrix reconstruction, and targeted Lean sources. The short presentation preserves the certified results and the full research manuscript.
 \bibliographystyle{elsarticle-harv}
 \bibliography{references}
+\input{table_residual_rent_regions}
 \end{document}

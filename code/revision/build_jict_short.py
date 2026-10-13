@@ -2,7 +2,8 @@
 
 No edits to the canonical paper/sections/*.tex or original JICT package.
 Requires existing generated figure/table files from `make figures tables`.
-Can generate and compile the unchanged JICT Online Supplement automatically.
+Preserves original Appendices A--F; the short supplement substitutes a proof-
+transparent Appendix E and retains the additional coalition ledger G.
 """
 from __future__ import annotations
 
@@ -31,6 +32,43 @@ def pages(path: Path) -> int:
     return int(re.search(r"(?m)^Pages:\s*(\d+)", info).group(1))
 
 
+def short_replication() -> None:
+    """Extend the historical anonymous archive without changing its builder."""
+    destination = OUT / "jict_short_replication_package_anonymous.zip"
+    additions = [(p, p.relative_to(ROOT).as_posix())
+                 for p in sorted((ROOT / "code/revision").glob("check*.py"))]
+    additions += [(ROOT / "formal/r7" / name, "formal/r7/" + name)
+                  for name in ("R7Formal.lean", "lakefile.toml", "lean-toolchain")]
+    additions += [(OUT / name, name) for name in (
+        "jict_short_source.zip", "jict_short_online_supplement_source.zip")]
+    certificate = ROOT / "build/final-polish/independent-certificates.json"
+    run(sys.executable, str(ROOT / "code/revision/check_jict_short_independent.py"),
+        "--json", str(certificate), cwd=ROOT)
+    additions.append((certificate, "independent-certificates.json"))
+    with zipfile.ZipFile(OUT / "replication_package_anonymous.zip") as original:
+        with zipfile.ZipFile(destination, "w", zipfile.ZIP_DEFLATED) as z:
+            for item in original.infolist():
+                z.writestr(item, original.read(item.filename))
+            for source, name in additions:
+                z.write(source, name)
+            z.writestr("SHORT_EDITION_REPRODUCTION.md", """# Short-edition verification
+
+Install Python requirements and a LaTeX/Poppler toolchain (including elsarticle).
+The original paper and its original replication Makefile are preserved.
+Run the R2--R9 scripts under code/revision in stage order; each fails closed.
+Run python code/revision/check_jict_short_independent.py --json certificates.json.
+Extract each jict_short_*source.zip into a separate empty directory and run
+latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex there (use -bibtex-
+for the supplement). These flat sources contain the actual short main/SI.
+The JSON records exact Bernstein coefficients, not numerical grid evidence.
+For targeted formal verification: cd formal/r7, lake update, lake exe cache get,
+then lake env lean R7Formal.lean. Use the pinned Lean/mathlib versions.
+Lean covers FV1--FV5 logical/algebraic statements, not demand equilibria,
+the entire adoption game, Appendix E sign certificates or the full coalition game.
+The matrix reconstruction imports no production verification module.
+""")
+
+
 def build(require_supplement: bool = True) -> None:
     # The short edition has an independently regenerated, legible figure.
     run(sys.executable, str(ROOT / "code/revision/make_jict_short_figure.py"), cwd=ROOT)
@@ -41,12 +79,23 @@ def build(require_supplement: bool = True) -> None:
     inputs.update({"preamble.tex": ROOT / "paper/preamble.tex",
                    "notation.tex": ROOT / "paper/notation.tex",
                    "references.bib": ROOT / "paper/references.bib",
-                   "figure_02_selective_erosion.pdf": ROOT / "paper/jict_short/generated/figure_02_selective_erosion.pdf",
+                   "Fig1.pdf": ROOT / "paper/jict_short/generated/figure_02_selective_erosion.pdf",
                    "table_residual_rent_regions.tex": ROOT / "paper/tables/generated/table_residual_rent_regions.tex"})
     for name, src in inputs.items():
         if not src.is_file():
             raise SystemExit(f"SHORT JICT FAIL: missing {src}; run 'make figures tables' first")
         shutil.copy2(src, FLAT / name)
+    # Journal artwork naming and preferred vector format; no numerical change.
+    run("pdftops", "-eps", str(FLAT / "Fig1.pdf"), str(FLAT / "Fig1.eps"))
+    shutil.copy2(FLAT / "Fig1.eps", OUT / "Fig1.eps")
+    short_table = FLAT / "table_residual_rent_regions.tex"
+    table = short_table.read_text(encoding="utf-8").replace(r"\begin{table}[htbp]", r"\begin{table}[H]")
+    old_boundary = r"$R(d,v)=\mathscr D$ or $R(d,v)=\mathscr E$ & Boundary case & Indifference in the corresponding comparison \\"
+    new_boundary = (r"$R(d,v)=\mathscr D$ & SU and IS indifferent & Strengthens; no strict ranking \\" + "\n" +
+                    r"$R(d,v)=\mathscr E$ & SU strictly preferred & Unchanged \\")
+    if old_boundary not in table:
+        raise SystemExit("SHORT JICT FAIL: expected boundary table row missing")
+    short_table.write_text(table.replace(old_boundary,new_boundary),encoding="utf-8")
     # Springer JICT permits bibliography entries for published/accepted work.
     # Preserve the canonical R9 bibliography untouched; omit unverified
     # unpublished techreports ONLY in this short-reviewer source.
@@ -72,6 +121,7 @@ def build(require_supplement: bool = True) -> None:
     if not 17 <= n <= 19:
         raise SystemExit(f"SHORT JICT FAIL: reviewer manuscript {n} pages, required 17--19")
     txt = subprocess.run(["pdftotext", str(pdf), "-"], text=True, capture_output=True, check=True).stdout
+    normalized_text = re.sub(r"\s+", " ", txt)
     for word in ("Ryota Matsuki", "ryota.matsuki@gmail.com", "github.com/ryotamatsuki"):
         if word.lower() in txt.lower():
             raise SystemExit(f"SHORT JICT FAIL: author information in anonymous manuscript: {word}")
@@ -79,7 +129,7 @@ def build(require_supplement: bool = True) -> None:
         raise SystemExit("SHORT JICT FAIL: non-JICT publisher footer")
     if "ChatGPT (OpenAI)" not in txt or "AI-assisted methods" not in txt:
         raise SystemExit("SHORT JICT FAIL: substantive AI research methods disclosure missing")
-    if "Maggi and Mr" not in txt or "Working Paper 33318" not in txt:
+    if "Maggi and Mr" not in normalized_text or "Working Paper 33318" not in normalized_text:
         raise SystemExit("SHORT JICT FAIL: working-paper discussion dropped")
     bbl = (FLAT / "main.bbl").read_text(encoding="utf-8")
     if "maggiMrazova2024" in bbl or "economidesSkrzypacz2003" in bbl:
@@ -101,7 +151,17 @@ def build(require_supplement: bool = True) -> None:
         short_si = OUT / "jict_short_online_supplement_source"
         if short_si.exists():
             shutil.rmtree(short_si)
-        shutil.copytree(canonical_si, short_si)
+        # Never inherit auxiliary state or latexmk dependency caches from
+        # another source tree; the short supplement is always a fresh build.
+        shutil.copytree(canonical_si, short_si, ignore=shutil.ignore_patterns(
+            "*.aux", "*.log", "*.out", "*.fls", "*.fdb_latexmk", "*.pdf",
+            "*.bbl", "*.blg", "*.synctex.gz"))
+        # A short-edition-only proof replacement: the original Appendix E
+        # and certified R4/R5 verification scripts remain byte-identical.
+        robustness = SOURCE / "short_supplement_robustness.tex"
+        if not robustness.is_file():
+            raise SystemExit("SHORT JICT FAIL: missing reviewer-verifiable robustness proofs")
+        shutil.copy2(robustness, short_si / "app_e_robustness.tex")
         ledger = SOURCE / "short_supplement_blocking.tex"
         if not ledger.is_file():
             raise SystemExit("SHORT JICT FAIL: missing five-partition blocking ledger")
@@ -133,6 +193,17 @@ def build(require_supplement: bool = True) -> None:
         }
         for tex in short_si.glob("*.tex"):
             body = tex.read_text(encoding="utf-8")
+            # Break long literal code paths without modifying their targets.
+            body = re.sub(r"\\texttt\{(code/[^}]+)\}",
+                          lambda m: r"\path{" + m.group(1).replace(r"\_", "_") + "}", body)
+            if tex.name == "preamble.tex":
+                body += "\n\\setlength{\\emergencystretch}{1em}\n"
+            if tex.name == "app_b_welfare_algebra.tex":
+                # The same N_MS polynomial, split into readable display rows.
+                needle = "-60c^2\n+108cv^2"
+                if needle not in body:
+                    raise SystemExit("SHORT JICT FAIL: expected N_MS display missing")
+                body = body.replace(needle, "-60c^2\\notag\\\\\n&\\quad+108cv^2", 1)
             for old, new in pointer_updates.items():
                 body = body.replace(old, new)
             # Repair prose malformed by inherited full-to-short substitutions.
@@ -190,6 +261,9 @@ def build(require_supplement: bool = True) -> None:
             "-bibtex-", stem + ".tex", cwd=ROOT / "submission")
         shutil.copy2(ROOT / "submission" / (stem + ".pdf"), OUT / dest)
     run(sys.executable, str(ROOT / "code/make_submission_package.py"), cwd=ROOT)
+    if require_supplement:
+        short_replication()
+        shutil.copy2(OUT / "jict_short_online_supplement.pdf", OUT / "ESM_1.pdf")
     manifest = """# JICT short-manuscript upload checklist
 
 Generated from the 17--19-page short-edition branch. Upload ONLY these short
@@ -202,7 +276,11 @@ submission files remain archived for rollback.
 4. ANONYMOUS ONLINE SUPPLEMENT SOURCE: jict_short_online_supplement_source.zip
 5. IDENTIFIED TITLE PAGE / DECLARATIONS: jict_short_identified_title_page.pdf
 6. IDENTIFIED COVER LETTER: jict_short_cover_letter.pdf
-7. ANONYMOUS CANONICAL PROOF REPLICATION: replication_package_anonymous.zip
+7. ANONYMOUS SHORT-EDITION REPLICATION: jict_short_replication_package_anonymous.zip
+   (includes R2--R9 checks, targeted Lean sources, exact sign certificates,
+   and the actual short main/supplement source ZIPs)
+8. NUMBERED SI ALIAS: ESM_1.pdf (Online Resource 1; same supplement bytes)
+9. SEPARATE VECTOR ARTWORK: Fig1.eps (same numerical figure as Fig1.pdf)
 
 Source identity, declarations, funding, conflicts, final portal categories,
 author email, originality and simultaneous-submission statements REQUIRE the
@@ -210,7 +288,7 @@ author's explicit validation in the live journal portal. All main/SI files
 must be reviewed as anonymous; author identity belongs only on named files.
 """
     (OUT / "jict_short_upload_manifest.md").write_text(manifest, encoding="utf-8")
-    print(f"JICT SHORT PACKAGE: PASS (reviewer={n} pages, anonymous; original R9 proofs + Appendix G; complete identified/anonymous upload manifest)")
+    print(f"JICT SHORT PACKAGE: PASS (reviewer={n} pages, anonymous; short Appendix E proof bridges + Appendix G; complete upload manifest)")
 
 
 if __name__ == "__main__":

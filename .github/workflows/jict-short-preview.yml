@@ -6,12 +6,14 @@ on:
       - 'paper/jict_short/**'
       - 'code/revision/build_jict_short.py'
       - 'code/revision/make_jict_short_figure.py'
+      - 'code/revision/check_jict_short_independent.py'
       - '.github/workflows/jict-short-preview.yml'
   push:
     paths:
       - 'paper/jict_short/**'
       - 'code/revision/build_jict_short.py'
       - 'code/revision/make_jict_short_figure.py'
+      - 'code/revision/check_jict_short_independent.py'
       - '.github/workflows/jict-short-preview.yml'
 
 permissions:
@@ -33,7 +35,7 @@ jobs:
           sudo apt-get install -y --no-install-recommends latexmk texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-publishers texlive-fonts-recommended poppler-utils unzip
       - name: Generate reproducible figures and tables
         run: make figures tables
-      - name: Compile 17--19-page manuscript and Appendix G coalition-proof supplement
+      - name: Compile manuscript, Appendix E proof bridges and Appendix G ledger
         run: python code/revision/build_jict_short.py
       - name: Clean-room short-source compilation
         run: |
@@ -54,6 +56,16 @@ jobs:
           pdftotext "${RUNNER_TEMP}/short-supplement-check/main.pdf" - | grep -F "Explicit Coalition-Deviation and Payoff Ledger"
           ! pdftotext "${RUNNER_TEMP}/short-supplement-check/main.pdf" - | grep -Eiq 'Ryota Matsuki|ryota.matsuki@gmail.com|github.com/ryotamatsuki'
           echo "SHORT SUPPLEMENT CLEAN ROOM: PASS"
+      - name: Independent reconstruction from the actual replication ZIP
+        run: |
+          mkdir -p "${RUNNER_TEMP}/short-replication-check"
+          unzip -q submission/generated/jict_short_replication_package_anonymous.zip -d "${RUNNER_TEMP}/short-replication-check"
+          cd "${RUNNER_TEMP}/short-replication-check"
+          python code/revision/check_jict_short_independent.py --json reproduced-certificates.json
+          diff independent-certificates.json reproduced-certificates.json
+          test -f formal/r7/R7Formal.lean
+          test -f code/revision/check_r4_network_role.py
+          test -f code/revision/check_r5_competition_portability.py
       - uses: actions/upload-artifact@v4
         with:
           name: jict-short-preview-${{ github.sha }}
@@ -66,4 +78,8 @@ jobs:
             submission/generated/jict_short_cover_letter.pdf
             submission/generated/jict_short_upload_manifest.md
             submission/generated/replication_package_anonymous.zip
+            submission/generated/jict_short_replication_package_anonymous.zip
+            submission/generated/ESM_1.pdf
+            submission/generated/Fig1.eps
+            build/final-polish/independent-certificates.json
           retention-days: 14
