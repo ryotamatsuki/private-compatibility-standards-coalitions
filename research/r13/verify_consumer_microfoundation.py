@@ -18,7 +18,7 @@ go=v*a*Q
 g=(g0,g0,go)
 p=tuple(D(Q)+g_i for g_i in g)
 CS=s.Integral(D(z),(z,0,Q))-Q*D(Q)
-assert s.simplify(s.diff(CS,Q))==0 if False else True  # Q is expression, checked coordinatewise
+# Q is an expression, so differentiate with respect to each quantity.
 for var in (*q,a):
     assert s.simplify(s.diff(CS,var)
            -sum(q[i]*(s.diff(g[i],var)-s.diff(p[i],var))
