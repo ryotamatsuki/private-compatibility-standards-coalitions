@@ -44,7 +44,8 @@ jobs:
                  'code/revision/build_jict_short.py']
           for path in paths:
               assert Path(path).read_bytes()==subprocess.check_output(['git','show',f'{base}:{path}']),path
-          assert current.count(b'\\\\begin{proposition}')==original.count(b'\\\\begin{proposition}')+1
+          prop = bytes([92]) + b'begin{proposition}'
+          assert current.count(prop)==original.count(prop)+1
           print('R9 PREFIX AND 10 ORIGINAL SOURCE FILES: PRESERVED')
           PY
       - run: python -m pip install sympy==1.13.3
