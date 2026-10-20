@@ -51,3 +51,7 @@ jobs:
       - run: python -m pip install sympy==1.13.3
       - name: General nonintegrable demand and R9 nesting identity audit
         run: python research/r12/verify_welfare_mapping.py
+      - name: Exhaustive SU and SW strict adoption dominance in original R9
+        run: python research/r12/verify_r9_generic_adoption_dominance.py
+      - name: Non-monotone welfare path and exact integrated reversal bound
+        run: python research/r12/verify_r9_nonmonotone_incidence.py
