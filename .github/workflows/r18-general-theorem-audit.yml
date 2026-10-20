@@ -1,0 +1,63 @@
+name: R18 Primitive Mechanism Independent Check
+on:
+  push:
+    branches: ['research/r18-primitive-mechanism-theorem']
+    paths:
+      - 'research/r18/**'
+      - '.github/workflows/r18-general-theorem-audit.yml'
+  pull_request:
+    paths:
+      - 'research/r18/**'
+      - '.github/workflows/r18-general-theorem-audit.yml'
+permissions:
+  contents: read
+jobs:
+  rational-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install sympy==1.13.3
+      - name: Prohibit changes to inherited research and paper files
+        run: |
+          git diff --exit-code 786bbf43444d735b8dafabd41ceb1d05ac878525 HEAD -- paper docs code
+          git diff --name-only 786bbf43444d735b8dafabd41ceb1d05ac878525 HEAD | while IFS= read -r file; do
+            case "$file" in research/r18/*|.github/workflows/r18-general-theorem-audit.yml) ;; *) echo "Protected: $file"; exit 1 ;; esac
+          done
+      - name: Independently derive full investment game and cost/network envelopes
+        run: python research/r18/verify_r18.py | tee research/r18/r18-ci-output.json
+  inherited-r9-r15-r16-replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install reproducible symbolic and numerical stack
+        run: python -m pip install sympy==1.13.3 numpy==2.1.3 scipy==1.14.1
+      - name: R10 correct fulfilled-expectations welfare and R13 buyers
+        run: |
+          python research/r15/audit_r10_welfare_convention.py
+          python research/r13/verify_consumer_microfoundation.py
+      - name: R9 strict investment and nonmonotone integrated incidence
+        run: |
+          python research/r12/verify_r9_generic_adoption_dominance.py
+          python research/r12/verify_r9_nonmonotone_incidence.py
+      - name: R15 nonlinear Cournot all-stage equilibrium replay
+        run: python research/r15/verify_infinite_dimensional_neighborhood.py
+      - name: R16 all 8 SU and 64 SW Bertrand stage portfolios
+        run: python research/r16/verify_bertrand_r13_full_game.py
+      - name: R16 global price deviations including boundary exit
+        run: python research/r16/verify_global_bertrand_price_deviations.py
+      - name: R16 rule out inactive seller equilibria by entry
+        run: python research/r16/verify_bertrand_no_boundary_equilibria.py
+      - name: R16 exact integrated welfare bound
+        run: python research/r16/verify_integrated_bertrand_incidence.py
+      - name: R16 nonlinear differentiated Bertrand empirical reproduction
+        run: python research/r16/verify_nonlinear_bertrand_consumer.py

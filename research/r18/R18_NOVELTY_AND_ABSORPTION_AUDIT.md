@@ -1,0 +1,32 @@
+# R18 — Prior-art absorption (adversarial, source-graded; 2026-10-20)
+
+## Scope and evidence method
+Inherit R0, R2, R7, R9 and R17 historical ledgers; their past priority conclusions are not automatically current or dispositive. [P] means R17 actually inspected primary full text and propositions; [A] means publisher/author abstract or catalog only; [L] denotes the inherited internal ledger; [U] latest full theorem text unavailable. Gandal–Shy (2001) [P], Maggi–Mrázová 2024 Yale working paper [P] (2026 revised [U]), Takarada et al. (2020) [P], Buccella–Fanti–Gori 2023 [P] (2026 [A/U]), Walz–Woeckener 2003 [A]. A publisher landing page or abstract must never be represented as proof that no overlapping theorem exists.
+
+## Absorb every easy claim
+- Stand-alone binary Nash investment thresholds and strict domination: finite game theory [directly absorbed].
+- Fixed setup cost economies of scope and market-count adoption thresholds: Gorman (1985), Cho–McCardle (2009), Matutes–Régibeau (1989), van Wegberg (2004), standards export-compliance literature [absorbed/partly].
+- One-way compatibility in network competition: Manenti–Somma (2008), Buccella–Fanti–Gori (2023,2026), Farrell–Simcoe (2012) [high/direct].
+- Public regional standard union, differentiated prices, network effects, national welfare: **Gandal–Shy (2001)** Props. 1–5 [direct]: already includes three-country standards union, government recognition and price competition; R18 cannot claim discovery of that setup.
+- Regional versus multilateral welfare, coalition blocking: **Takarada–Kawabata–Yanase–Kurata (2020)** [direct institutional broad area], but their underlying negative consumption-externality standard differs from the privately paid cross-support interface.
+- Strategic national standard setting followed by **firms' fixed-cost adaptation after government policy**: **Maggi–Mrázová (2024)** [direct concept], props 1–2,6–7 and Remark 5 from R17's inspected 2024 text. This timing is definitely NOT R18's novelty.
+- Government strategic trade policy and endogenous compatibility: **Walz–Woeckener (2003), DP3815** [A]; particularly high risk because it employs 3 countries with installed network bases and subsidy; recent additional related **DP3816** (same authors, separate discussion paper) considers regional standards body, compatibility and third-market competition. Its full proof remains [U]. https://cepr.org/publications/dp3816
+- General microfounded surplus incidence and pass-through: **Weyl–Fabinger (2013)** and Adachi–Fabinger (2022) [direct method overlap]. Atomistic fulfilled-expectations networks Katz–Shapiro (1985); regular game results Rosen (1965) [direct analytical tools].
+- Regulatory adoption, trade/export standard harmonization: Schmidt–Steingress (2022), Klimenko (2009) [A]; Farrell–Saloner (1992), van Wegberg (2004) [general overlap].
+
+## Closest theorem-level contrasts
+**Gandal & Shy 2001 [P]:** recognizes coalition exclusion and differentiated price competition and policy welfare. R18 adds an exogenously already-selected governmental SU followed by *endogenous outsider-only fixed-fee private support* and asks about change to the **same member's SU-v-IS counterfactual preference**, NOT just the initial decision to form a union. Their inspected public recognition propositions do not directly state that exact three-stage contrast; a combination with another paper could still absorb it. DOI https://doi.org/10.1016/S0022-1996(00)00067-2
+
+**Maggi & Mrázová 2024 [P] / 2026 revised [A/U]:** firm adaptation after public standards with a fixed per-standard cost is already there. R18 cannot claim timing, network, fixed costs or agreements independently new. Candidate difference: group-level incompatibility protection in member markets is privately eroded, leaving the home member firm's *outbound* access handicap intact, and cost/network contrast c(b-e)-(H+J) yields the ranking result. Whether a revised 2026 proposition entails this through correspondence is unresolved. 2024 primary: https://economics.yale.edu/sites/default/files/2024-12/20241218-RegCoop.pdf
+
+**Buccella–Fanti–Gori 2026 [A/U]:** publisher abstract directly occupies costly one-way compatibility with both Cournot/Bertrand. Cannot claim generic private compatibility asymmetry, fixed-fee staging or price/quantity portability new. Government institutional policy preference difference not described in the abstract, but theorem-level absence is unverified. DOI https://doi.org/10.1080/10438599.2025.2478583
+
+**Takarada et al. 2020 [P]:** regional/multilateral standards, welfare and blocking are broadly old. Their quality/regulatory stringency and cross-border negative consumption externalities imply distinct microeconomics. R18 does not generalize their theorem or revise their outcome. https://doi.org/10.1111/jpet.12425
+
+**Walz & Woeckener DP3815/DP3816 [A/U]:** proximity is more serious than simply “network effects with a government.” DP3816 invokes a regional standardization body and third market; need full proofs for any priority claim. https://cepr.org/publications/dp3815 ; https://cepr.org/publications/dp3816
+
+## Novel candidate after maximal absorption
+The credible residual is **one strategically purchased interface simultaneously (a) gives outsider access to the regional bloc, (b) removes part of member-market protection, but (c) leaves the member's outbound handicap in the nonmember market intact, so the same member's institutional counterfactual preference reverses**. R18's additional positive content is *two non-circular separate lower/upper derivative-envelope certificates* (one before, one after investment) satisfied in two conduct modes. The calculus envelopes as such may be absorbed by general tax incidence and regional trade comparisons. They are NOT proven to be new mathematics. The precise institutional interaction may be economically publishable, but **not priority certified**.
+
+## Evidence/priority verdict
+R17's 2024 primary-text findings retained, 2026 inaccessible full propositions still missing. No "first in literature"; no IJIO acceptance prediction. Absorption risk HIGH, particularly Gandal–Shy + Maggi–Mrázová combination and Walz–Woeckener DP3816. Recommended article claim: a conditional cost/compatibility *two-channel* explanation and nonempty Cournot/Bertrand microfoundations, rather than invention of endogenous standards compliance or pass-through.
