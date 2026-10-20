@@ -588,6 +588,34 @@ sufficiency conditions also admit a price-competition implementation.
 No claim is made that the same numerical primitives work under
 both modes.
 
+Both the homogeneous-buyer quantity game in the
+original paper and the differentiated price game below are
+specializations of the \emph{same economic consumer principle}.
+Given a concave quasilinear gross-surplus function
+\(\mathcal U(q)\) and fulfilled expected network benefits
+\(g=G(q,s)\), an atomistic buyer sector solves
+\[
+  \max_{q\ge0}\{
+     \mathcal U(q)+g^\top q-p^\top q\},
+\]
+taking \(g\) as fixed in its optimization.  Along a regular
+interior equilibrium its first-order condition and
+\emph{consumer-optimized} surplus imply
+\begin{equation}
+ p=\nabla\mathcal U(q)+G(q,s),\qquad
+ CS=\mathcal U(q)-q^\top\nabla\mathcal U(q).
+ \label{eq:unified-buyer-platform}
+\end{equation}
+The original model is recovered \emph{exactly}
+at \(\mathcal U(q)=Q-\frac12Q^2\) with \(Q=\sum_iq_i\),
+where homogeneous buyers may be indifferent and
+firms commit quantities.  The differentiated model below
+uses a strictly concave vector-valued \(\mathcal U(q)\)
+and firms commit prices.  Regularity and market Nash
+equilibria must be shown separately under each mode;
+equation~\eqref{eq:unified-buyer-platform} alone
+imposes neither Cournot nor Bertrand.
+
 Let an optimizing buyer sector have the strictly concave
 quasi-linear gross utility
 \[
