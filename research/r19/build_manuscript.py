@@ -42,7 +42,9 @@ def main():
    (OUT/'build_log.json').write_text(json.dumps(logs,indent=2));print(r.stdout[-4000:]);raise SystemExit(r.returncode)
  log=(OUT/'R19_PROPOSED_MANUSCRIPT.log').read_text()
  assert not re.search(r'(undefined references|undefined citations|multiply defined|LaTeX Warning: (Reference|Citation).*undefined)',log,re.I)
- assert 'Overfull \\hbox' not in log
+ if 'Overfull \\hbox' in log:
+  print('\n'.join(log[max(0,m.start()-120):m.start()+500] for m in re.finditer('Overfull',log)))
+  raise AssertionError('Overfull box; inspect saved TeX log')
  (OUT/'build_log.json').write_text(json.dumps(logs,indent=2))
  (OUT/'immutable_sources.json').write_text(json.dumps({'R9':R9,'sources':sources},indent=2))
  print('R19 proposal compile PASS; original sources snapshotted unchanged; output',OUT/'R19_PROPOSED_MANUSCRIPT.pdf')

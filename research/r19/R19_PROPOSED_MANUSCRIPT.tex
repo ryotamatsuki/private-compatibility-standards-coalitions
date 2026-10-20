@@ -10,6 +10,14 @@
 \renewcommand{\figurename}{Fig.}
 \providecommand{\DOIprefix}{}
 \providecommand{\doi}[1]{\url{https://doi.org/#1}}
+% elsarticle 3.3 has a documented stray-space box in the empty title footer.
+% This research draft uses nopreprintline; make that page style truly empty.
+% No class source, manuscript body, geometry or proof tolerance is changed.
+\makeatletter
+\def\ps@pprintTitle{%
+  \let\@oddhead\@empty\let\@evenhead\@empty
+  \let\@oddfoot\@empty\let\@evenfoot\@empty}
+\makeatother
 \newcommand{\RnineteenLevel}{2}
 \begin{document}
 \begin{frontmatter}

@@ -50,6 +50,15 @@ one overfull new paragraph; its wording was shortened and rebuilt.
 Final local build is 24 pages. All pages were rendered to contact sheets;
 the added proof pages and the first two pages were visually checked. A
 new editorial notice was kept together to avoid a page-break split.
+R19 run39414825602 passed all mathematics but initially failed the strict
+layout gate on elsarticle3.3's documented empty title-footer stray-space
+box (2.61108pt). The new research root explicitly empties that unused
+page-style footer; the overfull gate is retained without tolerance changes.
+Primary maintainer changelog confirms this class defect was fixed in3.4:
+https://www.ctan.org/ctan-ann/id/mailman.7918.1712740543.3764.ctan-ann@ctan.org .
+The exact Ubuntu3.3 package was downloaded/extracted locally without a
+system install to reproduce the runner and validate the repair;3.4c is
+also checked. This affects research-draft page style only, no old source.
 Final compile and render evidence is recorded in build/r19-manuscript,
 with undefined-reference/citation/duplicate and overfull checks failing
 closed in the builder. Generated build files are CI artifacts, not
