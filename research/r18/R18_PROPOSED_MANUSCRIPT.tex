@@ -1,0 +1,96 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{proposition}{Proposition}
+\title{Private Compatibility and Government Incentives for Standards Harmonization\\
+\large Research-only R18 proposed supplementary mechanism section}
+\date{20 October 2026}
+\begin{document}\maketitle
+\noindent\textbf{Editorial gate.} This is a separate, unsubmitted research draft. It does not edit the original JICT PR \#34, the R9 propositions, the full-bypass coalition stability theorem, or original proofs. The intended ordering of the eventual paper is the inherited Introduction, Model and product-market payoffs, Endogenous private adoption, Private adaptation and government incentives, Coalition stability and scope, followed by the candidate extension below. Page constraints deferred.
+
+\section{A conduct-neutral two-channel response bound}
+The inherited quantity-choice Cournot case uses atomistic buyers with
+\(p_i=1-Q+G_i(q,s)\), \(CS=Q^2/2\), and firms anticipating fulfilled
+network expectations. In a differentiated price-choice case a distinct
+buyer microfoundation satisfies \(p=\nabla U(q)+G(q,s)\),
+\(CS=U(q)-q^\top\nabla U(q)\), under the usual buyer-optimality
+and market-clearing restrictions. Neither buyer welfare definition may be
+changed solely to force a government ranking.
+
+For one of two symmetric formal union members, write
+\(m_B(z)\) for member-destination consumer surplus plus the two member
+firms' local profits with the outsider incompatible and at cost wedge
+\(z\); \(m_C(z)\) for the same national component with the outsider
+fully compatible; \(f_B(z)\) for the home firm's export profit in the
+outsider destination, where the two member firms have wedge \(z\);
+and \(f_C\) for its fully compatible, zero-wedge export profit.
+All these outcomes are obtained from a re-solved, specified product
+market game. Let \(H=m_C(0)-m_B(0)\), \(J=f_C-f_B(0)\),
+\(b=m_B'\), \(r=m_C'\), \(e=-f_B'\).
+Then the SU-minus-IS national gaps are
+\begin{align}
+D_0&=\int_0^c b(z)\,dz-H-J-\int_0^c e(z)\,dz,\\
+D_1&=\int_0^d r(z)\,dz-J-\int_0^c e(z)\,dz.
+\end{align}
+The export-market term is unchanged by the outsider's investment.
+
+\begin{proposition}[A conditional scope--erosion mechanism; R18-P]
+Suppose the induced consumer-optimal fulfilled-expectations market
+continuations exist and are regular and uniquely selected; or suppose
+that the following bounds hold uniformly across all admissible selections.
+Suppose outsider support yields at least \(\alpha>0\) operating-profit
+gain per each of two member destinations, while all SU members' reverse
+one-interface gains are at most \(\beta\) across rival profiles
+and all SW one-interface incremental gains are at most \(\sigma\).
+Assume \(\max\{0,\beta,\sigma\}<F<2\alpha\).
+If on \(z\in[0,c]\), \(b(z)\ge b_L\) and
+\(e_L\le e(z)\le e_U\), and on \(z\in[0,d]\),
+\(r(z)\le r_U\), then the two further inequalities
+\[
+c(b_L-e_U)>H+J,\qquad d r_U<J+c e_L
+\]
+imply unique outsider-only private SU adoption, no SW adoption,
+and \(D_0>0>D_1\). The result holds independent of
+the chosen Cournot/Bertrand first-order equations.
+\end{proposition}
+\begin{proof}
+All-profile incremental dominance makes member and SW additional
+interfaces strictly unprofitable. With members thereby inactive, one
+outsider interface covers two markets and yields at least \(2\alpha-F>0\).
+Integrating the displayed derivative envelopes gives
+\(D_0\ge c(b_L-e_U)-H-J>0\)
+and \(D_1\le dr_U-J-ce_L<0\).
+\end{proof}
+
+\noindent\textbf{Scope.} This is a \emph{response-envelope} theorem, not
+yet a complete demand-primitive theorem: the required signs and bounds
+are not proved for arbitrary consumer utility or conduct. Its finite
+investment selection is not independently novel, nor is national
+incidence accounting. The original R9 payoff blocks, residual
+\(R(d,v)\), boundary cutoffs and limited coalition-stability theorem
+remain the sharper original-model results.
+
+\section{Evidence and failure}
+At the independently recomputed original R9 witness,
+\(L_0\approx0.0011264>0\), \(U_1\approx-0.0020701<0\).
+At a distinct differentiated-price Bertrand witness
+\(L_0\approx0.0013170>0\),
+\(U_1\approx-0.0005916<0\). All eight SU and
+sixty-four SW investment profiles were checked at exact rational
+primitives. The full global Bertrand price-deviation/entry proof is
+\emph{inherited} from R16; no general nonlinear \(C^3\) price-game
+uniqueness is proved here. At \(v=0,c=1/10\), the original Cournot
+pre-investment ranking is negative, \(-47/3200\):
+reversal is not universal.
+
+\section{Research-only literature qualification}
+Gandal and Shy (2001) already analyze standards unions and price
+competition; Maggi and Mr\'azov\'a (2024, revised 2026) already analyze
+fixed-cost private response after standards choice; Buccella, Fanti
+and Gori (2026) cover costly one-way compatibility and two conducts;
+Weyl and Fabinger (2013) cover general welfare incidence.
+Missing full 2026 theorem texts prevent priority certification.
+The proposed incremental claim is restricted to
+\emph{the same government's counterfactual institution ranking following
+privately funded asymmetric bypass while outbound exclusion persists}.
+No merger into the original manuscript or journal submission is authorized.
+\end{document}
