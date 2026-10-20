@@ -1,0 +1,57 @@
+name: R12 mechanism identity and R9 freeze preservation
+on:
+  push:
+    paths:
+      - 'research/r12/**'
+      - 'paper/jict_short/short_04_incentives.tex'
+      - '.github/workflows/r12-mechanism-audit.yml'
+  pull_request:
+    paths:
+      - 'research/r12/**'
+      - 'paper/jict_short/short_04_incentives.tex'
+      - '.github/workflows/r12-mechanism-audit.yml'
+permissions:
+  contents: read
+jobs:
+  independent-math-and-preservation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify exact R9 prefix and unchanged related sources
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import subprocess
+          base='08d6e6adb1a90bdf03fa223c0961ac04620f0fa2'
+          changed='paper/jict_short/short_04_incentives.tex'
+          original=subprocess.check_output(['git','show',f'{base}:{changed}'])
+          current=Path(changed).read_bytes()
+          assert current.startswith(original) and len(current)>len(original)
+          paths=['paper/jict_short/main.tex',
+                 'paper/jict_short/short_01_introduction.tex',
+                 'paper/jict_short/short_02_model.tex',
+                 'paper/jict_short/short_03_adoption.tex',
+                 'paper/jict_short/short_05_stability_scope.tex',
+                 'paper/jict_short/short_06_discussion.tex',
+                 'paper/jict_short/short_supplement_robustness.tex',
+                 'paper/jict_short/short_supplement_blocking.tex',
+                 'paper/preamble.tex',
+                 'code/revision/build_jict_short.py']
+          for path in paths:
+              assert Path(path).read_bytes()==subprocess.check_output(['git','show',f'{base}:{path}']),path
+          prop = bytes([92]) + b'begin{proposition}'
+          assert current.count(prop)==original.count(prop)+1
+          print('R9 PREFIX AND 10 ORIGINAL SOURCE FILES: PRESERVED')
+          PY
+      - run: python -m pip install sympy==1.13.3
+      - name: General nonintegrable demand and R9 nesting identity audit
+        run: python research/r12/verify_welfare_mapping.py
+      - name: Exhaustive SU and SW strict adoption dominance in original R9
+        run: python research/r12/verify_r9_generic_adoption_dominance.py
+      - name: Non-monotone welfare path and exact integrated reversal bound
+        run: python research/r12/verify_r9_nonmonotone_incidence.py

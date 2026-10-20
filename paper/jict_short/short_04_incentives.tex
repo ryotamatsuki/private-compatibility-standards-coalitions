@@ -248,3 +248,164 @@ All inequalities are strict and all relevant expressions are continuous on the i
 \end{proof}
 
 The proposition rules out the interpretation that the government effect is an artifact of exact cost elimination. It does not establish portability across demand systems or competition modes. Section~\ref{sec:short-stability} reports the tests that limit that broader interpretation.
+
+
+\subsection{Conduct-neutral mechanism: market access and national incidence}
+\label{subsec:general-mechanism}
+The preceding propositions concern the certified Cournot environment and
+remain unchanged.  To identify which economics travels beyond that
+environment, consider the same two-member/one-outsider standards game but
+leave the product-market conduct and demand functions unspecified.  In a
+representative member destination, let \(q=(q_1,q_2,q_O)\),
+\(p(q,a)\) be differentiable inverse prices, and \(S(q,a)\) be its
+welfare-consistent consumer-surplus function.  We do \emph{not} require
+\(p=\nabla U\) or impose a particular market conduct; this accommodates
+the consumer-surplus convention used in Section~\ref{sec:short-model}.
+The continuously varying \(a\in[0,1]\) is a counterfactual
+interpolation from no private adoption to outsider-only adoption, not
+a third discrete strategy available to firms.  Assume that along this
+path the product-market equilibrium \(q(a)\) is regular and
+differentiable, home production costs \(C_h(q_h)\) are differentiable,
+the two member destinations are symmetric, and the home firm's
+operating profit in the outsider destination does not change.
+
+National accounting then gives
+\[
+ W_M^{SU}(a)=S(q(a),a)+
+ \sum_{h=1}^{2}\{p_h(q(a),a)q_h(a)-C_h(q_h(a))\}
+ +\pi_M^{O}.
+\]
+The sum of the \emph{two} member firms' profits in one member
+destination equals one home firm's total profits across the two
+symmetric member destinations; it does not attribute foreign-owned
+profits to a home government.  Put
+\begin{align*}
+ H_j&=S_{q_j}+\sum_{h=1}^{2}q_h p_{h,q_j}
+       +\mathbf1_{\{j=1,2\}}(p_j-C'_j),\\
+ A&=S_a+\sum_{h=1}^{2}q_h p_{h,a}.
+\end{align*}
+These marginal national-incidence coefficients are calculated
+from demand, consumer surplus, production costs and market responses,
+not from the sign of the \emph{ex post} government ranking.  By the
+chain rule, for either quantity- or price-competition equilibria,
+\begin{equation}
+ \frac{dW_M^{SU}}{da}=A+\sum_{j=1,2,O}H_jq'_j(a).
+ \label{eq:general-incidence}
+\end{equation}
+Where outsider sales increase, \(q'_O>0\), define the domestic-sales
+diversion ratios \(\delta_h=-q'_h/q'_O\).  Hence the
+\emph{exact, conduct-neutral} marginal national-welfare loss per unit
+of expanded outsider sales is
+\begin{equation}
+ L(a)=\sum_{h=1}^{2}H_h(a)\delta_h(a)-H_O(a)
+       -\frac{A(a)}{q'_O(a)},\qquad
+ \frac{dW_M^{SU}}{da}=-q'_O(a)L(a).
+ \label{eq:general-displacement}
+\end{equation}
+\(H_h\delta_h\) is domestic producer displacement, including induced
+prices and consumer-surplus effects; \(H_O\) captures the outsider
+quantity incidence; \(A\) records direct compatibility and home-price
+effects.  Their signs are \emph{not} assumed universal.
+
+\begin{proposition}[Conduct-neutral sufficient conditions for reversal]
+\label{prop:general-conduct-neutral}
+Suppose the same fixed-cost adoption game is solved under \(SU\) and
+\(SW\).  Let \(g_O^0\) be the outsider's gross profit gain from adding
+the member standard when both member firms do not adopt;
+\(\bar g_H\) the maximum gross gain of any member from reverse
+adoption over \emph{all} other \(SU\) adoption profiles; and
+\(\bar g_{SW}\) the maximum incremental gross gain from adding one
+foreign standard over \emph{all} \(SW\) adoption profiles.
+If
+\[
+ \max\{0,\bar g_H,\bar g_{SW}\}<F<g_O^0,
+ \tag{G1}
+\]
+the unique firm-stage equilibrium has outsider-only adoption under
+\(SU\) and no adoption under \(SW\).  In addition, suppose that the
+regular path above satisfies \(q'_O>0,\ \delta_h\ge\underline\delta_h
+\ge0,\ H_h\ge\underline H_h\ge0,\ H_O\le\overline H_O,\)
+and \(A/q'_O\le\overline A\) everywhere.  Write
+\[
+ \kappa=\sum_{h=1}^{2}\underline H_h\underline\delta_h
+       -\overline H_O-\overline A,\quad
+ \Delta q_O=q_O(1)-q_O(0)>0.
+\]
+If the initial counterfactual member advantage satisfies
+\begin{equation}
+ 0<G_0\equiv W_M^{SU}(0)-W^{IS}
+   <\kappa\,\Delta q_O,
+ \tag{G2}
+\end{equation}
+then private outsider adoption reverses the member government's
+ranking from \(SU\) to \(IS\), without restrictions to linear demand
+or Cournot conduct.  Strict adoption and ranking margins persist
+under sufficiently small regular payoff perturbations.
+\end{proposition}
+\begin{proof}
+The first inequality in (G1) strictly dominates each member's
+reverse adoption under every rival profile, and each incremental
+\(SW\) foreign-standard addition; after eliminating these actions,
+the outsider strictly gains from adoption by the second inequality.
+Thus the stated firm continuation is unique.  Under the response
+bounds, equation~\eqref{eq:general-displacement} yields
+\(L(a)\ge\kappa\).  Integration gives
+\(W_M^{SU}(1)-W_M^{SU}(0)\le-\kappa\Delta q_O<-G_0\).
+The post-adoption member therefore prefers \(IS\).  Continuity
+preserves the finite strict inequalities wherever equilibria remain
+well-defined and regular.
+\end{proof}
+
+The proposition supplies \emph{checkable sufficient inequalities},
+not an assumption-free prediction that private interoperability
+always favors international harmonization.  The original model's
+less restrictive adoption interval and explicit \(R(d,v)\) conditions
+remain the controlling sharper results for its own primitives.
+Also, the pointwise lower bound is sufficient, not necessary:
+national incidence can change sign along the interpolation while
+its integrated effect still reverses the ranking.  In particular,
+the differentiated-demand failure at \(\gamma=1/2\) in Online
+Supplement E remains a genuine failure, not a contradiction.
+
+
+\paragraph{When local welfare effects change sign.}
+The preceding pointwise condition is deliberately sufficient but can be
+too demanding even in the original certified Cournot model.  Write
+\(I(a)=A(a)+\sum_jH_j(a)q'_j(a)\), using the
+conduct-neutral incidence coefficients of
+equation~\eqref{eq:general-incidence}.  The following alternative admits
+a sign change in the marginal national-welfare effect.
+
+\begin{corollary}[Integrated incidence with non-monotone welfare]
+\label{cor:integrated-incidence}
+If \(I(a)\) is nondecreasing on \([0,1]\) and, for some integer
+\(n\ge1\),
+\begin{equation}
+  \frac1n\sum_{\ell=1}^{n}I(\ell/n)<-G_0,
+  \label{eq:general-integrated-certificate}
+\end{equation}
+then outsider-only private adaptation reverses the member's
+initial \(SU\) preference whenever the adoption continuation is
+selected as specified above.
+\end{corollary}
+\begin{proof}
+On each cell \([(\ell-1)/n,\ell/n]\), monotonicity gives
+\(I(a)\le I(\ell/n)\).  Consequently
+\(W_M^{SU}(1)-W_M^{SU}(0)=\int_0^1 I(a)\,da\le
+n^{-1}\sum_{\ell=1}^n I(\ell/n)<-G_0\).
+\end{proof}
+For the original Cournot witness
+\((c,v,d)=(1/10,6/25,1/20)\), a symmetric partial-compatibility
+interpolation with proportional residual-cost relief connects
+\emph{exactly} the original pre- and post-adoption market equilibria.
+Its \(I(a)\) is strictly increasing by an exact polynomial positivity
+certificate, yet \(I(0)<0<I(1)\): the local welfare effect reverses
+sign during adaptation.  Nevertheless, the \(n=16\) exact upper sum is
+approximately \(-0.0096983\), below
+\(-G_0\approx-0.0081443\), so the general sufficient test certifies
+the original reversal without requiring welfare to decrease at
+every intermediate step.  The interpolation is a proof device, not
+a change in the discrete firm-adoption game.  The exact expressions
+and sign certificates are reported in the reproducibility audit.
+This finite test establishes \emph{applicability}, not independent
+novelty of integration or pass-through accounting.
