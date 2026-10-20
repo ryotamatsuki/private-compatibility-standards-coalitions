@@ -1,0 +1,30 @@
+name: R16 Consumer-consistent Bertrand full-stage certificate
+on:
+  push:
+    paths:
+      - 'research/r16/**'
+      - '.github/workflows/r16-bertrand-exact.yml'
+  pull_request:
+    paths:
+      - 'research/r16/**'
+      - '.github/workflows/r16-bertrand-exact.yml'
+permissions:
+  contents: read
+jobs:
+  exact-bertrand:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install rational symbolic algebra
+        run: python -m pip install sympy==1.13.3
+      - name: Full R13-consistent Bertrand adoption and national welfare audit
+        run: python research/r16/verify_bertrand_r13_full_game.py
+      - name: Exact R10 contradiction and corrected Cournot comparison
+        run: python research/r15/audit_r10_welfare_convention.py
+      - name: Original R9 exact verification
+        run: |
+          python research/r12/verify_r9_generic_adoption_dominance.py
+          python research/r12/verify_r9_nonmonotone_incidence.py
