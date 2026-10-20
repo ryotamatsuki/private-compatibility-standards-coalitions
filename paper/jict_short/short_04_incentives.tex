@@ -366,3 +366,46 @@ national incidence can change sign along the interpolation while
 its integrated effect still reverses the ranking.  In particular,
 the differentiated-demand failure at \(\gamma=1/2\) in Online
 Supplement E remains a genuine failure, not a contradiction.
+
+
+\paragraph{When local welfare effects change sign.}
+The preceding pointwise condition is deliberately sufficient but can be
+too demanding even in the original certified Cournot model.  Write
+\(I(a)=A(a)+\sum_jH_j(a)q'_j(a)\), using the
+conduct-neutral incidence coefficients of
+equation~\eqref{eq:general-incidence}.  The following alternative admits
+a sign change in the marginal national-welfare effect.
+
+\begin{corollary}[Integrated incidence with non-monotone welfare]
+\label{cor:integrated-incidence}
+If \(I(a)\) is nondecreasing on \([0,1]\) and, for some integer
+\(n\ge1\),
+\begin{equation}
+  \frac1n\sum_{\ell=1}^{n}I(\ell/n)<-G_0,
+  \label{eq:general-integrated-certificate}
+\end{equation}
+then outsider-only private adaptation reverses the member's
+initial \(SU\) preference whenever the adoption continuation is
+selected as specified above.
+\end{corollary}
+\begin{proof}
+On each cell \([(\ell-1)/n,\ell/n]\), monotonicity gives
+\(I(a)\le I(\ell/n)\).  Consequently
+\(W_M^{SU}(1)-W_M^{SU}(0)=\int_0^1 I(a)\,da\le
+n^{-1}\sum_{\ell=1}^n I(\ell/n)<-G_0\).
+\end{proof}
+For the original Cournot witness
+\((c,v,d)=(1/10,6/25,1/20)\), a symmetric partial-compatibility
+interpolation with proportional residual-cost relief connects
+\emph{exactly} the original pre- and post-adoption market equilibria.
+Its \(I(a)\) is strictly increasing by an exact polynomial positivity
+certificate, yet \(I(0)<0<I(1)\): the local welfare effect reverses
+sign during adaptation.  Nevertheless, the \(n=16\) exact upper sum is
+approximately \(-0.0096983\), below
+\(-G_0\approx-0.0081443\), so the general sufficient test certifies
+the original reversal without requiring welfare to decrease at
+every intermediate step.  The interpolation is a proof device, not
+a change in the discrete firm-adoption game.  The exact expressions
+and sign certificates are reported in the reproducibility audit.
+This finite test establishes \emph{applicability}, not independent
+novelty of integration or pass-through accounting.
