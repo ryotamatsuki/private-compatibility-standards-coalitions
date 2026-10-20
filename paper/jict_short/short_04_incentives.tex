@@ -577,3 +577,132 @@ claim, not substitutes for the theorem's proof.  This result
 proves robustness to a function-space neighborhood of demands,
 \emph{not} universal robustness across all demand systems or
 an independently certified pure-strategy Bertrand equilibrium.
+
+
+\subsection{The same general mechanism under differentiated Bertrand competition}
+\label{subsec:bertrand-R16}
+The preceding nonparametric Cournot result establishes that
+the mechanism does not rely on the exact linear inverse demand.
+We now verify that the \emph{same} investment and national-incidence
+sufficiency conditions also admit a price-competition implementation.
+No claim is made that the same numerical primitives work under
+both modes.
+
+Both the homogeneous-buyer quantity game in the
+original paper and the differentiated price game below are
+specializations of the \emph{same economic consumer principle}.
+Given a concave quasilinear gross-surplus function
+\(\mathcal U(q)\) and fulfilled expected network benefits
+\(g=G(q,s)\), an atomistic buyer sector solves
+\[
+  \max_{q\ge0}\{
+     \mathcal U(q)+g^\top q-p^\top q\},
+\]
+taking \(g\) as fixed in its optimization.  Along a regular
+interior equilibrium its first-order condition and
+\emph{consumer-optimized} surplus imply
+\begin{equation}
+ p=\nabla\mathcal U(q)+G(q,s),\qquad
+ CS=\mathcal U(q)-q^\top\nabla\mathcal U(q).
+ \label{eq:unified-buyer-platform}
+\end{equation}
+The original model is recovered \emph{exactly}
+at \(\mathcal U(q)=Q-\frac12Q^2\) with \(Q=\sum_iq_i\),
+where homogeneous buyers may be indifferent and
+firms commit quantities.  The differentiated model below
+uses a strictly concave vector-valued \(\mathcal U(q)\)
+and firms commit prices.  Regularity and market Nash
+equilibria must be shown separately under each mode;
+equation~\eqref{eq:unified-buyer-platform} alone
+imposes neither Cournot nor Bertrand.
+
+Let an optimizing buyer sector have the strictly concave
+quasi-linear gross utility
+\[
+ U_0(q)=\boldsymbol{1}^{\top}q-\tfrac12q^\top M_0q,\qquad
+ M_0=(1-\gamma)I+\gamma\boldsymbol{1}\boldsymbol{1}^{\top},
+\]
+where firms correctly anticipate fulfilled network expectations
+\(g=vC(s)q\), \(C(s)\) being the same standard-support group
+indicator as before. Buyers treat \(g\) as given, so
+\begin{equation}
+ p=\boldsymbol{1}-(M_0-vC(s))q,\qquad
+ CS=\tfrac12q^\top M_0q
+ \label{eq:bertrand-consumer-consistent}
+\end{equation}
+is the consumer-consistent price--surplus pair. In particular,
+the network term is \emph{not} subtracted from \(M_0\) when
+calculating consumer surplus. Firms simultaneously select prices,
+anticipating the fulfilled-expectations demand adjustment.
+
+\begin{proposition}[Price-competition realization of the common
+compatibility-and-policy mechanism]
+\label{prop:bertrand-R16}
+With differentiated Bertrand product competition and
+\[
+ (\gamma,v,c,d,F)
+ =\left(\frac{23}{25},\frac{33}{500},
+ \frac{2}{125},\frac1{500},\frac1{40}\right),
+\]
+all market subgames in the finite standards-adoption game
+possess a unique positive-price, positive-quantity Bertrand
+equilibrium. The general adoption inequality (G1) strictly
+selects outsider-only adaptation under \(SU\) and no adaptation
+under \(SW\). The integrated national-incidence criterion
+in Corollary~\ref{cor:integrated-incidence} strictly selects
+a reversal of the member government's pre-adaptation
+\(SU\)-over-\(IS\) ranking. These results also persist on
+a nonempty open neighborhood of the stated primitives.
+\end{proposition}
+\begin{proof}
+For each of the 19 distinct standard-support/cost
+market configurations, \(M=M_0-vC\) is positive definite and
+the interior Bertrand first-order conditions solve
+\[
+ q=M^{-1}(\boldsymbol1-p),\qquad
+ q_i=(M^{-1})_{ii}(p_i-r_i).
+\]
+Exact rational active-set optimization certifies that no
+firm can improve its equilibrium profit by any unilateral
+price change, including changes at which a rival product
+exits. For every proper nonempty set of active sellers,
+at least one excluded seller has a strict profitable
+entry deviation; hence none is an alternative boundary
+price equilibrium. For the resulting market profits,
+all eight \(SU\) and sixty-four \(SW\) support profiles
+and unilateral deviations are evaluated. The strict
+G1 gains are
+\[
+ \max\{\overline g_H,\overline g_{SW}\}
+ \simeq0.01515717<0.025<g_O^0\simeq0.02981642.
+\]
+Using equation~\eqref{eq:bertrand-consumer-consistent},
+the member's original \(SU-IS\) ranking is strictly
+positive (\(\simeq0.00277401\)) and becomes strictly
+negative (\(\simeq-0.00090743\)).
+For a continuous accounting path from no outsider
+compatibility to full outsider compatibility, the
+Bertrand market equilibrium remains interior and
+\(I(a)=dW_M^{SU}/da\) is strictly increasing:
+the numerator and denominator of \(W''(a)\) have
+positive Bernstein coefficients throughout \([0,1]\).
+The exact \(64\)-step right-Riemann upper sum is
+approximately \(-0.00280225\), strictly below
+\(-G_0\simeq-0.00277401\); the integrated
+conduct-neutral criterion applies without imposing
+pointwise welfare decline. The complete certificates
+use exact rational comparisons. Finally, all market
+regularity, investment and ranking inequalities
+are strict, and their product-market solutions are
+continuous, giving the open-neighborhood claim.
+\end{proof}
+
+This independent Bertrand implementation and the
+original Cournot implementation satisfy the
+\emph{same} general G1 and integrated-incidence
+mechanism, although their numerical primitive vectors
+differ. It is incorrect to infer that all conduct modes,
+all demand functions or all standard-support policies
+generate a reversal. The result is also distinct from
+a claim of uniqueness of general pass-through
+decompositions, which are already well established.
