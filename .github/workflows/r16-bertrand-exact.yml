@@ -3,10 +3,12 @@ on:
   push:
     paths:
       - 'research/r16/**'
+      - 'paper/jict_short/short_04_incentives.tex'
       - '.github/workflows/r16-bertrand-exact.yml'
   pull_request:
     paths:
       - 'research/r16/**'
+      - 'paper/jict_short/short_04_incentives.tex'
       - '.github/workflows/r16-bertrand-exact.yml'
 permissions:
   contents: read
