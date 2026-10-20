@@ -69,7 +69,9 @@ def game(mode, partition):
                     continue
                 deviation=prof[:i]+(act,)+prof[i+1:]
                 margins.append(ledger[prof][0][i]-ledger[deviation][0][i])
-        if all(z>0 for z in margins):
+        # Include weak equilibria: reject every non-target profile with any
+        # strictly profitable deviation; the selected target is strict.
+        if all(z>=0 for z in margins):
             nash.append((prof,min(margins) if margins else None))
     return ledger,nash
 
