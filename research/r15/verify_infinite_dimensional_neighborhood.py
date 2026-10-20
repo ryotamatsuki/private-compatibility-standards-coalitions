@@ -77,7 +77,7 @@ def stage(base):
                 dev=prof[:i]+(act,)+prof[i+1:]
                 improvements.append(payoffs[prof][i]-payoffs[dev][i])
         if all(z>=-1e-9 for z in improvements):
-            nash.append((prof,min(improvements)))
+            nash.append((prof,min(improvements or [float('inf')])))
     return payoffs,consumers,nash
 
 def proof_of_stability():
