@@ -1,0 +1,55 @@
+name: R15 functional-demand portability and R10 welfare adversarial audit
+on:
+  push:
+    paths:
+      - 'research/r15/**'
+      - 'paper/jict_short/short_04_incentives.tex'
+      - '.github/workflows/r15-function-space.yml'
+  pull_request:
+    paths:
+      - 'research/r15/**'
+      - 'paper/jict_short/short_04_incentives.tex'
+      - '.github/workflows/r15-function-space.yml'
+permissions:
+  contents: read
+jobs:
+  mathematical-and-empirical-consistency:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Original manuscript and prior R13 scientific baseline unchanged
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import subprocess
+          r9='08d6e6adb1a90bdf03fa223c0961ac04620f0fa2'
+          r13='7ddd716dbb1ad6e07805edbd67969580fbd51e20'
+          sec='paper/jict_short/short_04_incentives.tex'
+          old=subprocess.check_output(['git','show',f'{r13}:{sec}'])
+          assert Path(sec).read_bytes().startswith(old)
+          for path in ['paper/jict_short/short_02_model.tex',
+                       'paper/jict_short/short_03_adoption.tex',
+                       'paper/jict_short/short_05_stability_scope.tex',
+                       'paper/jict_short/short_supplement_robustness.tex',
+                       'paper/jict_short/short_supplement_blocking.tex',
+                       'paper/preamble.tex']:
+              assert Path(path).read_bytes()==subprocess.check_output(
+                  ['git','show',f'{r9}:{path}']),path
+          print('ORIGINAL R9 + R13 TEXT PRESERVATION: PASS')
+          PY
+      - run: python -m pip install sympy==1.13.3 numpy==2.1.3 scipy==1.14.1
+      - name: Detect and quarantine prior R10 inconsistent welfare comparison
+        run: python research/r15/audit_r10_welfare_convention.py
+      - name: Nonlinear consumer-consistent original R9 full-stage re-equilibration
+        run: python research/r15/verify_infinite_dimensional_neighborhood.py
+      - name: R13 consumer foundations still pass
+        run: python research/r13/verify_consumer_microfoundation.py
+      - name: Original R9 strict dominance and policy reversal unchanged
+        run: |
+          python research/r12/verify_r9_generic_adoption_dominance.py
+          python research/r12/verify_r9_nonmonotone_incidence.py
