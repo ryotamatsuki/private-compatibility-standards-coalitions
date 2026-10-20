@@ -1,0 +1,7 @@
+R5 design freeze: gamma=1/2 differentiated demand
+R5-C pre-adoption SU advantage: FAILS on full audit box
+R5-B pre-adoption SU advantage: FAILS on full audit box
+R5-C/B outsider-only selection-free adoption interval: EXISTS on full audit box
+R5-C/B adoption effect on relative IS incentive: WEAKENS (E<0)
+R5-C/B SU->IS preference reversal: IMPOSSIBLE because initial SU preference fails
+R5 competition portability verification: PASS

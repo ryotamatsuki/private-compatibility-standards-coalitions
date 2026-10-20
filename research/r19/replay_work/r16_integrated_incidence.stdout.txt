@@ -1,0 +1,12 @@
+M determinant Bernstein degrees 2 0 positive on [0,1]
+positive member inverse diagonal numerator Bernstein degrees 2 0 positive on [0,1]
+member q positive Bernstein degrees 4 4 positive on [0,1]
+outsider q positive Bernstein degrees 3 4 positive on [0,1]
+All intermediate network-feedback and interior-price equilibria verified
+W second derivative Bernstein degrees 13 16 positive on [0,1]
+R12 integrable incidence I(a)=dW(a)/da is strictly increasing
+Member government initial SU-IS advantage G0: 0.002774007331480094
+Bertrand 64-bin exact right-upper sum: -0.002802245316978457
+Required threshold -G0: -0.002774007331480094
+Original exact Bertrand government gap after: -0.0009074338893336889
+R16 SAME GENERIC R12-G1+G3 MECHANISM: EXACT BERTRAND PROOF PASS

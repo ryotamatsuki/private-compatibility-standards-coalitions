@@ -1,0 +1,4 @@
+W_SU_member_no_bypass - W_IS = (36*c**2*v**4 - 144*c**2*v**3 + 232*c**2*v**2 - 176*c**2*v + 52*c**2 - 72*c*v**4 + 240*c*v**3 - 288*c*v**2 + 144*c*v - 24*c + 36*v**4 - 114*v**3 + 81*v**2 - 12*v)/(32*(v - 1)**2*(3*v - 2)**2)
+At v=0 = c*(13*c - 6)/32
+Identity check: PASS
+Sign on 0<c<1/3: NEGATIVE (analytic bound 13c-6 < -5/3)

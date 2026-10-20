@@ -1,0 +1,7 @@
+R9 SU profiles=8; SW profiles=64; all unilateral deviations checked
+G1 exact max_member_gain: 2024181/31129600 ~ 0.06502431769
+G1 exact max_SW_gain: 2122041/31129600 ~ 0.06816794948
+G1 exact outsider_gain_if_members_not_adopt: 459189/3891200 ~ 0.1180070415
+G1 exact F: 9/100
+Unique SU outsider-only and SW no-adoption equilibria: PASS
+R12 GENERIC STRICT ADOPTION DOMINANCE: PASS in original R9

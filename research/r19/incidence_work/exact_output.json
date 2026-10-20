@@ -1,0 +1,25 @@
+{
+  "status": "complete symbolic partial lemma; not full primitive joint theorem",
+  "ratio_formula": "(-L + 2*gamma*t)/(2*L*k) + (-L*gamma + t*(gamma + 2*h + 1))*(T + t*z - t)/(L*k*(-L*z + L - 2*t))",
+  "ratio_derivative": "(L*T - 2*t**2)*(-L*gamma + t*(gamma + 2*h + 1))/(L*k*(-L*z + L - 2*t)**2)",
+  "counterexample": {
+    "M": "Matrix([[3/2, 1, 1/10], [1, 3/2, 1], [1/10, 1, 3/2]])",
+    "M_leading_principal_minors": [
+      "3/2",
+      "5/4",
+      "14/25"
+    ],
+    "A": "Matrix([[3, 1, 1/10], [1, 3, 1], [1/10, 1, 3]])",
+    "q": [
+      "20/73",
+      "11/73",
+      "20/73"
+    ],
+    "dq_dcost3": [
+      "-70/2117",
+      "10/73",
+      "-800/2117"
+    ]
+  },
+  "scope": "inverse-demand substitutability and SPD/diagonal dominance alone do not force all rivals to lose; this example is not Marshallian gross substitutes"
+}

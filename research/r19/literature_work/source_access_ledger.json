@@ -1,0 +1,189 @@
+{
+  "baseline": "6cd349daec244def5cb4ed475cc448ed091b9c22",
+  "date": "2026-10-20",
+  "classification": "No Level-4 priority certification",
+  "material_full_proof_gaps": [
+    "Maggi-Mrazova July 2026 revision",
+    "Buccella-Fanti-Gori 2026",
+    "Walz-Woeckener DP3816"
+  ],
+  "sources": [
+    {
+      "work": "Gandal-Shy 2001",
+      "access": "primary author forthcoming version; propositions inspected",
+      "url": "https://www.tau.ac.il/~gandal/newtr.pdf",
+      "refs": [
+        "turn6view3",
+        "turn7view1",
+        "turn21view3"
+      ],
+      "version_caveat": "October 2000 author manuscript; final typeset identity unverified"
+    },
+    {
+      "work": "Takarada et al 2020",
+      "access": "publisher full relevant propositions and Appendix B inspected",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/jpet.12425",
+      "refs": [
+        "turn6view4",
+        "turn7view2",
+        "turn11view7"
+      ]
+    },
+    {
+      "work": "Klimenko 2009",
+      "access": "author abstract; final fulltext unavailable",
+      "url": "https://econ.gatech.edu/publications/pub/1491",
+      "refs": [
+        "turn17view3"
+      ]
+    },
+    {
+      "work": "Walz-Woeckener 2003 DP3815",
+      "access": "official abstract",
+      "url": "https://cepr.org/publications/dp3815",
+      "refs": [
+        "turn0search0"
+      ]
+    },
+    {
+      "work": "Walz-Woeckener 2003 DP3816",
+      "access": "official abstract; full proof unavailable",
+      "url": "https://cepr.org/publications/dp3816",
+      "refs": [
+        "turn1view0",
+        "turn19search3"
+      ]
+    },
+    {
+      "work": "Farrell-Saloner 1992",
+      "access": "working-paper scan located but no usable theorem extraction",
+      "url": "https://escholarship.org/content/qt8161p50b/qt8161p50b.pdf",
+      "refs": [
+        "turn11view1"
+      ]
+    },
+    {
+      "work": "Farrell-Simcoe 2012",
+      "access": "publisher partial chapter and full 2011 author draft available; relevant sections inspected",
+      "url": "https://people.bu.edu/tsimcoe/documents/working/FourPaths.pdf",
+      "refs": [
+        "turn17view0",
+        "turn11view4",
+        "turn11view5"
+      ],
+      "version_caveat": "publisher preview incomplete pp34-49; final chapter pp34-58"
+    },
+    {
+      "work": "Manenti-Somma 2008",
+      "access": "author full paper relevant propositions and payoff inequalities inspected",
+      "url": "https://economia.unipd.it/sites/economia.unipd.it/files/20080068.pdf",
+      "refs": [
+        "turn11view0",
+        "turn13view1",
+        "turn16view4"
+      ]
+    },
+    {
+      "work": "Buccella-Fanti-Gori 2023",
+      "access": "publisher full main text inspected; online appendix proofs not independently audited",
+      "url": "https://link.springer.com/article/10.1007/s00712-023-00834-x",
+      "refs": [
+        "turn6view2",
+        "turn7view3",
+        "turn21view2"
+      ]
+    },
+    {
+      "work": "Buccella-Fanti-Gori 2026",
+      "access": "publisher abstract and record; fulltext unavailable",
+      "url": "https://www.tandfonline.com/doi/full/10.1080/10438599.2025.2478583",
+      "refs": [
+        "turn2search2",
+        "turn3search25",
+        "turn4view0"
+      ]
+    },
+    {
+      "work": "Schmidt-Steingress 2022",
+      "access": "2019 WP full relevant theory inspected; 2022 abstract only",
+      "url": "https://publications.banque-france.fr/sites/default/files/medias/documents/wp729_0.pdf",
+      "refs": [
+        "turn15view2",
+        "turn16view2",
+        "turn20view3"
+      ]
+    },
+    {
+      "work": "Maggi-Mrazova 2024",
+      "access": "2024 primary relevant propositions and appendix proof inspected",
+      "url": "https://economics.yale.edu/sites/default/files/2024-12/20241218-RegCoop.pdf",
+      "refs": [
+        "turn1view2",
+        "turn7view4",
+        "turn11view8",
+        "turn13view4"
+      ]
+    },
+    {
+      "work": "Maggi-Mrazova July2026",
+      "access": "SSRN revision record only; latest fulltext uninspected",
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5076021",
+      "refs": [
+        "turn5search2",
+        "turn6view0",
+        "turn7view0"
+      ]
+    },
+    {
+      "work": "vanWegberg 2004",
+      "access": "publisher abstract and model excerpts; university full PDF inaccessible",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S016762450300060X",
+      "refs": [
+        "turn23search0",
+        "turn15view0"
+      ]
+    },
+    {
+      "work": "Weyl-Fabinger 2013",
+      "access": "published primary text reproduced in official legal exhibit; relevant sections inspected",
+      "url": "https://www.icann.org/en/system/files/files/irp-namecheap-claimants-post-hearing-brief-merits-reference-materials-rm-252-27may22-en.pdf",
+      "refs": [
+        "turn17view4",
+        "turn18view0",
+        "turn20view2",
+        "turn21view0"
+      ]
+    },
+    {
+      "work": "Adachi-Fabinger 2022",
+      "access": "2018 precursor primary relevant propositions inspected; final fulltext not extracted",
+      "url": "https://arxiv.org/pdf/1702.04967",
+      "refs": [
+        "turn20view1",
+        "turn21view1",
+        "turn18view3"
+      ],
+      "version_caveat": "precursor proposition numbers not asserted as 2022 final numbering"
+    },
+    {
+      "work": "Rosen 1965",
+      "access": "primary technical report relevant Theorems1-2 and DSC inspected; OCR noisy",
+      "url": "https://ntrs.nasa.gov/api/citations/19650010164/downloads/19650010164.pdf",
+      "refs": [
+        "turn11view3",
+        "turn12view2",
+        "turn13view3",
+        "turn20view0"
+      ]
+    },
+    {
+      "work": "Miklos-Thal-Shaffer 2021",
+      "access": "publisher correction abstract",
+      "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/711348",
+      "refs": [
+        "turn17view2"
+      ]
+    }
+  ],
+  "method_warning": "Do not use full source IDs in prose as citations; parent must independently open sources before user-facing citations."
+}

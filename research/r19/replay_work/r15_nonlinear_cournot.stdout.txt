@@ -1,0 +1,6 @@
+ALL 27 COMPATIBILITY-MATRIX COURNOT JACOBIANS SPD: EXACT PASS
+EPS: 0.01
+Nonlinear original-R9-compliant SU government gaps: 0.008337180701925129 -0.0072301474902085605
+SU and SW unique pure equilibria + strict unilateral margins: [((frozenset({0}), frozenset({0}), frozenset({0, 1})), np.float64(0.02822597374848613))] [((frozenset({0}), frozenset({1}), frozenset({2})), np.float64(0.021617375403246458))]
+COMPLETE 8 SU, 64 SW, 1 IS PROFILES RE-EQUILIBRATED: PASS
+R15 NONLINEAR DEMAND EXEMPLAR: PASS

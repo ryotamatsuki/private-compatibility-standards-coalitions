@@ -1,0 +1,15 @@
+{
+  "status": "PASS; independent symbolic partial theorem and scope counterexample",
+  "level3_joint_theorem": "NOT PROVED",
+  "rho_bertrand": "(2*gamma**2 - 10*gamma*v - 3*gamma + 12*v**2 + v - 2)/(-3*gamma + 5*v - 2)",
+  "r9_exact_residual": "-d*(4*d*v - 5*d + 8*v - 2)/(32*(v - 1)**2)",
+  "r16_dmin": "4923014700/123066192803",
+  "r16_dbar": "22150/213019",
+  "partial_network_counterexample": {
+    "gamma": "9/10",
+    "v": "4/5",
+    "full_det": "1/250",
+    "partial_det": "-33/250"
+  },
+  "proof_scope": "full-compatible residual family; pre-adoption and adoption game need separate certification"
+}

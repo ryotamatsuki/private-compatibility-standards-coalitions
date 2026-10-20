@@ -1,0 +1,6 @@
+{
+  "markets": 19,
+  "proper_active_set_omitted_brand_checks": 171,
+  "minimum_strict_slack": "33819/12831625",
+  "status": "exact rational polytope proof, including inactive-at-choke kinks"
+}

@@ -1,0 +1,5 @@
+Cournot R10_old_quadratic_network_surplus 0.000246088828194 -5.86960535444e-5
+Cournot R13_fulfilled_expectations_surplus -0.0117373194715 -8.96528047418e-5
+Bertrand R10_old_quadratic_network_surplus 0.00540874289496 -0.000855474258652
+Bertrand R13_fulfilled_expectations_surplus 0.00277400733148 -0.000907433889334
+R15 R10 CORRECTION EXACT: old common-conduct witness INVALID for R9/R13 welfare

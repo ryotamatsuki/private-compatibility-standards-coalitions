@@ -1,0 +1,9 @@
+R9 numerical witness endpoints EXACT: PASS
+Original no-adoption and after-adoption market block mapping: PASS
+Domestic diversion and outsider expansion on entire path: PASS
+Wprime changes sign, so R12 uniform pointwise loss: FAIL (as expected)
+Wsecond strictly positive on entire path (Bernstein): PASS
+Wprime right Riemann N=16 upper bound: -0.00969830953671486
+Threshold -G0: -0.00814425058972472
+Actual government gap pre: 0.00814425058972472 post: -0.00725523718836565
+Non-monotone conduct-neutral integrated sufficient test: PASS

@@ -1,0 +1,230 @@
+{
+  "baseline": "6cd349daec244def5cb4ed475cc448ed091b9c22",
+  "python": "3.12.14",
+  "versions": {
+    "sympy": "1.13.3",
+    "numpy": "2.1.3",
+    "scipy": "1.14.1"
+  },
+  "inherited_files_hashed": 191,
+  "inherited_sources_unchanged": true,
+  "results": [
+    {
+      "name": "r9_final",
+      "command": [
+        "python",
+        "code/revision/check_r9_final_audit.py"
+      ],
+      "exit_code": 0,
+      "seconds": 1.467,
+      "proof_status": "exact symbolic and source scope",
+      "stdout": "r9_final.stdout.txt",
+      "stderr": "r9_final.stderr.txt"
+    },
+    {
+      "name": "r9_zero_network_failure",
+      "command": [
+        "python",
+        "code/revision/check_network_zero.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.413,
+      "proof_status": "analytic counterexample",
+      "stdout": "r9_zero_network_failure.stdout.txt",
+      "stderr": "r9_zero_network_failure.stderr.txt"
+    },
+    {
+      "name": "r2_adoption",
+      "command": [
+        "python",
+        "code/revision/check_r2_adoption.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.446,
+      "proof_status": "exact symbolic",
+      "stdout": "r2_adoption.stdout.txt",
+      "stderr": "r2_adoption.stderr.txt"
+    },
+    {
+      "name": "r3_partial_erosion",
+      "command": [
+        "python",
+        "code/revision/check_r3_partial_erosion.py"
+      ],
+      "exit_code": 0,
+      "seconds": 3.096,
+      "proof_status": "exact symbolic residual boundary",
+      "stdout": "r3_partial_erosion.stdout.txt",
+      "stderr": "r3_partial_erosion.stderr.txt"
+    },
+    {
+      "name": "r5_portability_failure",
+      "command": [
+        "python",
+        "code/revision/check_r5_competition_portability.py"
+      ],
+      "exit_code": 0,
+      "seconds": 3.838,
+      "proof_status": "historical failure under its own declared surplus convention",
+      "stdout": "r5_portability_failure.stdout.txt",
+      "stderr": "r5_portability_failure.stderr.txt"
+    },
+    {
+      "name": "r6_coalition",
+      "command": [
+        "python",
+        "code/revision/check_r6_coalition_stability.py"
+      ],
+      "exit_code": 0,
+      "seconds": 5.919,
+      "proof_status": "exact limited original coalition concept",
+      "stdout": "r6_coalition.stdout.txt",
+      "stderr": "r6_coalition.stderr.txt"
+    },
+    {
+      "name": "r7_cleanroom",
+      "command": [
+        "python",
+        "code/revision/check_r7_cleanroom.py"
+      ],
+      "exit_code": 0,
+      "seconds": 8.508,
+      "proof_status": "exact independent original primitives",
+      "stdout": "r7_cleanroom.stdout.txt",
+      "stderr": "r7_cleanroom.stderr.txt"
+    },
+    {
+      "name": "r10_welfare_correction",
+      "command": [
+        "python",
+        "research/r15/audit_r10_welfare_convention.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.316,
+      "proof_status": "exact CS correction and withdrawal",
+      "stdout": "r10_welfare_correction.stdout.txt",
+      "stderr": "r10_welfare_correction.stderr.txt"
+    },
+    {
+      "name": "r13_consumers",
+      "command": [
+        "python",
+        "research/r13/verify_consumer_microfoundation.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.86,
+      "proof_status": "exact symbolic consumer identities",
+      "stdout": "r13_consumers.stdout.txt",
+      "stderr": "r13_consumers.stderr.txt"
+    },
+    {
+      "name": "r12_cournot_investment",
+      "command": [
+        "python",
+        "research/r12/verify_r9_generic_adoption_dominance.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.336,
+      "proof_status": "exact 8 SU / 64 SW; all unilateral investment deviations",
+      "stdout": "r12_cournot_investment.stdout.txt",
+      "stderr": "r12_cournot_investment.stderr.txt"
+    },
+    {
+      "name": "r12_cournot_incidence",
+      "command": [
+        "python",
+        "research/r12/verify_r9_nonmonotone_incidence.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.58,
+      "proof_status": "exact interval Bernstein/Riemann certificate",
+      "stdout": "r12_cournot_incidence.stdout.txt",
+      "stderr": "r12_cournot_incidence.stderr.txt"
+    },
+    {
+      "name": "r15_nonlinear_cournot",
+      "command": [
+        "python",
+        "research/r15/verify_infinite_dimensional_neighborhood.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.782,
+      "proof_status": "numerical nonlinear FOCs/adoption; exact baseline Jacobians",
+      "stdout": "r15_nonlinear_cournot.stdout.txt",
+      "stderr": "r15_nonlinear_cournot.stderr.txt"
+    },
+    {
+      "name": "r16_bertrand_investment",
+      "command": [
+        "python",
+        "research/r16/verify_bertrand_r13_full_game.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.344,
+      "proof_status": "exact interior FOCs and all investment deviations",
+      "stdout": "r16_bertrand_investment.stdout.txt",
+      "stderr": "r16_bertrand_investment.stderr.txt"
+    },
+    {
+      "name": "r16_global_price",
+      "command": [
+        "python",
+        "research/r16/verify_global_bertrand_price_deviations.py"
+      ],
+      "exit_code": 0,
+      "seconds": 2.706,
+      "proof_status": "exact all active-set unilateral price deviations from positive candidate",
+      "stdout": "r16_global_price.stdout.txt",
+      "stderr": "r16_global_price.stderr.txt"
+    },
+    {
+      "name": "r16_boundary_entry",
+      "command": [
+        "python",
+        "research/r16/verify_bertrand_no_boundary_equilibria.py"
+      ],
+      "exit_code": 0,
+      "seconds": 2.82,
+      "proof_status": "exact entry at restricted-active-set stationary candidates; see diagnostic caveat",
+      "stdout": "r16_boundary_entry.stdout.txt",
+      "stderr": "r16_boundary_entry.stderr.txt"
+    },
+    {
+      "name": "r16_integrated_incidence",
+      "command": [
+        "python",
+        "research/r16/verify_integrated_bertrand_incidence.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.799,
+      "proof_status": "exact interval Bernstein/Riemann",
+      "stdout": "r16_integrated_incidence.stdout.txt",
+      "stderr": "r16_integrated_incidence.stderr.txt"
+    },
+    {
+      "name": "r16_nonlinear_bertrand",
+      "command": [
+        "python",
+        "research/r16/verify_nonlinear_bertrand_consumer.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.357,
+      "proof_status": "numerical interior FOCs/adoption, not global nonlinear price proof",
+      "stdout": "r16_nonlinear_bertrand.stdout.txt",
+      "stderr": "r16_nonlinear_bertrand.stderr.txt"
+    },
+    {
+      "name": "r18",
+      "command": [
+        "python",
+        "research/r18/verify_r18.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.619,
+      "proof_status": "exact full investment games and R18 response bounds",
+      "stdout": "r18.stdout.txt",
+      "stderr": "r18.stderr.txt"
+    }
+  ],
+  "all_pass": true
+}

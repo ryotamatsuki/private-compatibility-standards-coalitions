@@ -1,0 +1,9 @@
+R2 generic examples: PASS
+Optional-deployment boundary test: PASS
+Cournot mapping at (c,v)=(0.10,0.24):
+  T_U=0.0661011
+  T_A=0.0818242
+  T_W=0.1003198
+  R2 SU-only unique interval: (0.0818242, 0.1636485)
+  Submitted headline interval: (0.1003198, 0.1636485)
+R2 verification: PASS

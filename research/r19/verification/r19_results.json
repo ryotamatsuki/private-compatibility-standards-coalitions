@@ -1,0 +1,28 @@
+{
+  "all_pass": true,
+  "protected_blobs": 191,
+  "overall_level": 2,
+  "checks": [
+    {
+      "script": "theory_work/verify_residual_incidence.py",
+      "exit_code": 0
+    },
+    {
+      "script": "incidence_work/verify_incidence.py",
+      "exit_code": 0
+    },
+    {
+      "script": "referee_work/verify_independent_referee.py",
+      "exit_code": 0
+    },
+    {
+      "script": "replay_work/verify_bertrand_boundary_kinks.py",
+      "exit_code": 0
+    },
+    {
+      "script": "replay_work/extra_counterfactuals.py",
+      "exit_code": 0
+    }
+  ],
+  "proof_scope": "partial theorem; complete target unproved"
+}
