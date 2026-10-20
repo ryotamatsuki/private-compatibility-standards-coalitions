@@ -1,0 +1,67 @@
+\documentclass[12pt,review,authoryear,nopreprintline]{elsarticle}
+\input{preamble}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\makeatletter
+\AtBeginDocument{\doublespacing\global\let\@blstr\baselinestretch}
+\makeatother
+\usepackage{float}
+\usepackage[labelfont=bf,labelsep=space]{caption}
+\renewcommand{\figurename}{Fig.}
+\providecommand{\DOIprefix}{}
+\providecommand{\doi}[1]{\url{https://doi.org/#1}}
+% elsarticle 3.3 has a documented stray-space box in the empty title footer.
+% This research draft uses nopreprintline; make that page style truly empty.
+% No class source, manuscript body, geometry or proof tolerance is changed.
+\makeatletter
+\def\ps@pprintTitle{%
+  \let\@oddhead\@empty\let\@evenhead\@empty
+  \let\@oddfoot\@empty\let\@evenfoot\@empty}
+\makeatother
+\newcommand{\RnineteenLevel}{2}
+\begin{document}
+\begin{frontmatter}
+\title{Private Compatibility and Government Incentives for Standards Harmonization}
+\author{Anonymous Author}
+\begin{abstract}
+When can private adaptation to an incompatible regional standard change governments' incentives to negotiate a wider agreement? We study three countries whose governments choose separate, regional, or common standards before firms decide whether to incur a fixed cost to support an additional standard. In a segmented Cournot model, one outsider's adoption erodes the protected member-market rents of a regional union without reciprocally removing members' disadvantage in the outsider market. With residual per-unit adaptation cost $d$, the member's regional-minus-international welfare difference is $-\mathscr D+R(d,v)$, where $R$ is obtained from the re-solved product market. This yields precisely bounded preference reversal, stronger incentive without reversal, and weaker incentive regions. Strict outsider-only adoption and a government preference reversal coexist on an open set even when adaptation cost relief is incomplete. The political effect is sensitive to the network and demand structure: the initial regional advantage vanishes at zero network effects, under one alternative singleton-network assumption, and in a pre-specified differentiated-demand test under Cournot and Bertrand competition. A full-bypass coalition-stability application distinguishes robust international coordination from blocking-rule-sensitive regional stability. We offer a conditional mechanism, not a general prediction that interoperability promotes international harmonization.
+\end{abstract}
+\begin{keyword}
+private compatibility \sep standards \sep interoperability \sep imperfect competition \sep coalition formation \sep international harmonization
+\JEL L13 \sep L15 \sep F15 \sep C71
+\end{keyword}
+\end{frontmatter}
+\noindent\begin{minipage}{\linewidth}
+\textbf{R19 research proposal, 20 October 2026.} The original
+six-section R9 text below is preserved. The separately labelled R19
+section adds only audited partial results. Overall level:
+\RnineteenLevel; the requested joint primitive theorem is not proved.
+This document is neither submitted nor merged into PR 34.
+\end{minipage}\par
+
+\makeatletter
+\typeout{JICT BODY FONT=\f@size; BASELINE=\the\baselineskip}
+\makeatother
+\input{short_01_introduction}
+\input{short_02_model}
+\input{short_03_adoption}
+\input{short_04_incentives}
+\input{short_05_stability_scope}
+\input{short_06_discussion}
+\input{R19_AUDITED_EXTENSION}
+\section*{AI-assisted methods and reproducibility}
+ChatGPT (OpenAI) assisted with theoretical exploration, algebraic checks,
+literature discovery, manuscript editing, and the preparation of verification
+code. AI output was not used as a substitute for a mathematical proof or as
+an authoritative scholarly reference. The author retains responsibility for
+the model assumptions, economic interpretation, theorem statements, and
+manuscript. Exact symbolic checks, independent Cournot re-derivations, and
+formal verification of selected logical claims are documented in the
+anonymous replication package. No empirical data are used.
+
+\section*{Online Supplement (Online Resource 1)}
+The anonymous Online Resource 1 provides Cournot derivations, firm-stage deviation checks, coalition-stability comparisons, and exact sign certificates (Appendices A--G). Appendix E identifies the alternative equilibria and their polynomial sign proofs; Appendix G supplies the five-partition deviation ledger. The replication package includes the R2--R9 checks, independent matrix reconstruction, and targeted Lean sources. The short presentation preserves the certified results and the full research manuscript.
+\bibliographystyle{elsarticle-harv}
+\bibliography{references,R19_ADDITIONAL_REFERENCES}
+\input{table_residual_rent_regions}
+\end{document}

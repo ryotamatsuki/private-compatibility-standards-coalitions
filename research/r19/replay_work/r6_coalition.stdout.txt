@@ -1,0 +1,7 @@
+R6 coalition-stability robustness verification: PASS
+symmetric high-F strict: ((frozenset({3}), frozenset({1, 2})), (frozenset({2}), frozenset({1, 3})), (frozenset({1}), frozenset({2, 3})))
+symmetric high-F weak: ()
+symmetric intermediate strict/weak: ((frozenset({1, 2, 3}),),)
+asymmetric high-F strict/weak: ((frozenset({3}), frozenset({1, 2})),)
+asymmetric intermediate strict/weak: ((frozenset({1, 2, 3}),),)
+exact witness adoption margin (3/2*T_A-F_I): 42591/15564800

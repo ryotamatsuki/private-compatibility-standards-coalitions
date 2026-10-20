@@ -1,0 +1,3143 @@
+{
+  "markets": 19,
+  "proper_active_set_omitted_brand_checks": 171,
+  "minimum_strict_slack": "33819/12831625",
+  "status": "exact rational polytope proof, including inactive-at-choke kinks",
+  "certificates": [
+    {
+      "used": [
+        0,
+        0,
+        0
+      ],
+      "cost": [
+        "0",
+        "0",
+        "0"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 1,
+      "max_pressure": "190869/235169",
+      "strict_entry_slack": "44300/235169"
+    },
+    {
+      "used": [
+        0,
+        0,
+        0
+      ],
+      "cost": [
+        "0",
+        "0",
+        "0"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 2,
+      "max_pressure": "190869/235169",
+      "strict_entry_slack": "44300/235169"
+    },
+    {
+      "used": [
+        0,
+        0,
+        0
+      ],
+      "cost": [
+        "0",
+        "0",
+        "0"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 0,
+      "max_pressure": "190869/235169",
+      "strict_entry_slack": "44300/235169"
+    },
+    {
+      "used": [
+        0,
+        0,
+        0
+      ],
+      "cost": [
+        "0",
+        "0",
+        "0"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "190869/235169",
+      "strict_entry_slack": "44300/235169"
+    },
+    {
+      "used": [
+        0,
+        0,
+        0
+      ],
+      "cost": [
+        "0",
+        "0",
+        "0"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "190869/235169",
+      "strict_entry_slack": "44300/235169"
+    },
+    {
+      "used": [
+        0,
+        0,
+        0
+      ],
+      "cost": [
+        "0",
+        "0",
+        "0"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "190869/235169",
+      "strict_entry_slack": "44300/235169"
+    },
+    {
+      "used": [
+        0,
+        0,
+        0
+      ],
+      "cost": [
+        "0",
+        "0",
+        "0"
+      ],
+      "active": [
+        0,
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "190869/213019",
+      "strict_entry_slack": "22150/213019"
+    },
+    {
+      "used": [
+        0,
+        0,
+        0
+      ],
+      "cost": [
+        "0",
+        "0",
+        "0"
+      ],
+      "active": [
+        0,
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "190869/213019",
+      "strict_entry_slack": "22150/213019"
+    },
+    {
+      "used": [
+        0,
+        0,
+        0
+      ],
+      "cost": [
+        "0",
+        "0",
+        "0"
+      ],
+      "active": [
+        1,
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "190869/213019",
+      "strict_entry_slack": "22150/213019"
+    },
+    {
+      "used": [
+        0,
+        0,
+        0
+      ],
+      "cost": [
+        "0",
+        "0",
+        "1/500"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 1,
+      "max_pressure": "190869/235169",
+      "strict_entry_slack": "44300/235169"
+    },
+    {
+      "used": [
+        0,
+        0,
+        0
+      ],
+      "cost": [
+        "0",
+        "0",
+        "1/500"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 2,
+      "max_pressure": "190869/235169",
+      "strict_entry_slack": "21914831/117584500"
+    },
+    {
+      "used": [
+        0,
+        0,
+        0
+      ],
+      "cost": [
+        "0",
+        "0",
+        "1/500"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 0,
+      "max_pressure": "190869/235169",
+      "strict_entry_slack": "44300/235169"
+    },
+    {
+      "used": [
+        0,
+        0,
+        0
+      ],
+      "cost": [
+        "0",
+        "0",
+        "1/500"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "190869/235169",
+      "strict_entry_slack": "21914831/117584500"
+    },
+    {
+      "used": [
+        0,
+        0,
+        0
+      ],
+      "cost": [
+        "0",
+        "0",
+        "1/500"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "95243631/117584500",
+      "strict_entry_slack": "22340869/117584500"
+    },
+    {
+      "used": [
+        0,
+        0,
+        0
+      ],
+      "cost": [
+        "0",
+        "0",
+        "1/500"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "95243631/117584500",
+      "strict_entry_slack": "22340869/117584500"
+    },
+    {
+      "used": [
+        0,
+        0,
+        0
+      ],
+      "cost": [
+        "0",
+        "0",
+        "1/500"
+      ],
+      "active": [
+        0,
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "190869/213019",
+      "strict_entry_slack": "10861981/106509500"
+    },
+    {
+      "used": [
+        0,
+        0,
+        0
+      ],
+      "cost": [
+        "0",
+        "0",
+        "1/500"
+      ],
+      "active": [
+        0,
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "190678131/213019000",
+      "strict_entry_slack": "22340869/213019000"
+    },
+    {
+      "used": [
+        0,
+        0,
+        0
+      ],
+      "cost": [
+        "0",
+        "0",
+        "1/500"
+      ],
+      "active": [
+        1,
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "190678131/213019000",
+      "strict_entry_slack": "22340869/213019000"
+    },
+    {
+      "used": [
+        0,
+        0,
+        0
+      ],
+      "cost": [
+        "0",
+        "1/500",
+        "1/500"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 1,
+      "max_pressure": "190869/235169",
+      "strict_entry_slack": "21914831/117584500"
+    },
+    {
+      "used": [
+        0,
+        0,
+        0
+      ],
+      "cost": [
+        "0",
+        "1/500",
+        "1/500"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 2,
+      "max_pressure": "190869/235169",
+      "strict_entry_slack": "21914831/117584500"
+    },
+    {
+      "used": [
+        0,
+        0,
+        0
+      ],
+      "cost": [
+        "0",
+        "1/500",
+        "1/500"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 0,
+      "max_pressure": "95243631/117584500",
+      "strict_entry_slack": "22340869/117584500"
+    },
+    {
+      "used": [
+        0,
+        0,
+        0
+      ],
+      "cost": [
+        "0",
+        "1/500",
+        "1/500"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "95243631/117584500",
+      "strict_entry_slack": "221057/1175845"
+    },
+    {
+      "used": [
+        0,
+        0,
+        0
+      ],
+      "cost": [
+        "0",
+        "1/500",
+        "1/500"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "95243631/117584500",
+      "strict_entry_slack": "22340869/117584500"
+    },
+    {
+      "used": [
+        0,
+        0,
+        0
+      ],
+      "cost": [
+        "0",
+        "1/500",
+        "1/500"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "95243631/117584500",
+      "strict_entry_slack": "221057/1175845"
+    },
+    {
+      "used": [
+        0,
+        0,
+        0
+      ],
+      "cost": [
+        "0",
+        "1/500",
+        "1/500"
+      ],
+      "active": [
+        0,
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "190678131/213019000",
+      "strict_entry_slack": "21914831/213019000"
+    },
+    {
+      "used": [
+        0,
+        0,
+        0
+      ],
+      "cost": [
+        "0",
+        "1/500",
+        "1/500"
+      ],
+      "active": [
+        0,
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "190678131/213019000",
+      "strict_entry_slack": "21914831/213019000"
+    },
+    {
+      "used": [
+        0,
+        0,
+        0
+      ],
+      "cost": [
+        "0",
+        "1/500",
+        "1/500"
+      ],
+      "active": [
+        1,
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "95243631/106509500",
+      "strict_entry_slack": "11265869/106509500"
+    },
+    {
+      "used": [
+        0,
+        0,
+        1
+      ],
+      "cost": [
+        "0",
+        "0",
+        "2/125"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 1,
+      "max_pressure": "93513/111793",
+      "strict_entry_slack": "18280/111793"
+    },
+    {
+      "used": [
+        0,
+        0,
+        1
+      ],
+      "cost": [
+        "0",
+        "0",
+        "2/125"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 2,
+      "max_pressure": "100740/111793",
+      "strict_entry_slack": "1158039/13974125"
+    },
+    {
+      "used": [
+        0,
+        0,
+        1
+      ],
+      "cost": [
+        "0",
+        "0",
+        "2/125"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 0,
+      "max_pressure": "93513/111793",
+      "strict_entry_slack": "18280/111793"
+    },
+    {
+      "used": [
+        0,
+        0,
+        1
+      ],
+      "cost": [
+        "0",
+        "0",
+        "2/125"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "100740/111793",
+      "strict_entry_slack": "1158039/13974125"
+    },
+    {
+      "used": [
+        0,
+        0,
+        1
+      ],
+      "cost": [
+        "0",
+        "0",
+        "2/125"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "1264563/1471250",
+      "strict_entry_slack": "206687/1471250"
+    },
+    {
+      "used": [
+        0,
+        0,
+        1
+      ],
+      "cost": [
+        "0",
+        "0",
+        "2/125"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "1264563/1471250",
+      "strict_entry_slack": "206687/1471250"
+    },
+    {
+      "used": [
+        0,
+        0,
+        1
+      ],
+      "cost": [
+        "0",
+        "0",
+        "2/125"
+      ],
+      "active": [
+        0,
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "100740/102653",
+      "strict_entry_slack": "33819/12831625"
+    },
+    {
+      "used": [
+        0,
+        0,
+        1
+      ],
+      "cost": [
+        "0",
+        "0",
+        "2/125"
+      ],
+      "active": [
+        0,
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "3123372039/3501195875",
+      "strict_entry_slack": "377823836/3501195875"
+    },
+    {
+      "used": [
+        0,
+        0,
+        1
+      ],
+      "cost": [
+        "0",
+        "0",
+        "2/125"
+      ],
+      "active": [
+        1,
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "3123372039/3501195875",
+      "strict_entry_slack": "377823836/3501195875"
+    },
+    {
+      "used": [
+        0,
+        0,
+        1
+      ],
+      "cost": [
+        "2/125",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 1,
+      "max_pressure": "11502099/13974125",
+      "strict_entry_slack": "449688/2794825"
+    },
+    {
+      "used": [
+        0,
+        0,
+        1
+      ],
+      "cost": [
+        "2/125",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 2,
+      "max_pressure": "2478204/2794825",
+      "strict_entry_slack": "316621/2794825"
+    },
+    {
+      "used": [
+        0,
+        0,
+        1
+      ],
+      "cost": [
+        "2/125",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 0,
+      "max_pressure": "11502099/13974125",
+      "strict_entry_slack": "449688/2794825"
+    },
+    {
+      "used": [
+        0,
+        0,
+        1
+      ],
+      "cost": [
+        "2/125",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "2478204/2794825",
+      "strict_entry_slack": "316621/2794825"
+    },
+    {
+      "used": [
+        0,
+        0,
+        1
+      ],
+      "cost": [
+        "2/125",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "10281/11770",
+      "strict_entry_slack": "32517/294250"
+    },
+    {
+      "used": [
+        0,
+        0,
+        1
+      ],
+      "cost": [
+        "2/125",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "10281/11770",
+      "strict_entry_slack": "32517/294250"
+    },
+    {
+      "used": [
+        0,
+        0,
+        1
+      ],
+      "cost": [
+        "2/125",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        0,
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "2478204/2566325",
+      "strict_entry_slack": "88121/2566325"
+    },
+    {
+      "used": [
+        0,
+        0,
+        1
+      ],
+      "cost": [
+        "2/125",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        0,
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "3147971361/3501195875",
+      "strict_entry_slack": "59441076/700239175"
+    },
+    {
+      "used": [
+        0,
+        0,
+        1
+      ],
+      "cost": [
+        "2/125",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        1,
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "3147971361/3501195875",
+      "strict_entry_slack": "59441076/700239175"
+    },
+    {
+      "used": [
+        0,
+        0,
+        2
+      ],
+      "cost": [
+        "0",
+        "1/500",
+        "2/125"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 1,
+      "max_pressure": "93513/111793",
+      "strict_entry_slack": "9028207/55896500"
+    },
+    {
+      "used": [
+        0,
+        0,
+        2
+      ],
+      "cost": [
+        "0",
+        "1/500",
+        "2/125"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 2,
+      "max_pressure": "100740/111793",
+      "strict_entry_slack": "1158039/13974125"
+    },
+    {
+      "used": [
+        0,
+        0,
+        2
+      ],
+      "cost": [
+        "0",
+        "1/500",
+        "2/125"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 0,
+      "max_pressure": "46662987/55896500",
+      "strict_entry_slack": "9233513/55896500"
+    },
+    {
+      "used": [
+        0,
+        0,
+        2
+      ],
+      "cost": [
+        "0",
+        "1/500",
+        "2/125"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "2513463/2794825",
+      "strict_entry_slack": "1183224/13974125"
+    },
+    {
+      "used": [
+        0,
+        0,
+        2
+      ],
+      "cost": [
+        "0",
+        "1/500",
+        "2/125"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "1264563/1471250",
+      "strict_entry_slack": "206687/1471250"
+    },
+    {
+      "used": [
+        0,
+        0,
+        2
+      ],
+      "cost": [
+        "0",
+        "1/500",
+        "2/125"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "1264563/1471250",
+      "strict_entry_slack": "407489/2942500"
+    },
+    {
+      "used": [
+        0,
+        0,
+        2
+      ],
+      "cost": [
+        "0",
+        "1/500",
+        "2/125"
+      ],
+      "active": [
+        0,
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "5031963/5132650",
+      "strict_entry_slack": "92823/25663250"
+    },
+    {
+      "used": [
+        0,
+        0,
+        2
+      ],
+      "cost": [
+        "0",
+        "1/500",
+        "2/125"
+      ],
+      "active": [
+        0,
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "3123372039/3501195875",
+      "strict_entry_slack": "1483285777/14004783500"
+    },
+    {
+      "used": [
+        0,
+        0,
+        2
+      ],
+      "cost": [
+        "0",
+        "1/500",
+        "2/125"
+      ],
+      "active": [
+        1,
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "12486994149/14004783500",
+      "strict_entry_slack": "1517789351/14004783500"
+    },
+    {
+      "used": [
+        0,
+        1,
+        0
+      ],
+      "cost": [
+        "0",
+        "2/125",
+        "1/500"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 1,
+      "max_pressure": "100740/111793",
+      "strict_entry_slack": "1158039/13974125"
+    },
+    {
+      "used": [
+        0,
+        1,
+        0
+      ],
+      "cost": [
+        "0",
+        "2/125",
+        "1/500"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 2,
+      "max_pressure": "93513/111793",
+      "strict_entry_slack": "9028207/55896500"
+    },
+    {
+      "used": [
+        0,
+        1,
+        0
+      ],
+      "cost": [
+        "0",
+        "2/125",
+        "1/500"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 0,
+      "max_pressure": "1264563/1471250",
+      "strict_entry_slack": "206687/1471250"
+    },
+    {
+      "used": [
+        0,
+        1,
+        0
+      ],
+      "cost": [
+        "0",
+        "2/125",
+        "1/500"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "1264563/1471250",
+      "strict_entry_slack": "407489/2942500"
+    },
+    {
+      "used": [
+        0,
+        1,
+        0
+      ],
+      "cost": [
+        "0",
+        "2/125",
+        "1/500"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "46662987/55896500",
+      "strict_entry_slack": "9233513/55896500"
+    },
+    {
+      "used": [
+        0,
+        1,
+        0
+      ],
+      "cost": [
+        "0",
+        "2/125",
+        "1/500"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "2513463/2794825",
+      "strict_entry_slack": "1183224/13974125"
+    },
+    {
+      "used": [
+        0,
+        1,
+        0
+      ],
+      "cost": [
+        "0",
+        "2/125",
+        "1/500"
+      ],
+      "active": [
+        0,
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "3123372039/3501195875",
+      "strict_entry_slack": "1483285777/14004783500"
+    },
+    {
+      "used": [
+        0,
+        1,
+        0
+      ],
+      "cost": [
+        "0",
+        "2/125",
+        "1/500"
+      ],
+      "active": [
+        0,
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "5031963/5132650",
+      "strict_entry_slack": "92823/25663250"
+    },
+    {
+      "used": [
+        0,
+        1,
+        0
+      ],
+      "cost": [
+        "0",
+        "2/125",
+        "1/500"
+      ],
+      "active": [
+        1,
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "12486994149/14004783500",
+      "strict_entry_slack": "1517789351/14004783500"
+    },
+    {
+      "used": [
+        0,
+        1,
+        1
+      ],
+      "cost": [
+        "2/125",
+        "0",
+        "1/500"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 1,
+      "max_pressure": "1264563/1471250",
+      "strict_entry_slack": "206687/1471250"
+    },
+    {
+      "used": [
+        0,
+        1,
+        1
+      ],
+      "cost": [
+        "2/125",
+        "0",
+        "1/500"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 2,
+      "max_pressure": "1264563/1471250",
+      "strict_entry_slack": "407489/2942500"
+    },
+    {
+      "used": [
+        0,
+        1,
+        1
+      ],
+      "cost": [
+        "2/125",
+        "0",
+        "1/500"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 0,
+      "max_pressure": "100740/111793",
+      "strict_entry_slack": "1158039/13974125"
+    },
+    {
+      "used": [
+        0,
+        1,
+        1
+      ],
+      "cost": [
+        "2/125",
+        "0",
+        "1/500"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "93513/111793",
+      "strict_entry_slack": "9028207/55896500"
+    },
+    {
+      "used": [
+        0,
+        1,
+        1
+      ],
+      "cost": [
+        "2/125",
+        "0",
+        "1/500"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "2513463/2794825",
+      "strict_entry_slack": "1183224/13974125"
+    },
+    {
+      "used": [
+        0,
+        1,
+        1
+      ],
+      "cost": [
+        "2/125",
+        "0",
+        "1/500"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "46662987/55896500",
+      "strict_entry_slack": "9233513/55896500"
+    },
+    {
+      "used": [
+        0,
+        1,
+        1
+      ],
+      "cost": [
+        "2/125",
+        "0",
+        "1/500"
+      ],
+      "active": [
+        0,
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "3123372039/3501195875",
+      "strict_entry_slack": "1483285777/14004783500"
+    },
+    {
+      "used": [
+        0,
+        1,
+        1
+      ],
+      "cost": [
+        "2/125",
+        "0",
+        "1/500"
+      ],
+      "active": [
+        0,
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "12486994149/14004783500",
+      "strict_entry_slack": "1517789351/14004783500"
+    },
+    {
+      "used": [
+        0,
+        1,
+        1
+      ],
+      "cost": [
+        "2/125",
+        "0",
+        "1/500"
+      ],
+      "active": [
+        1,
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "5031963/5132650",
+      "strict_entry_slack": "92823/25663250"
+    },
+    {
+      "used": [
+        0,
+        1,
+        1
+      ],
+      "cost": [
+        "2/125",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 1,
+      "max_pressure": "1264563/1471250",
+      "strict_entry_slack": "407489/2942500"
+    },
+    {
+      "used": [
+        0,
+        1,
+        1
+      ],
+      "cost": [
+        "2/125",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 2,
+      "max_pressure": "1264563/1471250",
+      "strict_entry_slack": "206687/1471250"
+    },
+    {
+      "used": [
+        0,
+        1,
+        1
+      ],
+      "cost": [
+        "2/125",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 0,
+      "max_pressure": "2513463/2794825",
+      "strict_entry_slack": "1183224/13974125"
+    },
+    {
+      "used": [
+        0,
+        1,
+        1
+      ],
+      "cost": [
+        "2/125",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "46662987/55896500",
+      "strict_entry_slack": "9233513/55896500"
+    },
+    {
+      "used": [
+        0,
+        1,
+        1
+      ],
+      "cost": [
+        "2/125",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "100740/111793",
+      "strict_entry_slack": "1158039/13974125"
+    },
+    {
+      "used": [
+        0,
+        1,
+        1
+      ],
+      "cost": [
+        "2/125",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "93513/111793",
+      "strict_entry_slack": "9028207/55896500"
+    },
+    {
+      "used": [
+        0,
+        1,
+        1
+      ],
+      "cost": [
+        "2/125",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        0,
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "12486994149/14004783500",
+      "strict_entry_slack": "1517789351/14004783500"
+    },
+    {
+      "used": [
+        0,
+        1,
+        1
+      ],
+      "cost": [
+        "2/125",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        0,
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "3123372039/3501195875",
+      "strict_entry_slack": "1483285777/14004783500"
+    },
+    {
+      "used": [
+        0,
+        1,
+        1
+      ],
+      "cost": [
+        "2/125",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        1,
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "5031963/5132650",
+      "strict_entry_slack": "92823/25663250"
+    },
+    {
+      "used": [
+        0,
+        1,
+        2
+      ],
+      "cost": [
+        "0",
+        "2/125",
+        "2/125"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 1,
+      "max_pressure": "552/671",
+      "strict_entry_slack": "13533/83875"
+    },
+    {
+      "used": [
+        0,
+        1,
+        2
+      ],
+      "cost": [
+        "0",
+        "2/125",
+        "2/125"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 2,
+      "max_pressure": "552/671",
+      "strict_entry_slack": "13533/83875"
+    },
+    {
+      "used": [
+        0,
+        1,
+        2
+      ],
+      "cost": [
+        "0",
+        "2/125",
+        "2/125"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 0,
+      "max_pressure": "67896/83875",
+      "strict_entry_slack": "15979/83875"
+    },
+    {
+      "used": [
+        0,
+        1,
+        2
+      ],
+      "cost": [
+        "0",
+        "2/125",
+        "2/125"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "67896/83875",
+      "strict_entry_slack": "14637/83875"
+    },
+    {
+      "used": [
+        0,
+        1,
+        2
+      ],
+      "cost": [
+        "0",
+        "2/125",
+        "2/125"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "67896/83875",
+      "strict_entry_slack": "15979/83875"
+    },
+    {
+      "used": [
+        0,
+        1,
+        2
+      ],
+      "cost": [
+        "0",
+        "2/125",
+        "2/125"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "67896/83875",
+      "strict_entry_slack": "14637/83875"
+    },
+    {
+      "used": [
+        0,
+        1,
+        2
+      ],
+      "cost": [
+        "0",
+        "2/125",
+        "2/125"
+      ],
+      "active": [
+        0,
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "136896/152875",
+      "strict_entry_slack": "13533/152875"
+    },
+    {
+      "used": [
+        0,
+        1,
+        2
+      ],
+      "cost": [
+        "0",
+        "2/125",
+        "2/125"
+      ],
+      "active": [
+        0,
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "136896/152875",
+      "strict_entry_slack": "13533/152875"
+    },
+    {
+      "used": [
+        0,
+        1,
+        2
+      ],
+      "cost": [
+        "0",
+        "2/125",
+        "2/125"
+      ],
+      "active": [
+        1,
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "135792/152875",
+      "strict_entry_slack": "17083/152875"
+    },
+    {
+      "used": [
+        0,
+        1,
+        2
+      ],
+      "cost": [
+        "2/125",
+        "0",
+        "2/125"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 1,
+      "max_pressure": "67896/83875",
+      "strict_entry_slack": "15979/83875"
+    },
+    {
+      "used": [
+        0,
+        1,
+        2
+      ],
+      "cost": [
+        "2/125",
+        "0",
+        "2/125"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 2,
+      "max_pressure": "67896/83875",
+      "strict_entry_slack": "14637/83875"
+    },
+    {
+      "used": [
+        0,
+        1,
+        2
+      ],
+      "cost": [
+        "2/125",
+        "0",
+        "2/125"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 0,
+      "max_pressure": "552/671",
+      "strict_entry_slack": "13533/83875"
+    },
+    {
+      "used": [
+        0,
+        1,
+        2
+      ],
+      "cost": [
+        "2/125",
+        "0",
+        "2/125"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "552/671",
+      "strict_entry_slack": "13533/83875"
+    },
+    {
+      "used": [
+        0,
+        1,
+        2
+      ],
+      "cost": [
+        "2/125",
+        "0",
+        "2/125"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "67896/83875",
+      "strict_entry_slack": "14637/83875"
+    },
+    {
+      "used": [
+        0,
+        1,
+        2
+      ],
+      "cost": [
+        "2/125",
+        "0",
+        "2/125"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "67896/83875",
+      "strict_entry_slack": "15979/83875"
+    },
+    {
+      "used": [
+        0,
+        1,
+        2
+      ],
+      "cost": [
+        "2/125",
+        "0",
+        "2/125"
+      ],
+      "active": [
+        0,
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "136896/152875",
+      "strict_entry_slack": "13533/152875"
+    },
+    {
+      "used": [
+        0,
+        1,
+        2
+      ],
+      "cost": [
+        "2/125",
+        "0",
+        "2/125"
+      ],
+      "active": [
+        0,
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "135792/152875",
+      "strict_entry_slack": "17083/152875"
+    },
+    {
+      "used": [
+        0,
+        1,
+        2
+      ],
+      "cost": [
+        "2/125",
+        "0",
+        "2/125"
+      ],
+      "active": [
+        1,
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "136896/152875",
+      "strict_entry_slack": "13533/152875"
+    },
+    {
+      "used": [
+        0,
+        1,
+        2
+      ],
+      "cost": [
+        "2/125",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 1,
+      "max_pressure": "67896/83875",
+      "strict_entry_slack": "14637/83875"
+    },
+    {
+      "used": [
+        0,
+        1,
+        2
+      ],
+      "cost": [
+        "2/125",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 2,
+      "max_pressure": "67896/83875",
+      "strict_entry_slack": "15979/83875"
+    },
+    {
+      "used": [
+        0,
+        1,
+        2
+      ],
+      "cost": [
+        "2/125",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 0,
+      "max_pressure": "67896/83875",
+      "strict_entry_slack": "14637/83875"
+    },
+    {
+      "used": [
+        0,
+        1,
+        2
+      ],
+      "cost": [
+        "2/125",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "67896/83875",
+      "strict_entry_slack": "15979/83875"
+    },
+    {
+      "used": [
+        0,
+        1,
+        2
+      ],
+      "cost": [
+        "2/125",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "552/671",
+      "strict_entry_slack": "13533/83875"
+    },
+    {
+      "used": [
+        0,
+        1,
+        2
+      ],
+      "cost": [
+        "2/125",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "552/671",
+      "strict_entry_slack": "13533/83875"
+    },
+    {
+      "used": [
+        0,
+        1,
+        2
+      ],
+      "cost": [
+        "2/125",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        0,
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "135792/152875",
+      "strict_entry_slack": "17083/152875"
+    },
+    {
+      "used": [
+        0,
+        1,
+        2
+      ],
+      "cost": [
+        "2/125",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        0,
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "136896/152875",
+      "strict_entry_slack": "13533/152875"
+    },
+    {
+      "used": [
+        0,
+        1,
+        2
+      ],
+      "cost": [
+        "2/125",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        1,
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "136896/152875",
+      "strict_entry_slack": "13533/152875"
+    },
+    {
+      "used": [
+        0,
+        2,
+        2
+      ],
+      "cost": [
+        "2/125",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 1,
+      "max_pressure": "1264563/1471250",
+      "strict_entry_slack": "407489/2942500"
+    },
+    {
+      "used": [
+        0,
+        2,
+        2
+      ],
+      "cost": [
+        "2/125",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 2,
+      "max_pressure": "1264563/1471250",
+      "strict_entry_slack": "206687/1471250"
+    },
+    {
+      "used": [
+        0,
+        2,
+        2
+      ],
+      "cost": [
+        "2/125",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 0,
+      "max_pressure": "2513463/2794825",
+      "strict_entry_slack": "1183224/13974125"
+    },
+    {
+      "used": [
+        0,
+        2,
+        2
+      ],
+      "cost": [
+        "2/125",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "46662987/55896500",
+      "strict_entry_slack": "9233513/55896500"
+    },
+    {
+      "used": [
+        0,
+        2,
+        2
+      ],
+      "cost": [
+        "2/125",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "100740/111793",
+      "strict_entry_slack": "1158039/13974125"
+    },
+    {
+      "used": [
+        0,
+        2,
+        2
+      ],
+      "cost": [
+        "2/125",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "93513/111793",
+      "strict_entry_slack": "9028207/55896500"
+    },
+    {
+      "used": [
+        0,
+        2,
+        2
+      ],
+      "cost": [
+        "2/125",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        0,
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "12486994149/14004783500",
+      "strict_entry_slack": "1517789351/14004783500"
+    },
+    {
+      "used": [
+        0,
+        2,
+        2
+      ],
+      "cost": [
+        "2/125",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        0,
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "3123372039/3501195875",
+      "strict_entry_slack": "1483285777/14004783500"
+    },
+    {
+      "used": [
+        0,
+        2,
+        2
+      ],
+      "cost": [
+        "2/125",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        1,
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "5031963/5132650",
+      "strict_entry_slack": "92823/25663250"
+    },
+    {
+      "used": [
+        1,
+        0,
+        1
+      ],
+      "cost": [
+        "1/500",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 1,
+      "max_pressure": "2513463/2794825",
+      "strict_entry_slack": "1183224/13974125"
+    },
+    {
+      "used": [
+        1,
+        0,
+        1
+      ],
+      "cost": [
+        "1/500",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 2,
+      "max_pressure": "46662987/55896500",
+      "strict_entry_slack": "9233513/55896500"
+    },
+    {
+      "used": [
+        1,
+        0,
+        1
+      ],
+      "cost": [
+        "1/500",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 0,
+      "max_pressure": "1264563/1471250",
+      "strict_entry_slack": "407489/2942500"
+    },
+    {
+      "used": [
+        1,
+        0,
+        1
+      ],
+      "cost": [
+        "1/500",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "1264563/1471250",
+      "strict_entry_slack": "206687/1471250"
+    },
+    {
+      "used": [
+        1,
+        0,
+        1
+      ],
+      "cost": [
+        "1/500",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "93513/111793",
+      "strict_entry_slack": "9028207/55896500"
+    },
+    {
+      "used": [
+        1,
+        0,
+        1
+      ],
+      "cost": [
+        "1/500",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "100740/111793",
+      "strict_entry_slack": "1158039/13974125"
+    },
+    {
+      "used": [
+        1,
+        0,
+        1
+      ],
+      "cost": [
+        "1/500",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        0,
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "12486994149/14004783500",
+      "strict_entry_slack": "1517789351/14004783500"
+    },
+    {
+      "used": [
+        1,
+        0,
+        1
+      ],
+      "cost": [
+        "1/500",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        0,
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "5031963/5132650",
+      "strict_entry_slack": "92823/25663250"
+    },
+    {
+      "used": [
+        1,
+        0,
+        1
+      ],
+      "cost": [
+        "1/500",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        1,
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "3123372039/3501195875",
+      "strict_entry_slack": "1483285777/14004783500"
+    },
+    {
+      "used": [
+        1,
+        1,
+        1
+      ],
+      "cost": [
+        "1/500",
+        "0",
+        "1/500"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 1,
+      "max_pressure": "95243631/117584500",
+      "strict_entry_slack": "22340869/117584500"
+    },
+    {
+      "used": [
+        1,
+        1,
+        1
+      ],
+      "cost": [
+        "1/500",
+        "0",
+        "1/500"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 2,
+      "max_pressure": "95243631/117584500",
+      "strict_entry_slack": "221057/1175845"
+    },
+    {
+      "used": [
+        1,
+        1,
+        1
+      ],
+      "cost": [
+        "1/500",
+        "0",
+        "1/500"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 0,
+      "max_pressure": "190869/235169",
+      "strict_entry_slack": "21914831/117584500"
+    },
+    {
+      "used": [
+        1,
+        1,
+        1
+      ],
+      "cost": [
+        "1/500",
+        "0",
+        "1/500"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "190869/235169",
+      "strict_entry_slack": "21914831/117584500"
+    },
+    {
+      "used": [
+        1,
+        1,
+        1
+      ],
+      "cost": [
+        "1/500",
+        "0",
+        "1/500"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "95243631/117584500",
+      "strict_entry_slack": "221057/1175845"
+    },
+    {
+      "used": [
+        1,
+        1,
+        1
+      ],
+      "cost": [
+        "1/500",
+        "0",
+        "1/500"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "95243631/117584500",
+      "strict_entry_slack": "22340869/117584500"
+    },
+    {
+      "used": [
+        1,
+        1,
+        1
+      ],
+      "cost": [
+        "1/500",
+        "0",
+        "1/500"
+      ],
+      "active": [
+        0,
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "190678131/213019000",
+      "strict_entry_slack": "21914831/213019000"
+    },
+    {
+      "used": [
+        1,
+        1,
+        1
+      ],
+      "cost": [
+        "1/500",
+        "0",
+        "1/500"
+      ],
+      "active": [
+        0,
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "95243631/106509500",
+      "strict_entry_slack": "11265869/106509500"
+    },
+    {
+      "used": [
+        1,
+        1,
+        1
+      ],
+      "cost": [
+        "1/500",
+        "0",
+        "1/500"
+      ],
+      "active": [
+        1,
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "190678131/213019000",
+      "strict_entry_slack": "21914831/213019000"
+    },
+    {
+      "used": [
+        1,
+        1,
+        1
+      ],
+      "cost": [
+        "1/500",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 1,
+      "max_pressure": "95243631/117584500",
+      "strict_entry_slack": "221057/1175845"
+    },
+    {
+      "used": [
+        1,
+        1,
+        1
+      ],
+      "cost": [
+        "1/500",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 2,
+      "max_pressure": "95243631/117584500",
+      "strict_entry_slack": "22340869/117584500"
+    },
+    {
+      "used": [
+        1,
+        1,
+        1
+      ],
+      "cost": [
+        "1/500",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 0,
+      "max_pressure": "95243631/117584500",
+      "strict_entry_slack": "221057/1175845"
+    },
+    {
+      "used": [
+        1,
+        1,
+        1
+      ],
+      "cost": [
+        "1/500",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "95243631/117584500",
+      "strict_entry_slack": "22340869/117584500"
+    },
+    {
+      "used": [
+        1,
+        1,
+        1
+      ],
+      "cost": [
+        "1/500",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "190869/235169",
+      "strict_entry_slack": "21914831/117584500"
+    },
+    {
+      "used": [
+        1,
+        1,
+        1
+      ],
+      "cost": [
+        "1/500",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "190869/235169",
+      "strict_entry_slack": "21914831/117584500"
+    },
+    {
+      "used": [
+        1,
+        1,
+        1
+      ],
+      "cost": [
+        "1/500",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        0,
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "95243631/106509500",
+      "strict_entry_slack": "11265869/106509500"
+    },
+    {
+      "used": [
+        1,
+        1,
+        1
+      ],
+      "cost": [
+        "1/500",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        0,
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "190678131/213019000",
+      "strict_entry_slack": "21914831/213019000"
+    },
+    {
+      "used": [
+        1,
+        1,
+        1
+      ],
+      "cost": [
+        "1/500",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        1,
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "190678131/213019000",
+      "strict_entry_slack": "21914831/213019000"
+    },
+    {
+      "used": [
+        1,
+        1,
+        2
+      ],
+      "cost": [
+        "1/500",
+        "0",
+        "2/125"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 1,
+      "max_pressure": "46662987/55896500",
+      "strict_entry_slack": "9233513/55896500"
+    },
+    {
+      "used": [
+        1,
+        1,
+        2
+      ],
+      "cost": [
+        "1/500",
+        "0",
+        "2/125"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 2,
+      "max_pressure": "2513463/2794825",
+      "strict_entry_slack": "1183224/13974125"
+    },
+    {
+      "used": [
+        1,
+        1,
+        2
+      ],
+      "cost": [
+        "1/500",
+        "0",
+        "2/125"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 0,
+      "max_pressure": "93513/111793",
+      "strict_entry_slack": "9028207/55896500"
+    },
+    {
+      "used": [
+        1,
+        1,
+        2
+      ],
+      "cost": [
+        "1/500",
+        "0",
+        "2/125"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "100740/111793",
+      "strict_entry_slack": "1158039/13974125"
+    },
+    {
+      "used": [
+        1,
+        1,
+        2
+      ],
+      "cost": [
+        "1/500",
+        "0",
+        "2/125"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "1264563/1471250",
+      "strict_entry_slack": "407489/2942500"
+    },
+    {
+      "used": [
+        1,
+        1,
+        2
+      ],
+      "cost": [
+        "1/500",
+        "0",
+        "2/125"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "1264563/1471250",
+      "strict_entry_slack": "206687/1471250"
+    },
+    {
+      "used": [
+        1,
+        1,
+        2
+      ],
+      "cost": [
+        "1/500",
+        "0",
+        "2/125"
+      ],
+      "active": [
+        0,
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "5031963/5132650",
+      "strict_entry_slack": "92823/25663250"
+    },
+    {
+      "used": [
+        1,
+        1,
+        2
+      ],
+      "cost": [
+        "1/500",
+        "0",
+        "2/125"
+      ],
+      "active": [
+        0,
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "12486994149/14004783500",
+      "strict_entry_slack": "1517789351/14004783500"
+    },
+    {
+      "used": [
+        1,
+        1,
+        2
+      ],
+      "cost": [
+        "1/500",
+        "0",
+        "2/125"
+      ],
+      "active": [
+        1,
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "3123372039/3501195875",
+      "strict_entry_slack": "1483285777/14004783500"
+    },
+    {
+      "used": [
+        2,
+        1,
+        2
+      ],
+      "cost": [
+        "1/500",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 1,
+      "max_pressure": "2513463/2794825",
+      "strict_entry_slack": "1183224/13974125"
+    },
+    {
+      "used": [
+        2,
+        1,
+        2
+      ],
+      "cost": [
+        "1/500",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 2,
+      "max_pressure": "46662987/55896500",
+      "strict_entry_slack": "9233513/55896500"
+    },
+    {
+      "used": [
+        2,
+        1,
+        2
+      ],
+      "cost": [
+        "1/500",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 0,
+      "max_pressure": "1264563/1471250",
+      "strict_entry_slack": "407489/2942500"
+    },
+    {
+      "used": [
+        2,
+        1,
+        2
+      ],
+      "cost": [
+        "1/500",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "1264563/1471250",
+      "strict_entry_slack": "206687/1471250"
+    },
+    {
+      "used": [
+        2,
+        1,
+        2
+      ],
+      "cost": [
+        "1/500",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "93513/111793",
+      "strict_entry_slack": "9028207/55896500"
+    },
+    {
+      "used": [
+        2,
+        1,
+        2
+      ],
+      "cost": [
+        "1/500",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "100740/111793",
+      "strict_entry_slack": "1158039/13974125"
+    },
+    {
+      "used": [
+        2,
+        1,
+        2
+      ],
+      "cost": [
+        "1/500",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        0,
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "12486994149/14004783500",
+      "strict_entry_slack": "1517789351/14004783500"
+    },
+    {
+      "used": [
+        2,
+        1,
+        2
+      ],
+      "cost": [
+        "1/500",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        0,
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "5031963/5132650",
+      "strict_entry_slack": "92823/25663250"
+    },
+    {
+      "used": [
+        2,
+        1,
+        2
+      ],
+      "cost": [
+        "1/500",
+        "2/125",
+        "0"
+      ],
+      "active": [
+        1,
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "3123372039/3501195875",
+      "strict_entry_slack": "1483285777/14004783500"
+    },
+    {
+      "used": [
+        2,
+        2,
+        2
+      ],
+      "cost": [
+        "1/500",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 1,
+      "max_pressure": "95243631/117584500",
+      "strict_entry_slack": "221057/1175845"
+    },
+    {
+      "used": [
+        2,
+        2,
+        2
+      ],
+      "cost": [
+        "1/500",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        0
+      ],
+      "omitted": 2,
+      "max_pressure": "95243631/117584500",
+      "strict_entry_slack": "22340869/117584500"
+    },
+    {
+      "used": [
+        2,
+        2,
+        2
+      ],
+      "cost": [
+        "1/500",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 0,
+      "max_pressure": "95243631/117584500",
+      "strict_entry_slack": "221057/1175845"
+    },
+    {
+      "used": [
+        2,
+        2,
+        2
+      ],
+      "cost": [
+        "1/500",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "95243631/117584500",
+      "strict_entry_slack": "22340869/117584500"
+    },
+    {
+      "used": [
+        2,
+        2,
+        2
+      ],
+      "cost": [
+        "1/500",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "190869/235169",
+      "strict_entry_slack": "21914831/117584500"
+    },
+    {
+      "used": [
+        2,
+        2,
+        2
+      ],
+      "cost": [
+        "1/500",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "190869/235169",
+      "strict_entry_slack": "21914831/117584500"
+    },
+    {
+      "used": [
+        2,
+        2,
+        2
+      ],
+      "cost": [
+        "1/500",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        0,
+        1
+      ],
+      "omitted": 2,
+      "max_pressure": "95243631/106509500",
+      "strict_entry_slack": "11265869/106509500"
+    },
+    {
+      "used": [
+        2,
+        2,
+        2
+      ],
+      "cost": [
+        "1/500",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        0,
+        2
+      ],
+      "omitted": 1,
+      "max_pressure": "190678131/213019000",
+      "strict_entry_slack": "21914831/213019000"
+    },
+    {
+      "used": [
+        2,
+        2,
+        2
+      ],
+      "cost": [
+        "1/500",
+        "1/500",
+        "0"
+      ],
+      "active": [
+        1,
+        2
+      ],
+      "omitted": 0,
+      "max_pressure": "190678131/213019000",
+      "strict_entry_slack": "21914831/213019000"
+    }
+  ]
+}

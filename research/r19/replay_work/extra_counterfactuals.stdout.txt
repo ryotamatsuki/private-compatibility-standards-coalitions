@@ -1,0 +1,76 @@
+{
+  "zero_network_private_adoption_without_reversal": {
+    "mode": "cournot",
+    "v": "0",
+    "c": "1/10",
+    "d": "1/20",
+    "F": "1/50",
+    "gamma": "None",
+    "profiles": {
+      "SU": 8,
+      "SW": 64,
+      "IS": 1
+    },
+    "unique_pure_investment_NE": {
+      "SU": "[(((), (), (0,)), 23/6400)]",
+      "SW": "[(((), (), ()), 23/6400)]",
+      "IS": "[(((), (), ()), oo)]"
+    },
+    "max_SU_member_increment": "21/1280",
+    "max_SW_increment": "21/1280",
+    "outsider_two_market_gross": "93/3200",
+    "fee_lower": "21/1280",
+    "fee_upper": "93/3200",
+    "pre_gap": "-47/3200",
+    "post_gap": "-243/12800",
+    "pre_decimal": -0.0146875,
+    "post_decimal": -0.018984375,
+    "all_mixed_investment_NE": "unique by all-profile strict removal dominance and outsider strict adoption",
+    "market_configurations": 17
+  },
+  "bertrand_complete_compatibility": {
+    "mode": "bertrand",
+    "v": "33/500",
+    "c": "2/125",
+    "d": "0",
+    "F": "1/40",
+    "gamma": "23/25",
+    "profiles": {
+      "SU": 8,
+      "SW": 64,
+      "IS": 1
+    },
+    "unique_pure_investment_NE": {
+      "SU": "[(((), (), (0,)), 108056845758197054792533/18013487435825664407975000)]",
+      "SW": "[(((), (), ()), 809011771034379265027/66035359322591246875000)]",
+      "IS": "[(((), (), ()), oo)]"
+    },
+    "max_SU_member_increment": "139598507913459666247977/9006743717912832203987500",
+    "max_SW_increment": "139598507913459666247977/9006743717912832203987500",
+    "outsider_two_market_gross": "139598507913459666247977/4503371858956416101993750",
+    "fee_lower": "139598507913459666247977/9006743717912832203987500",
+    "fee_upper": "139598507913459666247977/4503371858956416101993750",
+    "pre_gap": "7855162695059566974763678509/2831702211424358619269262025000",
+    "post_gap": "-12645019356141999684/18013487435825664407975",
+    "pre_decimal": 0.0027740073314800945,
+    "post_decimal": -0.0007019750840136195,
+    "all_mixed_investment_NE": "unique by all-profile strict removal dominance and outsider strict adoption",
+    "market_configurations": 14
+  },
+  "bertrand_d0_price_audit": {
+    "d": "0",
+    "market_configurations": 15,
+    "global_price_candidate_checks": 171,
+    "kink_entry_checks": 135,
+    "minimum_kink_entry_slack": "33819/12831625",
+    "conclusion": "unique pure-price Nash in each d=0 market; no mixed-price uniqueness claim"
+  },
+  "bertrand_local_residual_comparative_static": {
+    "government_post_gap_derivative_at_d0": "-17763659488800/168594391265507",
+    "derivative_decimal": -0.10536328851429766,
+    "second_derivative": "196717863342197016/74687315330619601",
+    "original_Cournot_v6_25_d0_derivative": "25/5776",
+    "interpretation": "cost-only rise in residual d locally lowers SU-minus-IS welfare at Bertrand d=0; original Cournot derivative is positive; export term fixed"
+  },
+  "epistemic_status": "exact rational finite games and exact candidate/vertex proof; local derivative at d=0, not a universal comparative-static theorem"
+}

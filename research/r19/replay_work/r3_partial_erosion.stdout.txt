@@ -1,0 +1,11 @@
+R3 equilibrium identities: PASS
+R3 adoption-threshold recovery at d=0: PASS
+R3 exact witness: PASS
+R3 witness-line robustness certificates: PASS
+Witness:
+  d=0.050000
+  pre-adoption SU-IS gap=0.008144251
+  post-adoption SU-IS gap=-0.007255237
+  lower F=0.068167949
+  chosen F=0.090000000
+  upper F=0.118007042

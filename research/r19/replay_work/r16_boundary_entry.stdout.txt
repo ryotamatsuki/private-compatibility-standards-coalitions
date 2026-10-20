@@ -1,0 +1,8 @@
+R16 VERIFIED GLOBAL PRICE BEST REPLIES: 19 distinct market games
+Feasible rational candidate prices evaluated: 211
+All rival-exit active sets, all stationary points and boundaries PASS
+Consumer LCP demand uniqueness: M positive definite for all games
+R16 GLOBAL UNILATERAL BERTRAND DEVIATION AUDIT: PASS
+ALL INACTIVE-PRODUCT NASH CANDIDATES EXCLUDED: 171
+All 19 markets have unique full-positive pure Bertrand equilibria
+Global deviation audit + boundary-entry audit: COMPLETE

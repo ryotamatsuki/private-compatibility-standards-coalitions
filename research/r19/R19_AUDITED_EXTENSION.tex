@@ -1,0 +1,168 @@
+\section{R19: Primitive residual incidence and its limits}
+\label{sec:r19-partial}
+\noindent\textbf{Research status.} The joint primitive theorem sought in
+R19 is not established. We retain the conditional mechanism and its
+original negative cases. The following result is a proved partial
+comparative static, not a claim about every demand or competition game.
+
+\subsection{Consumer primitives and a common post-adoption component}
+Consider baseline utility
+\(U_0(q)=\mathbf1^\top q-q^\top M_0q/2\), where
+\(M_0=(1-\gamma)I+\gamma\mathbf1\mathbf1^\top\).
+Buyers take expected network benefits as given individually. Fully
+compatible fulfilled networks give
+\(p=\mathbf1-(M_0-v\mathbf1\mathbf1^\top)q\) and
+\(CS=q^\top M_0q/2\). At \(\gamma=1\), retain the original
+uniform-type tied-buyer allocation and quantity clearing, rather than
+claiming strict concavity of differentiated demand.
+
+Two symmetric member suppliers have zero marginal cost, and the outsider
+has residual cost \(d\). The separately derived own-markup coefficients
+are \(\ell_C=1-v\) for Cournot, and
+\[
+\ell_B=\frac{(1-\gamma)(1+2\gamma-3v)}{1+\gamma-2v}
+\]
+for differentiated Bertrand. These follow from the actual quantity and
+price strategy equations respectively; an arbitrary \(\ell\) is only an
+algebraic conduct coefficient, not an economic primitive.
+
+Put \(b=\gamma-v\ge0\), \(\tau=1-\gamma+\ell>0\), and
+\(\kappa=\tau+3b>0\). The fully active solution is
+\[
+x(d)=\frac{\tau+bd}{\tau\kappa},\qquad
+ y(d)=\frac{\tau-(\tau+2b)d}{\tau\kappa},\qquad
+0\le d<\bar d=\frac{\tau}{\tau+2b}.
+\]
+The member national component from its two symmetric member destinations
+is
+\[
+m_C(d)=(1+\gamma+2\ell)x(d)^2+2\gamma x(d)y(d)+y(d)^2/2.
+\]
+The two profit terms represent the \emph{same home firm's} profits in
+two destinations by symmetry. They do not add foreign profits to welfare.
+
+\begin{proposition}[Primitive residual-incidence boundary, R19 T-R]
+\label{prop:r19-residual}
+Define
+\begin{align*}
+\rho&=1+2\gamma-4\ell b/\tau,\\
+\mathcal A&=\tau^2+4(1-\gamma)\tau b+
+ [6(1-\gamma)+4\ell]b^2>0.
+\end{align*}
+On the stated active branch,
+\[
+R_{\gamma,v,\ell}(d):=m_C(d)-m_C(0)
+=\frac{-\rho d+\mathcal A d^2/(2\tau^2)}{\kappa^2}.
+\]
+It is strictly convex. If \(\rho\le0\), it is nondecreasing for
+\(d\ge0\). If \(\rho>0\), its unconstrained minimum is
+\(d_{\min}=\rho\tau^2/\mathcal A\), and it decreases before this
+point. Every turning or zero-return point must be truncated by
+\(d\le c\), \(d<\bar d\), and the actual investment equilibrium.
+For original homogeneous Cournot, \(\rho=4v-1<0\) on \(v<1/4\).
+For substitute differentiated Bertrand, \(0\le v\le\gamma<1\)
+implies \(\rho>0\).
+\end{proposition}
+\begin{proof}
+The symmetric system
+\((M_0-v\mathbf1\mathbf1^\top+\ell I)q
+=\mathbf1-(0,0,d)^\top\) gives the displayed quantities. Expanding
+\(m_C(d)-m_C(0)\) gives the linear coefficient
+\(-\rho/\kappa^2\) and quadratic coefficient
+\(\mathcal A/(2\tau^2\kappa^2)\).
+Positivity follows term by term. At \(\gamma=1,\ell=1-v\),
+this is identically the original equation~\eqref{eq:residual-rent}.
+For Bertrand substitution gives
+\[
+\rho=\frac{2\gamma^2-10\gamma v-3\gamma+12v^2+v-2}
+{-3\gamma+5v-2}.
+\]
+The denominator is negative. Its numerator is convex in \(v\) and is
+negative at both endpoints \(v=0,\gamma\): respectively
+\((\gamma-2)(2\gamma+1)\) and
+\(2(\gamma-1)(2\gamma+1)\). Convexity bounds it above by the
+negative chord. Thus \(\rho>0\). Differentiating the quadratic
+proves the remaining assertions.
+\end{proof}
+
+\subsection{Global price continuation and endogenous-investment limits}
+For the fully compatible price game, write
+\(M=(1-\gamma)I+b\mathbf1\mathbf1^\top\).
+It is positive definite for \(\gamma<1,b\ge0\), giving unique
+consumer demand at every price by complementarity. As an active firm's
+price rises, rivals only enter; with \(n\) active brands its demand slope
+magnitude is
+\[
+\frac{1-\gamma+(n-1)b}{(1-\gamma)(1-\gamma+nb)}.
+\]
+This magnitude increases at rival entry. Thus its positive-sales profit
+is piecewise strictly concave with downward derivative jumps, and its
+interior stationary price is a global best reply. Below-cost or no-sale
+prices cannot dominate its strictly positive profit.
+
+Every zero-cost member must enter a putative boundary equilibrium. If
+only the outsider were inactive, including at its choke-price kink,
+necessary right-derivative conditions imply member markups
+\(p_i\ge\ell_Bq_i\), and hence
+\(Q\le2/(\tau+2b)\). The outsider's reservation price is then at
+least \(\tau/(\tau+2b)=\bar d>d\), admitting profitable entry.
+All equilibria must therefore be active, and the linear active FOC system
+has a unique solution. This establishes unique \emph{pure-price} Nash
+in this full-compatible family. Other portfolio network matrices require
+separate checks; full compatibility alone does not certify them.
+
+Holding the pre-adoption member-market outsider profit \(B\) fixed,
+its privately financed two-destination support gain is
+\(G_o(d)=2[\ell y(d)^2-B]\), with
+\[
+G_o'(d)=-\frac{4\ell(\tau+2b)y(d)}{\tau\kappa}<0.
+\]
+When \(\rho>0\) and \(d<d_{\min}\), raising residual cost
+therefore \emph{weakens private adoption while strengthening the member's
+relative IS preference}, conditional on strict outsider-only adoption
+remaining selected. The outsider's strict best-response cutoff is
+\[
+d_A=\bar d\left[1-\kappa\sqrt{(B+F/2)/\ell}\right]
+\]
+when positive; it does not replace all member and SW investment checks.
+
+At the R16 Bertrand primitives
+\((\gamma,v,c,d,F)=(23/25,33/500,2/125,1/500,1/40)\),
+exact investment checks give a strict private interval. Government gaps are
+\[
+\Delta_0\simeq+0.00277401,\qquad \Delta_1\simeq-0.000907434.
+\] These are different primitives from the original
+Cournot example. Here \(d_A\simeq0.0105895<c=0.016<d_{\min}
+\simeq0.040003\); no observable U-shape or later SU return is claimed.
+Original R10's identical-parameter full reversal remains withdrawn.
+
+For differentiated Cournot with \(0\le v<1/4\), the residual first
+slope switches at
+\[
+\gamma_C^*(v)=\frac{2v-1+\sqrt{17+20v-28v^2}}4.
+\]
+Indeed \(\rho_C=N_C/(\gamma+v-2)\), with
+\(N_C=2\gamma^2-2\gamma v+\gamma+4v^2-3v-2\).
+This numerator is strictly increasing in \(\gamma\ge v\), negative
+at \(\gamma=v\) and positive at \(\gamma=1\). Its unique root is
+the displayed cutoff, giving a negative residual slope below it and a
+positive one above it. Thus substitution and markups jointly determine
+the contrast; it is not a universal conduct dichotomy.
+
+\subsection{What remains unproved and what is already known}
+One-way private investment does not imply a government ranking reversal:
+with original Cournot primitives \((v,c,d,F)=(0,1/10,1/20,1/50)\),
+all-profile strict dominance gives outsider-only SU support and no SW
+support, but the initial government gap is \(-47/3200\).
+R19 has not derived the initial SU advantage and all investment threshold
+orders from a single common primitive condition. Overall grade therefore
+remains Level~2; the cumulative Level~3 and~4 criteria are not met.
+
+General welfare incidence and inverse-Jacobian methods are already
+established by \citet{r19WeylFabinger2013,r19AdachiFabinger2022}. Public standards
+followed by private fixed-cost adaptation are already in Maggi and
+Mr\'azov\'a; one-way compatibility and both competition forms are prior, including \citet{r19BuccellaEtAl2026}.
+The precise institutional residual increment remains subject to source
+comparison, with latest-2026 and Walz--Woeckener full-proof gaps. No
+firstness claim is made. The nonlinear Bertrand examples remain numerical
+checks, not a global nonlinear-price uniqueness theorem.

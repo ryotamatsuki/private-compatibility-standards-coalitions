@@ -1,0 +1,532 @@
+{
+  "as_of": "2026-10-20",
+  "repository": "ryotamatsuki/private-compatibility-standards-coalitions",
+  "r18_base_sha": "6cd349daec244def5cb4ed475cc448ed091b9c22",
+  "protected_pr34_head": "08d6e6adb1a90bdf03fa223c0961ac04620f0fa2",
+  "input_prs": [
+    {
+      "url": "https://github.com/ryotamatsuki/private-compatibility-standards-coalitions/pull/34",
+      "number": 34,
+      "state": "open",
+      "merged": false,
+      "mergeable": true,
+      "draft": false,
+      "body": "The short edition's Appendix E had exact robustness conclusions but insufficient on-paper detail to reconstruct the sign proofs. This revision now supplies the demand systems, re-derived equilibria, welfare targets, positive denominators, domains, endpoints and exact polynomial certificates.\n\n**Final files:** anonymous main 19 pages at 12-point true double spacing; online supplement 22 pages. Before: 18 pages at 1.5 spacing. This is a format correction, not a same-format compression comparison. The original 39-page JICT edition, original Appendices A–F, certified R2–R9 scripts and Lean sources remain unchanged.\n\nChanges:\n- Short-only Appendix E proof replacement, with an explicit rational S1 coefficient array and compact domain-wide Cournot/Bertrand certificates.\n- Separate evaluator from primitives; all firm actions and nonempty coalition deviations at exact witnesses; no production verification imports.\n- Section 5 table inside a formal proof, CS/domestic-profit decomposition of R, and accurate equality-boundary wording.\n- Limited English/literature polishing; explicit singleton assumption and policy limitations.\n- Editable anonymous main/SI ZIPs, separate identified-source ZIP, full short replication package, Fig1 EPS and numbered ESM_1 PDF.\n- [Independent audit](https://github.com/ryotamatsuki/private-compatibility-standards-coalitions/blob/revision/r9-jict-astra-final-polish/docs/revision/22_r9_final_polish_independent_audit_20261013.md), [old/new/reason ledger](https://github.com/ryotamatsuki/private-compatibility-standards-coalitions/blob/revision/r9-jict-astra-final-polish/docs/revision/23_r9_final_polish_change_ledger_20261013.md) and protected-blob evidence. The delivered ZIP includes both reports, exact source patch, QA JSON and all rational certificate coefficients.\n\n**Mathematical disclosure:** certified model, theorem inequalities, witness, stability and negative robustness conclusions unchanged. Equivalent identities and exact proof bridges were added. The equality prose distinguishes ranking indifference from unchanged incentive. No new economic theorem or model extension.\n\n**Final validation at head `08d6e6adb1a90bdf03fa223c0961ac04620f0fa2`: all four runs SUCCESS.**\n- [Paper CI — push](https://github.com/ryotamatsuki/private-compatibility-standards-coalitions/actions/runs/38333494416)\n- [Paper CI — PR](https://github.com/ryotamatsuki/private-compatibility-standards-coalitions/actions/runs/38333497139)\n- [Short Preview — push](https://github.com/ryotamatsuki/private-compatibility-standards-coalitions/actions/runs/38333494364)\n- [Short Preview — PR](https://github.com/ryotamatsuki/private-compatibility-standards-coalitions/actions/runs/38333497161)\n\nR2–R9, canonical verification, fresh Lean FV1–FV5, exact independent reconstruction, actual-replication-ZIP execution, clean-room main/SI recompilation with matching text, recursive anonymity, embedded fonts and spacing all passed. Lean coverage is targeted, not whole-paper formalization. Final CI PDFs were downloaded with digest verification and visually checked on all 19+22 pages; the title/cover were also inspected. Final PDFs and the complete submission ZIP are saved as deliverables.\n\nAudit: contribution **CONDITIONAL GO** for the bounded applied-theory mechanism; correctness, verifiability, readability and limited literature positioning **PASS**. Public-guideline file preflight passes; overall Stage 14 remains **UNVERIFIED** for the live portal, generated submission PDF and final author declarations, which were expressly outside the task.\n\n**Ready for author review. Do not merge without the author's approval. No journal submission has been performed.**\n",
+      "title": "R9 JICT final polish: verifiable Appendix E and 19-page double-spaced manuscript",
+      "base": "revision/research-track",
+      "base_sha": "e828684594479b674b9b1538ae0bc4a19a00b681",
+      "head": "revision/r9-jict-astra-final-polish",
+      "head_sha": "08d6e6adb1a90bdf03fa223c0961ac04620f0fa2",
+      "head_repo_id": 1347442552,
+      "head_repo_full_name": "ryotamatsuki/private-compatibility-standards-coalitions",
+      "merge_commit_sha": "89baa2acadc6c46a32770469c958944ab0e179e8",
+      "user": {
+        "login": "ryotamatsuki",
+        "name": "ryotamatsuki",
+        "email": null,
+        "avatar_url": "https://avatars.githubusercontent.com/u/60263857?v=4",
+        "id": 60263857
+      },
+      "requested_reviewers": null,
+      "requested_team_reviewers": null,
+      "diff": null,
+      "comments": null,
+      "created_at": "2026-10-13T00:40:36Z",
+      "updated_at": "2026-10-13T01:59:45Z",
+      "closed_at": null,
+      "merged_at": null,
+      "commits": 3,
+      "changed_files": 15,
+      "additions": 1196,
+      "deletions": 27,
+      "display_url": "https://github.com/ryotamatsuki/private-compatibility-standards-coalitions/pull/34",
+      "display_title": "R9 JICT final polish: verifiable Appendix E and 19-page double-spaced manuscript"
+    },
+    {
+      "url": "https://github.com/ryotamatsuki/private-compatibility-standards-coalitions/pull/41",
+      "number": 41,
+      "state": "open",
+      "merged": false,
+      "mergeable": true,
+      "draft": true,
+      "body": "## Editor-facing mission: generalize the ORIGINAL mechanism without altering its results\n\nThis is a **research-only Draft** child of R15, not a submission or a proposed merge into original PR #34. The original R9 model, original Cournot Propositions, residual-cost formula, coalition-stability results, original numeric witness, supplementary proofs and historical negative tests are preserved **byte-for-byte** as predecessor content. Page count is deliberately deferred.\n\n## Actual theoretical advance, not generic profit relabeling\n\n- R12+R13 gave **one conduct-neutral sufficient-condition mechanism** for (G1) endogenous SU outsider-only private compatibility and SW no-adoption, and (G3) a buyer-microfounded *integrated national-incidence* criterion for government preference reversal, robust even when the marginal national-welfare effect changes sign.\n- **R9 Cournot** satisfies G1+G3 with exact certificates and has a nonempty infinite-dimensional nonlinear inverse-demand neighborhood (R15).\n- **NEW R16 Bertrand** satisfies **the same G1 and G3** under an independent differentiated-quadratic, consumer-optimized fulfilled-network-expectations model. At (gamma,v,c,d,F)=(23/25,33/500,2/125,1/500,1/40), exact operating payoffs across ALL 8 SU/64 SW standard-support profiles show max member/SW adoption gain ~=0.01515717 < F=.025 < outsider gain ~=0.02981642. Member SU-minus-IS welfare changes **+0.00277400733 to -0.00090743389**. Consumer welfare is **correctly** CS=q'M0q/2, not previously erroneous R10 CS=q'(M0-vC)q/2.\n- **Price-game verification exceeds interior FOCs:** Exact active-set profit maximization across 19 distinct network/cost markets, 211 feasible rational candidate deviations, and 171 strict profitable-entry inequalities rule out all unilateral profitable price deviations and every inactive-brand equilibrium. Thus the price equilibrium in each relevant market is globally Nash and unique.\n- **R12-G3 IN BERTRAND:** Explicit symbolic compatibility/cost interpolation; positive Bernstein coefficients prove W''>0 on a continuum, and the exact **64-bin right-Riemann upper bound** -0.00280224531698 is below -G0=-0.00277400733148. Hence **the very same general theorem** drives the Bertrand ranking reversal, not merely an endpoint numerical coincidence.\n- **Beyond quadratic demand:** Nonquadratic consumer utility U=1'q-q'M0q/2-epsilon sum(q_i^4)/4 with epsilon=1e-4, solved for every stage-market combination and investment deviation, retains SU-minus-IS ranking +0.00272947 before / -0.00090978 after. Research note presents a parameter-open and conditional C3 function-space continuation argument (requires hostile peer scrutiny on price-strategy compactification and global uniqueness).\n\n## Important limits, no unsupported “perfect IJIO” claim\n\nThe Cournot and Bertrand nonvacuity examples use **different primitive parameter values** and differentiate products differently; R10's earlier **same-parameter** claim was withdrawn after R15 revealed inconsistent CS accounting. The general theorem is **conditional**; not all price games or demands induce the reversal, nor is standard national welfare incidence a newly invented math theorem. Original nearest literature must still be compared at proposition/proof level, especially Gandal & Shy (2001), Katz & Shapiro (1985), Walz & Woeckener (2003), Buccella–Fanti–Gori (2026) and strategic-trade pass-through research. IJIO editorial outcome is **not guaranteed**.\n\n## Artifacts\n\n- Append-only new Proposition in `paper/jict_short/short_04_incentives.tex` (all earlier R9-R15 text left untouched)\n- Independent research gate and theorem proof: `research/r16/R16_CONDUCT_NEUTRAL_COURNOT_BERTRAND_GENERALITY_AUDIT.md`\n- Exact price/welfare/adoption audit scripts, global rival-exit deviation scripts and the G3 exact Bernstein/Riemann certificate\n- Nonlinear consumer-price example re-solving all market and firm-stage profiles\n- Isolated GitHub Actions workflow to reproduce claims\n\n**NO MERGE / NO JOURNAL SUBMISSION** without final referee-level source-theorem audit and explicit author approval. Length requirements are intentionally out of scope for now.",
+      "title": "R16: Cournot-independent general mechanism, exact Bertrand equilibrium and welfare theorem",
+      "base": "research/r15-function-space-portability-20261020",
+      "base_sha": "ad94299cfaadff4cacf4bd0fe19379ef590c1d9a",
+      "head": "research/r16-fulfilled-bertrand-portability-20261020",
+      "head_sha": "500ffe4a4c1413b89e3f8e47368f7c720036e50d",
+      "head_repo_id": 1347442552,
+      "head_repo_full_name": "ryotamatsuki/private-compatibility-standards-coalitions",
+      "merge_commit_sha": "90863ff0bd8d07677c97a3406be7e9812cef9736",
+      "user": {
+        "login": "ryotamatsuki",
+        "name": "ryotamatsuki",
+        "email": null,
+        "avatar_url": "https://avatars.githubusercontent.com/u/60263857?v=4",
+        "id": 60263857
+      },
+      "requested_reviewers": null,
+      "requested_team_reviewers": null,
+      "diff": null,
+      "comments": null,
+      "created_at": "2026-10-20T09:30:10Z",
+      "updated_at": "2026-10-20T09:33:19Z",
+      "closed_at": null,
+      "merged_at": null,
+      "commits": 15,
+      "changed_files": 9,
+      "additions": 822,
+      "deletions": 1,
+      "display_url": "https://github.com/ryotamatsuki/private-compatibility-standards-coalitions/pull/41",
+      "display_title": "R16: Cournot-independent general mechanism, exact Bertrand equilibrium and welfare theorem"
+    },
+    {
+      "url": "https://github.com/ryotamatsuki/private-compatibility-standards-coalitions/pull/42",
+      "number": 42,
+      "state": "open",
+      "merged": false,
+      "mergeable": true,
+      "draft": true,
+      "body": "## Purpose\nCarry out **source- and theorem-level** skeptical novelty assessment of the original IJIO project and its R16 generalization, not rewrite or weaken any existing result. Original R9 PR #34 and scientific sources R9–R16 are unchanged. Page count deferred.\n\n## Research artifacts\n- `research/r17/R17_ORIGINAL_NOVELTY_VS_R16_PRIMARY_THEOREM_ABSORPTION_AUDIT.md`: >30k-character primary-text / historical claim-ledger report mapping editor decision, R1/R2/R7/R9 novelty findings, R12–R16 new conditional G1/G3 theorems and documented original R10 retraction to **specific propositions** in parent works. Explicit source access classifications `[P]` full text vs `[A]` abstract; forbids firstness claims.\n- `research/r17/R17_PROPOSED_MANUSCRIPT_POSITIONING.tex`: cautious proposed introduction paragraph distinguishing Gandal–Shy (2001) *already price competition, public standards unions*; Takarada et al. (2020) public regional/multilateral ranking; Buccella et al. (2023, **2026**) endogenous private compatibility/Cournot–Bertrand; Maggi–Mrázová costly adaptation after public standard-setting and formal agreements. Preserves original question; **not included in paper builder** until author approves.\n- `research/r17/R17_PROPOSED_ADDITIONAL_REFERENCES.bib`: missing vetted Buccella–Fanti–Gori (2026) published citation and Walz–Woeckener (2003) CEPR working paper. Maggi 2024 key already in canonical BibTeX; no duplication.\n\n## Most serious new finding\nA **directly inspected Dec. 2024 Yale full version of Maggi–Mrázová** has governments set national exact emission standards followed by **firms' post-policy fixed-cost adaptation/supply of different standards**, and Propositions 1–2, 6–7 and Remark 5 explicitly show spontaneous standards harmony and formal agreements inducing greater diversity or being only coordinating. Thus 'government sets standards, then firm pays an extra-standards fee' is **NOT novel**. The remaining candidate R16 contribution is appreciably narrower: after an *already fixed exclusionary regional government coalition*, the outsider *alone* buys the member standard and thereby reverses the *same government member's counterfactual SU-vs-IS preference*, while members' own outsider-market disadvantage persists, with joint G1+G3 equilibrium-feasibility verified in Cournot AND Bertrand under consumer-consistent welfare.\n\n## High-risk unresolved close predecessors\n- **Maggi–Mrázová July 16, 2026 revised full paper** not inspected; 2024 author's Yale full PDF was inspected and is compared proposition-by-proposition.\n- **Buccella–Fanti–Gori (2026)** full article behind publisher paywall; abstract shows one-way compatibility and Cournot/Bertrand are directly prior. The 2023 Pisa PDF is **another paper**, not this 2026 article.\n- Walz–Woeckener (2003), Klimenko (2009): official full abstracts verified, full theorems not yet extracted.\n\n## Verdict\n**CONDITIONAL GO for R16's stronger generality argument, NOT originality-certified or IJIO resubmission-ready.** The novel candidate is the strict *cross-stage government-institution preference* effect; finite dominance, consumer choice microfoundation and national incidence identities are established theory individually. Exact price game checks alone cannot guarantee independent original IO insight. Further primary proof absorption and a tighter economic primitive theorem needed.\n\n**DO NOT MERGE / SUBMIT:** journal choice and manuscript changes require separate author approval; PR #34 untouched. Source annotations in the audit include DOI and original-paper URLs.",
+      "title": "R17 independent IJIO novelty audit: original R0/R7/R9 vs cross-conduct R16, primary theorem mapping",
+      "base": "research/r16-fulfilled-bertrand-portability-20261020",
+      "base_sha": "500ffe4a4c1413b89e3f8e47368f7c720036e50d",
+      "head": "research/r17-prior-art-absorption-editorial-gate-20261020",
+      "head_sha": "786bbf43444d735b8dafabd41ceb1d05ac878525",
+      "head_repo_id": 1347442552,
+      "head_repo_full_name": "ryotamatsuki/private-compatibility-standards-coalitions",
+      "merge_commit_sha": "328d3dca644b70c956ec6f70a62e1901e019a662",
+      "user": {
+        "login": "ryotamatsuki",
+        "name": "ryotamatsuki",
+        "email": null,
+        "avatar_url": "https://avatars.githubusercontent.com/u/60263857?v=4",
+        "id": 60263857
+      },
+      "requested_reviewers": null,
+      "requested_team_reviewers": null,
+      "diff": null,
+      "comments": null,
+      "created_at": "2026-10-20T09:52:51Z",
+      "updated_at": "2026-10-20T09:52:51Z",
+      "closed_at": null,
+      "merged_at": null,
+      "commits": 6,
+      "changed_files": 3,
+      "additions": 227,
+      "deletions": 0,
+      "display_url": "https://github.com/ryotamatsuki/private-compatibility-standards-coalitions/pull/42",
+      "display_title": "R17 independent IJIO novelty audit: original R0/R7/R9 vs cross-conduct R16, primary theorem mapping"
+    },
+    {
+      "url": "https://github.com/ryotamatsuki/private-compatibility-standards-coalitions/pull/43",
+      "number": 43,
+      "state": "open",
+      "merged": false,
+      "mergeable": true,
+      "draft": true,
+      "body": "## Independent R18 research result — no merge/submission\n\n**Theorem status:** Main Proposition R18-P is a rigorously proven **conduct-neutral conditional mechanism**. It separately bounds (1) the initial member-market protection net of persistent export losses and (2) residual protection after one-way private support. It DOES NOT derive the signs of all derivative response envelopes directly from arbitrary consumer utility / production-cost / conduct primitives. **Level 2, NOT Level 3 or 4.**\n\n### Actual new mathematical content\n- Two-channel cost/compatibility decomposition (local protection b, compatible residual r, export handicap e, network contrasts H,J).\n- Sufficient inequalities `c(bL-eU)>H+J` and `d*rU<J+c*eL` give SU-to-IS government ranking reversal without assuming either welfare ranking.\n- Scope selection: `max(0,beta,sigma)<F<2alpha`; one outsider interface covers two member markets, member reverse access only one.\n- Independently re-solved exact SymPy rational **8 SU + 64 SW** adoption profiles under both R9 Cournot and R16 differentiated Bertrand, including every firm investment deviation. New bounds strict in BOTH instances:\n  - Cournot: pre lower +0.0011264283; post upper -0.0020701231.\n  - Bertrand: pre lower +0.0013170012; post upper -0.0005916274.\n- Inherited R16 global Bertrand price deviations / 2026 literature constraints stated **explicitly**; R18 did **not** independently re-run every global price deviation or establish all-C3 global uniqueness.\n- Counterexample v=0,c=.1: pre advantage -47/3200, so not universal.\n\n### Artifacts\nNine new files under `research/r18/`: model, theorems/proofs, primitive reduction, R9 exact nesting/preservation, novelty audit, independent hostile referees, SymPy executable, local verification log, manuscript proposal. One isolated `.github/workflows/r18-general-theorem-audit.yml`.\n\n### Protection and priority\nCreated from R17 commit `786bbf43444d735b8dafabd41ceb1d05ac878525`. PR #34 original and all inherited `paper/`, `docs/`, `code/` sources are unchanged. R10 FE welfare correction/retraction remains in place. Gandal–Shy (2001), Maggi–Mrázová (2024/2026), Buccella–Fanti–Gori (2026), Walz–Woeckener (2003) overlap remains serious. 2026 full-text priority questions unresolved.\n\n**No merge into parent research or JICT, no paper submission. Draft only.**",
+      "title": "R18 [RESEARCH ONLY]: primitive cost/network asymmetry bound and hostile Level-2 theorem audit",
+      "base": "research/r17-prior-art-absorption-editorial-gate-20261020",
+      "base_sha": "786bbf43444d735b8dafabd41ceb1d05ac878525",
+      "head": "research/r18-primitive-mechanism-theorem",
+      "head_sha": "6cd349daec244def5cb4ed475cc448ed091b9c22",
+      "head_repo_id": 1347442552,
+      "head_repo_full_name": "ryotamatsuki/private-compatibility-standards-coalitions",
+      "merge_commit_sha": "f7f2bd5d9578e2dc27e1742a2c3960951bb9a08b",
+      "user": {
+        "login": "ryotamatsuki",
+        "name": "ryotamatsuki",
+        "email": null,
+        "avatar_url": "https://avatars.githubusercontent.com/u/60263857?v=4",
+        "id": 60263857
+      },
+      "requested_reviewers": null,
+      "requested_team_reviewers": null,
+      "diff": null,
+      "comments": null,
+      "created_at": "2026-10-20T10:37:01Z",
+      "updated_at": "2026-10-20T10:38:59Z",
+      "closed_at": null,
+      "merged_at": null,
+      "commits": 4,
+      "changed_files": 10,
+      "additions": 505,
+      "deletions": 0,
+      "display_url": "https://github.com/ryotamatsuki/private-compatibility-standards-coalitions/pull/43",
+      "display_title": "R18 [RESEARCH ONLY]: primitive cost/network asymmetry bound and hostile Level-2 theorem audit"
+    }
+  ],
+  "r18_ci": {
+    "jobs": [
+      {
+        "id": 118583236845,
+        "name": "inherited-r9-r15-r16-replay",
+        "status": "completed",
+        "conclusion": "success",
+        "run_id": 39409427371,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Install reproducible symbolic and numerical stack",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4
+          },
+          {
+            "name": "R10 correct fulfilled-expectations welfare and R13 buyers",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5
+          },
+          {
+            "name": "R9 strict investment and nonmonotone integrated incidence",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6
+          },
+          {
+            "name": "R15 nonlinear Cournot all-stage equilibrium replay",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 7
+          },
+          {
+            "name": "R16 all 8 SU and 64 SW Bertrand stage portfolios",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 8
+          },
+          {
+            "name": "R16 global price deviations including boundary exit",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 9
+          },
+          {
+            "name": "R16 rule out inactive seller equilibria by entry",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 10
+          },
+          {
+            "name": "R16 exact integrated welfare bound",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 11
+          },
+          {
+            "name": "R16 nonlinear differentiated Bertrand empirical reproduction",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 12
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 23
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 24
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 25
+          }
+        ]
+      },
+      {
+        "id": 118583237222,
+        "name": "rational-check",
+        "status": "completed",
+        "conclusion": "success",
+        "run_id": 39409427371,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Run python -m pip install sympy==1.13.3",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4
+          },
+          {
+            "name": "Prohibit changes to inherited research and paper files",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5
+          },
+          {
+            "name": "Independently derive full investment game and cost/network envelopes",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 11
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 12
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 13
+          }
+        ]
+      }
+    ]
+  },
+  "r18_head_ci": {
+    "workflow_runs": [
+      {
+        "id": 39409427371,
+        "name": "R18 Primitive Mechanism Independent Check",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 6,
+        "jobs_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/actions/runs/39409427371/jobs",
+        "logs_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/actions/runs/39409427371/logs",
+        "workflow_id": 390413450
+      },
+      {
+        "id": 39409427427,
+        "name": "Paper CI",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 518,
+        "jobs_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/actions/runs/39409427427/jobs",
+        "logs_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/actions/runs/39409427427/logs",
+        "workflow_id": 343044459
+      }
+    ]
+  },
+  "exact_run": {
+    "id": 39409427371,
+    "name": "R18 Primitive Mechanism Independent Check",
+    "node_id": "WFR_kwLOUFBXeM8AAAAJLPwjqw",
+    "head_branch": "research/r18-primitive-mechanism-theorem",
+    "head_sha": "6cd349daec244def5cb4ed475cc448ed091b9c22",
+    "path": ".github/workflows/r18-general-theorem-audit.yml",
+    "display_title": "R18 [RESEARCH ONLY]: primitive cost/network asymmetry bound and hostile Level-2 theorem audit",
+    "run_number": 6,
+    "event": "pull_request",
+    "status": "completed",
+    "conclusion": "success",
+    "workflow_id": 390413450,
+    "check_suite_id": 106790434142,
+    "check_suite_node_id": "CS_kwDOUFBXeM8AAAAY3TS1Xg",
+    "url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/actions/runs/39409427371",
+    "html_url": "https://github.com/ryotamatsuki/private-compatibility-standards-coalitions/actions/runs/39409427371",
+    "pull_requests": [
+      {
+        "url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/pulls/43",
+        "id": 4934520198,
+        "number": 43,
+        "head": {
+          "ref": "research/r18-primitive-mechanism-theorem",
+          "sha": "6cd349daec244def5cb4ed475cc448ed091b9c22",
+          "repo": {
+            "id": 1347442552,
+            "url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions",
+            "name": "private-compatibility-standards-coalitions"
+          }
+        },
+        "base": {
+          "ref": "research/r17-prior-art-absorption-editorial-gate-20261020",
+          "sha": "786bbf43444d735b8dafabd41ceb1d05ac878525",
+          "repo": {
+            "id": 1347442552,
+            "url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions",
+            "name": "private-compatibility-standards-coalitions"
+          }
+        }
+      }
+    ],
+    "created_at": "2026-10-20T10:39:02Z",
+    "updated_at": "2026-10-20T10:39:38Z",
+    "actor": {
+      "login": "ryotamatsuki",
+      "id": 60263857,
+      "node_id": "MDQ6VXNlcjYwMjYzODU3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/60263857?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ryotamatsuki",
+      "html_url": "https://github.com/ryotamatsuki",
+      "followers_url": "https://api.github.com/users/ryotamatsuki/followers",
+      "following_url": "https://api.github.com/users/ryotamatsuki/following{/other_user}",
+      "gists_url": "https://api.github.com/users/ryotamatsuki/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/ryotamatsuki/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/ryotamatsuki/subscriptions",
+      "organizations_url": "https://api.github.com/users/ryotamatsuki/orgs",
+      "repos_url": "https://api.github.com/users/ryotamatsuki/repos",
+      "events_url": "https://api.github.com/users/ryotamatsuki/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/ryotamatsuki/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "run_attempt": 1,
+    "referenced_workflows": [],
+    "run_started_at": "2026-10-20T10:39:02Z",
+    "triggering_actor": {
+      "login": "ryotamatsuki",
+      "id": 60263857,
+      "node_id": "MDQ6VXNlcjYwMjYzODU3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/60263857?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ryotamatsuki",
+      "html_url": "https://github.com/ryotamatsuki",
+      "followers_url": "https://api.github.com/users/ryotamatsuki/followers",
+      "following_url": "https://api.github.com/users/ryotamatsuki/following{/other_user}",
+      "gists_url": "https://api.github.com/users/ryotamatsuki/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/ryotamatsuki/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/ryotamatsuki/subscriptions",
+      "organizations_url": "https://api.github.com/users/ryotamatsuki/orgs",
+      "repos_url": "https://api.github.com/users/ryotamatsuki/repos",
+      "events_url": "https://api.github.com/users/ryotamatsuki/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/ryotamatsuki/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "jobs_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/actions/runs/39409427371/jobs",
+    "logs_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/actions/runs/39409427371/logs",
+    "check_suite_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/check-suites/106790434142",
+    "artifacts_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/actions/runs/39409427371/artifacts",
+    "cancel_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/actions/runs/39409427371/cancel",
+    "rerun_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/actions/runs/39409427371/rerun",
+    "previous_attempt_url": null,
+    "workflow_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/actions/workflows/390413450",
+    "head_commit": {
+      "id": "6cd349daec244def5cb4ed475cc448ed091b9c22",
+      "tree_id": "4196a11c5233c9b8798e7df925b35f2260a864cb",
+      "message": "R18: rerun R9 R10 R13 R15 R16 nonlinear and all-corner Bertrand certificate in CI",
+      "timestamp": "2026-10-20T10:38:58Z",
+      "author": {
+        "name": "ryotamatsuki",
+        "email": "60263857+ryotamatsuki@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "ryotamatsuki",
+        "email": "60263857+ryotamatsuki@users.noreply.github.com"
+      }
+    },
+    "head_repository": {
+      "id": 1347442552,
+      "node_id": "R_kgDOUFBXeA",
+      "name": "private-compatibility-standards-coalitions",
+      "full_name": "ryotamatsuki/private-compatibility-standards-coalitions",
+      "private": false,
+      "owner": {
+        "login": "ryotamatsuki",
+        "id": 60263857,
+        "node_id": "MDQ6VXNlcjYwMjYzODU3",
+        "avatar_url": "https://avatars.githubusercontent.com/u/60263857?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/ryotamatsuki",
+        "html_url": "https://github.com/ryotamatsuki",
+        "followers_url": "https://api.github.com/users/ryotamatsuki/followers",
+        "following_url": "https://api.github.com/users/ryotamatsuki/following{/other_user}",
+        "gists_url": "https://api.github.com/users/ryotamatsuki/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/ryotamatsuki/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/ryotamatsuki/subscriptions",
+        "organizations_url": "https://api.github.com/users/ryotamatsuki/orgs",
+        "repos_url": "https://api.github.com/users/ryotamatsuki/repos",
+        "events_url": "https://api.github.com/users/ryotamatsuki/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/ryotamatsuki/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "html_url": "https://github.com/ryotamatsuki/private-compatibility-standards-coalitions",
+      "description": "Theoretical paper on private compatibility, international standards coalitions, and multilateral harmonization.",
+      "fork": false,
+      "url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions",
+      "forks_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/forks",
+      "keys_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/keys{/key_id}",
+      "collaborators_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/collaborators{/collaborator}",
+      "teams_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/teams",
+      "hooks_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/hooks",
+      "issue_events_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/issues/events{/number}",
+      "events_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/events",
+      "assignees_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/assignees{/user}",
+      "branches_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/branches{/branch}",
+      "tags_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/tags",
+      "blobs_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/git/blobs{/sha}",
+      "git_tags_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/git/tags{/sha}",
+      "git_refs_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/git/refs{/sha}",
+      "trees_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/git/trees{/sha}",
+      "statuses_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/statuses/{sha}",
+      "languages_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/languages",
+      "stargazers_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/stargazers",
+      "contributors_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/contributors",
+      "subscribers_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/subscribers",
+      "subscription_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/subscription",
+      "commits_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/commits{/sha}",
+      "git_commits_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/git/commits{/sha}",
+      "comments_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/comments{/number}",
+      "issue_comment_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/issues/comments{/number}",
+      "contents_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/contents/{+path}",
+      "compare_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/compare/{base}...{head}",
+      "merges_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/merges",
+      "archive_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/{archive_format}{/ref}",
+      "downloads_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/downloads",
+      "issues_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/issues{/number}",
+      "pulls_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/pulls{/number}",
+      "milestones_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/milestones{/number}",
+      "notifications_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/notifications{?since,all,participating}",
+      "labels_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/labels{/name}",
+      "releases_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/releases{/id}",
+      "deployments_url": "https://api.github.com/repos/ryotamatsuki/private-compatibility-standards-coalitions/deployments"
+    }
+  }
+}

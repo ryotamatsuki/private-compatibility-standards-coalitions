@@ -1,0 +1,19 @@
+{
+  "overall_level": 2,
+  "requested_main_theorem": "NOT_PROVED",
+  "level3_attained": false,
+  "level4_attained": false,
+  "scholarly_priority": "UNCONFIRMED",
+  "claims": {
+    "T_R": "ANALYTIC_PROOF_WITH_SYMBOLIC_CHECK",
+    "Cournot_substitution_cutoff": "ANALYTIC_PROOF_WITH_SYMBOLIC_CHECK",
+    "full_compatible_Bertrand_global_pure_Nash": "ANALYTIC_PROOF",
+    "R16_all_portfolio_global_pure_price_Nash": "EXACT_COMPUTATION_ASSISTED_PROOF",
+    "R9_R16_adoption": "EXACT_RATIONAL_WITH_DOMINANCE_PROOF",
+    "R15_nonlinear_example": "NUMERICAL",
+    "R16_nonlinear_example": "NUMERICAL",
+    "all_C3_price_global_uniqueness": "UNPROVED",
+    "primitive_initial_SU_superiority": "UNPROVED",
+    "general_primitive_all_profile_adoption_order": "UNPROVED"
+  }
+}

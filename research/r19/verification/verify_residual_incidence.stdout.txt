@@ -1,0 +1,62 @@
+{
+  "status": "PROVED_PARTIAL_THEOREM_NOT_FULL_LEVEL_3",
+  "symbolic_identity": "PASS",
+  "original_R9_residual_identity": "PASS",
+  "Bertrand_rho_sign": "analytic convex numerator and negative denominator",
+  "R16": {
+    "ell": {
+      "exact": "1321/11175",
+      "decimal": 0.1182102908277405
+    },
+    "tau": {
+      "exact": "443/2235",
+      "decimal": 0.1982102908277405
+    },
+    "kappa": {
+      "exact": "616907/223500",
+      "decimal": 2.7602102908277404
+    },
+    "rho": {
+      "exact": "222258/276875",
+      "decimal": 0.80273769751693
+    },
+    "A": {
+      "exact": "123066192803/156100781250",
+      "decimal": 0.78837653352872
+    },
+    "d_min": {
+      "exact": "4923014700/123066192803",
+      "decimal": 0.04000298203650931
+    },
+    "d_zero_again": {
+      "exact": "9846029400/123066192803",
+      "decimal": 0.08000596407301862
+    },
+    "d_exit": {
+      "exact": "22150/213019",
+      "decimal": 0.10398133499828653
+    },
+    "R_at_d": {
+      "exact": "-959072911274525373/4667957208163725062500",
+      "decimal": -0.0002054588053200694
+    },
+    "R_slope_at_d": {
+      "exact": "-934483178356750746/9335914416327450125",
+      "decimal": -0.10009551680577172
+    },
+    "outsider_pre_profit": {
+      "exact": "511244968167/31263041459387500",
+      "decimal": 1.635301443178959e-05
+    },
+    "outsider_adoption_cutoff": {
+      "exact": "22150/213019 - 206881*sqrt(549915964724215969739895)/1642706411483991000",
+      "decimal": 0.01058951937470792
+    }
+  },
+  "not_proved": [
+    "initial SU rank from primitives",
+    "all-stage investment selection over an interval",
+    "global price uniqueness for arbitrary demand",
+    "scholarly priority"
+  ]
+}
