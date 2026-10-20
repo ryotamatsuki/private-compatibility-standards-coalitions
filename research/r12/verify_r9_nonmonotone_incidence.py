@@ -38,7 +38,7 @@ assert G0==s.Rational(2408509,295731200)>0
 assert G1==-s.Rational(1341,184832)<0
 assert s.factor(W.subs(a,1)-W.subs(a,0))==-s.Rational(4554109,295731200)
 assert s.factor(s.diff(xh,a))==-205/(8*(3*a+16)**2)
-assert s.factor(s.diff(yo,a))==15*(891*a*a+156*a+19891)/(8*(3*a+16)**2*(6*a-25)**2)
+assert s.factor(s.diff(yo,a)-15*(891*a*a+156*a+19891)/(8*(3*a+16)**2*(6*a-25)**2))==0
 # W'(a) changes sign: the uniform pointwise welfare-loss condition
 # is NOT necessary and cannot be certified for this original witness.
 Wprime=s.factor(s.diff(W,a))
