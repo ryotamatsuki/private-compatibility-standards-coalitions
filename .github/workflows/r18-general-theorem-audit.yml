@@ -1,0 +1,32 @@
+name: R18 Primitive Mechanism Independent Check
+on:
+  push:
+    branches: ['research/r18-primitive-mechanism-theorem']
+    paths:
+      - 'research/r18/**'
+      - '.github/workflows/r18-general-theorem-audit.yml'
+  pull_request:
+    paths:
+      - 'research/r18/**'
+      - '.github/workflows/r18-general-theorem-audit.yml'
+permissions:
+  contents: read
+jobs:
+  rational-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install sympy==1.13.3
+      - name: Prohibit changes to inherited research and paper files
+        run: |
+          git diff --exit-code 786bbf43444d735b8dafabd41ceb1d05ac878525 HEAD -- paper docs code
+          git diff --name-only 786bbf43444d735b8dafabd41ceb1d05ac878525 HEAD | while IFS= read -r file; do
+            case "$file" in research/r18/*|.github/workflows/r18-general-theorem-audit.yml) ;; *) echo "Protected: $file"; exit 1 ;; esac
+          done
+      - name: Independently derive full investment game and cost/network envelopes
+        run: python research/r18/verify_r18.py | tee research/r18/r18-ci-output.json
