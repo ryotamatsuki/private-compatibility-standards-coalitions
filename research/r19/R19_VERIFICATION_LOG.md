@@ -47,6 +47,9 @@ BSTINPUTS, without changes to this project's inherited source. CI uses
 its separately installed TeX publisher package. A first layout pass found
 one overfull new paragraph; its wording was shortened and rebuilt.
 
+Final local build is 24 pages. All pages were rendered to contact sheets;
+the added proof pages and the first two pages were visually checked. A
+new editorial notice was kept together to avoid a page-break split.
 Final compile and render evidence is recorded in build/r19-manuscript,
 with undefined-reference/citation/duplicate and overfull checks failing
 closed in the builder. Generated build files are CI artifacts, not
