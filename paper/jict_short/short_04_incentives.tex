@@ -259,8 +259,11 @@ leave the product-market conduct and demand functions unspecified.  In a
 representative member destination, let \(q=(q_1,q_2,q_O)\),
 \(p(q,a)\) be differentiable inverse prices, and \(S(q,a)\) be its
 welfare-consistent consumer-surplus function.  We do \emph{not} require
-\(p=\nabla U\) or impose a particular market conduct; this accommodates
-the consumer-surplus convention used in Section~\ref{sec:short-model}.
+\(p=\nabla U\) or impose a particular market conduct.  Demand,
+prices, and surplus must nevertheless arise from the same consumer
+optimization problem with fulfilled network expectations, as specified
+below; the canonical convention in Section~\ref{sec:short-model}
+is an exact member of this economically admissible class.
 The continuously varying \(a\in[0,1]\) is a counterfactual
 interpolation from no private adoption to outsider-only adoption, not
 a third discrete strategy available to firms.  Assume that along this
@@ -268,6 +271,97 @@ path the product-market equilibrium \(q(a)\) is regular and
 differentiable, home production costs \(C_h(q_h)\) are differentiable,
 the two member destinations are symmetric, and the home firm's
 operating profit in the outsider destination does not change.
+
+
+
+\paragraph{Consumer microfoundation and fulfilled network expectations.}
+In each destination a continuum of atomistic consumers has unit
+demands and quasi-linear numeraire utility.  A buyer with taste vector
+\(t\) obtains \(u_i(t,a)=\theta(t)+\varepsilon_i(t)+g_i^e-p_i\)
+from standard-compatible product \(i\), or zero from the outside
+option.  A buyer takes expected network benefits \(g_i^e\) as given;
+fulfilled expectations require \(g_i^e=G_i(q,a)\) at the market
+equilibrium.  The firm, by contrast, may internalize
+\(G_i(q,a)\) in its chosen quantity or price strategy.
+The resulting national welfare is defined from \emph{realized
+buyer utility net of prices}, not from an arbitrary pair of
+inverse demands and postulated consumer-surplus functions.
+
+The original specification is nested \emph{exactly}, not as a
+limit of an unrelated differentiated-demand system.  Set
+\(\varepsilon_i(t)=0\), let \(\theta\) be uniformly distributed
+on \([0,1]\), and let active brands have common
+network-adjusted price \(z=p_i-g_i^e\).  Buyers with
+\(\theta\ge z\) purchase, with the quantities supplied by
+the Cournot firms clearing the allocation among indifferent
+buyers.  Then
+\[
+ Q=1-z,\qquad p_i=1-Q+G_i(q,a),\qquad
+ CS=\int_{1-Q}^{1}\bigl(\theta-(1-Q)\bigr)d\theta
+ =\frac{Q^2}{2}.
+\]
+For any continuously differentiable, strictly decreasing inverse
+quantile \(D(Q)\) of a general willingness-to-pay distribution,
+the same consumer optimization instead gives
+\begin{equation}
+ p_i=D(Q)+G_i(q,a),\qquad
+ CS=\int_0^Q D(z)\,dz-QD(Q).
+ \label{eq:general-consumer-foundation}
+\end{equation}
+The original uniform case is \(D(Q)=1-Q\); its
+group-specific, singleton-zero \(G_i\) and Cournot quantities
+are \emph{unchanged}.  With nondegenerate brand tastes
+\(\varepsilon_i\), consumers need not be indifferent,
+and differentiable product-specific demands can support
+regular price-setting equilibria, but their existence and
+the sign of government preferences remain separate questions.
+
+For a no-tie regular buyer-allocation branch, denote by
+\[
+ V(p,g)=\int\max\{0,\max_i[
+   \theta(t)+\varepsilon_i(t)+g_i-p_i]\}\,d\mu(t)
+\]
+the quasilinear consumer surplus.  Buyer optimization gives
+\(V_{p_i}=-q_i\) and \(V_{g_i}=q_i\).
+Along a differentiable, fulfilled-expectations market path,
+\(S(q(a),a)=V(p(a),G(q(a),a))\), so the total differential is
+\begin{equation}
+ \frac{dS}{da}
+ =\sum_{i=1,2,O}q_i(a)
+   \left[\frac{dG_i}{da}-\frac{dp_i}{da}\right].
+ \label{eq:microfounded-consumer-envelope}
+\end{equation}
+For the tied homogeneous-buyers Cournot case the identical
+pathwise formula follows directly from
+equation~\eqref{eq:general-consumer-foundation} and
+\(p_i=D(Q)+G_i\), without applying a differentiable
+product-choice envelope at a point of mass indifference.
+
+Combining this \emph{microfounded} surplus differential with
+national producer-profit accounting gives the more revealing
+specialization of equation~\eqref{eq:general-incidence}:
+\begin{equation}
+ \boxed{
+ \frac{dW_M^{SU}}{da}
+ =\underbrace{\sum_i q_i\frac{dG_i}{da}}_{
+   \text{buyer network benefits}}
+ -\underbrace{q_O\frac{dp_O}{da}}_{
+   \text{foreign-price incidence}}
+ +\underbrace{\sum_{h=1}^{2}(p_h-C'_h)
+                         \frac{dq_h}{da}}_{
+   \text{home markup displacement}}.}
+ \label{eq:microfounded-national-incidence}
+\end{equation}
+All derivatives include the total equilibrium response to
+the hypothetical adoption path.  In particular, the
+buyer network term is \emph{not} dropped merely because
+the original model happens to have \(CS=Q^2/2\):
+the benefit is capitalized into fulfilled-expectations
+prices.  This identity does not use the Cournot or Bertrand
+first-order conditions and is consistent with the
+model-independent private-investment and integrated-welfare
+sufficiency tests below.  Its individual incidence components
+are familiar welfare accounting, not independently new claims.
 
 National accounting then gives
 \[
