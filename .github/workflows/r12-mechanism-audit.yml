@@ -45,7 +45,11 @@ jobs:
           for path in paths:
               assert Path(path).read_bytes()==subprocess.check_output(['git','show',f'{base}:{path}']),path
           prop = bytes([92]) + b'begin{proposition}'
-          assert current.count(prop)==original.count(prop)+1
+          prior=subprocess.check_output(['git','show',\
+              '7ddd716dbb1ad6e07805edbd67969580fbd51e20:'+changed])
+          assert current.startswith(prior)
+          assert current.count(prop)==original.count(prop)+2
+          assert bytes([92])+b'label{prop:nonparametric-R15}' in current
           print('R9 PREFIX AND 10 ORIGINAL SOURCE FILES: PRESERVED')
           PY
       - run: python -m pip install sympy==1.13.3

@@ -503,3 +503,77 @@ a change in the discrete firm-adoption game.  The exact expressions
 and sign certificates are reported in the reproducibility audit.
 This finite test establishes \emph{applicability}, not independent
 novelty of integration or pass-through accounting.
+
+
+\subsection{Nonparametric demand robustness of the original mechanism}
+\label{subsec:nonparametric-R15}
+The preceding general incidence conditions do not require choosing
+Cournot or Bertrand, but they do require that the respective market
+equilibria exist and satisfy the stated investment and response
+inequalities.  A separate positive result verifies that the original
+Cournot mechanism is not a consequence of \emph{exactly} linear
+willingness-to-pay schedules.
+
+Keep the original network compatibility groups, three-country
+segmentation, firm standard-adoption strategies, all cost parameters,
+and the consumer-choice foundation above.  Let \(D\) range over
+smooth strictly decreasing inverse willingness-to-pay schedules and
+let consumer surplus be derived from the \emph{same} demand,
+\[
+CS_D(Q)=\int_0^Q D(z)\,dz-QD(Q),\qquad
+p_i=D(Q)+G_i(q,s).
+\]
+The original \(D_0(Q)=1-Q\) is a member of this class.
+
+\begin{proposition}[Nonparametric preservation of endogenous reversal]
+\label{prop:nonparametric-R15}
+At the certified original primitives
+\((v,c,d,F)=(6/25,1/10,1/20,9/100)\), there exists a
+strictly positive \(C^2\)-neighborhood of \(D_0(Q)=1-Q\)
+such that \emph{every} demand in this neighborhood admits
+well-defined, unique and regular Cournot continuations in the
+finite standards-adoption game.  In each regional union the
+outsider alone strictly adopts the members' standard; under
+separate standards no firm adopts; and a representative
+regional member's government strictly prefers the union
+before outsider adaptation but international standardization
+afterwards.
+\end{proposition}
+\begin{proof}
+For every compatible group matrix \(C(s)\), the product-market
+Cournot first-order conditions are
+\[
+0=D(Q)+G_i(q,s)-r_i
+  +q_i\{D'(Q)+vC_{ii}(s)\}.
+\]
+At the original \(D_0\), the negative Jacobian is the symmetric
+matrix \(J_s=M_s+\operatorname{diag}(\operatorname{diag}M_s)\),
+with \(M_s=\mathbf1\mathbf1^\top-vC(s)\).
+For all finitely many possible compatibility groups,
+\(J_s\) is positive definite at \(v=6/25\).
+A sufficiently small \(C^2\) perturbation preserves strong
+monotonicity of these equilibrium conditions and strict
+concavity of each firm's quantity payoff.  All original market
+equilibria are interior, so the perturbed market equilibria are
+unique and continuous in demand.  The adoption game has
+finitely many action profiles and the original certified
+investment inequalities are strict.  The original member
+government's pre-adoption union-minus-international welfare
+gap is \(2408509/295731200>0\), while the post-adoption gap is
+\(-1341/184832<0\).  Continuity therefore preserves all
+investment and policy-ranking inequalities simultaneously
+on a common open \(C^2\) neighborhood.
+\end{proof}
+For instance, a nonlinear inverse willingness-to-pay schedule
+\[
+D(Q)=1-Q+\frac1{100}\frac{Q^2}{4(1+Q^2)}
+\]
+belongs to the admissible consumer-optimal class and reproduces
+the outsider-only adoption pattern after all investment profiles
+are reoptimized.  Its computed before/after government gaps
+are approximately \(+0.00833718\) and \(-0.00723015\).
+These are numerical illustrations of the analytical open-set
+claim, not substitutes for the theorem's proof.  This result
+proves robustness to a function-space neighborhood of demands,
+\emph{not} universal robustness across all demand systems or
+an independently certified pure-strategy Bertrand equilibrium.
