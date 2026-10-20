@@ -115,3 +115,73 @@ Close overlap, inspected at official source/abstract level:
 - Buccella, Fanti & Gori (2026), *The compatibility decision game*, EINT, doi:10.1080/10438599.2025.2478583 (joint adoption and Cournot/Bertrand); full theorem-level overlap still pending.
 
 **Author decision needed later:** Is the generic incidence result an editorially persuasive explanatory bridge rather than a tautological welfare rewrite? No automatic merge or submission is justified by symbolic algebra alone.
+
+
+## 2026-10-20 adversarial second audit — nonvacuity of R12 (NEW)
+
+**Finding 1: The first, uniform sign-bound formulation is NOT satisfied at the original certified R9 witness.**
+For \((c,v,d,F)=(1/10,6/25,1/20,9/100)\), an economically interpretable continuous *accounting interpolation* moves from the original no-adoption network/cost configuration to the outsider-only adopted configuration:
+\[
+p_h(a)=1-Q+v(q_1+q_2+a q_O),\qquad
+p_O(a)=1-Q+vaQ,\qquad
+r_O(a)=c-a(c-d).
+\]
+The firms play Cournot at each interpolation value \(a\) (this is a proof device; firms' adoption strategies remain **binary** in the paper). The verified rational equilibrium:
+\[
+q_h(a)=\frac{5(22-a)}{16(3a+16)},\qquad
+q_O(a)=\frac{-5(297a+26)}{16(3a+16)(6a-25)}.
+\]
+Each home firm's quantity strictly decreases, the outsider's quantity strictly increases on \([0,1]\). The representative member government's welfare change from the member market (the rest is unchanged) is:
+\[
+W(a)=\frac{6336a^4-153384a^3+3057749a^2-14082300a+54686900}
+{512(3a+16)^2(6a-25)^2}.
+\]
+**Its derivative changes sign from negative at \(a=0\) to positive at \(a=1\).** Therefore an a-priori uniform positive lower bound \(\kappa\) on welfare loss cannot explain this very example. This is a **real weakness of R12's original G2 sufficient condition**, not a weakness of R9.
+
+**Finding 2: An integrated conduct-neutral sufficient condition fixes this without assuming an ex-post reversal.**
+Let \(I(a)=A+\sum_jH_jq'_j=dW/da\), using *independently specified market response, home prices and consumer-surplus derivatives*. When \(I\) is nondecreasing,
+\[
+\int_0^1 I(a)\,da\ \le\ \frac1n\sum_{\ell=1}^{n}I(\ell/n).
+\]
+Thus if the observable derivative right-sum is below \(-G_0\), reversal follows. This is a **sufficient inequality in local response objects**: a finite-resolution upper integral certificate, NOT the tautological endpoint condition \(W(1)-W(0)<-G_0\). It is still a standard integration bound, not novel pass-through theory.
+
+**Finding 3: The original R9 witness satisfies the integrated test with an exact sign certificate.**
+- \(G_0=2408509/295731200\approx0.00814425059>0\).
+- Actual post-adoption gap \(=-1341/184832\approx-0.007255237\).
+- \(\int I = -4554109/295731200\approx-0.01539948778\).
+- The *16-cell right-rectangle upper bound* on \(\int I\) is \(\approx-0.00969830954<-G_0\approx-0.00814425059\). Exact rational numbers, not rounded inequalities, are compared by the script.
+- \(W''(a)>0\) on **the entire interval** by a degree-five Bernstein positivity certificate with all six coefficients strictly positive:
+  \[
+  (278124832175,256619666720,243567051785,238056392390,
+   1196726617702/5,246846088619).
+  \]
+  The denominator is \(64(3a+16)^4(6a-25)^4>0\).
+- Source: \`research/r12/verify_r9_nonmonotone_incidence.py\`, which also confirms *both* endpoints agree **exactly** with the canonical R9 member-market profit and consumer-surplus blocks.
+
+**Finding 4: The general G1 strict-investment-selection sufficient condition is ALSO nonvacuous in the original R9 case.**
+All eight SU adoption profiles and 64 SW profiles were independently re-solved using the **original** (not smooth/quasilinear substitute) Cournot price/networks/cost equations; all unilateral deviations and **weak** pure equilibria were enumerated:
+- \(F=0.09\).
+- Outsider's gross gain against nonadopting members \(g_O^0\approx0.11800704153\) (also smallest gain against all other SU profiles at this witness).
+- Largest unilateral SU-member investment gain \(\bar g_H\approx0.06502431769\).
+- Largest incremental investment gain in SW \(\bar g_{SW}\approx0.06816794948\).
+- Hence
+  \[
+  \max\{0,\bar g_H,\bar g_{SW}\}<0.09<g_O^0
+  \]
+  **strictly**, independent of selecting a favorable adoption equilibrium.
+- Unique pure SU firm continuation = outsider-only, unique pure SW continuation = no adoption. Checks are exact rationals.
+- Source: \`research/r12/verify_r9_generic_adoption_dominance.py\`.
+
+**Joint assessment:** Existing R9's specific joint phenomenon **is** demonstrably encompassed by the combined general investment selection G1 + integrated incidence G3 mechanism, not just nested algebraically. No R9 original scientific result changes. The initial uniform pointwise G2 remains a separate stronger sufficient condition, **not** a necessary description of all valid configurations. The R12 new corollary makes that limitation explicit. Generality now has a verified exemplar; it is still **not** a universal sign theorem, full general demand/conduct existence theorem, equilibrium coalition stability extension, or automatically a novel contribution to IJIO.
+
+**Critical reviewer caveat:** The original R9 single-market \`p_i\` / \`CS=Q^2/2\` accounting pair is embedded algebraically, but a general micro-founded welfare theory should explicitly justify why \(S\) and \(p\) can be specified separately rather than claiming all pairs arise from rational consumer choice. This is a substantive economics issue that symbolic math alone cannot solve.
+
+## Specific IJIO editor decision — comparison
+
+The actual 2026-09-21 editorial decision (Sandro Shelegia) praised a well-written, clear paper, but classified it as a fairly standard **three-country Cournot trade modelling** exercise using algebraic profit/welfare comparisons of the same linear subgames; it did not find a **portable economic mechanism/general insight** sufficient for external review, and explicitly doubted an IJIO publication path. The research question *itself* was not rejected as ill-posed, but **insufficient innovation/scientific significance** was expressly cited.
+
+**Research judgment:** Model-general reformulation addresses the **specific portability criticism**, not a guaranteed novelty or original IJIO resubmission right. A referee could still regard G1 as standard finite-game dominance, G3 as numerical integration, and the new incidence identity as an application of existing pass-through theory. The next required research gate is either a materially sharper, economically primitive sufficient condition that carries across conduct without high-burden response assumptions, or a carefully delimited submission to a more suitable journal. Do not redesign the R9 economic question or modify original R9 results to force a general sign claim.
+
+## Final submission QA blocker
+
+R12 currently exceeded the 17–19-page internal JICT short-manuscript builder bound already before G3 was appended (compiled 21pp before this latest corollary); it is **not a compliant short submission package yet**. Keep the R9 JICT submission candidate untouched. Do not claim final compilation/length is green simply because standalone symbolic/adoption proofs pass.
